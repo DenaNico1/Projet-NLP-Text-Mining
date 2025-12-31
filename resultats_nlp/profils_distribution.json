@@ -1,0 +1,142 @@
+{
+  "distribution": {
+    "Non classifié": 1316,
+    "Data Manager": 402,
+    "Data/IA - Non spécifié": 375,
+    "Data Scientist": 182,
+    "Data Engineer": 169,
+    "Data Analyst": 161,
+    "BI Analyst": 157,
+    "Data Consultant": 126,
+    "AI Engineer": 32,
+    "AI Research Scientist": 31,
+    "MLOps Engineer": 15,
+    "Data Architect": 15,
+    "Computer Vision Engineer": 10,
+    "ML Engineer": 8,
+    "Analytics Engineer": 4
+  },
+  "taux_classification": 0.5617715617715617,
+  "confiance_moyenne": 0.6715043200397313,
+  "score_moyen": 5.6553983891463,
+  "by_pass": {
+    "pass1": 1423,
+    "pass2": 99,
+    "pass3": 29,
+    "pass4": 136
+  },
+  "by_profil": {
+    "Data Engineer": {
+      "count": 169,
+      "percentage": 5.627705627705628,
+      "score_moyen": 6.619829396757592,
+      "confiance_moyenne": 0.5771529327796436,
+      "score_title_moyen": 9.384615384615385,
+      "salaire_median": 16800.0
+    },
+    "Data Scientist": {
+      "count": 182,
+      "percentage": 6.0606060606060606,
+      "score_moyen": 6.052521524025691,
+      "confiance_moyenne": 0.6373791853633097,
+      "score_title_moyen": 8.659340659340659,
+      "salaire_median": 17736.0
+    },
+    "Data Analyst": {
+      "count": 161,
+      "percentage": 5.361305361305361,
+      "score_moyen": 5.838219497807557,
+      "confiance_moyenne": 0.5917618086999838,
+      "score_title_moyen": 8.236024844720497,
+      "salaire_median": 38994.0
+    },
+    "BI Analyst": {
+      "count": 157,
+      "percentage": 5.228105228105228,
+      "score_moyen": 6.343529658956593,
+      "confiance_moyenne": 0.6146948088113364,
+      "score_title_moyen": 9.235668789808917,
+      "salaire_median": 294000.0
+    },
+    "Data Consultant": {
+      "count": 126,
+      "percentage": 4.195804195804196,
+      "score_moyen": 6.400592270981639,
+      "confiance_moyenne": 0.7454840590886614,
+      "score_title_moyen": 9.88888888888889,
+      "salaire_median": 450000.0
+    },
+    "Data Manager": {
+      "count": 402,
+      "percentage": 13.386613386613385,
+      "score_moyen": 5.459319526191496,
+      "confiance_moyenne": 0.7027102398791293,
+      "score_title_moyen": 7.91044776119403,
+      "salaire_median": 32874.0
+    },
+    "Data Architect": {
+      "count": 15,
+      "percentage": 0.4995004995004995,
+      "score_moyen": 3.5718717632484163,
+      "confiance_moyenne": 0.6999907307202345,
+      "score_title_moyen": 5.2,
+      "salaire_median": null
+    },
+    "AI Engineer": {
+      "count": 32,
+      "percentage": 1.0656010656010655,
+      "score_moyen": 4.565653391465265,
+      "confiance_moyenne": 0.6345953612663531,
+      "score_title_moyen": 6.4375,
+      "salaire_median": 600000.0
+    },
+    "ML Engineer": {
+      "count": 8,
+      "percentage": 0.2664002664002664,
+      "score_moyen": 2.834639926075112,
+      "confiance_moyenne": 0.6343683734486636,
+      "score_title_moyen": 3.25,
+      "salaire_median": null
+    },
+    "Analytics Engineer": {
+      "count": 4,
+      "percentage": 0.1332001332001332,
+      "score_moyen": 5.284007142413011,
+      "confiance_moyenne": 0.5886837681573823,
+      "score_title_moyen": 7.5,
+      "salaire_median": null
+    },
+    "MLOps Engineer": {
+      "count": 15,
+      "percentage": 0.4995004995004995,
+      "score_moyen": 3.6142563199838125,
+      "confiance_moyenne": 0.7219610748446968,
+      "score_title_moyen": 4.0,
+      "salaire_median": 400.0
+    },
+    "AI Research Scientist": {
+      "count": 31,
+      "percentage": 1.0323010323010324,
+      "score_moyen": 5.083622541717724,
+      "confiance_moyenne": 0.7189319461693598,
+      "score_title_moyen": 6.516129032258065,
+      "salaire_median": 20850.0
+    },
+    "Computer Vision Engineer": {
+      "count": 10,
+      "percentage": 0.333000333000333,
+      "score_moyen": 3.1029860358496757,
+      "confiance_moyenne": 0.6904516684956378,
+      "score_title_moyen": 3.8,
+      "salaire_median": 494000.0
+    },
+    "Data/IA - Non spécifié": {
+      "count": 375,
+      "percentage": 12.487512487512488,
+      "score_moyen": 5.058694103690289,
+      "confiance_moyenne": 0.7275393833335023,
+      "score_title_moyen": 9.866666666666667,
+      "salaire_median": 22920.0
+    }
+  }
+}

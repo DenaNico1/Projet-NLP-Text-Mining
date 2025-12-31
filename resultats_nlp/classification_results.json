@@ -1,0 +1,133 @@
+{
+  "svm": {
+    "best_params": {
+      "C": 2.0,
+      "kernel": "rbf"
+    },
+    "cv_f1_score": 0.8957942470218108,
+    "test_accuracy": 0.8958677685950414,
+    "classification_report": {
+      "Business Intelligence": {
+        "precision": 0.9402985074626866,
+        "recall": 0.8181818181818182,
+        "f1-score": 0.875,
+        "support": 77.0
+      },
+      "Data Analysis": {
+        "precision": 0.9210526315789473,
+        "recall": 0.8536585365853658,
+        "f1-score": 0.8860759493670886,
+        "support": 41.0
+      },
+      "Data Engineering": {
+        "precision": 0.875,
+        "recall": 0.9047619047619048,
+        "f1-score": 0.8896321070234113,
+        "support": 147.0
+      },
+      "Deep Learning": {
+        "precision": 0.8943661971830986,
+        "recall": 0.8943661971830986,
+        "f1-score": 0.8943661971830986,
+        "support": 142.0
+      },
+      "ML Engineering": {
+        "precision": 0.9629629629629629,
+        "recall": 0.9629629629629629,
+        "f1-score": 0.9629629629629629,
+        "support": 27.0
+      },
+      "MLOps": {
+        "precision": 0.88268156424581,
+        "recall": 0.9239766081871345,
+        "f1-score": 0.9028571428571428,
+        "support": 171.0
+      },
+      "accuracy": 0.8958677685950414,
+      "macro avg": {
+        "precision": 0.9127269772389176,
+        "recall": 0.8929846713103807,
+        "f1-score": 0.9018157265656174,
+        "support": 605.0
+      },
+      "weighted avg": {
+        "precision": 0.8970738685213177,
+        "recall": 0.8958677685950414,
+        "f1-score": 0.8956505869174605,
+        "support": 605.0
+      }
+    }
+  },
+  "mlp": {
+    "best_params": {
+      "activation": "relu",
+      "alpha": 0.0001,
+      "hidden_layer_sizes": [
+        50,
+        25
+      ]
+    },
+    "cv_f1_score": 0.8950568508024814,
+    "test_accuracy": 0.8942148760330578,
+    "classification_report": {
+      "Business Intelligence": {
+        "precision": 0.8571428571428571,
+        "recall": 0.8571428571428571,
+        "f1-score": 0.8571428571428571,
+        "support": 77.0
+      },
+      "Data Analysis": {
+        "precision": 0.9714285714285714,
+        "recall": 0.8292682926829268,
+        "f1-score": 0.8947368421052632,
+        "support": 41.0
+      },
+      "Data Engineering": {
+        "precision": 0.8662420382165605,
+        "recall": 0.9251700680272109,
+        "f1-score": 0.8947368421052632,
+        "support": 147.0
+      },
+      "Deep Learning": {
+        "precision": 0.9402985074626866,
+        "recall": 0.8873239436619719,
+        "f1-score": 0.9130434782608695,
+        "support": 142.0
+      },
+      "ML Engineering": {
+        "precision": 0.9629629629629629,
+        "recall": 0.9629629629629629,
+        "f1-score": 0.9629629629629629,
+        "support": 27.0
+      },
+      "MLOps": {
+        "precision": 0.8742857142857143,
+        "recall": 0.8947368421052632,
+        "f1-score": 0.884393063583815,
+        "support": 171.0
+      },
+      "accuracy": 0.8942148760330578,
+      "macro avg": {
+        "precision": 0.9120601085832255,
+        "recall": 0.8927674944305322,
+        "f1-score": 0.9011693410268385,
+        "support": 605.0
+      },
+      "weighted avg": {
+        "precision": 0.8961841260313462,
+        "recall": 0.8942148760330578,
+        "f1-score": 0.8943701059531659,
+        "support": 605.0
+      }
+    }
+  },
+  "best_model": "SVM",
+  "topic_labels": {
+    "0": "Data Engineering",
+    "1": "ML Engineering",
+    "2": "Business Intelligence",
+    "3": "Deep Learning",
+    "4": "Data Analysis",
+    "5": "MLOps"
+  }
+}

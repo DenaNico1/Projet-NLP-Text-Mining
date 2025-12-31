@@ -1,0 +1,12 @@
+{
+  "kmeans": {
+    "silhouette": 0.04880348592996597,
+    "davies_bouldin": 3.378848320847786
+  },
+  "hdbscan": {
+    "n_clusters": 3,
+    "n_noise": 2614,
+    "silhouette": 0.21928542852401733,
+    "davies_bouldin": 1.564804206804
+  }
+}

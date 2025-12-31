@@ -1,0 +1,110 @@
+{
+  "total_offres": 3003,
+  "sources": {
+    "France Travail": 1571,
+    "Indeed": 1432
+  },
+  "regions": {
+    "Île-de-France": 352,
+    "Auvergne-Rhône-Alpes": 121,
+    "Nouvelle-Aquitaine": 82,
+    "Occitanie": 55,
+    "Provence-Alpes-Côte d'Azur": 50,
+    "Pays de la Loire": 14,
+    "Grand Est": 6,
+    "Normandie": 5,
+    "Centre-Val de Loire": 4,
+    "Bretagne": 2
+  },
+  "contract_types": {
+    "CDI": 1614,
+    "Stage": 457,
+    "Temps plein": 269,
+    "CDD": 193,
+    "Alternance": 165,
+    "Non spécifié": 116,
+    "MIS": 53,
+    "LIB": 41,
+    "Freelance": 13,
+    "CCE": 2
+  },
+  "salary_stats": {
+    "count": 140,
+    "mean": 117398.801,
+    "median": 28746.0,
+    "min": 76.0,
+    "max": 870000.0
+  },
+  "text_stats": {
+    "tokens_mean": 256.2264402264402,
+    "tokens_median": 249.0,
+    "tokens_min": 3,
+    "tokens_max": 1338
+  },
+  "competences_stats": {
+    "dictionnaire_size": 577,
+    "comp_mean": 5.488178488178488,
+    "comp_median": 4.0,
+    "offers_with_comp": 2717,
+    "top_10": [
+      {
+        "competence": "python",
+        "count": 1145,
+        "percentage": 38.12853812853813
+      },
+      {
+        "competence": "sql",
+        "count": 961,
+        "percentage": 32.001332001332
+      },
+      {
+        "competence": "autonomie",
+        "count": 892,
+        "percentage": 29.7036297036297
+      },
+      {
+        "competence": "rigueur",
+        "count": 746,
+        "percentage": 24.84182484182484
+      },
+      {
+        "competence": "management",
+        "count": 687,
+        "percentage": 22.877122877122876
+      },
+      {
+        "competence": "machine learning",
+        "count": 636,
+        "percentage": 21.178821178821178
+      },
+      {
+        "competence": "power bi",
+        "count": 526,
+        "percentage": 17.515817515817517
+      },
+      {
+        "competence": "intelligence artificielle",
+        "count": 452,
+        "percentage": 15.051615051615052
+      },
+      {
+        "competence": "r",
+        "count": 432,
+        "percentage": 14.385614385614387
+      },
+      {
+        "competence": "aws",
+        "count": 411,
+        "percentage": 13.686313686313687
+      }
+    ]
+  },
+  "preprocessing": {
+    "stopwords_count": 394,
+    "stopwords_fr_en": true,
+    "lemmatization": true,
+    "html_cleaning": true,
+    "min_token_length": 3
+  },
+  "timestamp": "2025-12-30T21:00:25.994342"
+}
