@@ -1,0 +1,771 @@
+﻿competence,chi2_score,p_value
+Spark,514.1316517428861,7.10709837061773e-109
+Big Data,463.2735763065804,6.726753204650976e-98
+Deep Learning,418.26758687436137,3.423409602305524e-88
+Scala,352.7441879561387,4.490241821547152e-74
+Machine Learning,312.60242085908095,1.953058539737678e-65
+GCP,307.07447847285204,3.016786404573117e-64
+Hadoop,300.669399162258,7.190319815207252e-63
+MLOps,280.71528097360806,1.3973400483085805e-58
+CI/CD,278.6470807045389,3.887076407446687e-58
+NLP,276.1434400982254,1.3410479778815402e-57
+aws,266.5908941273559,1.5100371067074466e-55
+AWS,266.5908941273559,1.5100371067074466e-55
+Datalake,252.90802077474046,1.3065472853684181e-52
+Python,241.68215937481114,3.34542465952833e-50
+DBT,237.1201455653014,3.182504559196829e-49
+Kafka,227.4159401386067,3.8284465131746733e-47
+Databricks,224.09977496384838,1.9662280007119816e-46
+Azure,216.47344697089483,8.458992814477515e-45
+Scikit-learn,216.1131531837025,1.0103696586652148e-44
+MLflow,216.07671700562392,1.0286875470728931e-44
+Data engineer,198.1904203312107,6.926231250036018e-41
+Transformers,192.4572635365008,1.1654897351673362e-39
+Intelligence artificielle,187.70539273811477,1.2085043436366205e-38
+PyTorch,176.71524073019975,2.690633561083472e-36
+Excel,173.86769821548478,1.0907568555202701e-35
+Power BI,168.2228715007813,1.7467697377841808e-34
+BigQuery,159.80350434198135,1.0900223708246299e-32
+TensorFlow,157.39364899009072,3.555938489228568e-32
+Kubernetes,154.1338168302437,1.7593725826621205e-31
+Pandas,148.5725410828291,2.687501447125803e-30
+Talend,140.06766570478038,1.7309584640177249e-28
+Linux,139.0241070317266,2.8846304267259625e-28
+Docker,136.69768402302668,9.003915161759487e-28
+docker,136.69768402302668,9.003915161759487e-28
+snowflake,131.00883689112737,1.4536796814835782e-26
+Snowflake,131.00883689112737,1.4536796814835782e-26
+java,129.28737119207958,3.371280565038068e-26
+JAVA,129.28737119207958,3.371280565038068e-26
+Java,129.28737119207958,3.371280565038068e-26
+Qlik Sense,129.0635243213751,3.7608939730693105e-26
+Qlik,125.6553967066002,1.9869852405282027e-25
+Anglais technique,125.18287980741191,2.5025622538210974e-25
+LangChain,122.82137864083813,7.924472447316708e-25
+Tableau,122.35526440411313,9.948300430077734e-25
+Plotly,121.51415712757661,1.4995896469741692e-24
+NumPy,119.80305819326944,3.454985466376734e-24
+Git,115.7344843416514,2.510713244126901e-23
+R,114.70489103483521,4.1461913621063064e-23
+Looker,103.44669595566785,9.91429606559782e-21
+LLM,100.17253857939407,4.860620515605828e-20
+Informatique industrielle,99.31699438614349,7.361969189977093e-20
+Airflow,95.86299553628824,3.9303311315256284e-19
+MySQL,92.46209092982144,2.041219474153905e-18
+Data management,90.09947107794467,6.4036739592800336e-18
+HTML,87.57150195916276,2.173923019814349e-17
+management,80.44720075722194,6.765346928982558e-16
+PostgreSQL,73.03937347821872,2.3854420192933207e-14
+LlamaIndex,68.72395833333273,1.8883380936308597e-13
+Agile,68.4810375044622,2.1212351856987586e-13
+Angular,68.35286453535134,2.2554642397451355e-13
+Matplotlib,67.03780829687292,4.231648513636346e-13
+rigueur,66.31781533917083,5.970729399895474e-13
+Windows,63.63537334321816,2.1499567666606922e-12
+SQL,63.61765617659726,2.1682091439946312e-12
+Rigueur scientifique,58.73953216948398,2.2134684103412154e-11
+GPT,56.96325244154577,5.1459217762810215e-11
+Keras,56.79796229080542,5.5658024055630353e-11
+SPRING,56.213574299090666,7.34383227945095e-11
+Spring,56.213574299090666,7.34383227945095e-11
+MongoDB,55.56353545766077,9.994612847076223e-11
+Javascript,55.06005949702718,1.2687467972847118e-10
+Scrum,54.68083560632988,1.5183820385226256e-10
+NLTK,54.17713994565169,1.9272845618449638e-10
+CSS,52.591736722523514,4.0791968273906766e-10
+PHP,49.62040623886182,1.6571356592844857e-09
+Bonne communication,46.955518065369176,5.801340418522896e-09
+e-commerce,46.45358303577657,7.341994892180109e-09
+Spring ,46.10384877728267,8.650531045197586e-09
+spaCy,44.38775931821826,1.9321596341178108e-08
+Tableau Software,44.21917459239091,2.090648713190135e-08
+REST,36.77678978140763,6.639330949122185e-07
+Power Query,34.99754951351621,1.50634590935764e-06
+REACT,34.89762724847031,1.577114741429928e-06
+React,34.89762724847031,1.577114741429928e-06
+autonomie,33.60984947267726,2.8470333693608816e-06
+Java Script,32.45786516853973,4.821188485655609e-06
+API,31.97843968094567,5.999952299987562e-06
+.Net,25.582474223662537,0.00010750827131909001
+MDM,24.08553558345569,0.0002090477155239408
+go,23.947693015541397,0.00022219582273287934
+Biologie,21.58924708008404,0.0006265916121195087
+SIG,20.910297785531075,0.0008422852591018635
+Kubeflow,20.11008890189143,0.0011916529100781223
+Informatique,20.002156059370694,0.0012485668370306891
+CIEL,19.691941647284427,0.001427450134831364
+Hibernate,19.649606140116937,0.0014537393225201795
+Analyse statistique,19.330166254326432,0.0016680481190204555
+API REST,18.986089676891993,0.0019336377054281944
+RQTH,18.194532342531584,0.00271222735519269
+Redis,17.778688524590244,0.0032369486155020342
+Optimisation de performances,17.435797028940723,0.0037433257440704784
+Cobol,16.513024848381445,0.0055222431975229715
+Logiciels comptables,15.341161036159,0.008999867996612468
+KOTLIN,14.665401938183109,0.011891913525199646
+Product Management,14.64280790132741,0.012002735155066772
+LangGraph,13.92589886387402,0.016087031178956105
+Vue.js,13.750299675856352,0.017275812830915806
+Azure Databricks,13.744791666666547,0.017314438826912987
+Business Object,12.605909562774988,0.027365433586629902
+C#.net,11.811291683739308,0.03746703803086033
+Algorithmique,11.720659042407867,0.038822493575881835
+Conduite de projets ,10.095224282922903,0.07258163486909074
+Gestion de projets informatiques,10.061285332097349,0.07351726082788056
+GraphQL,9.40503710233409,0.09395895358454429
+Seaborn,8.865640096618284,0.1145448326601824
+JPA,7.571198326447995,0.18150495848326398
+Langage objet,7.412208479703298,0.191743903703374
+React.js,7.351772975433999,0.1957652019823944
+Analyse de risque,6.854933297341953,0.23165460135187968
+Coder,6.540453968104691,0.25712053545435704
+XGBoost,6.4915730337079465,0.26127934028246247
+Animer des sessions de formation,6.302954781387494,0.2778460974472537
+Esprit logique,6.270024734889394,0.28082392924633093
+BERT,6.214673913043564,0.2858871592881492
+Cognos,5.988992992819364,0.3072914221083296
+Cassandra,5.171455277923096,0.3953161156182321
+UX design,5.079625292740068,0.4062401665984465
+Connaissances en Robotisation,5.079625292740068,0.4062401665984465
+Ingenieur AUTOMATICIEN,5.079625292740068,0.4062401665984465
+PLSQL,5.079625292740068,0.4062401665984465
+B to B,5.038362288308147,0.41121637779057435
+jQuery,5.026025083546063,0.4127123191890902
+Application web,4.338013181468829,0.5018446414055617
+LightGBM,4.059091175093618,0.5409400472368815
+Machine Learning et Data Science,3.9898663949275224,0.5508758684708348
+Programmation en Python,3.840986237928635,0.572529783159332
+Google Analytics 4,3.256977945367241,0.6604345006051275
+Animation de groupes,3.2457865168539732,0.6621514100077249
+Hibernates,3.2457865168539732,0.6621514100077249
+"Zoom, ",3.2457865168539732,0.6621514100077249
+PipeDrive,3.2457865168539732,0.6621514100077249
+"Jenkins, Git, GitLab, Docker",3.2457865168539732,0.6621514100077249
+bonne organisation,3.2285116185050042,0.6648030197462063
+Recueillir et analyser les besoins clients,3.135012367444697,0.6791798891683385
+Connaissance de JIRA,3.107336956521782,0.6834417906146998
+Visual Basic,3.0888625140006325,0.6862879451166133
+Analyse et Formalisation,2.539812646370034,0.7704876340387661
+interfaces visuelles ,2.539812646370034,0.7704876340387661
+Architecture web,2.539812646370034,0.7704876340387661
+"Architectures de calcul HPC, de l'anglais",2.539812646370034,0.7704876340387661
+PowerAMC,2.539812646370034,0.7704876340387661
+"Delphi, C++, C#, Android Studio",2.539812646370034,0.7704876340387661
+Datastage PX,2.539812646370034,0.7704876340387661
+Programmation logicielle,2.539812646370034,0.7704876340387661
+Datastage Server,2.539812646370034,0.7704876340387661
+Prospection commerciale,2.539812646370034,0.7704876340387661
+Typing,2.539812646370034,0.7704876340387661
+Slack,2.176561736687872,0.8242141812917791
+DICOM,1.8927995816119987,0.863770542606852
+RxJS,1.8927995816119987,0.863770542606852
+Julia,1.8927995816119987,0.863770542606852
+Connaissance du langage SQL,1.8235748014459026,0.872978321499065
+AERONAUTIQUE,0.9643120399152525,0.9653925875025967
+ Maîtrise de Microsoft Access,,
+ACCOMPAGNEMENT DES METIERS DANS LEUR TRANSFORMAT ,,
+ARCHITECTURE TECHNIQUE ET INTEGRATION DES SI ,,
+Accompagner l'appropriation d'un outil par ses utilisateurs,,
+Accompagner une personne dans l'acquisition de connaissances,,
+Actualiser des bases de données,,
+Actualiser régulièrement ses connaissances,,
+Adaptation des contenus aux apprenants,,
+"Adapter l'apprentissage selon la progression pédagogique, les difficultés rencontrées",,
+Adapter les outils de traitement statistique de données,,
+Adapter les solutions aux contraintes de l'environnement de production,,
+Adapter une stratégie de vente à une cible ou un produit,,
+Administrateur de réseaux informatiques et sécurité des systèmes d'information et de communication,,
+Administrer une basse de données,,
+Agir rapidement en cas de panne pour minimiser les interruptions,,
+Alignement de données entre Legacy et Target,,
+Analyse de cycle de vie,,
+Analyse de données client,,
+Analyse de données de production,,
+Analyse de données expérimentales,,
+Analyse de résultats de tests,,
+Analyse des besoins clients pour systèmes embarqués,,
+Analyse en chromatographie,,
+"Analyse quantitative de données textuelles (TXM, .",,
+Analyser des données pour identifier des tendances,,
+Analyser des données pour soutenir des décisions stratégiques,,
+Analyser des données techniques pour optimiser les processus,,
+Analyser des résultats de tests et essais,,
+Analyser des échanges communautaires en ligne,,
+Analyser des échantillons de matières ou de produits,,
+Analyser et prévenir les risques,,
+Analyser la qualité des process,,
+Analyser les besoins des clients pour proposer des services adaptés,,
+Analyser les besoins des utilisateurs pour la création de contenus multimédias,,
+Analyser les besoins des utilisateurs pour la création de logiciels,,
+Analyser les besoins informatiques,,
+Analyser les besoins spécifiques des clients,,
+"Analyser les données d'une étude, d'un projet",,
+Analyser les tendances de consommation des clients,,
+Analyser les tendances du marché digital,,
+Analyser les tendances du marché pour anticiper les besoins,,
+Analyser les tendances du marché pour anticiper les évolutions de l'IA,,
+Analyser les écarts de coûts et proposer des ajustements,,
+Analyser un bilan financier,,
+Analyser une situation et produire un diagnostic,,
+"Analyser, exploiter, structurer des données",,
+"Analyser, résoudre un problème courant ou complexe",,
+"Animer un réseau, une communauté",,
+Animer une démarche agile et innovante,,
+Anticiper les risques de cybersécurité,,
+"Apache Spark, Amazon S3, Liquidbase",,
+Application des méthodes de machine learning dans BI,,
+Appliquer un cadre juridique ou réglementaire,,
+Apporter une assistance technique aux équipes,,
+Appétence pour les sujets d’analyse,,
+Architecture de solutions cloud,,
+Architecture des des outils collaboratifs,,
+"Architectures modèles de langue, leurs évaluations",,
+Archivage sécurisé et pérenne de données recherche,,
+Argumenter pour des choix technologiques stratégiques,,
+Assembler des composants logiciels,,
+Assister une structure dans l'interprétation et l'analyse d'une étude,,
+Assurer la compatibilité des systèmes avec les normes actuelles,,
+Assurer la confidentialité des informations des utilisateurs,,
+Assurer la formation continue des équipes sur les nouvelles technologies de bases de données,,
+Assurer la maintenance et l'actualisation des systèmes d'IA,,
+Assurer la mise à jour des logiciels de systèmes de sécurité,,
+Assurer le suivi de la formation et le tracer dans les outils de suivi pédagogique à disposition,,
+Assurer le suivi des stocks en temps réel,,
+Assurer une mise à jour régulière des contenus,,
+Audit des systèmes d'information,,
+"BTS services informatiques aux organisations option A : solutions d'infrastructure, systèmes et réseaux",,
+"Base de données : MongoDB, Postgresql",,
+Base de données unifiée et centralisée,,
+"Base de données, outils modélisation",,
+Batch ETL,,
+Big data Analytics,,
+Bonne maîtrise des logiciels statistiques,,
+Bonne pratique des outils de design UI/UX.,,
+Bonnes connaissances sur front Web (ReactJS),,
+Bonnes notions d’intégration système/API REST/,,
+Business Intelligence (BI) - Informatique décisionnelle,,
+CI / CD ,,
+CONCEPTION  MODELE DONNE SYSTEME INFORMATIQUE ,,
+Cadre déontologique prod. données qualitatives,,
+Cadre légal production données qualitatives,,
+Cadre réglementaire environnemental,,
+"Calculer les marges, la rentabilité d'un produit ou d'une activité",,
+Calibration d'instruments de laboratoire,,
+Capacité à analyser les données financières,,
+Capacité à comprendre les enjeux de santé publique,,
+Capacité à hiérarchiser +à prioriser ses missions,,
+Capacité à identifier des solutions,,
+Capacité à interagir avec plusieurs interlocuteurs,,
+Capacité à intervenir manuellement sur des cas spé,,
+Capacité à résoudre des problèmes techniques,,
+Capacité à vulgariser des sujets complexes,,
+Capacités d'organisation,,
+Capacités d’organisation,,
+Changer ou réparer une pièce ou un ensemble défectueux,,
+"Cloud & Orchestration : RunAI, Prefect",,
+Codifier une facture,,
+Collaboration interdisciplinaire en IA,,
+Collaborer avec des équipes multidisciplinaires,,
+Collaborer avec des équipes pour intégrer des analyses,,
+Collaborer avec les développeurs pour améliorer la qualité du logiciel,,
+Collaborer avec les développeurs pour la correction des bugs,,
+Collaborer avec les équipes pour intégrer les systèmes informatiques,,
+Collaborer avec une équipe projet,,
+Collaborer dans un groupe pour réaliser un projet,,
+Collecter des données statistiques,,
+"Collecter et analyser des données, des informations",,
+Collecter les résultats d'une enquête,,
+"Collecter, tester, analyser des échantillons, des matériaux",,
+Communiquer auprès de ses interlocuteurs internes et externes,,
+Communiquer clairement les concepts d'IA aux parties prenantes non techniques,,
+Communiquer des insights clés aux parties prenantes,,
+Communiquer efficacement avec les équipes interdépendantes,,
+Communiquer efficacement par écrit les résultats des tests,,
+"Communiquer les résultats de mesure et d'analyses aux services qualité, production, aux clients, aux élus, ...",,
+Communiquer les résultats des études aux parties prenantes,,
+Compréhension des modèles d’optimisation / dispatc,,
+Compétences avancées en maîtrise d'ouvrage,,
+Compétences en Data-Management,,
+Compétences en SEO.,,
+Compétences en biostatistiques et en épidémiologie,,
+"Compétences en budget, RH, pilotage",,
+Compétences en installation et maintenance informa,,
+Compétences rédactionnelles et de synthèse,,
+Conception de bases de données,,
+Conception de systèmes informatiques,,
+Conception de tableaux de bord de gestion,,
+Conceptualiser et modéliser le SI,,
+Concevoir des algorithmes d'apprentissage automatique,,
+"Concevoir des modèles théoriques (calcul, simulation, modélisation)",,
+"Concevoir des outils de pilotage, indicateurs, tableaux de bord",,
+Concevoir des supports de communication et d'image,,
+Concevoir des tableaux de bord pour le suivi des performances,,
+Concevoir et animer une démarche d'innovation,,
+Concevoir et développer les programmes et applicat,,
+Concevoir et développer une solution digitale,,
+Concevoir et gérer un projet,,
+"Concevoir et préparer les cours, les travaux dirigés ou les travaux pratiques",,
+"Concevoir l'architecture d'un système, d'un réseau",,
+Concevoir l'ingénierie de formation et les séquences pédagogiques,,
+Concevoir les spécifications de l'installation automatisée en fonction du cahier des charges,,
+"Concevoir un logiciel, un système d'informations, une application",,
+Concevoir un plan d'analyse statistique : définir une méthode d'étude statistique (procédures de recueil et traitement des informations) pertinente et les outils logiciels d'analyse des données,,
+Concevoir une application web,,
+"Concevoir, actualiser des outils de suivi de la qualité",,
+Conditionner des produits,,
+Conduire des revues de code pour assurer la qualité des développements d'IA,,
+Conduire des travaux d'études et de recherche,,
+Conduire des études d’impacts,,
+"Conduire les négociations commerciales : prix, délais, promotions et conclure la vente (bons de commande, contrats de vente…)",,
+Conduite de projet ;,,
+Conduite de projets complexes,,
+Configurer le poste de travail aux besoins de l'utilisateur,,
+Connaissance approfondie en mathématiques,,
+Connaissance de Sifac+ obligatoire,,
+Connaissance de la réglementation bancaire,,
+Connaissance des problématiques de conformité,,
+Connaissance des technologies Cloud (AWS),,
+"Connaissance outils ETL (Talend,IDWS Data Flow M.)",,
+Connaissances  sur les collectivité territoriales,,
+Connaissances en architecture logiciel (MVC...),,
+Connaissances en conduite du changement,,
+Connaissances réglementaire de l'eau,,
+"Connaissances solides en gestion d’hébergement, do",,
+Connaissances sur QT sont un plus,,
+"Connaissances techniques (Cloud, data/BI, CRM, …)",,
+Conseil en choix de matériel informatique éco-responsable,,
+Conseiller dans le cadre d'une relation commerciale,,
+Construire et maintenir des relations professionnelles durables,,
+Conteneurisation (Docker) et PyInstaller ,,
+Contrôler la conformité d'un équipement de laboratoire,,
+"Contrôler la conformité d'un équipement, d'une machine, d'une installation",,
+Contrôler la conformité des données,,
+Contrôler la qualité d'une base de données,,
+Contrôler la qualité et la conformité des process,,
+"Contrôler les règles de Qualité, Hygiène, Sécurité, Santé et Environnement (QHSSE)",,
+Convaincre en argumentant avec un ou plusieurs interlocuteurs,,
+"Coordination interne, communication structurée.",,
+Coordonner l'intervention d'équipes pluridisciplinaires,,
+Création de rapports/tableaux de bord Power BI,,
+Créer une documentation technique,,
+"Créer, concevoir de nouveaux produits ou des améliorations produits",,
+"Créer, élaborer et identifier des concepts innovants",,
+"Cuire des viandes, poissons ou légumes",,
+"Curiosité intellectuelle, sens critique",,
+DEFINITION DES STANDARDS D'URBANISATION DU MINAR ,,
+"DOCKER, Kubernetes, Aws, Rundeck, Java, Python",,
+DUT informatique,,
+Data Entry,,
+"Diriger des travaux de recherche (thèse, mémoire d'études...)",,
+"Diriger et gérer un ensemble, une structure, une organisation",,
+"Disponibilité, discrétion et confidentialité",,
+Disposer de capacités d’écoute et de synthèse,,
+Distribution de données en temps réel avec KAFKA,,
+Documenter les anomalies rencontrées lors des tests,,
+Documenter les interventions et les anomalies rencontrées,,
+Documenter les processus et les architectures d'IA,,
+Documenter les procédures de développement et d'exploitation,,
+Documenter les procédures de gestion des bases de données,,
+Documenter les procédures de sécurité pour les utilisateurs,,
+Documenter les procédures techniques et configurations,,
+Documenter les procédures techniques pour les utilisateurs,,
+Documenter les solutions techniques pour les développeurs,,
+Documenter les spécifications techniques des projets IA embarqués,,
+"Documenter, mutualiser des ressources de recherche",,
+"Données d'activité de la structure, du service",,
+Droit et réglementation des assurances,,
+Définir des mesures de prévention des risques,,
+Définir et faire évoluer des procédés de traitement de l'information,,
+Définir la stratégie des systèmes d'informations,,
+Définir la stratégie financière d'une structure,,
+Définir les solutions de stockage et de structuration des données,,
+Définir un dispositif de suivi de production,,
+Dépanner des équipements informatiques,,
+Déploiement de couches logicielles spécifiques IA ,,
+Déploiement de services cloud (cloud computing),,
+Déploiement de solutions informatiques,,
+"Déployer, intégrer un logiciel, un système d'informations, une application",,
+"Dépoussiérer les sols, les tapis, les meubles, les objets et aérer, désodoriser les pièces",,
+Déterminer des axes d'évolution technologiques,,
+Déterminer des mesures correctives,,
+"Déterminer et développer les méthodes de recherche, de recueil et d'analyse de données",,
+Déterminer l'opportunité de l'intégration d'outils d'intelligence artificielle et de data science dans le modèle d'affaires,,
+Déterminer le potentiel d'un client ou prospect,,
+Développement Commercial,,
+Développement back-end,,
+Développement de jobs d'extraction & d'acquisition,,
+Développement de logiciels,,
+Développement de logiciels embarqués,,
+Développement de produits basés sur l'IA,,
+Développement de tests automatisés,,
+Développement de tests de sécurité,,
+Développement front-end,,
+Développement ventes OEM,,
+Développer des algorithmes pour l'analyse de données,,
+Développer des modèles mathématiques pour la création de produits d'assurance ou d'épargne,,
+Développer des modèles prédictifs pour l'analyse de données,,
+Développer des méthodes d'analyse,,
+Développer des scripts pour l'automatisation des rapports,,
+Développer des tableaux de bord pour suivre les KPIs,,
+Développer et fidéliser la relation client,,
+Développer l'image et la notoriété d'une entreprise,,
+"Développer un logiciel, un système d'informations, une application",,
+Développer un portefeuille clients et prospects,,
+Développer une application en lien avec une base de données,,
+Effectuer un reporting régulier à la hiérarchie,,
+Elaborer des outils de collecte de données ,,
+Elaborer des processus et des modes opératoires techniques,,
+Elaborer des propositions techniques,,
+Elaborer des solutions techniques et fonctionnelles,,
+Elaborer des supports de communication adaptés,,
+Elaborer des tableaux de bord,,
+"Elaborer et planifier un programme de production, d'exploitation",,
+"Elaborer un plan marketing, une stratégie de marque et de communication",,
+Elaborer une nomenclature,,
+Elaborer une stratégie commerciale,,
+"Elaborer, adapter une proposition commerciale",,
+Encourager la participation de chaque membre du groupe,,
+Enjeux et exigences liés à la gestion des données,,
+Enlever un colis chez un client,,
+Enrichir une base de données,,
+"Enseigner, transmettre des connaissances, développer des compétences",,
+"Entretenir un équipement, une machine, une installation",,
+"Entretenir, nettoyer un espace, un lieu, un local",,
+Environnement PLM / 3DExpérience / CATIA,,
+Environnements de recherche en sciences sociales,,
+"Esprit d'initiative, capacité d’analyse, rigueur",,
+Esprit de synthèse,,
+"Etablir des prévisions, des évaluations, des recommandations, des perspectives",,
+Etablir des rapports de progression des travaux,,
+Etablir un devis,,
+"Etablir un plan de tournée de prospection (ciblage, interlocuteurs, préparation de dossiers techniques)",,
+"Etudier et concevoir des pièces, sous-ensembles ou ensembles",,
+Evaluation des besoins du client,,
+Evaluer l'efficacité des modèles de données,,
+Evaluer l'impact financier des décisions stratégiques,,
+Evaluer la satisfaction client et ajuster les services,,
+Evaluer la satisfaction des clients et recueillir les feedbacks,,
+Evaluer le résultat de ses actions,,
+Excellente maîtrise traitement automatique langage,,
+Excellentes compétences rédactionnelles,,
+Expertise en exploitation des installations,,
+Expliquer les choix techniques aux clients,,
+Exploiter des solutions de Data Science ou d'Intelligence Artificielle,,
+Expérience dans fonction publique appréciée,,
+Expérience dans un environnement normé ,,
+Expérience en BE -Machines Speciales,,
+"Expérience secteur bancaire,banque dinvestissement",,
+Faciliter la collaboration interdisciplinaire dans les projets de développement,,
+Faciliter la collaboration interdépartementale sur les projets BI,,
+Faciliter les projets et transformations,,
+Faire preuve d'adaptabilité et d'autonomie,,
+Faire preuve d'appétence pour l’utilisation de logiciels numériques et de nouvelles technologies,,
+Familiarité dans secteur industriel / aéronautique,,
+Fiscalité,,
+Formalisation et uniformisation des données,,
+Formaliser les résultats d'une étude statistique de données,,
+Formation des utilisateurs sur les outils informatiques,,
+Former les utilisateurs sur les procédures d'accès et d'utilisation des bases de données,,
+Former les équipes à l'utilisation responsable des technologies,,
+Forte capacité analytique et lecture de dashboards,,
+Fortes capacités de raisonnement analytique,,
+GARANTIE DE L'INTEGRITE DU SI EN REGARD DU SCHEM ,,
+GESTION D'UN PRESTATAIRE SI INTERNE OU EXTERNE ,,
+GESTION DE LA QUALITE DES DONNEES ET DES REFEREN ,,
+Gestion Clientele,,
+Gestion de bases de données NoSQL,,
+Gestion de portefeuille clients,,
+Gestion de tests de performance,,
+Gestion de version de code,,
+Gestion des configurations,,
+Gestion des incidents de non-conformité,,
+Gestion des incidents et support utilisateur,,
+Gestion des risques (Risk Management),,
+"Gestion, préparation, annotation de corpus textuel",,
+"Gherkin, SpecFlow, POM ou équivalents",,
+GitHub / GitLab,,
+Goût pour la collaboration interdisciplinaire,,
+Gérer des bases de données,,
+Gérer des données massives,,
+Gérer et déployer des logiciels à distance,,
+Gérer et maitriser des bases de données (SQL/NoSQL),,
+Gérer la documentation technique des projets,,
+Gérer la sécurité des données dans les projets BI,,
+Gérer les bases de données et assurer leur intégrité,,
+Gérer les stocks,,
+Gérer les stocks de réactifs et de consommables nécessaires aux analyses,,
+Gérer les urgences et les priorités dans un laboratoire,,
+Gérer les versions de logiciels et leur compatibilité,,
+Gérer les versions de logiciels et leurs mises à jour,,
+Gérer une base de données numériques,,
+IDENTIFICATION DES DONNEES DU SYST D'INFOR,,
+Identifier des contraintes techniques,,
+Identifier des non-conformités,,
+"Identifier et sélectionner des fournisseurs, sous-traitants, prestataires",,
+"Identifier la demande et réaliser les ébauches, schémas de pièces, systèmes, sous-ensembles ou ensembles",,
+Identifier les contraintes d'un projet,,
+Identifier ses axes de progrès,,
+Indicateurs de suivi d'activité,,
+Informatica PowerCenter,,
+Installation de logiciels,,
+Installer du matériel d'automatisation,,
+Installer ou configurer un serveur réseau,,
+Interprétation de données financières,,
+Interprétation de mesures physiques,,
+Interpréter des résultats d'analyses pour des décisions stratégiques,,
+Interpréter des résultats de campagne média,,
+Intégration continue & DataOps : Gitlab CI,,
+Intégration de systèmes,,
+Intégrer des outils IA/Data Science,,
+Intégrer les bases de données avec d'autres systèmes d'information,,
+Intégrer les données techniques pour la réalisation du projet,,
+Intérêt pour applications interdisciplinaires TAL,,
+"JUnit, Sélénium",,
+LOGICIEL COMPTA/PAIE,,
+LOGICIEL R,,
+Lancer des documents de production,,
+Langage C maîtrisé en système embarqué bare-meta,,
+Langage informatique SQL,,
+"Langages C et C++ , CANopen, SPI, I2C ",,
+Langages de programmation informatique,,
+Langue anglaise : B2,,
+"Licence pro mention métiers de l'informatique : conception, développement et test de logiciels",,
+Licence pro mention métiers de l'informatique : systèmes d'information et gestion de données,,
+"Lire et interpréter des données et documents techniques, au besoin en anglais",,
+Livrer une commande,,
+Logiciels de gestion d'appels téléphoniques,,
+Logiciels susnommés ou de leur équivalents,,
+MISE EN OEUVRE UNE DEMARCHE D'URBANISATION DANS ,,
+Machines à CN,,
+Maintenance préventive et curative de deuxième niveau,,
+Maintenir à jour la documentation technique et les manuels d'utilisation,,
+"Maitrise Python, PyTorch,OpenAI API",,
+"Maitrise de DAX (calculs, mesures, ...)",,
+Maitrise de Dataïku,,
+Maitrise de l'environnement territorial,,
+Maitrise de la construction de requêtes complexes,,
+Maitrise de la méthodologie de projet (agile),,
+"Maitrise de sklearn, tensorflow, keras, pandas...",,
+Maitrise des techniques de supervision de modèles,,
+Marchés publics,,
+Master mention bio-informatique,,
+Master mention chimie et sciences des matériaux,,
+Master mention informatique,,
+Mastère spécialisé contrôle de gestion et pilotage de la performance,,
+Mastère spécialisé expert big data engineer,,
+"Maîtrise Webscraping (Python, ...)",,
+"Maîtrise d'un outil de gestion de flux (Kafka, Flink…)",,
+Maîtrise de Python et du framework FastAPI,,
+Maîtrise de l'anglais ,,
+Maîtrise de la langue française,,
+Maîtrise de sujets SI,,
+Maîtrise des outils de datawiz,,
+"Maîtrise des outils de gestion de projet (Trello, ",,
+Maîtrise des outils de gestion des données (SIG),,
+Maîtrise des outils d’extraction de données ,,
+Maîtrise des outils informatiques ,,
+Maîtrise des outils informatiques bureautiques ,,
+"Maîtrise des technologies web (HTML, CSS, JS, fram",,
+Maîtrise d’une autre langue serait un plus ,,
+Maîtriser les architectures de calcul HPC,,
+Maîtriser les caractéristiques d'un produit ou d'un matériau,,
+"Maîtriser les services proposés par l’entreprise, ainsi que le cadre légal et réglementaire",,
+Mener une recherche et une veille d'information,,
+Mesurer le retour sur investissement d'une action marketing,,
+Mettre en place des indicateurs de performance technique,,
+Mettre en place des outils de suivi de la qualité des tests,,
+Mettre en place des solutions d'amélioration de la performance,,
+Mettre en œuvre la stratégie commerciale de l'entreprise,,
+Mettre à jour les logiciels des systèmes embarqués,,
+"Mise en place de test unitaire,fonctionnel pytest",,
+Modélisation et simulation,,
+Modélisation informatique,,
+Modélisation économique,,
+Modéliser une base de données,,
+"Monter et régler une installation, une machine",,
+Métabase,,
+Méthode AGILE,,
+"Méthodes, outils traitement et analyse de données",,
+Méthodologies de prospection,,
+NATIONALITE FRANCAISE,,
+Niveau avancé prouvé développement LabVIEW,,
+Normes d'hygiène et de propreté,,
+Normes qualité,,
+"Notions de base en finances publiques (LOLF, GBCP)",,
+Optimisation de la performance des systèmes,,
+Optimisation des flux de production,,
+"Optimiser des algorithmes, une application informatique et mettre en oeuvre leur développement",,
+Optimiser des processus d'analyse de données,,
+Optimiser l'utilisation des outils bureautiques,,
+Optimiser la visibilité des publications sur les réseaux sociaux,,
+Optimiser les performances d'une base de données,,
+Optimiser les performances des systèmes d'IA,,
+Optimiser les processus de développement logiciel,,
+Optimiser les processus de qualité pour assurer la fiabilité des logiciels,,
+Optimiser les processus de sauvegarde des données,,
+Optimiser les processus financiers pour réduire les dépenses,,
+Optimiser les processus informatiques pour réduire l'empreinte écologique,,
+Optimiser les procédures de tests pour améliorer l'efficacité,,
+Optimiser une activité commerciale,,
+Organiser le flux des produits sur une ligne de production,,
+Organiser le traitement des commandes,,
+Organiser le travail d'une équipe,,
+"Organiser un corpus de données, textes ou document",,
+"Organiser, aménager un espace de vente",,
+Paramétrer un logiciel métier et l'interfacer à d'autres applicatifs,,
+Paramétrer un programme d'automatisation pour un automate programmable,,
+"Piloter la gestion de la production, de l'exploitation",,
+Piloter le déploiement de solutions innovantes,,
+Planifier des interventions de maintenance,,
+Planifier et suivre la réalisation des mesures et analyses et interpréter les résultats,,
+Planifier et suivre les échéances de projet,,
+Planifier son travail en autonomie,,
+Polyvalence et capacité d’adaptation,,
+Pratique de la data,,
+Procéder aux phases de tests et de recettes des applications développées,,
+"Procéder à des tests, expérimentations",,
+Procédures de contrôle qualité,,
+Procédures de tests,,
+Procédures qualité et sécurité des systèmes d'information et de télécoms,,
+Programmation TIA Portal,,
+Programmation en JavaScript,,
+Programmation en Python pour IA,,
+"Programmation scientifique (Python, Julia, R)",,
+Promouvoir l'interactivité et la collaboration,,
+Promouvoir la collaboration entre les développeurs et les opérateurs pour une meilleure intégration,,
+Promouvoir une culture d'amélioration continue au sein de l'équipe,,
+Proposer des améliorations pour augmenter l'efficacité des systèmes,,
+Proposer des améliorations pour optimiser les processus,,
+Proposer des pistes d'amélioration des solutions,,
+Proposer des solutions architecturales adaptées,,
+"Prospecter de nouveaux clients, de nouveaux marchés",,
+Préparer des plats culinaires,,
+"Préparer et animer une réunion, un groupe de travail, un atelier",,
+"Préparer l'intervention, le matériel et les supports d'une enquête",,
+"Préparer, assembler des plats simples",,
+Présenter les avantages techniques et commerciaux des produits,,
+Présenter les évolutions du système d'information au commanditaire,,
+Prévisons des ventes,,
+Python Django,,
+"Python, SQL, AWS, Azure",,
+"Python, SQL,C++ et JAVA",,
+Pédagogue et à l'écoute,,
+Recenser les besoins du commanditaire,,
+Recueillir et analyser les besoins client,,
+Refonte de système de référentiels,,
+"Relever, contrôler, ajuster des mesures et dosages",,
+"Remettre la commande au client (service à l'assiette, emballage à emporter, plateau, ...)",,
+Rendre compte de son activité,,
+Rendre compte du travail réalisé (écrit et oral),,
+Respect des délais & engagements,,
+Respecter la confidentialité des informations,,
+Respecter les délais de mise en œuvre des projets,,
+Respecter les délais de production pour répondre aux demandes des clients,,
+Respecter les normes de sécurité informatique dans l'assistance,,
+Respecter les normes de sécurité informatique dans le développement,,
+"Rest, GraphQL API, AJAX",,
+RgRX,,
+Réaliser des calculs de rentabilité de produits d'assurance ou d'épargne,,
+Réaliser des relevés dimensionnels,,
+Réaliser des études et développements informatiques,,
+"Réaliser et faire évoluer les schémas, les plans de détails, de sous-ensembles ou d'ensembles",,
+Réaliser et vérifier des calculs de mathématiques généraux ou appliqués,,
+Réaliser l'analyse fonctionnelle de l'installation et la décliner en un programme d'automatisation,,
+Réaliser l'inventaire d'un portefeuille de contrats,,
+Réaliser la mise en production de solutions logicielles dans un environnement d'exploitation,,
+"Réaliser ou modifier les schémas, les épures, les plans des ouvrages, des installations, des aménagements selon les normes et les évolutions de contraintes",,
+Réaliser un diagnostic technique,,
+Réaliser un modèle de prévision,,
+"Réaliser un prototype de la solution technique pour validation par le donneur d'ordres (configuration type, ...)",,
+"Réaliser un suivi régulier sur l'activité commerciale : nombre de clients rencontrés, propositions commerciales rédigées, présentées, vendues, relances réalisées…",,
+Réaliser une opération de maintenance,,
+"Réaliser une veille de marché, une veille concurrentielle",,
+Réaliser une veille documentaire,,
+Réaliser une veille technique ou technologique pour anticiper les évolutions,,
+"Réaliser une étude de marché, évaluer le potentiel d'un produit ou service",,
+Rédaction de documentation technique,,
+Rédiger de l'information,,
+Rédiger des documents d'ingénierie (rédaction des spécifications fonctionnelles et livrables techniques des solutions),,
+Rédiger le contenu d'un support de communication,,
+Rédiger les volets IA et Data Science d'une proposition commerciale de développement de solution,,
+"Rédiger un cahier des charges, des spécifications techniques",,
+"Rédiger un rapport, un compte rendu d'activité",,
+Rédiger une Spécification Technique de Besoin (STB,,
+Régulation et instrumentation,,
+"Réparer un équipement, une machine, une installation",,
+Résoudre les problèmes techniques rencontrés,,
+Savoir communiquer et faire preuve de pédagogie,,
+Savoir gérer plusieurs projets ou activités simultanément,,
+Savoir piloter un projet,,
+Secteur Aéronautique,,
+"Sens de la qualité, de la marge et de la productiv",,
+Solide base en analyse de productions langagières ,,
+Solides connaissances en gestion de réseau,,
+"Structurer, synthétiser des informations",,
+"Superviser et contrôler l'exécution d'études, de documents et de plans de détails confiés aux bureaux d'études",,
+Superviser une clôture comptable,,
+"Superviser, coordonner les réalisations ou développements informatiques (collaborateurs, sous-traitants)",,
+Supply chain (ex./ connaissances),,
+Support client à distance,,
+Surveillance de systèmes informatiques,,
+Surveiller le fonctionnement d'applicatifs et logiciels,,
+Surveiller les performances du système de gestion de bases de données,,
+Surveiller les tendances du marché digital,,
+Synthétiser et mettre en forme des données pour les présenter lors de réunions stratégiques,,
+Système de Gestion de Bases de Données (SGBD),,
+Systèmes d'exploitation informatique,,
+Systèmes d'information de gestion,,
+Systèmes de gestion de base de données,,
+Systèmes de gestion de base de données ,,
+Systèmes gestion et archivage de bases de données,,
+Sécurité des applications,,
+Techniques d'affacturage,,
+Techniques d'optimisation pour IA,,
+"Techniques de communication orales, écrites et numériques",,
+Techniques de machine learning en bioinformatique,,
+"Techniques de prospection, négociation, vente",,
+Techniques de vente et de promotion,,
+Techniques pédagogiques,,
+Technologie de l'internet,,
+Technologies HADOOP,,
+Technologies informatiques,,
+"Tester un logiciel, un système d'informations, une application",,
+Tests de conformité aux standards,,
+Tests de l'interface utilisateur,,
+Traduire les demandes de l'entreprise en solutions techniques,,
+Traiter des données,,
+Traiter les données d'analyse pour en extraire des tendances,,
+Traiter les retours utilisateurs pour améliorer le produit,,
+Traiter les retours utilisateurs pour améliorer les systèmes,,
+"Transmettre des bases théoriques, des techniques et gestes en combinant plusieurs modalités pédagogiques",,
+"Travailler en interdisciplinarité, à l'internation",,
+Types de sandwichs,,
+Tâches transversales (entreprenuriales),,
+Utilisation d'équipements de laboratoire spécialisés,,
+Utilisation de frameworks de développement,,
+Utilisation de logiciels de gestion de données de laboratoire,,
+Utilisation de logiciels statistiques,,
+Utiliser de manière pertinente et efficace des logiciels de base de données et la suite Office,,
+Utiliser des logiciels statistiques pour le traitement de données,,
+Utiliser l'anglais en contexte professionnel,,
+Utiliser les outils numériques,,
+Valider les résultats de mesures et d'analyses,,
+Valoriser des ressources de recherche,,
+Veille technologique en métrologie,,
+Veiller à la bonne qualité du service rendu/du produit vendu et à la satisfaction du client,,
+Vulgarisation de sujet complexes,,
+Vulgariser et dialoguer avec non-informaticiens,,
+Vérifier la conformité d'une réalisation avec un cahier des charges,,
+"Vérifier le programme d'automatisation par une série de tests sur plate-forme d'essais, en atelier, sur site",,
+"Webpack, Grunt, npm",,
+Word et Excel,,
+formation ISTQB,,
+méthode agile Scrum,,
+"o	Compétences solides en NLP, machine learning ",,
+o	Connaissances en développement web,,
+o	Maîtrise des modèles de langage (LLM).,,
+oracle Exadata,,
+"programmation orientée agents /behaviors, IOT/Edge",,
+python pandas,,
+réseaux de Communication,,
+"word, excel, access, powerpoint, outlook",,

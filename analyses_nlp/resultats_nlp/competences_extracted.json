@@ -1,0 +1,1378 @@
+{
+  "top_competences": [
+    {
+      "competence": "python",
+      "count": 1145,
+      "percentage": 38.12853812853813
+    },
+    {
+      "competence": "sql",
+      "count": 961,
+      "percentage": 32.001332001332
+    },
+    {
+      "competence": "autonomie",
+      "count": 892,
+      "percentage": 29.7036297036297
+    },
+    {
+      "competence": "rigueur",
+      "count": 746,
+      "percentage": 24.84182484182484
+    },
+    {
+      "competence": "management",
+      "count": 687,
+      "percentage": 22.877122877122876
+    },
+    {
+      "competence": "machine learning",
+      "count": 636,
+      "percentage": 21.178821178821178
+    },
+    {
+      "competence": "power bi",
+      "count": 526,
+      "percentage": 17.515817515817517
+    },
+    {
+      "competence": "intelligence artificielle",
+      "count": 452,
+      "percentage": 15.051615051615052
+    },
+    {
+      "competence": "r",
+      "count": 432,
+      "percentage": 14.385614385614387
+    },
+    {
+      "competence": "aws",
+      "count": 411,
+      "percentage": 13.686313686313687
+    },
+    {
+      "competence": "agile",
+      "count": 400,
+      "percentage": 13.320013320013322
+    },
+    {
+      "competence": "big data",
+      "count": 359,
+      "percentage": 11.954711954711955
+    },
+    {
+      "competence": "azure",
+      "count": 357,
+      "percentage": 11.888111888111888
+    },
+    {
+      "competence": "data engineer",
+      "count": 321,
+      "percentage": 10.68931068931069
+    },
+    {
+      "competence": "git",
+      "count": 309,
+      "percentage": 10.289710289710289
+    },
+    {
+      "competence": "excel",
+      "count": 308,
+      "percentage": 10.256410256410255
+    },
+    {
+      "competence": "ci/cd",
+      "count": 306,
+      "percentage": 10.18981018981019
+    },
+    {
+      "competence": "gcp",
+      "count": 300,
+      "percentage": 9.990009990009991
+    },
+    {
+      "competence": "spark",
+      "count": 293,
+      "percentage": 9.756909756909756
+    },
+    {
+      "competence": "devops",
+      "count": 250,
+      "percentage": 8.325008325008325
+    },
+    {
+      "competence": "tableau",
+      "count": 243,
+      "percentage": 8.091908091908092
+    },
+    {
+      "competence": "java",
+      "count": 241,
+      "percentage": 8.025308025308025
+    },
+    {
+      "competence": "pytorch",
+      "count": 237,
+      "percentage": 7.892107892107893
+    },
+    {
+      "competence": "tensorflow",
+      "count": 231,
+      "percentage": 7.6923076923076925
+    },
+    {
+      "competence": "docker",
+      "count": 219,
+      "percentage": 7.292707292707293
+    },
+    {
+      "competence": "deep learning",
+      "count": 218,
+      "percentage": 7.25940725940726
+    },
+    {
+      "competence": "scikit-learn",
+      "count": 197,
+      "percentage": 6.56010656010656
+    },
+    {
+      "competence": "kubernetes",
+      "count": 178,
+      "percentage": 5.927405927405927
+    },
+    {
+      "competence": "snowflake",
+      "count": 171,
+      "percentage": 5.694305694305695
+    },
+    {
+      "competence": "api",
+      "count": 170,
+      "percentage": 5.661005661005661
+    },
+    {
+      "competence": "data management",
+      "count": 170,
+      "percentage": 5.661005661005661
+    },
+    {
+      "competence": "talend",
+      "count": 166,
+      "percentage": 5.527805527805528
+    },
+    {
+      "competence": "scala",
+      "count": 164,
+      "percentage": 5.461205461205462
+    },
+    {
+      "competence": "nlp",
+      "count": 140,
+      "percentage": 4.662004662004662
+    },
+    {
+      "competence": "qlik",
+      "count": 137,
+      "percentage": 4.562104562104563
+    },
+    {
+      "competence": "hadoop",
+      "count": 136,
+      "percentage": 4.528804528804529
+    },
+    {
+      "competence": "airflow",
+      "count": 135,
+      "percentage": 4.495504495504496
+    },
+    {
+      "competence": "mlops",
+      "count": 134,
+      "percentage": 4.462204462204462
+    },
+    {
+      "competence": "pandas",
+      "count": 130,
+      "percentage": 4.329004329004329
+    },
+    {
+      "competence": "linux",
+      "count": 124,
+      "percentage": 4.12920412920413
+    },
+    {
+      "competence": "datalake",
+      "count": 122,
+      "percentage": 4.062604062604063
+    },
+    {
+      "competence": "postgresql",
+      "count": 112,
+      "percentage": 3.7296037296037294
+    },
+    {
+      "competence": "llm",
+      "count": 111,
+      "percentage": 3.696303696303696
+    },
+    {
+      "competence": "kafka",
+      "count": 104,
+      "percentage": 3.463203463203463
+    },
+    {
+      "competence": "apis",
+      "count": 100,
+      "percentage": 3.3300033300033305
+    },
+    {
+      "competence": "databricks",
+      "count": 98,
+      "percentage": 3.263403263403263
+    },
+    {
+      "competence": "llms",
+      "count": 95,
+      "percentage": 3.1635031635031634
+    },
+    {
+      "competence": "numpy",
+      "count": 91,
+      "percentage": 3.0303030303030303
+    },
+    {
+      "competence": "e-commerce",
+      "count": 91,
+      "percentage": 3.0303030303030303
+    },
+    {
+      "competence": "bigquery",
+      "count": 91,
+      "percentage": 3.0303030303030303
+    },
+    {
+      "competence": "anglais technique",
+      "count": 91,
+      "percentage": 3.0303030303030303
+    },
+    {
+      "competence": "rag",
+      "count": 90,
+      "percentage": 2.997002997002997
+    },
+    {
+      "competence": "scrum",
+      "count": 86,
+      "percentage": 2.863802863802864
+    },
+    {
+      "competence": "dbt",
+      "count": 78,
+      "percentage": 2.5974025974025974
+    },
+    {
+      "competence": "matplotlib",
+      "count": 78,
+      "percentage": 2.5974025974025974
+    },
+    {
+      "competence": "mongodb",
+      "count": 69,
+      "percentage": 2.2977022977022976
+    },
+    {
+      "competence": "mlflow",
+      "count": 66,
+      "percentage": 2.197802197802198
+    },
+    {
+      "competence": "langchain",
+      "count": 59,
+      "percentage": 1.9647019647019648
+    },
+    {
+      "competence": "transformers",
+      "count": 58,
+      "percentage": 1.9314019314019315
+    },
+    {
+      "competence": "développement commercial",
+      "count": 56,
+      "percentage": 1.8648018648018647
+    },
+    {
+      "competence": "rest",
+      "count": 54,
+      "percentage": 1.7982017982017984
+    },
+    {
+      "competence": "looker",
+      "count": 53,
+      "percentage": 1.7649017649017649
+    },
+    {
+      "competence": "mdm",
+      "count": 51,
+      "percentage": 1.6983016983016983
+    },
+    {
+      "competence": "keras",
+      "count": 51,
+      "percentage": 1.6983016983016983
+    },
+    {
+      "competence": "power query",
+      "count": 51,
+      "percentage": 1.6983016983016983
+    },
+    {
+      "competence": "rigueur scientifique",
+      "count": 47,
+      "percentage": 1.5651015651015652
+    },
+    {
+      "competence": "mysql",
+      "count": 47,
+      "percentage": 1.5651015651015652
+    },
+    {
+      "competence": "esprit de synthèse",
+      "count": 46,
+      "percentage": 1.531801531801532
+    },
+    {
+      "competence": "qlik sense",
+      "count": 43,
+      "percentage": 1.431901431901432
+    },
+    {
+      "competence": "streamlit",
+      "count": 43,
+      "percentage": 1.431901431901432
+    },
+    {
+      "competence": "large language models",
+      "count": 41,
+      "percentage": 1.3653013653013655
+    },
+    {
+      "competence": "maîtrise de l'anglais ",
+      "count": 38,
+      "percentage": 1.2654012654012654
+    },
+    {
+      "competence": "sig",
+      "count": 34,
+      "percentage": 1.1322011322011323
+    },
+    {
+      "competence": "seaborn",
+      "count": 34,
+      "percentage": 1.1322011322011323
+    },
+    {
+      "competence": "secteur aéronautique",
+      "count": 32,
+      "percentage": 1.0656010656010655
+    },
+    {
+      "competence": "gpt",
+      "count": 29,
+      "percentage": 0.9657009657009658
+    },
+    {
+      "competence": "plotly",
+      "count": 29,
+      "percentage": 0.9657009657009658
+    },
+    {
+      "competence": "benchmarks",
+      "count": 27,
+      "percentage": 0.8991008991008992
+    },
+    {
+      "competence": "business object",
+      "count": 22,
+      "percentage": 0.7326007326007326
+    },
+    {
+      "competence": "coder",
+      "count": 20,
+      "percentage": 0.666000666000666
+    },
+    {
+      "competence": "cassandra",
+      "count": 20,
+      "percentage": 0.666000666000666
+    },
+    {
+      "competence": "redis",
+      "count": 18,
+      "percentage": 0.5994005994005994
+    },
+    {
+      "competence": "product management",
+      "count": 16,
+      "percentage": 0.5328005328005327
+    },
+    {
+      "competence": "api rest",
+      "count": 14,
+      "percentage": 0.4662004662004662
+    },
+    {
+      "competence": "tableau software",
+      "count": 13,
+      "percentage": 0.4329004329004329
+    },
+    {
+      "competence": "kubeflow",
+      "count": 12,
+      "percentage": 0.3996003996003996
+    },
+    {
+      "competence": "analyse statistique",
+      "count": 11,
+      "percentage": 0.3663003663003663
+    },
+    {
+      "competence": "cognos",
+      "count": 11,
+      "percentage": 0.3663003663003663
+    },
+    {
+      "competence": "spacy",
+      "count": 10,
+      "percentage": 0.333000333000333
+    },
+    {
+      "competence": "bert",
+      "count": 10,
+      "percentage": 0.333000333000333
+    },
+    {
+      "competence": "java script",
+      "count": 10,
+      "percentage": 0.333000333000333
+    },
+    {
+      "competence": "google analytics 4",
+      "count": 8,
+      "percentage": 0.2664002664002664
+    },
+    {
+      "competence": "conduite de projets ",
+      "count": 7,
+      "percentage": 0.2331002331002331
+    },
+    {
+      "competence": "langgraph",
+      "count": 7,
+      "percentage": 0.2331002331002331
+    },
+    {
+      "competence": "programmation en python",
+      "count": 6,
+      "percentage": 0.1998001998001998
+    },
+    {
+      "competence": "nltk",
+      "count": 6,
+      "percentage": 0.1998001998001998
+    },
+    {
+      "competence": "rédaction de documentation technique",
+      "count": 5,
+      "percentage": 0.1665001665001665
+    },
+    {
+      "competence": "graphql",
+      "count": 5,
+      "percentage": 0.1665001665001665
+    },
+    {
+      "competence": "analyse de risque",
+      "count": 5,
+      "percentage": 0.1665001665001665
+    },
+    {
+      "competence": "b to b",
+      "count": 5,
+      "percentage": 0.1665001665001665
+    }
+  ],
+  "bigrams": [
+    {
+      "bigram": "machine learning",
+      "frequency": 1264
+    },
+    {
+      "bigram": "data science",
+      "frequency": 1256
+    },
+    {
+      "bigram": "base données",
+      "frequency": 897
+    },
+    {
+      "bigram": "mise place",
+      "frequency": 829
+    },
+    {
+      "bigram": "analyse données",
+      "frequency": 772
+    },
+    {
+      "bigram": "data engineer",
+      "frequency": 740
+    },
+    {
+      "bigram": "intelligence artificielle",
+      "frequency": 646
+    },
+    {
+      "bigram": "prise charge",
+      "frequency": 609
+    },
+    {
+      "bigram": "big data",
+      "frequency": 607
+    },
+    {
+      "bigram": "data scientist",
+      "frequency": 604
+    },
+    {
+      "bigram": "temp plein",
+      "frequency": 566
+    },
+    {
+      "bigram": "mise uvre",
+      "frequency": 531
+    },
+    {
+      "bigram": "an expérience",
+      "frequency": 491
+    },
+    {
+      "bigram": "situation handicap",
+      "frequency": 489
+    },
+    {
+      "bigram": "tableau bord",
+      "frequency": 485
+    },
+    {
+      "bigram": "data analyst",
+      "frequency": 483
+    },
+    {
+      "bigram": "bonnes pratiques",
+      "frequency": 477
+    },
+    {
+      "bigram": "sein équipe",
+      "frequency": 460
+    },
+    {
+      "bigram": "veille technologique",
+      "frequency": 459
+    },
+    {
+      "bigram": "amélioration continue",
+      "frequency": 427
+    },
+    {
+      "bigram": "transformation digitale",
+      "frequency": 424
+    },
+    {
+      "bigram": "esprit équipe",
+      "frequency": 421
+    },
+    {
+      "bigram": "équipes métiers",
+      "frequency": 408
+    },
+    {
+      "bigram": "mettre place",
+      "frequency": 407
+    },
+    {
+      "bigram": "deep learning",
+      "frequency": 392
+    },
+    {
+      "bigram": "aujourd hui",
+      "frequency": 383
+    },
+    {
+      "bigram": "école ingénieur",
+      "frequency": 378
+    },
+    {
+      "bigram": "personnes situation",
+      "frequency": 372
+    },
+    {
+      "bigram": "chaque jour",
+      "frequency": 371
+    },
+    {
+      "bigram": "équipe data",
+      "frequency": 366
+    },
+    {
+      "bigram": "compétences technique",
+      "frequency": 357
+    },
+    {
+      "bigram": "pourquoi rejoindre",
+      "frequency": 346
+    },
+    {
+      "bigram": "force proposition",
+      "frequency": 335
+    },
+    {
+      "bigram": "business intelligence",
+      "frequency": 326
+    },
+    {
+      "bigram": "qualité données",
+      "frequency": 318
+    },
+    {
+      "bigram": "charge transport",
+      "frequency": 304
+    },
+    {
+      "bigram": "data management",
+      "frequency": 304
+    },
+    {
+      "bigram": "première expérience",
+      "frequency": 303
+    },
+    {
+      "bigram": "pipeline données",
+      "frequency": 302
+    },
+    {
+      "bigram": "concevoir développer",
+      "frequency": 299
+    },
+    {
+      "bigram": "travailler équipe",
+      "frequency": 296
+    },
+    {
+      "bigram": "valeur ajoutée",
+      "frequency": 293
+    },
+    {
+      "bigram": "auprès client",
+      "frequency": 287
+    },
+    {
+      "bigram": "télétravail partiel",
+      "frequency": 287
+    },
+    {
+      "bigram": "data engineering",
+      "frequency": 286
+    },
+    {
+      "bigram": "tant data",
+      "frequency": 285
+    },
+    {
+      "bigram": "transport quotidien",
+      "frequency": 283
+    },
+    {
+      "bigram": "sopra steria",
+      "frequency": 279
+    },
+    {
+      "bigram": "gestion projet",
+      "frequency": 277
+    },
+    {
+      "bigram": "intéressement participation",
+      "frequency": 272
+    }
+  ],
+  "trigrams": [
+    {
+      "trigram": "personnes situation handicap",
+      "frequency": 362
+    },
+    {
+      "trigram": "prise charge transport",
+      "frequency": 304
+    },
+    {
+      "trigram": "charge transport quotidien",
+      "frequency": 283
+    },
+    {
+      "trigram": "forte valeur ajoutée",
+      "frequency": 187
+    },
+    {
+      "trigram": "base données sql",
+      "frequency": 185
+    },
+    {
+      "trigram": "machine learning deep",
+      "frequency": 177
+    },
+    {
+      "trigram": "learning deep learning",
+      "frequency": 176
+    },
+    {
+      "trigram": "depuis plus an",
+      "frequency": 166
+    },
+    {
+      "trigram": "modèles machine learning",
+      "frequency": 163
+    },
+    {
+      "trigram": "chiffre affaire milliard",
+      "frequency": 156
+    },
+    {
+      "trigram": "cdi temp plein",
+      "frequency": 142
+    },
+    {
+      "trigram": "minimum an expérience",
+      "frequency": 132
+    },
+    {
+      "trigram": "mise uvre solution",
+      "frequency": 128
+    },
+    {
+      "trigram": "bon niveau anglais",
+      "frequency": 125
+    },
+    {
+      "trigram": "affaire milliard euro",
+      "frequency": 122
+    },
+    {
+      "trigram": "base données relationnelles",
+      "frequency": 121
+    },
+    {
+      "trigram": "capacité travailler équipe",
+      "frequency": 121
+    },
+    {
+      "trigram": "tant data engineer",
+      "frequency": 121
+    },
+    {
+      "trigram": "moins an expérience",
+      "frequency": 120
+    },
+    {
+      "trigram": "tous postes ouverts",
+      "frequency": 116
+    },
+    {
+      "trigram": "durée contrat mois",
+      "frequency": 107
+    },
+    {
+      "trigram": "postes ouverts personnes",
+      "frequency": 107
+    },
+    {
+      "trigram": "jusqu jours semaine",
+      "frequency": 105
+    },
+    {
+      "trigram": "ouverts personnes situation",
+      "frequency": 105
+    },
+    {
+      "trigram": "comprendre leurs besoins",
+      "frequency": 104
+    },
+    {
+      "trigram": "construire avenir positif",
+      "frequency": 104
+    },
+    {
+      "trigram": "étroite collaboration équipes",
+      "frequency": 103
+    },
+    {
+      "trigram": "assurer veille technologique",
+      "frequency": 101
+    },
+    {
+      "trigram": "concevoir développer maintenir",
+      "frequency": 99
+    },
+    {
+      "trigram": "cdi statut cadre",
+      "frequency": 96
+    }
+  ],
+  "cooccurrences": [
+    {
+      "comp1": "python",
+      "comp2": "sql",
+      "count": 638
+    },
+    {
+      "comp1": "python",
+      "comp2": "machine learning",
+      "count": 472
+    },
+    {
+      "comp1": "autonomie",
+      "comp2": "rigueur",
+      "count": 446
+    },
+    {
+      "comp1": "python",
+      "comp2": "autonomie",
+      "count": 359
+    },
+    {
+      "comp1": "sql",
+      "comp2": "autonomie",
+      "count": 326
+    },
+    {
+      "comp1": "sql",
+      "comp2": "power bi",
+      "count": 324
+    },
+    {
+      "comp1": "python",
+      "comp2": "r",
+      "count": 304
+    },
+    {
+      "comp1": "python",
+      "comp2": "management",
+      "count": 301
+    },
+    {
+      "comp1": "python",
+      "comp2": "aws",
+      "count": 295
+    },
+    {
+      "comp1": "sql",
+      "comp2": "rigueur",
+      "count": 281
+    },
+    {
+      "comp1": "sql",
+      "comp2": "management",
+      "count": 276
+    },
+    {
+      "comp1": "python",
+      "comp2": "rigueur",
+      "count": 271
+    },
+    {
+      "comp1": "python",
+      "comp2": "power bi",
+      "count": 266
+    },
+    {
+      "comp1": "python",
+      "comp2": "azure",
+      "count": 254
+    },
+    {
+      "comp1": "sql",
+      "comp2": "machine learning",
+      "count": 253
+    },
+    {
+      "comp1": "python",
+      "comp2": "git",
+      "count": 247
+    },
+    {
+      "comp1": "python",
+      "comp2": "ci/cd",
+      "count": 242
+    },
+    {
+      "comp1": "python",
+      "comp2": "intelligence artificielle",
+      "count": 241
+    },
+    {
+      "comp1": "sql",
+      "comp2": "aws",
+      "count": 237
+    },
+    {
+      "comp1": "aws",
+      "comp2": "azure",
+      "count": 236
+    },
+    {
+      "comp1": "python",
+      "comp2": "gcp",
+      "count": 224
+    },
+    {
+      "comp1": "python",
+      "comp2": "spark",
+      "count": 213
+    },
+    {
+      "comp1": "sql",
+      "comp2": "git",
+      "count": 209
+    },
+    {
+      "comp1": "python",
+      "comp2": "data engineer",
+      "count": 208
+    },
+    {
+      "comp1": "sql",
+      "comp2": "azure",
+      "count": 206
+    },
+    {
+      "comp1": "sql",
+      "comp2": "data engineer",
+      "count": 202
+    },
+    {
+      "comp1": "management",
+      "comp2": "machine learning",
+      "count": 202
+    },
+    {
+      "comp1": "machine learning",
+      "comp2": "r",
+      "count": 199
+    },
+    {
+      "comp1": "aws",
+      "comp2": "gcp",
+      "count": 198
+    },
+    {
+      "comp1": "autonomie",
+      "comp2": "machine learning",
+      "count": 196
+    },
+    {
+      "comp1": "sql",
+      "comp2": "spark",
+      "count": 188
+    },
+    {
+      "comp1": "azure",
+      "comp2": "gcp",
+      "count": 187
+    },
+    {
+      "comp1": "autonomie",
+      "comp2": "management",
+      "count": 186
+    },
+    {
+      "comp1": "big data",
+      "comp2": "spark",
+      "count": 183
+    },
+    {
+      "comp1": "sql",
+      "comp2": "r",
+      "count": 181
+    },
+    {
+      "comp1": "sql",
+      "comp2": "big data",
+      "count": 181
+    },
+    {
+      "comp1": "python",
+      "comp2": "agile",
+      "count": 178
+    },
+    {
+      "comp1": "rigueur",
+      "comp2": "machine learning",
+      "count": 178
+    },
+    {
+      "comp1": "machine learning",
+      "comp2": "git",
+      "count": 178
+    },
+    {
+      "comp1": "python",
+      "comp2": "big data",
+      "count": 175
+    },
+    {
+      "comp1": "sql",
+      "comp2": "ci/cd",
+      "count": 175
+    },
+    {
+      "comp1": "autonomie",
+      "comp2": "power bi",
+      "count": 175
+    },
+    {
+      "comp1": "sql",
+      "comp2": "gcp",
+      "count": 174
+    },
+    {
+      "comp1": "machine learning",
+      "comp2": "intelligence artificielle",
+      "count": 174
+    },
+    {
+      "comp1": "python",
+      "comp2": "devops",
+      "count": 170
+    },
+    {
+      "comp1": "aws",
+      "comp2": "git",
+      "count": 169
+    },
+    {
+      "comp1": "rigueur",
+      "comp2": "management",
+      "count": 166
+    },
+    {
+      "comp1": "sql",
+      "comp2": "agile",
+      "count": 165
+    },
+    {
+      "comp1": "aws",
+      "comp2": "big data",
+      "count": 162
+    },
+    {
+      "comp1": "management",
+      "comp2": "aws",
+      "count": 161
+    }
+  ],
+  "competences_par_source": {
+    "France Travail": [
+      {
+        "competence": "autonomie",
+        "count": 466
+      },
+      {
+        "competence": "sql",
+        "count": 428
+      },
+      {
+        "competence": "python",
+        "count": 387
+      },
+      {
+        "competence": "rigueur",
+        "count": 348
+      },
+      {
+        "competence": "management",
+        "count": 330
+      },
+      {
+        "competence": "agile",
+        "count": 238
+      },
+      {
+        "competence": "power bi",
+        "count": 208
+      },
+      {
+        "competence": "azure",
+        "count": 196
+      },
+      {
+        "competence": "big data",
+        "count": 186
+      },
+      {
+        "competence": "machine learning",
+        "count": 181
+      }
+    ],
+    "Indeed": [
+      {
+        "competence": "python",
+        "count": 758
+      },
+      {
+        "competence": "sql",
+        "count": 533
+      },
+      {
+        "competence": "machine learning",
+        "count": 455
+      },
+      {
+        "competence": "autonomie",
+        "count": 426
+      },
+      {
+        "competence": "rigueur",
+        "count": 398
+      },
+      {
+        "competence": "management",
+        "count": 357
+      },
+      {
+        "competence": "power bi",
+        "count": 318
+      },
+      {
+        "competence": "r",
+        "count": 310
+      },
+      {
+        "competence": "intelligence artificielle",
+        "count": 275
+      },
+      {
+        "competence": "aws",
+        "count": 249
+      }
+    ]
+  },
+  "competences_par_region": {
+    "Île-de-France": [
+      {
+        "competence": "python",
+        "count": 191
+      },
+      {
+        "competence": "sql",
+        "count": 148
+      },
+      {
+        "competence": "machine learning",
+        "count": 112
+      },
+      {
+        "competence": "management",
+        "count": 84
+      },
+      {
+        "competence": "autonomie",
+        "count": 83
+      },
+      {
+        "competence": "rigueur",
+        "count": 79
+      },
+      {
+        "competence": "power bi",
+        "count": 75
+      },
+      {
+        "competence": "git",
+        "count": 68
+      },
+      {
+        "competence": "excel",
+        "count": 67
+      },
+      {
+        "competence": "r",
+        "count": 66
+      }
+    ],
+    "Auvergne-Rhône-Alpes": [
+      {
+        "competence": "python",
+        "count": 64
+      },
+      {
+        "competence": "sql",
+        "count": 45
+      },
+      {
+        "competence": "rigueur",
+        "count": 42
+      },
+      {
+        "competence": "autonomie",
+        "count": 40
+      },
+      {
+        "competence": "anglais technique",
+        "count": 36
+      },
+      {
+        "competence": "intelligence artificielle",
+        "count": 31
+      },
+      {
+        "competence": "machine learning",
+        "count": 31
+      },
+      {
+        "competence": "power bi",
+        "count": 28
+      },
+      {
+        "competence": "aws",
+        "count": 25
+      },
+      {
+        "competence": "excel",
+        "count": 20
+      }
+    ],
+    "Nouvelle-Aquitaine": [
+      {
+        "competence": "python",
+        "count": 53
+      },
+      {
+        "competence": "power bi",
+        "count": 38
+      },
+      {
+        "competence": "autonomie",
+        "count": 37
+      },
+      {
+        "competence": "machine learning",
+        "count": 31
+      },
+      {
+        "competence": "ci/cd",
+        "count": 27
+      },
+      {
+        "competence": "agile",
+        "count": 23
+      },
+      {
+        "competence": "sql",
+        "count": 20
+      },
+      {
+        "competence": "qlik",
+        "count": 20
+      },
+      {
+        "competence": "qlik sense",
+        "count": 19
+      },
+      {
+        "competence": "tableau",
+        "count": 19
+      }
+    ],
+    "Occitanie": [
+      {
+        "competence": "sql",
+        "count": 27
+      },
+      {
+        "competence": "python",
+        "count": 24
+      },
+      {
+        "competence": "rigueur",
+        "count": 19
+      },
+      {
+        "competence": "data engineer",
+        "count": 19
+      },
+      {
+        "competence": "autonomie",
+        "count": 18
+      },
+      {
+        "competence": "apis",
+        "count": 18
+      },
+      {
+        "competence": "llms",
+        "count": 15
+      },
+      {
+        "competence": "r",
+        "count": 15
+      },
+      {
+        "competence": "rag",
+        "count": 15
+      },
+      {
+        "competence": "agile",
+        "count": 15
+      }
+    ],
+    "Provence-Alpes-Côte d'Azur": [
+      {
+        "competence": "python",
+        "count": 38
+      },
+      {
+        "competence": "machine learning",
+        "count": 24
+      },
+      {
+        "competence": "management",
+        "count": 23
+      },
+      {
+        "competence": "rigueur",
+        "count": 14
+      },
+      {
+        "competence": "power bi",
+        "count": 14
+      },
+      {
+        "competence": "sql",
+        "count": 14
+      },
+      {
+        "competence": "azure",
+        "count": 12
+      },
+      {
+        "competence": "intelligence artificielle",
+        "count": 12
+      },
+      {
+        "competence": "java",
+        "count": 12
+      },
+      {
+        "competence": "agile",
+        "count": 11
+      }
+    ]
+  }
+}
