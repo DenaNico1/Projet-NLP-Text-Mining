@@ -1,0 +1,11 @@
+﻿Cluster,N_Competences,Top_Competences
+0,13,"management, r, ci/cd, gcp, nlp, linux, llm, llms, dbt, mdm"
+1,2,"power bi, power query"
+2,4,"sql, postgresql, mysql, graphql"
+3,4,"e-commerce, développement commercial, business object, product management"
+4,1,snowflake
+5,4,"spark, api, rest, api rest"
+6,48,"autonomie, rigueur, aws, azure, git, devops, tableau, java, pytorch, docker"
+7,31,"python, intelligence artificielle, agile, excel, tensorflow, scikit-learn, scala, matplotlib, mlflow, transformers"
+8,2,"machine learning, deep learning"
+9,5,"big data, data engineer, data management, datalake, databricks"

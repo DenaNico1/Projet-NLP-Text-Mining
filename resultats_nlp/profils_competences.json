@@ -1,0 +1,758 @@
+{
+  "Data Engineer": {
+    "top_10": [
+      {
+        "competence": "python",
+        "count": 92,
+        "percentage": 54.437869822485204
+      },
+      {
+        "competence": "sql",
+        "count": 85,
+        "percentage": 50.29585798816568
+      },
+      {
+        "competence": "big data",
+        "count": 83,
+        "percentage": 49.112426035502956
+      },
+      {
+        "competence": "data engineer",
+        "count": 78,
+        "percentage": 46.15384615384615
+      },
+      {
+        "competence": "spark",
+        "count": 77,
+        "percentage": 45.562130177514796
+      },
+      {
+        "competence": "aws",
+        "count": 72,
+        "percentage": 42.60355029585799
+      },
+      {
+        "competence": "azure",
+        "count": 70,
+        "percentage": 41.42011834319527
+      },
+      {
+        "competence": "gcp",
+        "count": 63,
+        "percentage": 37.278106508875744
+      },
+      {
+        "competence": "ci/cd",
+        "count": 56,
+        "percentage": 33.13609467455622
+      },
+      {
+        "competence": "scala",
+        "count": 51,
+        "percentage": 30.17751479289941
+      }
+    ]
+  },
+  "Data Scientist": {
+    "top_10": [
+      {
+        "competence": "python",
+        "count": 132,
+        "percentage": 72.52747252747253
+      },
+      {
+        "competence": "machine learning",
+        "count": 105,
+        "percentage": 57.692307692307686
+      },
+      {
+        "competence": "sql",
+        "count": 76,
+        "percentage": 41.75824175824176
+      },
+      {
+        "competence": "r",
+        "count": 65,
+        "percentage": 35.714285714285715
+      },
+      {
+        "competence": "autonomie",
+        "count": 50,
+        "percentage": 27.472527472527474
+      },
+      {
+        "competence": "rigueur",
+        "count": 49,
+        "percentage": 26.923076923076923
+      },
+      {
+        "competence": "tensorflow",
+        "count": 45,
+        "percentage": 24.725274725274726
+      },
+      {
+        "competence": "scikit-learn",
+        "count": 43,
+        "percentage": 23.626373626373624
+      },
+      {
+        "competence": "management",
+        "count": 40,
+        "percentage": 21.978021978021978
+      },
+      {
+        "competence": "intelligence artificielle",
+        "count": 38,
+        "percentage": 20.87912087912088
+      }
+    ]
+  },
+  "Data Analyst": {
+    "top_10": [
+      {
+        "competence": "sql",
+        "count": 107,
+        "percentage": 66.45962732919256
+      },
+      {
+        "competence": "excel",
+        "count": 66,
+        "percentage": 40.993788819875775
+      },
+      {
+        "competence": "python",
+        "count": 64,
+        "percentage": 39.75155279503105
+      },
+      {
+        "competence": "rigueur",
+        "count": 60,
+        "percentage": 37.267080745341616
+      },
+      {
+        "competence": "management",
+        "count": 53,
+        "percentage": 32.91925465838509
+      },
+      {
+        "competence": "power bi",
+        "count": 49,
+        "percentage": 30.434782608695656
+      },
+      {
+        "competence": "autonomie",
+        "count": 48,
+        "percentage": 29.81366459627329
+      },
+      {
+        "competence": "data management",
+        "count": 38,
+        "percentage": 23.60248447204969
+      },
+      {
+        "competence": "tableau",
+        "count": 27,
+        "percentage": 16.77018633540373
+      },
+      {
+        "competence": "r",
+        "count": 19,
+        "percentage": 11.801242236024844
+      }
+    ]
+  },
+  "BI Analyst": {
+    "top_10": [
+      {
+        "competence": "autonomie",
+        "count": 48,
+        "percentage": 30.573248407643312
+      },
+      {
+        "competence": "sql",
+        "count": 43,
+        "percentage": 27.388535031847134
+      },
+      {
+        "competence": "power bi",
+        "count": 41,
+        "percentage": 26.11464968152866
+      },
+      {
+        "competence": "agile",
+        "count": 34,
+        "percentage": 21.656050955414013
+      },
+      {
+        "competence": "management",
+        "count": 30,
+        "percentage": 19.10828025477707
+      },
+      {
+        "competence": "rigueur",
+        "count": 30,
+        "percentage": 19.10828025477707
+      },
+      {
+        "competence": "python",
+        "count": 22,
+        "percentage": 14.012738853503185
+      },
+      {
+        "competence": "excel",
+        "count": 21,
+        "percentage": 13.375796178343949
+      },
+      {
+        "competence": "tableau",
+        "count": 20,
+        "percentage": 12.738853503184714
+      },
+      {
+        "competence": "talend",
+        "count": 18,
+        "percentage": 11.464968152866243
+      }
+    ]
+  },
+  "Data Consultant": {
+    "top_10": [
+      {
+        "competence": "autonomie",
+        "count": 49,
+        "percentage": 38.88888888888889
+      },
+      {
+        "competence": "management",
+        "count": 47,
+        "percentage": 37.301587301587304
+      },
+      {
+        "competence": "machine learning",
+        "count": 41,
+        "percentage": 32.53968253968254
+      },
+      {
+        "competence": "rigueur",
+        "count": 35,
+        "percentage": 27.77777777777778
+      },
+      {
+        "competence": "python",
+        "count": 30,
+        "percentage": 23.809523809523807
+      },
+      {
+        "competence": "agile",
+        "count": 20,
+        "percentage": 15.873015873015872
+      },
+      {
+        "competence": "power bi",
+        "count": 20,
+        "percentage": 15.873015873015872
+      },
+      {
+        "competence": "sql",
+        "count": 20,
+        "percentage": 15.873015873015872
+      },
+      {
+        "competence": "devops",
+        "count": 18,
+        "percentage": 14.285714285714285
+      },
+      {
+        "competence": "intelligence artificielle",
+        "count": 18,
+        "percentage": 14.285714285714285
+      }
+    ]
+  },
+  "Data Manager": {
+    "top_10": [
+      {
+        "competence": "autonomie",
+        "count": 120,
+        "percentage": 29.850746268656714
+      },
+      {
+        "competence": "management",
+        "count": 110,
+        "percentage": 27.363184079601986
+      },
+      {
+        "competence": "rigueur",
+        "count": 105,
+        "percentage": 26.119402985074625
+      },
+      {
+        "competence": "python",
+        "count": 99,
+        "percentage": 24.62686567164179
+      },
+      {
+        "competence": "sql",
+        "count": 93,
+        "percentage": 23.134328358208954
+      },
+      {
+        "competence": "agile",
+        "count": 62,
+        "percentage": 15.422885572139302
+      },
+      {
+        "competence": "machine learning",
+        "count": 58,
+        "percentage": 14.427860696517413
+      },
+      {
+        "competence": "intelligence artificielle",
+        "count": 50,
+        "percentage": 12.437810945273633
+      },
+      {
+        "competence": "power bi",
+        "count": 49,
+        "percentage": 12.189054726368159
+      },
+      {
+        "competence": "azure",
+        "count": 45,
+        "percentage": 11.194029850746269
+      }
+    ]
+  },
+  "Data Architect": {
+    "top_10": [
+      {
+        "competence": "management",
+        "count": 9,
+        "percentage": 60.0
+      },
+      {
+        "competence": "r",
+        "count": 5,
+        "percentage": 33.33333333333333
+      },
+      {
+        "competence": "deep learning",
+        "count": 3,
+        "percentage": 20.0
+      },
+      {
+        "competence": "python",
+        "count": 3,
+        "percentage": 20.0
+      },
+      {
+        "competence": "pytorch",
+        "count": 3,
+        "percentage": 20.0
+      },
+      {
+        "competence": "devops",
+        "count": 2,
+        "percentage": 13.333333333333334
+      },
+      {
+        "competence": "autonomie",
+        "count": 2,
+        "percentage": 13.333333333333334
+      },
+      {
+        "competence": "intelligence artificielle",
+        "count": 2,
+        "percentage": 13.333333333333334
+      },
+      {
+        "competence": "machine learning",
+        "count": 2,
+        "percentage": 13.333333333333334
+      },
+      {
+        "competence": "large language models",
+        "count": 2,
+        "percentage": 13.333333333333334
+      }
+    ]
+  },
+  "AI Engineer": {
+    "top_10": [
+      {
+        "competence": "python",
+        "count": 14,
+        "percentage": 43.75
+      },
+      {
+        "competence": "management",
+        "count": 14,
+        "percentage": 43.75
+      },
+      {
+        "competence": "intelligence artificielle",
+        "count": 11,
+        "percentage": 34.375
+      },
+      {
+        "competence": "aws",
+        "count": 11,
+        "percentage": 34.375
+      },
+      {
+        "competence": "git",
+        "count": 10,
+        "percentage": 31.25
+      },
+      {
+        "competence": "machine learning",
+        "count": 9,
+        "percentage": 28.125
+      },
+      {
+        "competence": "ci/cd",
+        "count": 9,
+        "percentage": 28.125
+      },
+      {
+        "competence": "autonomie",
+        "count": 8,
+        "percentage": 25.0
+      },
+      {
+        "competence": "deep learning",
+        "count": 8,
+        "percentage": 25.0
+      },
+      {
+        "competence": "sql",
+        "count": 8,
+        "percentage": 25.0
+      }
+    ]
+  },
+  "ML Engineer": {
+    "top_10": [
+      {
+        "competence": "python",
+        "count": 5,
+        "percentage": 62.5
+      },
+      {
+        "competence": "rigueur",
+        "count": 5,
+        "percentage": 62.5
+      },
+      {
+        "competence": "machine learning",
+        "count": 5,
+        "percentage": 62.5
+      },
+      {
+        "competence": "docker",
+        "count": 4,
+        "percentage": 50.0
+      },
+      {
+        "competence": "kubernetes",
+        "count": 4,
+        "percentage": 50.0
+      },
+      {
+        "competence": "deep learning",
+        "count": 3,
+        "percentage": 37.5
+      },
+      {
+        "competence": "sql",
+        "count": 3,
+        "percentage": 37.5
+      },
+      {
+        "competence": "linux",
+        "count": 2,
+        "percentage": 25.0
+      },
+      {
+        "competence": "mlops",
+        "count": 2,
+        "percentage": 25.0
+      },
+      {
+        "competence": "pytorch",
+        "count": 2,
+        "percentage": 25.0
+      }
+    ]
+  },
+  "Analytics Engineer": {
+    "top_10": [
+      {
+        "competence": "python",
+        "count": 3,
+        "percentage": 75.0
+      },
+      {
+        "competence": "bigquery",
+        "count": 2,
+        "percentage": 50.0
+      },
+      {
+        "competence": "e-commerce",
+        "count": 2,
+        "percentage": 50.0
+      },
+      {
+        "competence": "looker",
+        "count": 2,
+        "percentage": 50.0
+      },
+      {
+        "competence": "sql",
+        "count": 2,
+        "percentage": 50.0
+      },
+      {
+        "competence": "deep learning",
+        "count": 2,
+        "percentage": 50.0
+      },
+      {
+        "competence": "machine learning",
+        "count": 2,
+        "percentage": 50.0
+      },
+      {
+        "competence": "google analytics 4",
+        "count": 1,
+        "percentage": 25.0
+      },
+      {
+        "competence": "tableau",
+        "count": 1,
+        "percentage": 25.0
+      },
+      {
+        "competence": "big data",
+        "count": 1,
+        "percentage": 25.0
+      }
+    ]
+  },
+  "MLOps Engineer": {
+    "top_10": [
+      {
+        "competence": "devops",
+        "count": 13,
+        "percentage": 86.66666666666667
+      },
+      {
+        "competence": "ci/cd",
+        "count": 10,
+        "percentage": 66.66666666666666
+      },
+      {
+        "competence": "kubernetes",
+        "count": 10,
+        "percentage": 66.66666666666666
+      },
+      {
+        "competence": "docker",
+        "count": 6,
+        "percentage": 40.0
+      },
+      {
+        "competence": "git",
+        "count": 6,
+        "percentage": 40.0
+      },
+      {
+        "competence": "api",
+        "count": 5,
+        "percentage": 33.33333333333333
+      },
+      {
+        "competence": "linux",
+        "count": 5,
+        "percentage": 33.33333333333333
+      },
+      {
+        "competence": "python",
+        "count": 5,
+        "percentage": 33.33333333333333
+      },
+      {
+        "competence": "sql",
+        "count": 5,
+        "percentage": 33.33333333333333
+      },
+      {
+        "competence": "machine learning",
+        "count": 4,
+        "percentage": 26.666666666666668
+      }
+    ]
+  },
+  "AI Research Scientist": {
+    "top_10": [
+      {
+        "competence": "python",
+        "count": 21,
+        "percentage": 67.74193548387096
+      },
+      {
+        "competence": "machine learning",
+        "count": 19,
+        "percentage": 61.29032258064516
+      },
+      {
+        "competence": "autonomie",
+        "count": 12,
+        "percentage": 38.70967741935484
+      },
+      {
+        "competence": "intelligence artificielle",
+        "count": 12,
+        "percentage": 38.70967741935484
+      },
+      {
+        "competence": "r",
+        "count": 12,
+        "percentage": 38.70967741935484
+      },
+      {
+        "competence": "rigueur",
+        "count": 10,
+        "percentage": 32.25806451612903
+      },
+      {
+        "competence": "scikit-learn",
+        "count": 7,
+        "percentage": 22.58064516129032
+      },
+      {
+        "competence": "tensorflow",
+        "count": 5,
+        "percentage": 16.129032258064516
+      },
+      {
+        "competence": "pytorch",
+        "count": 5,
+        "percentage": 16.129032258064516
+      },
+      {
+        "competence": "rigueur scientifique",
+        "count": 4,
+        "percentage": 12.903225806451612
+      }
+    ]
+  },
+  "Computer Vision Engineer": {
+    "top_10": [
+      {
+        "competence": "python",
+        "count": 7,
+        "percentage": 70.0
+      },
+      {
+        "competence": "machine learning",
+        "count": 6,
+        "percentage": 60.0
+      },
+      {
+        "competence": "scikit-learn",
+        "count": 5,
+        "percentage": 50.0
+      },
+      {
+        "competence": "deep learning",
+        "count": 4,
+        "percentage": 40.0
+      },
+      {
+        "competence": "intelligence artificielle",
+        "count": 4,
+        "percentage": 40.0
+      },
+      {
+        "competence": "pytorch",
+        "count": 4,
+        "percentage": 40.0
+      },
+      {
+        "competence": "tensorflow",
+        "count": 4,
+        "percentage": 40.0
+      },
+      {
+        "competence": "rigueur",
+        "count": 4,
+        "percentage": 40.0
+      },
+      {
+        "competence": "git",
+        "count": 4,
+        "percentage": 40.0
+      },
+      {
+        "competence": "numpy",
+        "count": 3,
+        "percentage": 30.0
+      }
+    ]
+  },
+  "Data/IA - Non spécifié": {
+    "top_10": [
+      {
+        "competence": "python",
+        "count": 134,
+        "percentage": 35.733333333333334
+      },
+      {
+        "competence": "autonomie",
+        "count": 122,
+        "percentage": 32.53333333333333
+      },
+      {
+        "competence": "rigueur",
+        "count": 110,
+        "percentage": 29.333333333333332
+      },
+      {
+        "competence": "machine learning",
+        "count": 98,
+        "percentage": 26.13333333333333
+      },
+      {
+        "competence": "sql",
+        "count": 92,
+        "percentage": 24.53333333333333
+      },
+      {
+        "competence": "intelligence artificielle",
+        "count": 73,
+        "percentage": 19.466666666666665
+      },
+      {
+        "competence": "management",
+        "count": 72,
+        "percentage": 19.2
+      },
+      {
+        "competence": "r",
+        "count": 71,
+        "percentage": 18.933333333333334
+      },
+      {
+        "competence": "power bi",
+        "count": 45,
+        "percentage": 12.0
+      },
+      {
+        "competence": "excel",
+        "count": 44,
+        "percentage": 11.733333333333333
+      }
+    ]
+  }
+}

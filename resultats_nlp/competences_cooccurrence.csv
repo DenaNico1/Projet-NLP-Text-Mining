@@ -1,0 +1,1879 @@
+﻿comp1,comp2,weight
+python,sql,638
+machine learning,python,472
+autonomie,rigueur,446
+autonomie,python,359
+autonomie,sql,326
+power bi,sql,324
+python,r,304
+management,python,301
+aws,python,295
+rigueur,sql,281
+management,sql,276
+python,rigueur,271
+power bi,python,266
+azure,python,254
+machine learning,sql,253
+git,python,247
+ci/cd,python,242
+intelligence artificielle,python,241
+aws,sql,237
+aws,azure,236
+python,tensorflow,228
+gcp,python,224
+python,pytorch,218
+python,spark,213
+git,sql,209
+data engineer,python,208
+azure,sql,206
+data engineer,sql,202
+machine learning,management,202
+docker,python,201
+machine learning,r,199
+aws,gcp,198
+autonomie,machine learning,196
+java,python,192
+spark,sql,188
+azure,gcp,187
+power bi,tableau,187
+autonomie,management,186
+pytorch,tensorflow,186
+big data,spark,183
+python,scikit-learn,182
+machine learning,scikit-learn,181
+r,sql,181
+big data,sql,181
+agile,python,178
+git,machine learning,178
+machine learning,rigueur,178
+ci/cd,sql,175
+big data,python,175
+autonomie,power bi,175
+gcp,sql,174
+intelligence artificielle,machine learning,174
+machine learning,tensorflow,171
+data management,management,170
+devops,python,170
+machine learning,pytorch,170
+aws,git,169
+deep learning,machine learning,169
+management,rigueur,166
+agile,sql,165
+sql,tableau,165
+aws,big data,162
+java,sql,162
+azure,ci/cd,161
+aws,management,161
+autonomie,intelligence artificielle,160
+excel,sql,159
+deep learning,python,156
+aws,spark,156
+aws,ci/cd,152
+agile,autonomie,149
+python,scala,147
+aws,machine learning,145
+management,power bi,143
+azure,big data,142
+docker,sql,141
+autonomie,aws,141
+python,tableau,140
+aws,data engineer,140
+autonomie,ci/cd,140
+intelligence artificielle,rigueur,140
+power bi,rigueur,140
+scikit-learn,tensorflow,137
+data engineer,spark,135
+azure,spark,135
+docker,kubernetes,134
+deep learning,pytorch,134
+docker,machine learning,133
+autonomie,azure,132
+big data,machine learning,132
+management,r,132
+intelligence artificielle,tensorflow,131
+devops,sql,130
+hadoop,spark,130
+pandas,python,130
+ci/cd,spark,129
+machine learning,nlp,129
+pytorch,scikit-learn,128
+aws,devops,127
+python,snowflake,127
+autonomie,excel,126
+kubernetes,python,126
+intelligence artificielle,sql,126
+excel,rigueur,126
+scala,spark,124
+big data,gcp,123
+ci/cd,docker,122
+intelligence artificielle,r,121
+aws,kubernetes,121
+big data,ci/cd,121
+gcp,spark,120
+scala,sql,120
+nlp,python,120
+azure,power bi,119
+intelligence artificielle,pytorch,119
+big data,r,118
+kubernetes,sql,118
+autonomie,git,117
+autonomie,r,115
+excel,power bi,115
+ci/cd,gcp,115
+aws,docker,115
+java,spark,114
+big data,management,113
+big data,hadoop,112
+azure,management,112
+mlops,python,111
+r,scikit-learn,110
+git,management,110
+devops,git,109
+docker,git,109
+autonomie,pytorch,108
+autonomie,spark,108
+deep learning,intelligence artificielle,107
+big data,scala,107
+intelligence artificielle,management,106
+docker,management,106
+azure,devops,105
+ci/cd,devops,105
+r,tensorflow,104
+rigueur,tensorflow,103
+aws,snowflake,103
+snowflake,sql,102
+agile,machine learning,102
+autonomie,tensorflow,101
+devops,docker,101
+api,python,100
+aws,intelligence artificielle,100
+git,spark,100
+azure,snowflake,100
+java,scala,100
+data engineer,git,98
+data management,sql,98
+big data,power bi,98
+airflow,python,98
+api,sql,97
+hadoop,sql,97
+pytorch,rigueur,97
+autonomie,big data,96
+ci/cd,management,96
+big data,data engineer,96
+ci/cd,git,95
+git,kubernetes,95
+kubernetes,spark,95
+postgresql,sql,95
+machine learning,pandas,94
+data engineer,gcp,94
+ci/cd,java,94
+big data,java,94
+aws,power bi,94
+docker,gcp,94
+devops,machine learning,93
+devops,gcp,93
+ci/cd,kubernetes,93
+big data,intelligence artificielle,93
+data engineer,java,92
+agile,management,92
+azure,data engineer,92
+power bi,qlik,92
+deep learning,tensorflow,92
+git,rigueur,92
+agile,rigueur,91
+devops,management,91
+ci/cd,scala,91
+azure,scala,91
+power bi,r,91
+data engineer,power bi,91
+numpy,python,91
+pandas,scikit-learn,91
+docker,spark,90
+qlik,sql,90
+pandas,sql,90
+data engineer,kubernetes,90
+gcp,git,90
+numpy,pandas,90
+sql,tensorflow,89
+airflow,sql,89
+machine learning,mlops,89
+aws,rigueur,89
+excel,python,88
+power bi,talend,88
+data engineer,management,88
+autonomie,scikit-learn,88
+python,talend,88
+management,spark,88
+autonomie,gcp,88
+kubernetes,management,87
+pytorch,sql,87
+sql,talend,87
+azure,git,86
+ci/cd,snowflake,86
+big data,kubernetes,85
+data engineer,docker,85
+power bi,spark,85
+azure,java,85
+azure,machine learning,85
+agile,power bi,85
+r,spark,84
+pandas,pytorch,84
+data engineer,scala,84
+azure,docker,84
+gcp,management,84
+pytorch,r,84
+autonomie,talend,84
+git,nlp,84
+linux,python,83
+hadoop,python,83
+bigquery,sql,83
+autonomie,devops,83
+ci/cd,power bi,83
+r,rigueur,82
+aws,hadoop,82
+aws,scala,82
+kafka,spark,82
+gcp,machine learning,82
+docker,scala,81
+autonomie,deep learning,81
+big data,datalake,81
+gcp,rigueur,81
+gcp,scala,80
+airflow,spark,80
+apis,python,80
+devops,kubernetes,80
+pandas,tensorflow,80
+machine learning,spark,80
+git,scikit-learn,80
+big data,git,80
+aws,java,79
+ci/cd,machine learning,79
+devops,spark,79
+deep learning,r,79
+matplotlib,python,78
+databricks,python,78
+python,qlik,78
+airflow,data engineer,77
+scikit-learn,sql,77
+java,management,77
+nlp,pytorch,77
+postgresql,python,77
+kafka,python,77
+machine learning,matplotlib,77
+data engineer,devops,77
+aws,r,76
+big data,devops,76
+autonomie,pandas,76
+nlp,rigueur,76
+machine learning,numpy,76
+autonomie,java,75
+matplotlib,scikit-learn,75
+llms,python,75
+nlp,tensorflow,75
+deep learning,scikit-learn,75
+docker,java,74
+autonomie,tableau,74
+pandas,rigueur,74
+autonomie,data engineer,74
+big data,docker,74
+data engineer,hadoop,74
+bigquery,python,73
+deep learning,rigueur,73
+llm,python,73
+aws,mlops,73
+azure,r,73
+gcp,kubernetes,73
+power bi,snowflake,73
+azure,rigueur,73
+airflow,aws,72
+git,tensorflow,72
+git,pytorch,72
+gcp,java,72
+excel,management,72
+azure,databricks,72
+autonomie,numpy,71
+docker,mlops,71
+api,autonomie,71
+qlik,tableau,71
+numpy,scikit-learn,71
+apis,sql,70
+agile,big data,70
+apis,machine learning,70
+nlp,scikit-learn,70
+ci/cd,intelligence artificielle,70
+ci/cd,data engineer,70
+hadoop,power bi,69
+docker,rigueur,69
+intelligence artificielle,pandas,69
+ci/cd,r,69
+deep learning,sql,69
+databricks,spark,69
+ci/cd,mlops,69
+aws,nlp,69
+numpy,rigueur,68
+agile,intelligence artificielle,68
+r,scala,68
+data engineer,machine learning,68
+numpy,tensorflow,68
+numpy,pytorch,68
+rigueur,scikit-learn,67
+gcp,snowflake,67
+git,scala,67
+management,tableau,67
+numpy,sql,67
+autonomie,kafka,67
+docker,r,66
+mlflow,python,66
+autonomie,data management,66
+aws,tensorflow,66
+kubernetes,machine learning,66
+devops,rigueur,66
+kafka,sql,66
+nlp,r,65
+qlik,talend,65
+r,tableau,65
+management,nlp,65
+aws,pytorch,65
+aws,scikit-learn,65
+datalake,power bi,65
+data management,python,65
+agile,spark,65
+agile,scrum,65
+git,pandas,64
+autonomie,qlik,64
+snowflake,talend,64
+java,machine learning,64
+intelligence artificielle,scikit-learn,63
+rigueur,tableau,63
+mlops,sql,63
+airflow,git,63
+dbt,python,63
+matplotlib,tensorflow,63
+linux,sql,63
+python,rag,62
+docker,nlp,62
+api,ci/cd,62
+azure,hadoop,62
+llms,machine learning,62
+linux,machine learning,62
+git,intelligence artificielle,62
+management,mlops,62
+devops,java,61
+machine learning,mlflow,61
+intelligence artificielle,numpy,61
+intelligence artificielle,llm,61
+datalake,sql,61
+ci/cd,kafka,61
+aws,pandas,61
+ci/cd,rigueur,60
+deep learning,git,60
+nlp,sql,60
+bigquery,gcp,60
+hadoop,r,60
+devops,mlops,60
+hadoop,java,60
+machine learning,power bi,60
+datalake,spark,60
+azure,kubernetes,59
+datalake,python,59
+azure,talend,59
+airflow,kubernetes,59
+agile,azure,59
+agile,data engineer,59
+agile,devops,58
+git,power bi,58
+intelligence artificielle,nlp,58
+management,scala,58
+big data,kafka,58
+aws,databricks,58
+mongodb,python,58
+autonomie,docker,57
+mlops,nlp,57
+git,numpy,57
+llms,rag,57
+aws,numpy,57
+e-commerce,sql,57
+autonomie,snowflake,57
+git,r,57
+aws,kafka,56
+hadoop,kubernetes,56
+java,kubernetes,56
+kubernetes,power bi,56
+langchain,python,55
+git,java,55
+api,management,55
+big data,databricks,54
+git,mlops,54
+ci/cd,hadoop,54
+ci/cd,mongodb,54
+deep learning,pandas,54
+api,java,54
+azure,intelligence artificielle,54
+apis,git,54
+management,snowflake,54
+agile,tableau,54
+azure,mongodb,54
+databricks,snowflake,54
+docker,intelligence artificielle,54
+gcp,mlops,54
+hadoop,scala,54
+data engineer,tableau,54
+airflow,big data,53
+matplotlib,r,53
+deep learning,transformers,53
+agile,git,53
+intelligence artificielle,llms,53
+deep learning,llms,53
+anglais technique,rigueur,53
+devops,scala,53
+llms,r,53
+devops,intelligence artificielle,53
+management,pytorch,53
+api,data engineer,53
+azure,kafka,52
+agile,talend,52
+java,r,52
+dbt,sql,52
+gcp,r,52
+data management,power bi,52
+java,power bi,52
+pandas,r,52
+autonomie,nlp,51
+agile,ci/cd,51
+anglais technique,python,51
+ci/cd,databricks,51
+data engineer,rigueur,51
+keras,python,51
+java,linux,50
+api,spark,50
+mlops,rigueur,50
+data engineer,r,50
+keras,pytorch,50
+looker,sql,50
+azure,tableau,50
+datalake,hadoop,50
+keras,machine learning,50
+nlp,pandas,50
+agile,aws,50
+machine learning,rag,50
+git,snowflake,50
+devops,snowflake,49
+anglais technique,autonomie,49
+power bi,power query,49
+gcp,intelligence artificielle,49
+deep learning,nlp,49
+intelligence artificielle,spark,49
+linux,rigueur,49
+kafka,scala,49
+llm,machine learning,49
+databricks,gcp,49
+databricks,sql,49
+machine learning,scala,49
+api,gcp,49
+r,rag,48
+hadoop,kafka,48
+big data,snowflake,48
+docker,tensorflow,48
+intelligence artificielle,rag,48
+mlflow,sql,48
+docker,pytorch,48
+api,azure,48
+devops,nlp,48
+anglais technique,sql,48
+gcp,power bi,48
+agile,r,47
+rigueur,rigueur scientifique,47
+deep learning,management,47
+intelligence artificielle,mlops,47
+api,aws,47
+agile,api,47
+llms,management,47
+api,rigueur,47
+apis,docker,47
+mlflow,pytorch,46
+autonomie,scala,46
+kubernetes,scala,46
+mlops,pytorch,46
+big data,tableau,46
+deep learning,rag,46
+airflow,power bi,46
+data engineer,snowflake,46
+keras,tensorflow,46
+tableau,talend,46
+azure,scikit-learn,46
+langchain,machine learning,46
+mlflow,tensorflow,45
+nlp,numpy,45
+matplotlib,pandas,45
+mlops,tensorflow,45
+llms,pytorch,45
+docker,mlflow,45
+autonomie,mlops,45
+gcp,hadoop,45
+big data,nlp,45
+airflow,machine learning,44
+mlops,spark,44
+autonomie,postgresql,44
+agile,datalake,44
+management,tensorflow,44
+nlp,rag,44
+llms,transformers,44
+llm,pytorch,44
+snowflake,spark,44
+databricks,scala,44
+kubernetes,mlops,44
+llms,nlp,44
+azure,mlops,44
+git,llms,43
+aws,tableau,43
+azure,pytorch,43
+docker,mongodb,43
+e-commerce,python,43
+api,docker,43
+qlik,qlik sense,43
+python,transformers,43
+airflow,autonomie,43
+mongodb,sql,42
+aws,matplotlib,42
+matplotlib,numpy,42
+python,streamlit,42
+big data,mongodb,42
+big data,rigueur,42
+deep learning,numpy,42
+aws,rag,42
+mlflow,scikit-learn,42
+aws,talend,42
+api,kubernetes,42
+python,rigueur scientifique,42
+ci/cd,tensorflow,41
+java,rigueur,41
+git,rag,41
+llm,r,41
+kubernetes,rigueur,41
+big data,mlops,41
+docker,scikit-learn,41
+gcp,tableau,41
+gcp,nlp,41
+databricks,management,41
+azure,tensorflow,41
+aws,deep learning,41
+matplotlib,sql,41
+management,pandas,41
+databricks,java,40
+aws,mongodb,40
+big data,talend,40
+rest,sql,40
+airflow,docker,40
+mlops,scikit-learn,40
+ci/cd,pytorch,40
+langchain,rag,40
+git,langchain,40
+mlflow,nlp,40
+agile,java,40
+agile,tensorflow,40
+data engineer,dbt,40
+management,talend,40
+management,mdm,40
+postgresql,rigueur,40
+spark,talend,39
+langchain,pytorch,39
+git,matplotlib,39
+intelligence artificielle,transformers,39
+gcp,mongodb,39
+apis,r,39
+pytorch,rigueur scientifique,39
+data management,excel,39
+management,rag,39
+airflow,hadoop,39
+api,devops,39
+agile,pytorch,39
+java,tableau,39
+machine learning,rigueur scientifique,39
+devops,mongodb,39
+data management,rigueur,39
+pytorch,transformers,39
+devops,kafka,39
+dbt,snowflake,39
+azure,pandas,38
+autonomie,hadoop,38
+gcp,mlflow,38
+mongodb,spark,38
+data engineer,datalake,38
+api,power bi,38
+llm,llms,38
+numpy,r,38
+looker,python,38
+r,transformers,38
+ci/cd,datalake,38
+kafka,r,38
+git,mongodb,38
+autonomie,llm,38
+machine learning,postgresql,38
+intelligence artificielle,scala,38
+spark,tableau,38
+keras,scikit-learn,38
+java,postgresql,38
+keras,r,37
+gcp,talend,37
+pytorch,spark,37
+autonomie,linux,37
+mongodb,scala,37
+airflow,ci/cd,37
+ci/cd,llm,37
+llm,rag,37
+management,qlik,37
+mysql,sql,37
+big data,deep learning,37
+apis,data engineer,37
+apis,scala,37
+langchain,tensorflow,37
+llms,tensorflow,37
+agile,gcp,37
+ci/cd,pandas,37
+spark,tensorflow,37
+deep learning,langchain,37
+llm,mlops,36
+airflow,devops,36
+langchain,scikit-learn,36
+devops,scikit-learn,36
+mysql,postgresql,36
+mysql,python,36
+agile,postgresql,36
+keras,nlp,36
+rag,sql,36
+mlflow,mlops,36
+git,linux,36
+mlops,pandas,36
+bigquery,git,36
+autonomie,langchain,36
+rigueur scientifique,tensorflow,36
+azure,llm,36
+excel,r,36
+hadoop,management,36
+linux,postgresql,36
+ci/cd,scikit-learn,36
+devops,pytorch,35
+deep learning,keras,35
+azure,numpy,35
+gcp,llm,35
+devops,tensorflow,35
+gcp,kafka,35
+airflow,datalake,35
+azure,qlik,35
+mlflow,r,35
+agile,qlik,35
+management,scikit-learn,35
+qlik,r,35
+ci/cd,talend,35
+deep learning,llm,35
+keras,management,35
+java,kafka,35
+scikit-learn,spark,35
+ci/cd,nlp,35
+mlops,r,35
+scala,snowflake,35
+langchain,nlp,35
+bigquery,looker,35
+apis,nlp,35
+big data,pytorch,34
+airflow,management,34
+devops,r,34
+databricks,devops,34
+ci/cd,mlflow,34
+apis,autonomie,34
+excel,tableau,34
+sql,streamlit,34
+databricks,talend,34
+matplotlib,pytorch,34
+rigueur,spark,34
+machine learning,tableau,34
+machine learning,seaborn,34
+power bi,scala,34
+git,mlflow,34
+data engineer,mlops,34
+big data,scikit-learn,34
+python,seaborn,34
+matplotlib,seaborn,34
+rag,transformers,34
+docker,linux,33
+api,big data,33
+java,snowflake,33
+aws,llms,33
+large language models,llm,33
+docker,power bi,33
+seaborn,tensorflow,33
+autonomie,qlik sense,33
+apis,azure,33
+databricks,git,33
+kubernetes,r,33
+aws,llm,33
+intelligence artificielle,mongodb,33
+scikit-learn,seaborn,33
+langchain,sql,33
+python,rest,33
+airflow,gcp,32
+datalake,git,32
+mongodb,snowflake,32
+datalake,scala,32
+docker,kafka,32
+qlik sense,talend,32
+agile,kafka,32
+git,streamlit,32
+mdm,sql,32
+aws,langchain,32
+data engineer,talend,32
+databricks,docker,32
+gcp,pytorch,32
+data management,machine learning,32
+gcp,tensorflow,32
+apis,aws,32
+api,scala,32
+git,rest,32
+scrum,sql,32
+data engineer,databricks,32
+airflow,azure,31
+llm,rigueur,31
+devops,rest,31
+power bi,qlik sense,31
+anglais technique,machine learning,31
+apis,rigueur,31
+autonomie,kubernetes,31
+kafka,machine learning,31
+deep learning,docker,31
+git,kafka,31
+git,hadoop,31
+agile,scala,31
+ci/cd,dbt,31
+data engineer,kafka,31
+management,transformers,31
+large language models,llms,31
+big data,tensorflow,31
+big data,pandas,30
+apis,ci/cd,30
+autonomie,databricks,30
+langchain,llms,30
+pandas,rag,30
+llm,nlp,30
+llm,pandas,30
+keras,rigueur,30
+gcp,scikit-learn,30
+agile,nlp,30
+llms,sql,30
+agile,airflow,30
+big data,data management,30
+airflow,kafka,30
+autonomie,mysql,30
+aws,data management,30
+docker,pandas,30
+ci/cd,rest,30
+ci/cd,tableau,30
+rigueur,talend,30
+autonomie,matplotlib,30
+intelligence artificielle,power bi,30
+ci/cd,qlik,30
+anglais technique,intelligence artificielle,30
+deep learning,rigueur scientifique,30
+r,seaborn,30
+dbt,gcp,30
+intelligence artificielle,mlflow,29
+nlp,spark,29
+intelligence artificielle,rigueur scientifique,29
+aws,datalake,29
+autonomie,développement commercial,29
+autonomie,rag,29
+llm,sql,29
+datalake,machine learning,29
+pandas,spark,29
+langchain,management,29
+llm,tensorflow,29
+bigquery,snowflake,29
+e-commerce,management,29
+data management,mdm,29
+dbt,machine learning,29
+docker,snowflake,29
+plotly,python,29
+power query,sql,29
+azure,nlp,29
+data management,git,29
+rigueur,snowflake,29
+deep learning,matplotlib,29
+machine learning,plotly,29
+ci/cd,deep learning,29
+machine learning,transformers,29
+autonomie,scrum,29
+intelligence artificielle,keras,29
+agile,qlik sense,29
+api,tableau,28
+matplotlib,rigueur,28
+databricks,power bi,28
+mdm,python,28
+machine learning,rest,28
+datalake,kubernetes,28
+qlik sense,tableau,28
+développement commercial,management,28
+intelligence artificielle,langchain,28
+ci/cd,data management,28
+gcp,looker,28
+datalake,java,28
+python,scrum,28
+mlflow,rigueur,28
+agile,anglais technique,28
+llm,scikit-learn,28
+mysql,rigueur,28
+deep learning,mlflow,28
+ci/cd,numpy,28
+pytorch,rag,28
+rag,scikit-learn,28
+bigquery,management,28
+rigueur,transformers,28
+dbt,git,28
+autonomie,datalake,28
+apis,rest,27
+plotly,sql,27
+autonomie,mlflow,27
+qlik,snowflake,27
+pandas,power bi,27
+devops,llm,27
+mlops,rag,27
+azure,datalake,27
+llms,pandas,27
+power bi,scrum,27
+agile,docker,27
+scala,talend,27
+intelligence artificielle,postgresql,27
+autonomie,rest,27
+azure,rest,27
+azure,data management,27
+kubernetes,tableau,27
+kubernetes,nlp,27
+docker,tableau,27
+docker,hadoop,27
+linux,mysql,27
+rag,tensorflow,27
+airflow,dbt,27
+aws,qlik,26
+api,machine learning,26
+devops,pandas,26
+intelligence artificielle,kubernetes,26
+mlflow,pandas,26
+agile,snowflake,26
+keras,pandas,26
+java,mysql,26
+autonomie,llms,26
+autonomie,mongodb,26
+langchain,pandas,26
+apis,devops,26
+nlp,transformers,26
+mlops,numpy,26
+data management,qlik,26
+management,numpy,26
+aws,dbt,26
+sql,transformers,26
+data management,snowflake,25
+keras,sql,25
+data engineer,nlp,25
+agile,databricks,25
+azure,bigquery,25
+autonomie,mdm,25
+ci/cd,rag,25
+intelligence artificielle,java,25
+databricks,kubernetes,25
+deep learning,gcp,25
+kubernetes,snowflake,25
+scikit-learn,transformers,25
+deep learning,mlops,25
+docker,llm,25
+intelligence artificielle,matplotlib,25
+bigquery,ci/cd,25
+anglais technique,java,25
+anglais technique,linux,25
+docker,rest,25
+docker,numpy,25
+tensorflow,transformers,25
+big data,qlik,25
+llm,transformers,25
+apis,tensorflow,25
+hadoop,tableau,25
+apis,intelligence artificielle,25
+apis,gcp,25
+api,r,25
+mlops,scala,25
+apis,pytorch,25
+api,hadoop,24
+aws,mlflow,24
+scala,tableau,24
+apis,java,24
+api,rest,24
+pandas,transformers,24
+rest,rigueur,24
+api,intelligence artificielle,24
+llm,spark,24
+langchain,transformers,24
+autonomie,transformers,24
+azure,mlflow,24
+agile,kubernetes,24
+langchain,rigueur,24
+apis,mlops,24
+bigquery,machine learning,24
+mlflow,spark,24
+kafka,mlops,24
+rag,rigueur,24
+deep learning,large language models,24
+power query,python,24
+dbt,power bi,24
+databricks,intelligence artificielle,24
+kafka,mongodb,24
+anglais technique,mysql,24
+anglais technique,postgresql,24
+rigueur,scala,24
+machine learning,mysql,24
+datalake,kafka,24
+data management,r,24
+management,streamlit,23
+snowflake,tableau,23
+api,git,23
+apis,llm,23
+apis,pandas,23
+apis,scikit-learn,23
+big data,llm,23
+git,talend,23
+git,transformers,23
+llm,rest,23
+devops,power bi,23
+matplotlib,nlp,23
+postgresql,pytorch,23
+aws,rest,23
+management,postgresql,23
+kafka,rigueur,23
+rest,scikit-learn,23
+postgresql,tensorflow,23
+large language models,transformers,23
+power bi,streamlit,23
+intelligence artificielle,snowflake,23
+gpt,python,23
+intelligence artificielle,large language models,23
+mlflow,numpy,23
+intelligence artificielle,rest,23
+agile,hadoop,23
+bigquery,devops,23
+data management,intelligence artificielle,23
+r,rest,23
+bigquery,intelligence artificielle,23
+gcp,pandas,23
+git,keras,23
+bigquery,dbt,23
+scala,tensorflow,23
+nlp,rest,22
+mlops,rest,22
+llms,scikit-learn,22
+e-commerce,gcp,22
+pytorch,rest,22
+airflow,databricks,22
+airflow,mlops,22
+airflow,snowflake,22
+dbt,plotly,22
+numpy,rag,22
+big data,bigquery,22
+big data,rest,22
+apis,linux,22
+apis,big data,22
+management,scrum,22
+azure,mdm,22
+linux,r,22
+linux,scala,22
+langchain,numpy,22
+data engineer,linux,22
+autonomie,esprit de synthèse,22
+autonomie,keras,22
+git,llm,22
+git,looker,22
+devops,mlflow,22
+git,plotly,22
+pandas,rest,22
+numpy,transformers,22
+devops,langchain,22
+llms,rigueur,22
+dbt,streamlit,21
+mongodb,rigueur,21
+dbt,e-commerce,21
+aws,keras,21
+big data,scrum,21
+e-commerce,git,21
+e-commerce,machine learning,21
+matplotlib,rag,21
+pytorch,scala,21
+bigquery,docker,21
+kubernetes,mongodb,21
+machine learning,mongodb,21
+keras,numpy,21
+keras,rag,21
+keras,llms,21
+looker,tableau,21
+gcp,rest,21
+devops,numpy,21
+bigquery,tableau,21
+mlops,snowflake,21
+looker,power bi,21
+scala,scikit-learn,21
+keras,matplotlib,21
+langchain,r,21
+data management,talend,21
+management,matplotlib,21
+apis,spark,21
+rest,tensorflow,21
+airflow,api,20
+bigquery,spark,20
+hadoop,machine learning,20
+gcp,numpy,20
+dbt,management,20
+kafka,kubernetes,20
+docker,postgresql,20
+dbt,deep learning,20
+intelligence artificielle,kafka,20
+agile,dbt,20
+mongodb,rest,20
+java,talend,20
+cassandra,kafka,20
+excel,power query,20
+deep learning,kubernetes,20
+kafka,pytorch,20
+apis,kafka,20
+autonomie,e-commerce,20
+mdm,talend,20
+rest,spark,20
+apis,mlflow,20
+llm,scala,20
+llm,mlflow,20
+llm,numpy,20
+aws,transformers,20
+aws,mdm,20
+mongodb,r,20
+mlflow,rest,20
+numpy,spark,20
+mdm,power bi,20
+big data,mlflow,20
+datalake,management,20
+java,mongodb,20
+data management,java,20
+autonomie,rigueur scientifique,20
+llms,numpy,20
+pandas,scala,20
+mlflow,scala,20
+big data,postgresql,19
+dbt,looker,19
+kafka,mlflow,19
+devops,tableau,19
+langchain,mlops,19
+devops,scrum,19
+dbt,devops,19
+looker,machine learning,19
+kafka,scikit-learn,19
+cassandra,git,19
+agile,apis,19
+aws,cassandra,19
+business object,rigueur,19
+cassandra,ci/cd,19
+mongodb,tensorflow,19
+mongodb,pandas,19
+keras,langchain,19
+aws,bigquery,19
+scrum,spark,19
+kafka,rest,19
+kafka,tensorflow,19
+cassandra,rigueur,19
+cassandra,scala,19
+cassandra,sql,19
+mlops,power bi,19
+machine learning,snowflake,19
+kafka,pandas,19
+kafka,numpy,19
+kafka,nlp,19
+numpy,scala,19
+llms,matplotlib,19
+numpy,rest,19
+autonomie,bigquery,19
+matplotlib,transformers,19
+esprit de synthèse,rigueur,19
+apis,numpy,19
+mdm,snowflake,19
+autonomie,cassandra,19
+bigquery,power bi,19
+databricks,hadoop,19
+bigquery,rigueur,19
+datalake,r,19
+cassandra,tensorflow,18
+cassandra,intelligence artificielle,18
+cassandra,llm,18
+cassandra,mongodb,18
+cassandra,machine learning,18
+cassandra,mlflow,18
+cassandra,mlops,18
+big data,numpy,18
+big data,cassandra,18
+rest,scala,18
+big data,dbt,18
+git,qlik,18
+git,mdm,18
+large language models,python,18
+azure,matplotlib,18
+e-commerce,qlik,18
+databricks,machine learning,18
+azure,cassandra,18
+ci/cd,langchain,18
+esprit de synthèse,management,18
+ci/cd,scrum,18
+ci/cd,streamlit,18
+postgresql,power bi,18
+e-commerce,looker,18
+apis,mongodb,18
+apis,cassandra,18
+linux,management,18
+langchain,matplotlib,18
+docker,redis,18
+postgresql,spark,18
+airflow,java,18
+autonomie,streamlit,18
+kafka,llm,18
+ci/cd,postgresql,18
+llm,mongodb,18
+nlp,power bi,18
+intelligence artificielle,maîtrise de l'anglais ,18
+mongodb,numpy,18
+airflow,postgresql,18
+mlops,mongodb,18
+nlp,scala,18
+cassandra,docker,18
+cassandra,devops,18
+mongodb,scikit-learn,18
+mongodb,pytorch,18
+aws,postgresql,18
+mlflow,mongodb,18
+cassandra,spark,18
+bigquery,kubernetes,18
+cassandra,scikit-learn,18
+cassandra,rest,18
+cassandra,nlp,18
+cassandra,numpy,18
+cassandra,pandas,18
+cassandra,python,18
+cassandra,pytorch,18
+cassandra,r,18
+datalake,snowflake,18
+cassandra,gcp,18
+mongodb,nlp,18
+keras,transformers,18
+aws,redis,17
+git,redis,17
+apis,llms,17
+gpt,machine learning,17
+gpt,mlops,17
+kubernetes,postgresql,17
+devops,postgresql,17
+mdm,qlik,17
+gpt,intelligence artificielle,17
+azure,streamlit,17
+databricks,tableau,17
+azure,scrum,17
+large language models,rag,17
+large language models,pytorch,17
+snowflake,streamlit,17
+ci/cd,llms,17
+airflow,llms,17
+bigquery,deep learning,17
+bigquery,e-commerce,17
+bigquery,mongodb,17
+bigquery,databricks,17
+machine learning,streamlit,17
+management,power query,17
+management,mongodb,17
+data management,e-commerce,17
+python,redis,17
+management,redis,17
+deep learning,plotly,17
+deep learning,devops,17
+deep learning,streamlit,17
+aws,streamlit,17
+databricks,kafka,17
+postgresql,talend,17
+plotly,streamlit,16
+redis,rigueur,16
+gpt,llms,16
+mdm,streamlit,16
+large language models,r,16
+devops,redis,16
+databricks,rigueur,16
+gcp,streamlit,16
+kubernetes,redis,16
+gpt,management,16
+api,talend,16
+api,apis,16
+ci/cd,mdm,16
+data management,tableau,16
+data management,spark,16
+autonomie,power query,16
+mlflow,streamlit,16
+mlflow,plotly,16
+databricks,mongodb,16
+data engineer,excel,16
+power bi,pytorch,16
+kafka,management,16
+docker,llms,16
+gcp,redis,16
+dbt,mlflow,16
+data engineer,redis,16
+deep learning,e-commerce,16
+développement commercial,intelligence artificielle,16
+streamlit,talend,16
+agile,rest,16
+business object,power bi,16
+mongodb,power bi,16
+machine learning,redis,16
+mlops,redis,16
+qlik,streamlit,16
+data management,streamlit,16
+management,product management,16
+power bi,tensorflow,16
+agile,looker,16
+nlp,redis,16
+big data,linux,16
+bigquery,java,16
+bigquery,data engineer,16
+gcp,plotly,16
+bigquery,scala,16
+big data,rag,15
+looker,streamlit,15
+bigquery,mlflow,15
+agile,excel,15
+rag,spark,15
+looker,mlflow,15
+looker,plotly,15
+anglais technique,aws,15
+e-commerce,mlflow,15
+databricks,mlops,15
+e-commerce,power bi,15
+management,mlflow,15
+coder,python,15
+llms,mlops,15
+nlp,rigueur scientifique,15
+rigueur,sig,15
+data engineer,data management,15
+power bi,scikit-learn,15
+deep learning,looker,15
+kafka,power bi,15
+data management,devops,15
+kafka,talend,15
+anglais technique,maîtrise de l'anglais ,15
+excel,machine learning,15
+large language models,management,15
+bigquery,streamlit,15
+bigquery,plotly,15
+e-commerce,plotly,15
+e-commerce,streamlit,15
+datalake,mongodb,15
+azure,dbt,15
+linux,spark,15
+llm,management,15
+apis,rag,15
+r,scrum,15
+rigueur scientifique,scikit-learn,14
+r,talend,14
+intelligence artificielle,tableau,14
+airflow,nlp,14
+pandas,rigueur scientifique,14
+intelligence artificielle,linux,14
+git,postgresql,14
+qlik,spark,14
+large language models,machine learning,14
+databricks,datalake,14
+gpt,llm,14
+dbt,talend,14
+devops,talend,14
+api,api rest,14
+postgresql,tableau,14
+docker,langchain,14
+anglais technique,data engineer,14
+api,snowflake,14
+kubernetes,llms,14
+agile,coder,14
+deep learning,spark,14
+deep learning,power bi,14
+aws,scrum,14
+aws,maîtrise de l'anglais ,14
+api rest,rest,14
+docker,rag,14
+data engineer,postgresql,14
+power bi,rag,14
+agile,data management,14
+agile,e-commerce,14
+azure,deep learning,14
+tableau,tableau software,13
+api,kafka,13
+e-commerce,excel,13
+agile,deep learning,13
+agile,scikit-learn,13
+autonomie,dbt,13
+rigueur,scrum,13
+anglais technique,api,13
+excel,qlik,13
+devops,rag,13
+api,postgresql,13
+databricks,rag,13
+devops,hadoop,13
+dbt,postgresql,13
+esprit de synthèse,r,13
+maîtrise de l'anglais ,power bi,13
+data engineer,scrum,13
+ci/cd,linux,13
+gpt,langchain,13
+dbt,mlops,13
+postgresql,snowflake,13
+développement commercial,machine learning,13
+airflow,rag,13
+hadoop,talend,13
+java,scrum,13
+azure,rag,12
+airflow,rigueur,12
+nlp,tableau,12
+aws,sig,12
+machine learning,talend,12
+intelligence artificielle,sig,12
+keras,mlflow,12
+hadoop,qlik,12
+data management,databricks,12
+java,rag,12
+hadoop,scikit-learn,12
+kubeflow,python,12
+api,pytorch,12
+apis,power bi,12
+airflow,talend,12
+kafka,postgresql,12
+hadoop,linux,12
+numpy,power bi,12
+mlops,tableau,12
+agile,bigquery,12
+hadoop,pytorch,12
+agile,mlops,12
+autonomie,looker,12
+docker,transformers,12
+devops,llms,12
+docker,keras,12
+numpy,rigueur scientifique,12
+dbt,nlp,12
+maîtrise de l'anglais ,sig,12
+dbt,tableau,12
+dbt,spark,12
+gpt,rag,12
+kubernetes,linux,12
+esprit de synthèse,sql,12
+langchain,llm,12
+looker,management,12
+anglais technique,apis,12
+anglais technique,sig,12
+airflow,intelligence artificielle,12
+bigquery,talend,12
+databricks,r,12
+azure,excel,12
+databricks,qlik,12
+airflow,bigquery,12
+azure,postgresql,11
+api,pandas,11
+api,scikit-learn,11
+hadoop,scrum,11
+sql,tableau software,11
+airflow,langchain,11
+datalake,devops,11
+benchmarks,rigueur,11
+mlops,postgresql,11
+machine learning,qlik,11
+développement commercial,python,11
+langchain,power bi,11
+git,tableau,11
+devops,kubeflow,11
+autonomie,benchmarks,11
+apis,management,11
+kubeflow,sql,11
+kubeflow,machine learning,11
+api,tensorflow,11
+e-commerce,tableau,11
+api,mlops,11
+devops,mdm,11
+ci/cd,gpt,11
+aws,coder,11
+keras,rigueur scientifique,11
+agile,power query,11
+management,maîtrise de l'anglais ,11
+aws,kubeflow,11
+kubernetes,tensorflow,11
+data management,pandas,11
+git,rigueur scientifique,11
+kubernetes,pytorch,11
+maîtrise de l'anglais ,rigueur,11
+llms,spark,11
+agile,llm,11
+pandas,power query,11
+kubeflow,kubernetes,11
+plotly,tableau,10
+plotly,power bi,10
+qlik,scala,10
+java script,power bi,10
+java script,sql,10
+java script,python,10
+java script,tableau,10
+coder,intelligence artificielle,10
+kubeflow,management,10
+data management,postgresql,10
+databricks,langchain,10
+agile,pandas,10
+dbt,docker,10
+data management,docker,10
+kubeflow,spark,10
+esprit de synthèse,python,10
+apis,tableau,10
+api,dbt,10
+airflow,kubeflow,10
+gcp,qlik,10
+java,rest,10
+java,mlops,10
+apis,deep learning,10
+databricks,dbt,10
+databricks,gpt,10
+hadoop,tensorflow,10
+gcp,rag,10
+datalake,talend,10
+gcp,scrum,10
+mongodb,postgresql,10
+java,java script,10
+datalake,scrum,10
+datalake,rigueur,10
+hadoop,mlops,10
+gpt,nlp,10
+nlp,snowflake,10
+data engineer,java script,10
+docker,kubeflow,10
+data management,power query,10
+gpt,sql,10
+kubernetes,rag,10
+aws,gpt,10
+maîtrise de l'anglais ,sql,10
+kubernetes,mlflow,10
+qlik,rigueur,10
+python,tableau software,10
+big data,llms,9
+airflow,mongodb,9
+devops,plotly,9
+esprit de synthèse,machine learning,9
+datalake,qlik,9
+ci/cd,transformers,9
+azure,looker,9
+excel,talend,9
+big data,langchain,9
+excel,intelligence artificielle,9
+power bi,tableau software,9
+data management,nlp,9
+databricks,llms,9
+databricks,postgresql,9
+r,rigueur scientifique,9
+java,mdm,9
+airflow,deep learning,9
+api,llm,9
+airflow,tableau,9
+airflow,apis,9
+api,mdm,9
+autonomie,kubeflow,9
+api,kubeflow,9
+esprit de synthèse,excel,9
+aws,bert,9
+dbt,r,9
+dbt,power query,9
+python,spacy,9
+pandas,postgresql,9
+data management,kubernetes,9
+qlik,scrum,9
+kubernetes,langchain,9
+llms,power bi,9
+dbt,kubernetes,9
+llms,tableau,9
+scala,scrum,9
+intelligence artificielle,scrum,9
+git,gpt,9
+agile,kubeflow,9
+agile,rigueur scientifique,9
+rag,snowflake,9
+aws,excel,9
+git,kubeflow,9
+benchmarks,intelligence artificielle,9
+nlp,postgresql,9
+nlp,plotly,9
+mlops,transformers,9
+machine learning,scrum,9
+data engineer,kubeflow,9
+deep learning,hadoop,9
+data engineer,intelligence artificielle,9
+kafka,kubeflow,9
+plotly,postgresql,8
+airflow,pandas,8
+big data,qlik sense,8
+airflow,gpt,8
+hadoop,intelligence artificielle,8
+data engineer,mdm,8
+big data,plotly,8
+data engineer,power query,8
+mlops,plotly,8
+bert,sql,8
+bert,python,8
+bert,plotly,8
+docker,gpt,8
+nlp,spacy,8
+java,qlik,8
+mysql,power bi,8
+management,plotly,8
+data engineer,looker,8
+intelligence artificielle,qlik,8
+kafka,qlik,8
+kafka,scrum,8
+azure,linux,8
+azure,e-commerce,8
+java,nlp,8
+hadoop,pandas,8
+devops,gpt,8
+dbt,llms,8
+docker,plotly,8
+langchain,spark,8
+mlflow,transformers,8
+kubernetes,scrum,8
+dbt,rag,8
+langchain,postgresql,8
+dbt,java,8
+aws,plotly,8
+apis,bigquery,8
+apis,snowflake,8
+pandas,tableau,8
+devops,linux,8
+gpt,spark,8
+gpt,kubernetes,8
+pandas,spacy,8
+power query,rigueur,8
+datalake,mdm,8
+gcp,linux,8
+airflow,scala,8
+airflow,linux,8
+looker,rigueur,8
+power query,scrum,8
+looker,snowflake,8
+llms,postgresql,8
+dbt,kafka,8
+llms,snowflake,8
+bert,mlops,8
+bert,machine learning,8
+azure,langchain,8
+data management,gcp,8
+autonomie,tableau software,8
+api,deep learning,8
+datalake,tableau,8
+excel,maîtrise de l'anglais ,8
+apis,excel,8
+airflow,data management,8
+bert,nlp,8
+coder,sql,8
+langchain,plotly,7
+aws,mysql,7
+développement commercial,r,7
+data engineer,streamlit,7
+bert,data management,7
+bert,data engineer,7
+data engineer,llms,7
+data engineer,plotly,7
+bert,ci/cd,7
+intelligence artificielle,talend,7
+dbt,gpt,7
+aws,e-commerce,7
+java,plotly,7
+agile,mysql,7
+azure,tableau software,7
+dbt,langchain,7
+postgresql,rest,7
+benchmarks,management,7
+benchmarks,python,7
+api,datalake,7
+data management,langchain,7
+maîtrise de l'anglais ,python,7
+langchain,tableau,7
+data engineer,gpt,7
+rag,tableau,7
+langchain,snowflake,7
+management,secteur aéronautique,7
+product management,sql,7
+cognos,sql,7
+management,rest,7
+aws,linux,7
+java,llms,7
+java,langchain,7
+machine learning,spacy,7
+bert,big data,7
+data engineer,rag,7
+deep learning,spacy,7
+développement commercial,rigueur,7
+data engineer,mysql,7
+data engineer,langchain,7
+mlops,rigueur scientifique,7
+bert,git,7
+kafka,snowflake,7
+bert,databricks,7
+postgresql,rag,7
+big data,excel,7
+data engineer,e-commerce,7
+bert,docker,7
+bert,java,7
+big data,gpt,7
+bert,gpt,7
+airflow,tensorflow,7
+plotly,snowflake,7
+plotly,rag,7
+bert,devops,7
+bert,management,7
+bert,kubernetes,7
+bert,langchain,7
+bert,llms,7
+plotly,spark,7
+spacy,sql,7
+bert,dbt,7
+excel,gcp,7
+api,nlp,7
+bert,tableau,7
+ci/cd,plotly,7
+databricks,plotly,7
+tableau software,talend,7
+mdm,scala,7
+linux,power bi,7
+databricks,scrum,7
+bert,postgresql,7
+bert,spark,7
+bert,power bi,7
+bert,rag,7
+bert,snowflake,7
+qlik sense,sql,7
+apis,kubernetes,7
+api,numpy,7
+agile,streamlit,7
+gpt,snowflake,7
+gpt,power bi,7
+gpt,tableau,7
+llms,plotly,7
+api rest,python,7
+api rest,sql,7
+airflow,plotly,7
+kubernetes,plotly,7
+data management,plotly,7
+data management,rag,7
+bigquery,postgresql,7
+gcp,postgresql,7
+airflow,bert,7
+data management,dbt,7
+gpt,java,7
+data management,gpt,7
+data management,mlops,7
+linux,pytorch,7
+looker,spark,7
+anglais technique,devops,7
+gpt,postgresql,7
+autonomie,cognos,7
+api,linux,7
+databricks,nlp,7
+api,scrum,7
+data management,llms,7
+power query,r,7
+looker,tableau software,7
+gpt,plotly,7
+data engineer,qlik,6
+deep learning,rest,6
+langchain,spacy,6
+mlops,spacy,6
+git,scrum,6
+deep learning,qlik,6
+deep learning,linux,6
+aws,développement commercial,6
+dbt,rigueur,6
+dbt,qlik,6
+dbt,scala,6
+scrum,streamlit,6
+scrum,tableau,6
+langgraph,python,6
+cognos,rigueur,6
+cognos,power bi,6
+azure,llms,6
+scikit-learn,tableau,6
+mysql,talend,6
+azure,mysql,6
+azure,secteur aéronautique,6
+gcp,langchain,6
+dbt,scrum,6
+java,llm,6
+scikit-learn,spacy,6
+intelligence artificielle,looker,6
+airflow,mlflow,6
+airflow,pytorch,6
+big data,esprit de synthèse,6
+big data,mdm,6
+nltk,pandas,6
+devops,looker,6
+nltk,python,6
+keras,spark,6
+agile,llms,6
+agile,api rest,6
+power query,qlik,6
+airflow,r,6
+looker,talend,6
+llm,power bi,6
+programmation en python,python,6
+pytorch,tableau,6
+bigquery,pandas,6
+kubernetes,rest,6
+autonomie,maîtrise de l'anglais ,6
+kubernetes,pandas,6
+kubernetes,llm,6
+agile,rag,6
+management,tableau software,6
+power query,streamlit,6
+airflow,e-commerce,6
+devops,tableau software,6
+pytorch,spacy,6
+numpy,tableau,6
+anglais technique,management,6
+esprit de synthèse,spark,6
+kubernetes,transformers,6
+devops,qlik,6
+e-commerce,rigueur,6
+r,streamlit,6
+linux,transformers,6
+api,mlflow,6
+api rest,ci/cd,6
+rigueur scientifique,sql,6
+anglais technique,azure,6
+excel,scrum,6
+api,langchain,6
+databricks,mdm,6
+spacy,transformers,6
+nltk,sql,6
+nltk,spacy,6
+nltk,rigueur,5
+nltk,scikit-learn,5
+nltk,transformers,5
+spacy,tensorflow,5
+llamaindex,machine learning,5
+llamaindex,python,5
+autonomie,coder,5
+e-commerce,snowflake,5
+linux,talend,5
+linux,pandas,5
+r,snowflake,5
+api,databricks,5
+api,bigquery,5
+mdm,spark,5
+mdm,rigueur,5
+anglais technique,ci/cd,5
+devops,secteur aéronautique,5
+devops,gérer des bases de données,5
+autonomie,sig,5
+e-commerce,r,5
+google analytics 4,looker,5
+google analytics 4,sql,5
+google analytics 4,tableau,5
+ci/cd,looker,5
+mlflow,power bi,5
+spark,tableau software,5
+e-commerce,scrum,5
+api rest,devops,5
+api rest,git,5
+api rest,rigueur,5
+api,mongodb,5
+api,secteur aéronautique,5
+api,nltk,5
+apis,postgresql,5
+autonomie,secteur aéronautique,5
+pytorch,qlik,5
+anglais technique,power bi,5
+numpy,postgresql,5
+data management,hadoop,5
+data management,scala,5
+llm,snowflake,5
+api,spacy,5
+api,transformers,5
+api,excel,5
+airflow,mysql,5
+bigquery,google analytics 4,5
+bigquery,qlik,5
+bigquery,numpy,5
+gcp,mysql,5
+gcp,mdm,5
+gcp,matplotlib,5
+kubernetes,scikit-learn,5
+anglais technique,docker,5
+anglais technique,benchmarks,5
+anglais technique,pytorch,5
+anglais technique,pandas,5
+pandas,qlik,5
+devops,e-commerce,5
+qlik,scikit-learn,5
+pandas,seaborn,5
+looker,numpy,5
+looker,pandas,5
+tableau,tensorflow,5
+airflow,gérer des bases de données,5
+matplotlib,power bi,5
+agile,tableau software,5
+agile,langchain,5
+maîtrise de l'anglais ,r,5
+aws,langgraph,5
+aws,gérer des bases de données,5
+dbt,rest,5
+agile,sig,5
+scrum,talend,5
+rag,rigueur scientifique,5
+agile,mdm,5
+airflow,transformers,5
+airflow,qlik,5
+seaborn,sql,5
+mlflow,nltk,5
+agile,linux,5
+agile,product management,5
+agile,numpy,5
+agile,mongodb,5
+gcp,gérer des bases de données,5
+docker,scrum,5
+azure,gérer des bases de données,5
+gcp,gpt,5
+mlflow,spacy,5
+java,tensorflow,5
+mlflow,rigueur scientifique,5
+excel,snowflake,5
+rigueur,secteur aéronautique,5
+rigueur,spacy,5
+machine learning,nltk,5
+intelligence artificielle,llamaindex,5
+management,mysql,5
+management,programmation en python,5
+benchmarks,pytorch,5
+deep learning,nltk,5
+nlp,nltk,5
+mlops,qlik,5
+mlops,nltk,5
+langchain,llamaindex,5
+langchain,mlflow,5
+data engineer,gérer des bases de données,5
+postgresql,r,5
+postgresql,scala,5
+deep learning,llamaindex,5
+power bi,product management,5
+hadoop,snowflake,5
+airflow,anglais technique,5
+big data,keras,5
+big data,gérer des bases de données,5
+nltk,pytorch,5
+airflow,scikit-learn,5
+airflow,llm,5
+gérer des bases de données,hadoop,5
+gérer des bases de données,java,5
+gérer des bases de données,kafka,5
+gérer des bases de données,python,5
+gérer des bases de données,spark,5
+gérer des bases de données,sql,5

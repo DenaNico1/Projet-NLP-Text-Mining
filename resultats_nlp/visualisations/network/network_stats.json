@@ -1,0 +1,280 @@
+{
+  "global": {
+    "n_nodes": 150,
+    "n_edges": 1459,
+    "density": 0.1305592841163311,
+    "average_clustering": 0.4668499252082563
+  },
+  "hubs": [
+    {
+      "competence": "python",
+      "count": 1133,
+      "degree": 78,
+      "pagerank": 0.05367096009797156,
+      "betweenness": 0.02370589693289655
+    },
+    {
+      "competence": "sql",
+      "count": 944,
+      "degree": 73,
+      "pagerank": 0.04364048236168405,
+      "betweenness": 0.01553695340983408
+    },
+    {
+      "competence": "autonomie",
+      "count": 852,
+      "degree": 71,
+      "pagerank": 0.031816203895423494,
+      "betweenness": 0.016002006983107855
+    },
+    {
+      "competence": "rigueur",
+      "count": 700,
+      "degree": 66,
+      "pagerank": 0.025928406122909035,
+      "betweenness": 0.016301909724680933
+    },
+    {
+      "competence": "machine learning",
+      "count": 626,
+      "degree": 71,
+      "pagerank": 0.030924173251144316,
+      "betweenness": 0.012188954297919073
+    },
+    {
+      "competence": "management",
+      "count": 626,
+      "degree": 70,
+      "pagerank": 0.027575041384115668,
+      "betweenness": 0.01851105157631388
+    },
+    {
+      "competence": "power bi",
+      "count": 522,
+      "degree": 60,
+      "pagerank": 0.021588123280867146,
+      "betweenness": 0.0104631982363947
+    },
+    {
+      "competence": "r",
+      "count": 424,
+      "degree": 57,
+      "pagerank": 0.02009097529141907,
+      "betweenness": 0.004812056204438019
+    },
+    {
+      "competence": "intelligence artificielle",
+      "count": 420,
+      "degree": 59,
+      "pagerank": 0.01969097643590588,
+      "betweenness": 0.008434837404558089
+    },
+    {
+      "competence": "aws",
+      "count": 410,
+      "degree": 66,
+      "pagerank": 0.026983008762848648,
+      "betweenness": 0.010018449200188004
+    },
+    {
+      "competence": "agile",
+      "count": 386,
+      "degree": 54,
+      "pagerank": 0.014968088771635841,
+      "betweenness": 0.005264453036522892
+    },
+    {
+      "competence": "azure",
+      "count": 355,
+      "degree": 56,
+      "pagerank": 0.021061824291864026,
+      "betweenness": 0.002429926188626973
+    },
+    {
+      "competence": "big data",
+      "count": 340,
+      "degree": 53,
+      "pagerank": 0.019681467606852666,
+      "betweenness": 0.0014695108342029739
+    },
+    {
+      "competence": "git",
+      "count": 308,
+      "degree": 64,
+      "pagerank": 0.02197269467746196,
+      "betweenness": 0.005267256948670395
+    },
+    {
+      "competence": "ci/cd",
+      "count": 305,
+      "degree": 58,
+      "pagerank": 0.020345862609022106,
+      "betweenness": 0.0028096794152113478
+    },
+    {
+      "competence": "gcp",
+      "count": 300,
+      "degree": 54,
+      "pagerank": 0.01839280646084987,
+      "betweenness": 0.002613574367238987
+    },
+    {
+      "competence": "spark",
+      "count": 293,
+      "degree": 55,
+      "pagerank": 0.019829703107822966,
+      "betweenness": 0.0021043293453631108
+    },
+    {
+      "competence": "devops",
+      "count": 245,
+      "degree": 56,
+      "pagerank": 0.015722250352822605,
+      "betweenness": 0.0025989987773898313
+    },
+    {
+      "competence": "pytorch",
+      "count": 237,
+      "degree": 46,
+      "pagerank": 0.015548875478841684,
+      "betweenness": 0.0013445218737026423
+    },
+    {
+      "competence": "tensorflow",
+      "count": 231,
+      "degree": 46,
+      "pagerank": 0.015551521197554026,
+      "betweenness": 0.0017257918837925714
+    },
+    {
+      "competence": "docker",
+      "count": 219,
+      "degree": 55,
+      "pagerank": 0.017128778320905542,
+      "betweenness": 0.002360311302004944
+    },
+    {
+      "competence": "scala",
+      "count": 164,
+      "degree": 46,
+      "pagerank": 0.012958313475378756,
+      "betweenness": 0.0007933261822015621
+    },
+    {
+      "competence": "nlp",
+      "count": 139,
+      "degree": 49,
+      "pagerank": 0.012482566598249327,
+      "betweenness": 0.0017825942725400662
+    },
+    {
+      "competence": "mlops",
+      "count": 134,
+      "degree": 50,
+      "pagerank": 0.010980704457116693,
+      "betweenness": 0.00140362706926838
+    }
+  ],
+  "top_edges": [
+    {
+      "comp1": "python",
+      "comp2": "sql",
+      "weight": 638
+    },
+    {
+      "comp1": "python",
+      "comp2": "machine learning",
+      "weight": 472
+    },
+    {
+      "comp1": "autonomie",
+      "comp2": "rigueur",
+      "weight": 446
+    },
+    {
+      "comp1": "python",
+      "comp2": "autonomie",
+      "weight": 359
+    },
+    {
+      "comp1": "sql",
+      "comp2": "autonomie",
+      "weight": 326
+    },
+    {
+      "comp1": "sql",
+      "comp2": "power bi",
+      "weight": 324
+    },
+    {
+      "comp1": "python",
+      "comp2": "r",
+      "weight": 304
+    },
+    {
+      "comp1": "python",
+      "comp2": "management",
+      "weight": 301
+    },
+    {
+      "comp1": "python",
+      "comp2": "aws",
+      "weight": 295
+    },
+    {
+      "comp1": "sql",
+      "comp2": "rigueur",
+      "weight": 281
+    },
+    {
+      "comp1": "sql",
+      "comp2": "management",
+      "weight": 276
+    },
+    {
+      "comp1": "python",
+      "comp2": "rigueur",
+      "weight": 271
+    },
+    {
+      "comp1": "python",
+      "comp2": "power bi",
+      "weight": 266
+    },
+    {
+      "comp1": "python",
+      "comp2": "azure",
+      "weight": 254
+    },
+    {
+      "comp1": "sql",
+      "comp2": "machine learning",
+      "weight": 253
+    },
+    {
+      "comp1": "python",
+      "comp2": "git",
+      "weight": 247
+    },
+    {
+      "comp1": "python",
+      "comp2": "ci/cd",
+      "weight": 242
+    },
+    {
+      "comp1": "python",
+      "comp2": "intelligence artificielle",
+      "weight": 241
+    },
+    {
+      "comp1": "sql",
+      "comp2": "aws",
+      "weight": 237
+    },
+    {
+      "comp1": "aws",
+      "comp2": "azure",
+      "weight": 236
+    }
+  ]
+}

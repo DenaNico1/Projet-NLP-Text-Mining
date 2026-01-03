@@ -1,0 +1,1166 @@
+{
+  "top_100_competences": [
+    {
+      "competence": "Spark",
+      "chi2_score": 514.1316517428861,
+      "p_value": 7.10709837061773e-109
+    },
+    {
+      "competence": "Big Data",
+      "chi2_score": 463.2735763065804,
+      "p_value": 6.726753204650976e-98
+    },
+    {
+      "competence": "Deep Learning",
+      "chi2_score": 418.26758687436137,
+      "p_value": 3.423409602305524e-88
+    },
+    {
+      "competence": "Scala",
+      "chi2_score": 352.7441879561387,
+      "p_value": 4.490241821547152e-74
+    },
+    {
+      "competence": "Machine Learning",
+      "chi2_score": 312.60242085908095,
+      "p_value": 1.953058539737678e-65
+    },
+    {
+      "competence": "GCP",
+      "chi2_score": 307.07447847285204,
+      "p_value": 3.016786404573117e-64
+    },
+    {
+      "competence": "Hadoop",
+      "chi2_score": 300.669399162258,
+      "p_value": 7.190319815207252e-63
+    },
+    {
+      "competence": "MLOps",
+      "chi2_score": 280.71528097360806,
+      "p_value": 1.3973400483085805e-58
+    },
+    {
+      "competence": "CI/CD",
+      "chi2_score": 278.6470807045389,
+      "p_value": 3.887076407446687e-58
+    },
+    {
+      "competence": "NLP",
+      "chi2_score": 276.1434400982254,
+      "p_value": 1.3410479778815402e-57
+    },
+    {
+      "competence": "aws",
+      "chi2_score": 266.5908941273559,
+      "p_value": 1.5100371067074466e-55
+    },
+    {
+      "competence": "AWS",
+      "chi2_score": 266.5908941273559,
+      "p_value": 1.5100371067074466e-55
+    },
+    {
+      "competence": "Datalake",
+      "chi2_score": 252.90802077474046,
+      "p_value": 1.3065472853684181e-52
+    },
+    {
+      "competence": "Python",
+      "chi2_score": 241.68215937481114,
+      "p_value": 3.34542465952833e-50
+    },
+    {
+      "competence": "DBT",
+      "chi2_score": 237.1201455653014,
+      "p_value": 3.182504559196829e-49
+    },
+    {
+      "competence": "Kafka",
+      "chi2_score": 227.4159401386067,
+      "p_value": 3.8284465131746733e-47
+    },
+    {
+      "competence": "Databricks",
+      "chi2_score": 224.09977496384838,
+      "p_value": 1.9662280007119816e-46
+    },
+    {
+      "competence": "Azure",
+      "chi2_score": 216.47344697089483,
+      "p_value": 8.458992814477515e-45
+    },
+    {
+      "competence": "Scikit-learn",
+      "chi2_score": 216.1131531837025,
+      "p_value": 1.0103696586652148e-44
+    },
+    {
+      "competence": "MLflow",
+      "chi2_score": 216.07671700562392,
+      "p_value": 1.0286875470728931e-44
+    },
+    {
+      "competence": "Data engineer",
+      "chi2_score": 198.1904203312107,
+      "p_value": 6.926231250036018e-41
+    },
+    {
+      "competence": "Transformers",
+      "chi2_score": 192.4572635365008,
+      "p_value": 1.1654897351673362e-39
+    },
+    {
+      "competence": "Intelligence artificielle",
+      "chi2_score": 187.70539273811477,
+      "p_value": 1.2085043436366205e-38
+    },
+    {
+      "competence": "PyTorch",
+      "chi2_score": 176.71524073019975,
+      "p_value": 2.690633561083472e-36
+    },
+    {
+      "competence": "Excel",
+      "chi2_score": 173.86769821548478,
+      "p_value": 1.0907568555202701e-35
+    },
+    {
+      "competence": "Power BI",
+      "chi2_score": 168.2228715007813,
+      "p_value": 1.7467697377841808e-34
+    },
+    {
+      "competence": "BigQuery",
+      "chi2_score": 159.80350434198135,
+      "p_value": 1.0900223708246299e-32
+    },
+    {
+      "competence": "TensorFlow",
+      "chi2_score": 157.39364899009072,
+      "p_value": 3.555938489228568e-32
+    },
+    {
+      "competence": "Kubernetes",
+      "chi2_score": 154.1338168302437,
+      "p_value": 1.7593725826621205e-31
+    },
+    {
+      "competence": "Pandas",
+      "chi2_score": 148.5725410828291,
+      "p_value": 2.687501447125803e-30
+    },
+    {
+      "competence": "Talend",
+      "chi2_score": 140.06766570478038,
+      "p_value": 1.7309584640177249e-28
+    },
+    {
+      "competence": "Linux",
+      "chi2_score": 139.0241070317266,
+      "p_value": 2.8846304267259625e-28
+    },
+    {
+      "competence": "Docker",
+      "chi2_score": 136.69768402302668,
+      "p_value": 9.003915161759487e-28
+    },
+    {
+      "competence": "docker",
+      "chi2_score": 136.69768402302668,
+      "p_value": 9.003915161759487e-28
+    },
+    {
+      "competence": "snowflake",
+      "chi2_score": 131.00883689112737,
+      "p_value": 1.4536796814835782e-26
+    },
+    {
+      "competence": "Snowflake",
+      "chi2_score": 131.00883689112737,
+      "p_value": 1.4536796814835782e-26
+    },
+    {
+      "competence": "java",
+      "chi2_score": 129.28737119207958,
+      "p_value": 3.371280565038068e-26
+    },
+    {
+      "competence": "JAVA",
+      "chi2_score": 129.28737119207958,
+      "p_value": 3.371280565038068e-26
+    },
+    {
+      "competence": "Java",
+      "chi2_score": 129.28737119207958,
+      "p_value": 3.371280565038068e-26
+    },
+    {
+      "competence": "Qlik Sense",
+      "chi2_score": 129.0635243213751,
+      "p_value": 3.7608939730693105e-26
+    },
+    {
+      "competence": "Qlik",
+      "chi2_score": 125.6553967066002,
+      "p_value": 1.9869852405282027e-25
+    },
+    {
+      "competence": "Anglais technique",
+      "chi2_score": 125.18287980741191,
+      "p_value": 2.5025622538210974e-25
+    },
+    {
+      "competence": "LangChain",
+      "chi2_score": 122.82137864083813,
+      "p_value": 7.924472447316708e-25
+    },
+    {
+      "competence": "Tableau",
+      "chi2_score": 122.35526440411313,
+      "p_value": 9.948300430077734e-25
+    },
+    {
+      "competence": "Plotly",
+      "chi2_score": 121.51415712757661,
+      "p_value": 1.4995896469741692e-24
+    },
+    {
+      "competence": "NumPy",
+      "chi2_score": 119.80305819326944,
+      "p_value": 3.454985466376734e-24
+    },
+    {
+      "competence": "Git",
+      "chi2_score": 115.7344843416514,
+      "p_value": 2.510713244126901e-23
+    },
+    {
+      "competence": "R",
+      "chi2_score": 114.70489103483521,
+      "p_value": 4.1461913621063064e-23
+    },
+    {
+      "competence": "Looker",
+      "chi2_score": 103.44669595566785,
+      "p_value": 9.91429606559782e-21
+    },
+    {
+      "competence": "LLM",
+      "chi2_score": 100.17253857939407,
+      "p_value": 4.860620515605828e-20
+    },
+    {
+      "competence": "Informatique industrielle",
+      "chi2_score": 99.31699438614349,
+      "p_value": 7.361969189977093e-20
+    },
+    {
+      "competence": "Airflow",
+      "chi2_score": 95.86299553628824,
+      "p_value": 3.9303311315256284e-19
+    },
+    {
+      "competence": "MySQL",
+      "chi2_score": 92.46209092982144,
+      "p_value": 2.041219474153905e-18
+    },
+    {
+      "competence": "Data management",
+      "chi2_score": 90.09947107794467,
+      "p_value": 6.4036739592800336e-18
+    },
+    {
+      "competence": "HTML",
+      "chi2_score": 87.57150195916276,
+      "p_value": 2.173923019814349e-17
+    },
+    {
+      "competence": "management",
+      "chi2_score": 80.44720075722194,
+      "p_value": 6.765346928982558e-16
+    },
+    {
+      "competence": "PostgreSQL",
+      "chi2_score": 73.03937347821872,
+      "p_value": 2.3854420192933207e-14
+    },
+    {
+      "competence": "LlamaIndex",
+      "chi2_score": 68.72395833333273,
+      "p_value": 1.8883380936308597e-13
+    },
+    {
+      "competence": "Agile",
+      "chi2_score": 68.4810375044622,
+      "p_value": 2.1212351856987586e-13
+    },
+    {
+      "competence": "Angular",
+      "chi2_score": 68.35286453535134,
+      "p_value": 2.2554642397451355e-13
+    },
+    {
+      "competence": "Matplotlib",
+      "chi2_score": 67.03780829687292,
+      "p_value": 4.231648513636346e-13
+    },
+    {
+      "competence": "rigueur",
+      "chi2_score": 66.31781533917083,
+      "p_value": 5.970729399895474e-13
+    },
+    {
+      "competence": "Windows",
+      "chi2_score": 63.63537334321816,
+      "p_value": 2.1499567666606922e-12
+    },
+    {
+      "competence": "SQL",
+      "chi2_score": 63.61765617659726,
+      "p_value": 2.1682091439946312e-12
+    },
+    {
+      "competence": "Rigueur scientifique",
+      "chi2_score": 58.73953216948398,
+      "p_value": 2.2134684103412154e-11
+    },
+    {
+      "competence": "GPT",
+      "chi2_score": 56.96325244154577,
+      "p_value": 5.1459217762810215e-11
+    },
+    {
+      "competence": "Keras",
+      "chi2_score": 56.79796229080542,
+      "p_value": 5.5658024055630353e-11
+    },
+    {
+      "competence": "SPRING",
+      "chi2_score": 56.213574299090666,
+      "p_value": 7.34383227945095e-11
+    },
+    {
+      "competence": "Spring",
+      "chi2_score": 56.213574299090666,
+      "p_value": 7.34383227945095e-11
+    },
+    {
+      "competence": "MongoDB",
+      "chi2_score": 55.56353545766077,
+      "p_value": 9.994612847076223e-11
+    },
+    {
+      "competence": "Javascript",
+      "chi2_score": 55.06005949702718,
+      "p_value": 1.2687467972847118e-10
+    },
+    {
+      "competence": "Scrum",
+      "chi2_score": 54.68083560632988,
+      "p_value": 1.5183820385226256e-10
+    },
+    {
+      "competence": "NLTK",
+      "chi2_score": 54.17713994565169,
+      "p_value": 1.9272845618449638e-10
+    },
+    {
+      "competence": "CSS",
+      "chi2_score": 52.591736722523514,
+      "p_value": 4.0791968273906766e-10
+    },
+    {
+      "competence": "PHP",
+      "chi2_score": 49.62040623886182,
+      "p_value": 1.6571356592844857e-09
+    },
+    {
+      "competence": "Bonne communication",
+      "chi2_score": 46.955518065369176,
+      "p_value": 5.801340418522896e-09
+    },
+    {
+      "competence": "e-commerce",
+      "chi2_score": 46.45358303577657,
+      "p_value": 7.341994892180109e-09
+    },
+    {
+      "competence": "Spring ",
+      "chi2_score": 46.10384877728267,
+      "p_value": 8.650531045197586e-09
+    },
+    {
+      "competence": "spaCy",
+      "chi2_score": 44.38775931821826,
+      "p_value": 1.9321596341178108e-08
+    },
+    {
+      "competence": "Tableau Software",
+      "chi2_score": 44.21917459239091,
+      "p_value": 2.090648713190135e-08
+    },
+    {
+      "competence": "REST",
+      "chi2_score": 36.77678978140763,
+      "p_value": 6.639330949122185e-07
+    },
+    {
+      "competence": "Power Query",
+      "chi2_score": 34.99754951351621,
+      "p_value": 1.50634590935764e-06
+    },
+    {
+      "competence": "REACT",
+      "chi2_score": 34.89762724847031,
+      "p_value": 1.577114741429928e-06
+    },
+    {
+      "competence": "React",
+      "chi2_score": 34.89762724847031,
+      "p_value": 1.577114741429928e-06
+    },
+    {
+      "competence": "autonomie",
+      "chi2_score": 33.60984947267726,
+      "p_value": 2.8470333693608816e-06
+    },
+    {
+      "competence": "Java Script",
+      "chi2_score": 32.45786516853973,
+      "p_value": 4.821188485655609e-06
+    },
+    {
+      "competence": "API",
+      "chi2_score": 31.97843968094567,
+      "p_value": 5.999952299987562e-06
+    },
+    {
+      "competence": ".Net",
+      "chi2_score": 25.582474223662537,
+      "p_value": 0.00010750827131909001
+    },
+    {
+      "competence": "MDM",
+      "chi2_score": 24.08553558345569,
+      "p_value": 0.0002090477155239408
+    },
+    {
+      "competence": "go",
+      "chi2_score": 23.947693015541397,
+      "p_value": 0.00022219582273287934
+    },
+    {
+      "competence": "Biologie",
+      "chi2_score": 21.58924708008404,
+      "p_value": 0.0006265916121195087
+    },
+    {
+      "competence": "SIG",
+      "chi2_score": 20.910297785531075,
+      "p_value": 0.0008422852591018635
+    },
+    {
+      "competence": "Kubeflow",
+      "chi2_score": 20.11008890189143,
+      "p_value": 0.0011916529100781223
+    },
+    {
+      "competence": "Informatique",
+      "chi2_score": 20.002156059370694,
+      "p_value": 0.0012485668370306891
+    },
+    {
+      "competence": "CIEL",
+      "chi2_score": 19.691941647284427,
+      "p_value": 0.001427450134831364
+    },
+    {
+      "competence": "Hibernate",
+      "chi2_score": 19.649606140116937,
+      "p_value": 0.0014537393225201795
+    },
+    {
+      "competence": "Analyse statistique",
+      "chi2_score": 19.330166254326432,
+      "p_value": 0.0016680481190204555
+    },
+    {
+      "competence": "API REST",
+      "chi2_score": 18.986089676891993,
+      "p_value": 0.0019336377054281944
+    },
+    {
+      "competence": "RQTH",
+      "chi2_score": 18.194532342531584,
+      "p_value": 0.00271222735519269
+    },
+    {
+      "competence": "Redis",
+      "chi2_score": 17.778688524590244,
+      "p_value": 0.0032369486155020342
+    }
+  ],
+  "selected_competences": [
+    ".Net",
+    "API",
+    "API REST",
+    "AWS",
+    "Agile",
+    "Airflow",
+    "Analyse statistique",
+    "Anglais technique",
+    "Angular",
+    "Azure",
+    "Big Data",
+    "BigQuery",
+    "Biologie",
+    "Bonne communication",
+    "CI/CD",
+    "CIEL",
+    "CSS",
+    "DBT",
+    "Data engineer",
+    "Data management",
+    "Databricks",
+    "Datalake",
+    "Deep Learning",
+    "Docker",
+    "Excel",
+    "GCP",
+    "GPT",
+    "Git",
+    "HTML",
+    "Hadoop",
+    "Hibernate",
+    "Informatique",
+    "Informatique industrielle",
+    "Intelligence artificielle",
+    "JAVA",
+    "Java",
+    "Java Script",
+    "Javascript",
+    "Kafka",
+    "Keras",
+    "Kubeflow",
+    "Kubernetes",
+    "LLM",
+    "LangChain",
+    "Linux",
+    "LlamaIndex",
+    "Looker",
+    "MDM",
+    "MLOps",
+    "MLflow",
+    "Machine Learning",
+    "Matplotlib",
+    "MongoDB",
+    "MySQL",
+    "NLP",
+    "NLTK",
+    "NumPy",
+    "PHP",
+    "Pandas",
+    "Plotly",
+    "PostgreSQL",
+    "Power BI",
+    "Power Query",
+    "PyTorch",
+    "Python",
+    "Qlik",
+    "Qlik Sense",
+    "R",
+    "REACT",
+    "REST",
+    "RQTH",
+    "React",
+    "Redis",
+    "Rigueur scientifique",
+    "SIG",
+    "SPRING",
+    "SQL",
+    "Scala",
+    "Scikit-learn",
+    "Scrum",
+    "Snowflake",
+    "Spark",
+    "Spring",
+    "Spring ",
+    "Tableau",
+    "Tableau Software",
+    "Talend",
+    "TensorFlow",
+    "Transformers",
+    "Windows",
+    "autonomie",
+    "aws",
+    "docker",
+    "e-commerce",
+    "go",
+    "java",
+    "management",
+    "rigueur",
+    "snowflake",
+    "spaCy"
+  ],
+  "signature_by_profile": {
+    "Data Engineering": [
+      {
+        "competence": "Connaissance de JIRA",
+        "freq_profil": 0.001358695652173913,
+        "freq_global": 0.0003307972213033411,
+        "lift": 4.107336956521738
+      },
+      {
+        "competence": "BERT",
+        "freq_profil": 0.002717391304347826,
+        "freq_global": 0.0006615944426066821,
+        "lift": 4.107336956521738
+      },
+      {
+        "competence": "Analyse statistique",
+        "freq_profil": 0.010869565217391304,
+        "freq_global": 0.0033079722130334105,
+        "lift": 3.285869565217391
+      },
+      {
+        "competence": "Power Query",
+        "freq_profil": 0.021739130434782608,
+        "freq_global": 0.006615944426066821,
+        "lift": 3.285869565217391
+      },
+      {
+        "competence": "Animer des sessions de formation",
+        "freq_profil": 0.004076086956521739,
+        "freq_global": 0.0013231888852133643,
+        "lift": 3.080502717391304
+      },
+      {
+        "competence": "Business Object",
+        "freq_profil": 0.008152173913043478,
+        "freq_global": 0.0026463777704267286,
+        "lift": 3.080502717391304
+      },
+      {
+        "competence": "Conduite de projets ",
+        "freq_profil": 0.006793478260869565,
+        "freq_global": 0.002315580549123387,
+        "lift": 2.9338121118012426
+      },
+      {
+        "competence": "Analyse de risque",
+        "freq_profil": 0.005434782608695652,
+        "freq_global": 0.0019847833278200462,
+        "lift": 2.7382246376811596
+      },
+      {
+        "competence": "Data management",
+        "freq_profil": 0.09375,
+        "freq_global": 0.03804168044988422,
+        "lift": 2.4644021739130433
+      },
+      {
+        "competence": "Excel",
+        "freq_profil": 0.15896739130434784,
+        "freq_global": 0.07079060535891499,
+        "lift": 2.245600111743194
+      },
+      {
+        "competence": "Cognos",
+        "freq_profil": 0.008152173913043478,
+        "freq_global": 0.0036387694343367515,
+        "lift": 2.240365612648221
+      },
+      {
+        "competence": "bonne organisation",
+        "freq_profil": 0.004076086956521739,
+        "freq_global": 0.0019847833278200462,
+        "lift": 2.0536684782608696
+      },
+      {
+        "competence": "Connaissance du langage SQL",
+        "freq_profil": 0.001358695652173913,
+        "freq_global": 0.0006615944426066821,
+        "lift": 2.053668478260869
+      },
+      {
+        "competence": "Slack",
+        "freq_profil": 0.001358695652173913,
+        "freq_global": 0.0006615944426066821,
+        "lift": 2.053668478260869
+      },
+      {
+        "competence": "Machine Learning et Data Science",
+        "freq_profil": 0.001358695652173913,
+        "freq_global": 0.0006615944426066821,
+        "lift": 2.053668478260869
+      }
+    ],
+    "ML Engineering": [
+      {
+        "competence": "Transformers",
+        "freq_profil": 0.11940298507462686,
+        "freq_global": 0.010254713860403573,
+        "lift": 11.643716899374096
+      },
+      {
+        "competence": "Biologie",
+        "freq_profil": 0.014925373134328358,
+        "freq_global": 0.0013231888852133643,
+        "lift": 11.279850746268655
+      },
+      {
+        "competence": "Matplotlib",
+        "freq_profil": 0.05970149253731343,
+        "freq_global": 0.006615944426066821,
+        "lift": 9.023880597014925
+      },
+      {
+        "competence": "NumPy",
+        "freq_profil": 0.1044776119402985,
+        "freq_global": 0.013562686073436983,
+        "lift": 7.703312704768838
+      },
+      {
+        "competence": "HTML",
+        "freq_profil": 0.11194029850746269,
+        "freq_global": 0.01918623883559378,
+        "lift": 5.834405558414823
+      },
+      {
+        "competence": "Deep Learning",
+        "freq_profil": 0.208955223880597,
+        "freq_global": 0.044988422097254385,
+        "lift": 4.644644424934152
+      },
+      {
+        "competence": "Pandas",
+        "freq_profil": 0.09701492537313433,
+        "freq_global": 0.02216341382732385,
+        "lift": 4.377255513477389
+      },
+      {
+        "competence": "Scikit-learn",
+        "freq_profil": 0.1044776119402985,
+        "freq_global": 0.025802183261660602,
+        "lift": 4.049177190968235
+      },
+      {
+        "competence": "Anglais technique",
+        "freq_profil": 0.1791044776119403,
+        "freq_global": 0.04531921931855772,
+        "lift": 3.952064495043033
+      },
+      {
+        "competence": "LLM",
+        "freq_profil": 0.11940298507462686,
+        "freq_global": 0.03241812768772742,
+        "lift": 3.6832165702101736
+      },
+      {
+        "competence": "NLP",
+        "freq_profil": 0.08955223880597014,
+        "freq_global": 0.02547138604035726,
+        "lift": 3.51579763520062
+      },
+      {
+        "competence": "Machine Learning",
+        "freq_profil": 0.4626865671641791,
+        "freq_global": 0.1352960635130665,
+        "lift": 3.41980805021348
+      },
+      {
+        "competence": "TensorFlow",
+        "freq_profil": 0.11194029850746269,
+        "freq_global": 0.03341051935163745,
+        "lift": 3.3504507167134623
+      },
+      {
+        "competence": "PyTorch",
+        "freq_profil": 0.11940298507462686,
+        "freq_global": 0.036056897122064176,
+        "lift": 3.3115158154183213
+      },
+      {
+        "competence": "R",
+        "freq_profil": 0.3208955223880597,
+        "freq_global": 0.09956996361230566,
+        "lift": 3.2228144989339014
+      }
+    ],
+    "Business Intelligence": [
+      {
+        "competence": "LlamaIndex",
+        "freq_profil": 0.026041666666666668,
+        "freq_global": 0.0033079722130334105,
+        "lift": 7.872395833333334
+      },
+      {
+        "competence": "Azure Databricks",
+        "freq_profil": 0.005208333333333333,
+        "freq_global": 0.0006615944426066821,
+        "lift": 7.872395833333332
+      },
+      {
+        "competence": "Plotly",
+        "freq_profil": 0.052083333333333336,
+        "freq_global": 0.007277538868673503,
+        "lift": 7.156723484848485
+      },
+      {
+        "competence": "NLTK",
+        "freq_profil": 0.0234375,
+        "freq_global": 0.0033079722130334105,
+        "lift": 7.08515625
+      },
+      {
+        "competence": "MLflow",
+        "freq_profil": 0.09895833333333333,
+        "freq_global": 0.014555077737347006,
+        "lift": 6.7988873106060606
+      },
+      {
+        "competence": "LangChain",
+        "freq_profil": 0.0625,
+        "freq_global": 0.00992391663910023,
+        "lift": 6.2979166666666675
+      },
+      {
+        "competence": "DBT",
+        "freq_profil": 0.12760416666666666,
+        "freq_global": 0.02117102216341383,
+        "lift": 6.027303059895832
+      },
+      {
+        "competence": "Tableau Software",
+        "freq_profil": 0.0234375,
+        "freq_global": 0.0039695666556400925,
+        "lift": 5.904296875
+      },
+      {
+        "competence": "Keras",
+        "freq_profil": 0.03125,
+        "freq_global": 0.005292755540853457,
+        "lift": 5.904296875
+      },
+      {
+        "competence": "Optimisation de performances",
+        "freq_profil": 0.0078125,
+        "freq_global": 0.0013231888852133643,
+        "lift": 5.904296875
+      },
+      {
+        "competence": "spaCy",
+        "freq_profil": 0.0234375,
+        "freq_global": 0.0039695666556400925,
+        "lift": 5.904296875
+      },
+      {
+        "competence": "NLP",
+        "freq_profil": 0.14322916666666666,
+        "freq_global": 0.02547138604035726,
+        "lift": 5.6231398809523805
+      },
+      {
+        "competence": "MLOps",
+        "freq_profil": 0.1640625,
+        "freq_global": 0.029440952695997353,
+        "lift": 5.572594803370786
+      },
+      {
+        "competence": "Qlik Sense",
+        "freq_profil": 0.078125,
+        "freq_global": 0.014224280516043665,
+        "lift": 5.492369186046512
+      },
+      {
+        "competence": "Rigueur scientifique",
+        "freq_profil": 0.036458333333333336,
+        "freq_global": 0.006946741647370162,
+        "lift": 5.248263888888889
+      }
+    ],
+    "Deep Learning": [
+      {
+        "competence": "Java Script",
+        "freq_profil": 0.014044943820224719,
+        "freq_global": 0.0033079722130334105,
+        "lift": 4.245786516853933
+      },
+      {
+        "competence": "Animation de groupes",
+        "freq_profil": 0.0014044943820224719,
+        "freq_global": 0.0003307972213033411,
+        "lift": 4.245786516853932
+      },
+      {
+        "competence": "PipeDrive",
+        "freq_profil": 0.0014044943820224719,
+        "freq_global": 0.0003307972213033411,
+        "lift": 4.245786516853932
+      },
+      {
+        "competence": "Zoom, ",
+        "freq_profil": 0.0014044943820224719,
+        "freq_global": 0.0003307972213033411,
+        "lift": 4.245786516853932
+      },
+      {
+        "competence": "XGBoost",
+        "freq_profil": 0.0028089887640449437,
+        "freq_global": 0.0006615944426066821,
+        "lift": 4.245786516853932
+      },
+      {
+        "competence": "Hibernates",
+        "freq_profil": 0.0014044943820224719,
+        "freq_global": 0.0003307972213033411,
+        "lift": 4.245786516853932
+      },
+      {
+        "competence": "Jenkins, Git, GitLab, Docker",
+        "freq_profil": 0.0014044943820224719,
+        "freq_global": 0.0003307972213033411,
+        "lift": 4.245786516853932
+      },
+      {
+        "competence": "Logiciels comptables",
+        "freq_profil": 0.008426966292134831,
+        "freq_global": 0.002315580549123387,
+        "lift": 3.6392455858747996
+      },
+      {
+        "competence": "Programmation en Python",
+        "freq_profil": 0.0028089887640449437,
+        "freq_global": 0.0009923916639100231,
+        "lift": 2.8305243445692883
+      },
+      {
+        "competence": "Cobol",
+        "freq_profil": 0.01544943820224719,
+        "freq_global": 0.005954349983460139,
+        "lift": 2.594647315855181
+      },
+      {
+        "competence": "B to B",
+        "freq_profil": 0.004213483146067416,
+        "freq_global": 0.0016539861065167053,
+        "lift": 2.5474719101123595
+      },
+      {
+        "competence": "SIG",
+        "freq_profil": 0.021067415730337078,
+        "freq_global": 0.008269930532583526,
+        "lift": 2.5474719101123595
+      },
+      {
+        "competence": "JPA",
+        "freq_profil": 0.0056179775280898875,
+        "freq_global": 0.0026463777704267286,
+        "lift": 2.122893258426966
+      },
+      {
+        "competence": "Slack",
+        "freq_profil": 0.0014044943820224719,
+        "freq_global": 0.0006615944426066821,
+        "lift": 2.122893258426966
+      },
+      {
+        "competence": "LightGBM",
+        "freq_profil": 0.0014044943820224719,
+        "freq_global": 0.0006615944426066821,
+        "lift": 2.122893258426966
+      }
+    ],
+    "Data Analysis": [
+      {
+        "competence": "Datalake",
+        "freq_profil": 0.20689655172413793,
+        "freq_global": 0.02877935825339067,
+        "lift": 7.1890606420927465
+      },
+      {
+        "competence": "Kafka",
+        "freq_profil": 0.2019704433497537,
+        "freq_global": 0.029771749917300694,
+        "lift": 6.783962780514505
+      },
+      {
+        "competence": "Hadoop",
+        "freq_profil": 0.21182266009852216,
+        "freq_global": 0.03341051935163745,
+        "lift": 6.339999024532995
+      },
+      {
+        "competence": "Scala",
+        "freq_profil": 0.27586206896551724,
+        "freq_global": 0.04531921931855772,
+        "lift": 6.087087842939844
+      },
+      {
+        "competence": "Databricks",
+        "freq_profil": 0.1724137931034483,
+        "freq_global": 0.029771749917300694,
+        "lift": 5.791187739463602
+      },
+      {
+        "competence": "Spark",
+        "freq_profil": 0.3793103448275862,
+        "freq_global": 0.07112140258021833,
+        "lift": 5.33327987169206
+      },
+      {
+        "competence": "go",
+        "freq_profil": 0.029556650246305417,
+        "freq_global": 0.005954349983460139,
+        "lift": 4.963875205254515
+      },
+      {
+        "competence": "Kubeflow",
+        "freq_profil": 0.009852216748768473,
+        "freq_global": 0.002315580549123387,
+        "lift": 4.254750175932442
+      },
+      {
+        "competence": "Big Data",
+        "freq_profil": 0.3645320197044335,
+        "freq_global": 0.08600727753886868,
+        "lift": 4.238385752178855
+      },
+      {
+        "competence": "Optimisation de performances",
+        "freq_profil": 0.0049261083743842365,
+        "freq_global": 0.0013231888852133643,
+        "lift": 3.7229064039408866
+      },
+      {
+        "competence": "MDM",
+        "freq_profil": 0.04433497536945813,
+        "freq_global": 0.01223949718822362,
+        "lift": 3.6222873119424843
+      },
+      {
+        "competence": "CIEL",
+        "freq_profil": 0.014778325123152709,
+        "freq_global": 0.004300363876943433,
+        "lift": 3.436528988253126
+      },
+      {
+        "competence": "Cassandra",
+        "freq_profil": 0.0049261083743842365,
+        "freq_global": 0.0016539861065167053,
+        "lift": 2.9783251231527093
+      },
+      {
+        "competence": "Data engineer",
+        "freq_profil": 0.21674876847290642,
+        "freq_global": 0.07343698312934172,
+        "lift": 2.9514933652864688
+      },
+      {
+        "competence": "CI/CD",
+        "freq_profil": 0.33004926108374383,
+        "freq_global": 0.1161098246774727,
+        "lift": 2.842561014974808
+      }
+    ],
+    "MLOps": [
+      {
+        "competence": "Redis",
+        "freq_profil": 0.00819672131147541,
+        "freq_global": 0.002315580549123387,
+        "lift": 3.5398126463700237
+      },
+      {
+        "competence": "Datastage PX",
+        "freq_profil": 0.00117096018735363,
+        "freq_global": 0.0003307972213033411,
+        "lift": 3.5398126463700232
+      },
+      {
+        "competence": "Datastage Server",
+        "freq_profil": 0.00117096018735363,
+        "freq_global": 0.0003307972213033411,
+        "lift": 3.5398126463700232
+      },
+      {
+        "competence": "PLSQL",
+        "freq_profil": 0.00234192037470726,
+        "freq_global": 0.0006615944426066821,
+        "lift": 3.5398126463700232
+      },
+      {
+        "competence": "PowerAMC",
+        "freq_profil": 0.00117096018735363,
+        "freq_global": 0.0003307972213033411,
+        "lift": 3.5398126463700232
+      },
+      {
+        "competence": "UX design",
+        "freq_profil": 0.00234192037470726,
+        "freq_global": 0.0006615944426066821,
+        "lift": 3.5398126463700232
+      },
+      {
+        "competence": "Architectures de calcul HPC, de l'anglais",
+        "freq_profil": 0.00117096018735363,
+        "freq_global": 0.0003307972213033411,
+        "lift": 3.5398126463700232
+      },
+      {
+        "competence": "Connaissances en Robotisation",
+        "freq_profil": 0.00234192037470726,
+        "freq_global": 0.0006615944426066821,
+        "lift": 3.5398126463700232
+      },
+      {
+        "competence": "Ingenieur AUTOMATICIEN",
+        "freq_profil": 0.00234192037470726,
+        "freq_global": 0.0006615944426066821,
+        "lift": 3.5398126463700232
+      },
+      {
+        "competence": "Typing",
+        "freq_profil": 0.00117096018735363,
+        "freq_global": 0.0003307972213033411,
+        "lift": 3.5398126463700232
+      },
+      {
+        "competence": "Programmation logicielle",
+        "freq_profil": 0.00117096018735363,
+        "freq_global": 0.0003307972213033411,
+        "lift": 3.5398126463700232
+      },
+      {
+        "competence": "interfaces visuelles ",
+        "freq_profil": 0.00117096018735363,
+        "freq_global": 0.0003307972213033411,
+        "lift": 3.5398126463700232
+      },
+      {
+        "competence": "Architecture web",
+        "freq_profil": 0.00117096018735363,
+        "freq_global": 0.0003307972213033411,
+        "lift": 3.5398126463700232
+      },
+      {
+        "competence": "Analyse et Formalisation",
+        "freq_profil": 0.00117096018735363,
+        "freq_global": 0.0003307972213033411,
+        "lift": 3.5398126463700232
+      },
+      {
+        "competence": "Prospection commerciale",
+        "freq_profil": 0.00117096018735363,
+        "freq_global": 0.0003307972213033411,
+        "lift": 3.5398126463700232
+      }
+    ]
+  },
+  "statistics": {
+    "total_competences": 770,
+    "selected_k": 100,
+    "mean_chi2": NaN,
+    "max_chi2": NaN
+  }
+}

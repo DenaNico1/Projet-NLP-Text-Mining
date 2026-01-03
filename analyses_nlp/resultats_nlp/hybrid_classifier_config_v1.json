@@ -1,0 +1,284 @@
+{
+  "regex_profils": {
+    "Data Scientist": [
+      "data scientist",
+      "scientifique.*donn[ée]es",
+      "scientist.*data",
+      "datascientist"
+    ],
+    "ML Engineer": [
+      "machine learning engineer",
+      "ml engineer",
+      "ing[ée]nieur.*machine learning",
+      "ing[ée]nieur ml",
+      "machine learning.*ing[ée]nieur"
+    ],
+    "Data Engineer": [
+      "data engineer",
+      "ing[ée]nieur.*donn[ée]es",
+      "ing[ée]nieur data",
+      "engineer.*data"
+    ],
+    "MLOps Engineer": [
+      "mlops",
+      "ml.*ops",
+      "machine learning.*ops",
+      "devops.*ml"
+    ],
+    "Deep Learning Engineer": [
+      "deep learning",
+      "ing[ée]nieur.*deep learning",
+      "dl engineer"
+    ],
+    "NLP Engineer": [
+      "nlp engineer",
+      "natural language",
+      "traitement.*langage",
+      "ing[ée]nieur.*nlp",
+      "nlp.*ing[ée]nieur"
+    ],
+    "Computer Vision Engineer": [
+      "computer vision",
+      "vision.*ordinateur",
+      "cv engineer",
+      "image.*processing"
+    ],
+    "Data Analyst": [
+      "data analyst",
+      "analyste.*donn[ée]es",
+      "analyst.*data",
+      "analyste data"
+    ],
+    "BI Analyst": [
+      "business intelligence",
+      "bi analyst",
+      "analyste.*bi\\b",
+      "analyste.*d[ée]cisionnel"
+    ],
+    "Analytics Engineer": [
+      "analytics engineer",
+      "ing[ée]nieur.*analytics",
+      "analytics.*ing[ée]nieur"
+    ],
+    "Big Data Engineer": [
+      "big data",
+      "ing[ée]nieur.*big data",
+      "hadoop.*engineer",
+      "spark.*engineer"
+    ],
+    "Research Scientist": [
+      "research scientist",
+      "chercheur",
+      "scientist.*research",
+      "ai.*researcher"
+    ],
+    "Quantitative Analyst": [
+      "quantitative analyst",
+      "quant\\b",
+      "analyste.*quantitatif"
+    ],
+    "Data Architect": [
+      "data architect",
+      "architecte.*donn[ée]es",
+      "architecte data"
+    ]
+  },
+  "signatures_competences": {
+    "Data Scientist": {
+      "must_have": [
+        "python",
+        "machine learning",
+        "scikit-learn",
+        "pandas"
+      ],
+      "strong_indicators": [
+        "jupyter",
+        "statistiques",
+        "numpy",
+        "matplotlib",
+        "r",
+        "deep learning"
+      ],
+      "threshold": 0.3
+    },
+    "ML Engineer": {
+      "must_have": [
+        "python",
+        "machine learning",
+        "tensorflow",
+        "pytorch",
+        "scikit-learn"
+      ],
+      "strong_indicators": [
+        "keras",
+        "xgboost",
+        "lightgbm",
+        "feature engineering",
+        "model deployment"
+      ],
+      "threshold": 0.35
+    },
+    "MLOps Engineer": {
+      "must_have": [
+        "kubernetes",
+        "docker",
+        "mlflow",
+        "ci/cd"
+      ],
+      "strong_indicators": [
+        "kubeflow",
+        "airflow",
+        "terraform",
+        "jenkins",
+        "gitlab",
+        "aws",
+        "azure"
+      ],
+      "threshold": 0.4
+    },
+    "Deep Learning Engineer": {
+      "must_have": [
+        "pytorch",
+        "tensorflow",
+        "deep learning",
+        "neural networks"
+      ],
+      "strong_indicators": [
+        "cnn",
+        "rnn",
+        "lstm",
+        "gpt",
+        "transformers",
+        "cuda",
+        "gpu"
+      ],
+      "threshold": 0.4
+    },
+    "NLP Engineer": {
+      "must_have": [
+        "nlp",
+        "transformers",
+        "bert",
+        "spacy",
+        "hugging face"
+      ],
+      "strong_indicators": [
+        "langchain",
+        "openai",
+        "gpt",
+        "llm",
+        "embedding",
+        "sentiment analysis"
+      ],
+      "threshold": 0.35
+    },
+    "Computer Vision Engineer": {
+      "must_have": [
+        "computer vision",
+        "opencv",
+        "yolo",
+        "cnn"
+      ],
+      "strong_indicators": [
+        "segmentation",
+        "detection",
+        "image processing",
+        "pytorch",
+        "tensorflow"
+      ],
+      "threshold": 0.4
+    },
+    "Data Engineer": {
+      "must_have": [
+        "sql",
+        "python",
+        "etl",
+        "data pipeline"
+      ],
+      "strong_indicators": [
+        "spark",
+        "airflow",
+        "kafka",
+        "databricks",
+        "aws",
+        "snowflake",
+        "dbt"
+      ],
+      "threshold": 0.3
+    },
+    "Big Data Engineer": {
+      "must_have": [
+        "spark",
+        "hadoop",
+        "kafka",
+        "big data"
+      ],
+      "strong_indicators": [
+        "hive",
+        "hbase",
+        "presto",
+        "flink",
+        "scala",
+        "mapreduce"
+      ],
+      "threshold": 0.4
+    },
+    "Data Analyst": {
+      "must_have": [
+        "sql",
+        "excel",
+        "data analysis"
+      ],
+      "strong_indicators": [
+        "python",
+        "pandas",
+        "tableau",
+        "power bi",
+        "statistics"
+      ],
+      "threshold": 0.25
+    },
+    "BI Analyst": {
+      "must_have": [
+        "power bi",
+        "tableau",
+        "sql",
+        "qlik"
+      ],
+      "strong_indicators": [
+        "dax",
+        "looker",
+        "metabase",
+        "reporting",
+        "dashboard"
+      ],
+      "threshold": 0.35
+    },
+    "Analytics Engineer": {
+      "must_have": [
+        "dbt",
+        "sql",
+        "data modeling"
+      ],
+      "strong_indicators": [
+        "looker",
+        "airflow",
+        "python",
+        "snowflake",
+        "bigquery",
+        "git"
+      ],
+      "threshold": 0.4
+    }
+  },
+  "topic_to_profil": {
+    "0": "Data Engineering",
+    "1": "ML Engineering",
+    "2": "Business Intelligence",
+    "3": "Deep Learning",
+    "4": "Data Analysis",
+    "5": "MLOps"
+  },
+  "version": "1.0",
+  "date": "2024-12-27"
+}

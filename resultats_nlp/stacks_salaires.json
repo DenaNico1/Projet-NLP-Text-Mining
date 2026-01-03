@@ -1,0 +1,238 @@
+{
+  "salaires_par_competence": {
+    "SQL": {
+      "count": 17.0,
+      "median": 499500.0,
+      "mean": 351402.1176470588,
+      "q25": 36000.0,
+      "q75": 582000.0
+    },
+    "CI/CD": {
+      "count": 11.0,
+      "median": 480000.0,
+      "mean": 334017.8181818182,
+      "q25": 38700.0,
+      "q75": 612000.0
+    },
+    "JAVA": {
+      "count": 10.0,
+      "median": 480000.0,
+      "mean": 352370.0,
+      "q25": 38550.0,
+      "q75": 585000.0
+    },
+    "Java": {
+      "count": 10.0,
+      "median": 480000.0,
+      "mean": 352370.0,
+      "q25": 38550.0,
+      "q75": 585000.0
+    },
+    "java": {
+      "count": 10.0,
+      "median": 480000.0,
+      "mean": 352370.0,
+      "q25": 38550.0,
+      "q75": 585000.0
+    },
+    "Power BI": {
+      "count": 10.0,
+      "median": 241200.0,
+      "mean": 283276.404,
+      "q25": 32423.010000000002,
+      "q75": 541500.0
+    },
+    "API": {
+      "count": 10.0,
+      "median": 180000.0,
+      "mean": 279376.2,
+      "q25": 38550.0,
+      "q75": 556500.0
+    },
+    "rigueur": {
+      "count": 48.0,
+      "median": 87360.0,
+      "mean": 212799.79624999998,
+      "q25": 32025.0,
+      "q75": 480000.0
+    },
+    "Agile": {
+      "count": 34.0,
+      "median": 87360.0,
+      "mean": 223918.9411764706,
+      "q25": 28098.0,
+      "q75": 510000.0
+    },
+    "Machine Learning": {
+      "count": 20.0,
+      "median": 87360.0,
+      "mean": 144813.116,
+      "q25": 35696.58,
+      "q75": 87360.0
+    },
+    "PyTorch": {
+      "count": 20.0,
+      "median": 87360.0,
+      "mean": 100170.2,
+      "q25": 33867.0,
+      "q75": 87360.0
+    },
+    "TensorFlow": {
+      "count": 18.0,
+      "median": 87360.0,
+      "mean": 106985.88888888889,
+      "q25": 29601.0,
+      "q75": 87360.0
+    },
+    "Git": {
+      "count": 16.0,
+      "median": 87360.0,
+      "mean": 234165.0,
+      "q25": 87360.0,
+      "q75": 517500.0
+    },
+    "Scikit-learn": {
+      "count": 14.0,
+      "median": 87360.0,
+      "mean": 133556.0,
+      "q25": 87360.0,
+      "q75": 87360.0
+    },
+    "NLP": {
+      "count": 12.0,
+      "median": 87360.0,
+      "mean": 111991.5,
+      "q25": 87360.0,
+      "q75": 87360.0
+    },
+    "Informatique": {
+      "count": 57.0,
+      "median": 66000.0,
+      "mean": 198080.3596491228,
+      "q25": 26472.0,
+      "q75": 462000.0
+    },
+    "Python": {
+      "count": 36.0,
+      "median": 38400.0,
+      "mean": 129829.16777777778,
+      "q25": 14850.0,
+      "q75": 87360.0
+    },
+    "autonomie": {
+      "count": 27.0,
+      "median": 37662.0,
+      "mean": 188753.7037037037,
+      "q25": 27186.0,
+      "q75": 417000.0
+    },
+    "R": {
+      "count": 13.0,
+      "median": 34692.0,
+      "mean": 220413.53846153847,
+      "q25": 27468.0,
+      "q75": 426000.0
+    },
+    "Excel": {
+      "count": 13.0,
+      "median": 32400.0,
+      "mean": 112197.84615384616,
+      "q25": 28440.0,
+      "q75": 44028.0
+    },
+    "Intelligence artificielle": {
+      "count": 27.0,
+      "median": 10920.0,
+      "mean": 37324.16148148148,
+      "q25": 9000.0,
+      "q75": 32149.02
+    },
+    "Anglais technique": {
+      "count": 11.0,
+      "median": 9000.0,
+      "mean": 66514.36363636363,
+      "q25": 9000.0,
+      "q75": 23331.0
+    }
+  },
+  "stacks_techniques": {
+    "Data Analyst": {
+      "count": 9.0,
+      "salary_median": 426000.0,
+      "salary_mean": 340396.0,
+      "competences": [
+        "Python",
+        "SQL",
+        "Pandas",
+        "Excel"
+      ]
+    },
+    "ML Engineer": {
+      "count": 18.0,
+      "salary_median": 87360.0,
+      "salary_mean": 141100.22222222222,
+      "competences": [
+        "Python",
+        "TensorFlow",
+        "Docker",
+        "Kubernetes"
+      ]
+    },
+    "Data Engineer": {
+      "count": 7.0,
+      "salary_median": 426000.0,
+      "salary_mean": 365298.85714285716,
+      "competences": [
+        "Python",
+        "Spark",
+        "Airflow",
+        "SQL"
+      ]
+    },
+    "Deep Learning": {
+      "count": 19.0,
+      "salary_median": 87360.0,
+      "salary_mean": 103460.1052631579,
+      "competences": [
+        "PyTorch",
+        "TensorFlow",
+        "Deep Learning"
+      ]
+    },
+    "NLP Engineer": {
+      "count": 12.0,
+      "salary_median": 87360.0,
+      "salary_mean": 111991.5,
+      "competences": [
+        "NLP",
+        "Transformers",
+        "Python"
+      ]
+    }
+  },
+  "salaires_par_experience": {
+    "Débutant": {
+      "count": 34.0,
+      "median": 31650.0
+    },
+    "Expérimenté": {
+      "count": 74.0,
+      "median": 41499.0
+    }
+  },
+  "salaires_par_contrat": {
+    "CDI": {
+      "count": 92.0,
+      "median": 87360.0
+    },
+    "CDD": {
+      "count": 24.0,
+      "median": 29910.0
+    },
+    "Stage": {
+      "count": 11.0,
+      "median": 9000.0
+    }
+  },
+  "salaires_par_region": {}
+}

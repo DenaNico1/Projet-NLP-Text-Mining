@@ -1,0 +1,44 @@
+{
+  "total": 3023,
+  "par_methode": {
+    "lda_fallback": 1992,
+    "titre": 873,
+    "competences": 158
+  },
+  "par_profil": {
+    "MLOps": 791,
+    "Deep Learning": 511,
+    "Data Engineering": 444,
+    "Data Engineer": 364,
+    "Data Analyst": 302,
+    "Data Scientist": 181,
+    "Data Analysis": 91,
+    "Business Intelligence": 91,
+    "ML Engineering": 64,
+    "Big Data Engineer": 57,
+    "BI Analyst": 30,
+    "Analytics Engineer": 28,
+    "Data Architect": 26,
+    "ML Engineer": 14,
+    "MLOps Engineer": 9
+  },
+  "par_confiance": {
+    "faible": 1992,
+    "haute": 918,
+    "moyenne": 113
+  },
+  "emerging": {
+    "total_fallback": 1992,
+    "pct_fallback": 65.89480648362553,
+    "emerging_titles": {
+      "Data manager (H/F)": 41,
+      "Architecte logiciel (H/F)": 19,
+      "Développeur / Développeuse d'application h/f": 17,
+      "Ingénieur / Ingénieure développement logiciel informatique (H/F)": 16,
+      "Chef de projet logiciel (H/F)": 14,
+      "Assistant Comptable / Data Controller H/F": 11,
+      "Chief Data Officer (H/F)": 11,
+      "Chef de projet data (H/F)": 10
+    }
+  }
+}

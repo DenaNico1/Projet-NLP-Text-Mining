@@ -1,0 +1,33 @@
+
+NETTOYAGE ENTREPÔT v2 - CASCADE AMÉLIORÉ
+Date: 2025-12-30 15:33:09
+
+AMÉLIORATIONS v2:
+- Architecte logiciel (sans data) supprimés
+- Chef projet logiciel (sans data) supprimés
+- Concepteur/Responsable logiciel supprimés
+
+RÉSULTATS:
+---------
+
+OFFRES:
+  AVANT:      3,267
+  APRÈS:      3,111
+  Supprimées: 156 (4.8%)
+
+COMPÉTENCES:
+  AVANT:      1,013
+  APRÈS:      986
+  Supprimées: 27 (2.7%)
+
+BACKUPS:
+--------
+Tables:
+  - fact_offres_backup_v2 (3,267 offres)
+  - fact_competences_backup_v2 (1,013 compétences)
+
+Pour restaurer:
+DROP TABLE fact_offres;
+CREATE TABLE fact_offres AS SELECT * FROM fact_offres_backup_v2;
+DROP TABLE fact_competences;
+CREATE TABLE fact_competences AS SELECT * FROM fact_competences_backup_v2;

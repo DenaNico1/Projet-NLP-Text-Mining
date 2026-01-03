@@ -1,0 +1,23 @@
+# .gitignore
+
+# Secrets
+.env
+*.duckdb
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pkl
+.Python
+env/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
