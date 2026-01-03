@@ -1,8 +1,7 @@
 """
 PREPROCESSING MASTER - Unique Point de Traitement
 Fait TOUT le preprocessing et génère data_clean.pkl avec toutes les colonnes nécessaires
-
-VERSION FINALE :
+Fonctionnalités principales:
 - Stopwords FR+EN complets
 - Lemmatisation activée
 - Nettoyage HTML complet
@@ -29,20 +28,20 @@ def main():
     Pipeline de preprocessing MASTER
     """
     print("="*70)
-    print("🔧 PREPROCESSING MASTER - POINT UNIQUE DE TRAITEMENT")
+    print(" PREPROCESSING MASTER - POINT UNIQUE DE TRAITEMENT")
     print("="*70)
     
     # ==========================================
     # 1. CHARGEMENT DES DONNÉES
     # ==========================================
-    print("\n📄 Chargement des données...")
+    print("\n Chargement des données...")
     
     loader = DataLoader()
     df_offres = loader.load_all_offers()
     df_competences = loader.load_competences()
     loader.disconnect()
     
-    print(f"\n📊 Statistiques initiales:")
+    print(f"\n Statistiques initiales:")
     print(f"   Total offres: {len(df_offres)}")
     print(f"   Avec description: {df_offres['description'].notna().sum()}")
     print(f"   Compétences structurées: {len(df_competences)}")
@@ -50,7 +49,7 @@ def main():
     # ==========================================
     # 2. NETTOYAGE ET ENRICHISSEMENT
     # ==========================================
-    print("\n🧹 Nettoyage des données...")
+    print("\n Nettoyage des données...")
     
     # Calcul salaire annuel moyen
     df_offres['salary_annual'] = df_offres.apply(compute_salary_annual, axis=1)
@@ -63,30 +62,30 @@ def main():
     # ==========================================
     # 3. PREPROCESSING NLP COMPLET
     # ==========================================
-    print("\n🔤 Preprocessing NLP complet...")
+    print("\n Preprocessing NLP complet...")
     
     preprocessor = TextPreprocessor(language='french')
     
     # 3.1 Nettoyage HTML
-    print("   ✅ Nettoyage HTML (entités &nbsp;, balises)...")
+    print("    Nettoyage HTML (entités &nbsp;, balises)...")
     df_clean['description_clean'] = df_clean['description'].apply(
         preprocessor.clean_text
     )
     
     # 3.2 Tokenisation + Stopwords + Lemmatisation
-    print("   ✅ Tokenisation + Stopwords FR+EN + Lemmatisation...")
+    print("    Tokenisation + Stopwords FR+EN + Lemmatisation...")
     df_clean['tokens'] = df_clean['description_clean'].apply(
         lambda x: preprocessor.preprocess(x, lemmatize=True)
     )
     
     # 3.3 Texte pour sklearn (rejoint tokens pour TF-IDF/LDA)
-    print("   ✅ Génération text_for_sklearn (tokens rejoints)...")
+    print("    Génération text_for_sklearn (tokens rejoints)...")
     df_clean['text_for_sklearn'] = df_clean['tokens'].apply(lambda x: ' '.join(x))
     
     # 3.4 Nombre de tokens
     df_clean['num_tokens'] = df_clean['tokens'].apply(len)
     
-    print(f"\n📊 Statistiques texte:")
+    print(f"\n Statistiques texte:")
     print(f"   Tokens moyen par offre: {df_clean['num_tokens'].mean():.0f}")
     print(f"   Tokens médian: {df_clean['num_tokens'].median():.0f}")
     print(f"   Tokens min/max: {df_clean['num_tokens'].min()}/{df_clean['num_tokens'].max()}")
@@ -94,7 +93,7 @@ def main():
     # ==========================================
     # 4. VÉRIFICATIONS QUALITÉ
     # ==========================================
-    print("\n🔍 Vérifications qualité preprocessing:")
+    print("\n Vérifications qualité preprocessing:")
     
     sample_tokens = df_clean['tokens'].iloc[0]
     print(f"   Exemple tokens (1ère offre): {sample_tokens[:15]}")
@@ -105,24 +104,24 @@ def main():
     stop_en = set(stopwords.words('english'))
     
     stopwords_found = [t for t in sample_tokens if t in stop_fr or t in stop_en]
-    print(f"   ✅ Stopwords FR+EN filtrés: {len(stopwords_found) == 0}")
+    print(f"    Stopwords FR+EN filtrés: {len(stopwords_found) == 0}")
     if stopwords_found:
-        print(f"      ⚠️  Trouvés: {stopwords_found[:10]}")
+        print(f"   Trouvés: {stopwords_found[:10]}")
     
     # Vérifier absence 'nbsp'
     nbsp_count = sum(1 for tokens in df_clean['tokens'] if 'nbsp' in tokens)
-    print(f"   ✅ 'nbsp' supprimé: {nbsp_count == 0} ({nbsp_count} offres contiennent 'nbsp')")
+    print(f"   'nbsp' supprimé: {nbsp_count == 0} ({nbsp_count} offres contiennent 'nbsp')")
     
     # Vérifier longueur mots >= 3
     short_tokens = [t for t in sample_tokens if len(t) < 3]
-    print(f"   ✅ Tokens >= 3 caractères: {len(short_tokens) == 0}")
+    print(f"   Tokens >= 3 caractères: {len(short_tokens) == 0}")
     if short_tokens:
-        print(f"      ⚠️  Tokens courts trouvés: {short_tokens}")
+        print(f"        Tokens courts trouvés: {short_tokens}")
     
     # ==========================================
     # 5. DICTIONNAIRE COMPÉTENCES
     # ==========================================
-    print("\n🎓 Création dictionnaire compétences...")
+    print("\n Création dictionnaire compétences...")
     
     # Compétences France Travail
     unique_skills = df_competences['skill_label'].unique()
@@ -167,7 +166,7 @@ def main():
     # ==========================================
     # 6. EXTRACTION COMPÉTENCES
     # ==========================================
-    print("\n🔍 Extraction compétences par pattern matching...")
+    print("\n Extraction compétences par pattern matching...")
     
     df_clean['competences_found'] = df_clean['description'].apply(
         lambda x: extract_competences_from_text(x, all_skills)
@@ -183,7 +182,7 @@ def main():
     all_comps = [comp for comps in df_clean['competences_found'] for comp in comps]
     comp_counter = Counter(all_comps)
     
-    print(f"\n🏆 Top 10 compétences extraites:")
+    print(f"\n Top 10 compétences extraites:")
     for comp, count in comp_counter.most_common(10):
         pct = count / len(df_clean) * 100
         print(f"   {comp:<30s}: {count:4d} ({pct:5.1f}%)")
@@ -191,7 +190,7 @@ def main():
     # ==========================================
     # 7. STATISTIQUES PAR SOURCE
     # ==========================================
-    print("\n📊 Statistiques par source:")
+    print("\n Statistiques par source:")
     
     for source in df_clean['source_name'].unique():
         df_source = df_clean[df_clean['source_name'] == source]
@@ -205,7 +204,7 @@ def main():
     # ==========================================
     # 8. STATISTIQUES PAR RÉGION
     # ==========================================
-    print("\n🗺️  Top 10 régions:")
+    print("\n  Top 10 régions:")
     
     region_stats = df_clean.groupby('region').agg({
         'offre_id': 'count',
@@ -221,7 +220,7 @@ def main():
     # ==========================================
     # 9. SAUVEGARDE DATA_CLEAN.PKL (COMPLET)
     # ==========================================
-    print("\n💾 Sauvegarde data_clean.pkl (COMPLET)...")
+    print("\n Sauvegarde data_clean.pkl (COMPLET)...")
     
     saver = ResultSaver()
     
@@ -248,7 +247,7 @@ def main():
     
     df_final = df_clean[colonnes_finales].copy()
     
-    print(f"\n📋 Colonnes dans data_clean.pkl:")
+    print(f"\n Colonnes dans data_clean.pkl:")
     for col in colonnes_finales:
         print(f"   - {col}")
     
@@ -268,7 +267,7 @@ def main():
     # ==========================================
     # 10. STATISTIQUES GLOBALES
     # ==========================================
-    print("\n📊 Génération statistiques globales...")
+    print("\n Génération statistiques globales...")
     
     stats = {
         'total_offres': len(df_final),
@@ -314,35 +313,35 @@ def main():
     # RÉSUMÉ FINAL
     # ==========================================
     print("\n" + "="*70)
-    print("✅ PREPROCESSING MASTER TERMINÉ !")
+    print(" PREPROCESSING MASTER TERMINÉ !")
     print("="*70)
     
-    print(f"\n📁 Fichier principal créé:")
-    print(f"   📦 data_clean.pkl ({len(df_final)} offres, {len(colonnes_finales)} colonnes)")
+    print(f"\n Fichier principal créé:")
+    print(f"    data_clean.pkl ({len(df_final)} offres, {len(colonnes_finales)} colonnes)")
+
+    print(f"\n Colonnes disponibles pour analyses:")
+    print(f"    description          → Texte brut original")
+    print(f"    description_clean    → HTML nettoyé")
+    print(f"    tokens               → Liste tokens (clean, lemmatisés)")
+    print(f"    text_for_sklearn     → String pour TF-IDF/LDA")
+    print(f"    competences_found    → Compétences extraites")
     
-    print(f"\n📋 Colonnes disponibles pour analyses:")
-    print(f"   📝 description          → Texte brut original")
-    print(f"   🧹 description_clean    → HTML nettoyé")
-    print(f"   🔤 tokens               → Liste tokens (clean, lemmatisés)")
-    print(f"   📊 text_for_sklearn     → String pour TF-IDF/LDA")
-    print(f"   🎓 competences_found    → Compétences extraites")
+    print(f"\n Qualité du preprocessing:")
+    print(f"    Stopwords FR+EN filtrés ({len(preprocessor.stop_words)} stopwords)")
+    print(f"    Lemmatisation appliquée (technique/techniques → technique)")
+    print(f"    HTML nettoyé (&nbsp; supprimé)")
+    print(f"    Tokens >= 3 caractères")
+    print(f"    Compétences normalisées (lowercase)")
     
-    print(f"\n📊 Qualité du preprocessing:")
-    print(f"   ✅ Stopwords FR+EN filtrés ({len(preprocessor.stop_words)} stopwords)")
-    print(f"   ✅ Lemmatisation appliquée (technique/techniques → technique)")
-    print(f"   ✅ HTML nettoyé (&nbsp; supprimé)")
-    print(f"   ✅ Tokens >= 3 caractères")
-    print(f"   ✅ Compétences normalisées (lowercase)")
-    
-    print(f"\n📂 Fichiers additionnels:")
+    print(f"\n Fichiers additionnels:")
     print(f"   - data_clean.csv (export sans tokens)")
     print(f"   - dictionnaire_competences.json ({len(all_skills)} compétences)")
     print(f"   - competences_ft.pkl (compétences France Travail)")
     print(f"   - stats_globales.json (statistiques complètes)")
     
-    print(f"\n🚀 Prochaines étapes:")
-    print(f"   1. python 2_extraction_competences_v2.py")
-    print(f"   2. python 3_topic_modeling_v2.py")
+    print(f"\n Prochaines étapes:")
+    print(f"   1. python 2_extraction_competences.py")
+    print(f"   2. python 3_topic_modeling.py")
     
     return df_final, all_skills
 

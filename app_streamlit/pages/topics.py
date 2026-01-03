@@ -14,7 +14,7 @@ import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from config import MODELS_DIR, RESULTS_DIR
 
-@st.cache_data
+"""@st.cache_data
 def load_data():
     with open(MODELS_DIR / 'data_with_profiles.pkl', 'rb') as f:
         df = pickle.load(f)
@@ -28,7 +28,11 @@ def load_data():
     
     return df, topics
 
-df, topics = load_data()
+df, topics = load_data()"""
+
+# data
+from data_loaders import load_topics_data
+df, topics = load_topics_data()
 
 st.title(" Topics & Tendances")
 st.markdown("Thématiques découvertes par LDA")

@@ -28,7 +28,7 @@ from profils_definitions import get_all_profils
 
 def viz_distribution_profils(df, saver):
     """1. Distribution des profils (bar chart)"""
-    print("   📊 Distribution profils...")
+    print("    Distribution profils...")
     
     df_class = df[df['status'] == 'classified']
     profil_counts = df_class['profil_assigned'].value_counts()

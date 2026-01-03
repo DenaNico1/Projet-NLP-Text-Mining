@@ -1,5 +1,5 @@
 """
-2. Extraction de Compétences - VERSION SIMPLIFIÉE
+2. Extraction de Compétences -
 Lit data_clean.pkl (déjà preprocessé) et fait TF-IDF + visualisations
 
 CHANGEMENTS :
@@ -94,7 +94,7 @@ def create_wordcloud(text_data, title="Word Cloud"):
 def main():
     """Pipeline extraction compétences SIMPLIFIÉ"""
     print("="*70)
-    print("🎓 ÉTAPE 2 : EXTRACTION DE COMPÉTENCES (VERSION SIMPLIFIÉE)")
+    print("🎓 ÉTAPE 2 : EXTRACTION DE COMPÉTENCES ")
     print("="*70)
     
     saver = ResultSaver()
@@ -102,19 +102,19 @@ def main():
     # ==========================================
     # 1. CHARGEMENT DATA_CLEAN.PKL
     # ==========================================
-    print("\n📥 Chargement data_clean.pkl (déjà preprocessé)...")
+    print("\n Chargement data_clean.pkl (déjà preprocessé)...")
     
     with open('../resultats_nlp/models/data_clean.pkl', 'rb') as f:
         df = pickle.load(f)
     
-    print(f"   ✅ Offres: {len(df)}")
-    print(f"   ✅ Compétences déjà extraites: {df['num_competences'].sum():.0f}")
-    print(f"   ✅ Text for sklearn disponible: {len(df['text_for_sklearn'])}")
+    print(f"    Offres: {len(df)}")
+    print(f"    Compétences déjà extraites: {df['num_competences'].sum():.0f}")
+    print(f"    Text for sklearn disponible: {len(df['text_for_sklearn'])}")
     
     # ==========================================
     # 2. STATISTIQUES COMPÉTENCES
     # ==========================================
-    print("\n📊 Statistiques compétences...")
+    print("\n Statistiques compétences...")
     
     print(f"   Compétences moyennes par offre: {df['num_competences'].mean():.1f}")
     print(f"   Offres avec compétences: {(df['num_competences'] > 0).sum()}")
@@ -123,7 +123,7 @@ def main():
     all_comps = [comp for comps in df['competences_found'] for comp in comps]
     comp_counter = Counter(all_comps)
     
-    print(f"\n🏆 Top 20 compétences:")
+    print(f"\n Top 20 compétences:")
     for comp, count in comp_counter.most_common(20):
         pct = count / len(df) * 100
         print(f"   {comp:<30s}: {count:4d} ({pct:5.1f}%)")
@@ -131,34 +131,34 @@ def main():
     # ==========================================
     # 3. TF-IDF - TERMES IMPORTANTS
     # ==========================================
-    print("\n📊 Calcul TF-IDF (sur text_for_sklearn)...")
+    print("\n Calcul TF-IDF (sur text_for_sklearn)...")
     
     df_tfidf = compute_tfidf_keywords(df['text_for_sklearn'], top_k=100)
     
-    print(f"\n🔑 Top 20 termes TF-IDF:")
+    print(f"\n Top 20 termes TF-IDF:")
     print(df_tfidf.head(20).to_string(index=False))
     
     # ==========================================
     # 4. N-GRAMS
     # ==========================================
-    print("\n🔤 Extraction N-grams (sur text_for_sklearn)...")
+    print("\n Extraction N-grams (sur text_for_sklearn)...")
     
     # Bigrams
     bigrams = extract_ngrams(df['text_for_sklearn'], n=2, top_k=50)
-    print(f"\n📌 Top 20 Bi-grams:")
+    print(f"\n Top 20 Bi-grams:")
     for ngram, freq in bigrams[:20]:
         print(f"   {ngram:<40s}: {freq:4.0f}")
     
     # Trigrams
     trigrams = extract_ngrams(df['text_for_sklearn'], n=3, top_k=30)
-    print(f"\n📌 Top 15 Tri-grams:")
+    print(f"\n Top 15 Tri-grams:")
     for ngram, freq in trigrams[:15]:
         print(f"   {ngram:<50s}: {freq:4.0f}")
     
     # ==========================================
     # 5. COMPÉTENCES PAR SOURCE
     # ==========================================
-    print("\n🔎 Compétences par source:")
+    print("\n Compétences par source:")
     
     comp_by_source = {}
     for source in df['source_name'].unique():
@@ -174,7 +174,7 @@ def main():
     # ==========================================
     # 6. COMPÉTENCES PAR RÉGION
     # ==========================================
-    print("\n🗺️  Compétences par région (Top 5 régions):")
+    print("\n  Compétences par région (Top 5 régions):")
     
     top_regions = df['region'].value_counts().head(5).index
     
@@ -193,7 +193,7 @@ def main():
     # ==========================================
     # 7. CO-OCCURRENCE DE COMPÉTENCES
     # ==========================================
-    print("\n🔗 Co-occurrences de compétences...")
+    print("\n Co-occurrences de compétences...")
     
     top_20_comps = [c for c, _ in comp_counter.most_common(20)]
     cooc_matrix = np.zeros((len(top_20_comps), len(top_20_comps)))
@@ -225,7 +225,7 @@ def main():
     # ==========================================
     # 8. VISUALISATIONS
     # ==========================================
-    print("\n📊 Création des visualisations...")
+    print("\n Création des visualisations...")
     
     # Word Cloud
     print("   Word cloud compétences...")
@@ -301,7 +301,7 @@ def main():
     # ==========================================
     # 9. SAUVEGARDE RÉSULTATS
     # ==========================================
-    print("\n💾 Sauvegarde des résultats...")
+    print("\n Sauvegarde des résultats...")
     
     results = {
         'top_competences': [
@@ -339,14 +339,14 @@ def main():
     # Sauvegarder DataFrame avec analyses
     saver.save_pickle(df, 'data_with_analyses.pkl')
     
-    print("\n✅ EXTRACTION DE COMPÉTENCES TERMINÉE !")
-    print(f"\n📊 Résultats:")
+    print("\n EXTRACTION DE COMPÉTENCES TERMINÉE !")
+    print(f"\n Résultats:")
     print(f"   - {len(comp_counter)} compétences uniques")
     print(f"   - {len(bigrams)} bi-grams")
     print(f"   - {len(trigrams)} tri-grams")
     print(f"   - {len(pairs_sorted)} paires co-occurrences")
     
-    print(f"\n📁 Fichiers créés:")
+    print(f"\n Fichiers créés:")
     print(f"   - competences_extracted.json")
     print(f"   - data_with_analyses.pkl")
     print(f"   - tfidf_keywords.csv")

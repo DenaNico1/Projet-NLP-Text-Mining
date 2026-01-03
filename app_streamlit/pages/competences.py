@@ -13,14 +13,22 @@ import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from config import MODELS_DIR, RESULTS_DIR, VIZ_DIR
 
-@st.cache_data
-def load_data():
-    with open(MODELS_DIR / 'data_with_profiles.pkl', 'rb') as f:
-        df = pickle.load(f)
-    df_comp = pd.read_csv(RESULTS_DIR / 'competences_analysis.csv')
-    return df, df_comp
 
-df, df_comp = load_data()
+#from config_db import load_offres_with_nlp
+#from collections import Counter
+
+# Charger offres depuis PostgreSQL
+# df = load_offres_with_nlp()
+
+from utils import get_data
+df = get_data()
+
+# Charger analyse compétences depuis CSV (TEMPORAIRE)
+RESULTS_DIR = Path('../resultats_nlp')
+df_comp = pd.read_csv(RESULTS_DIR / 'competences_analysis.csv')
+
+# Renommer 'count' en 'nb_offres'
+df_comp = df_comp.rename(columns={'count': 'nb_offres'})
 
 st.title("Analyse des Compétences")
 st.markdown("Réseau sémantique, clusters et co-occurrences")
@@ -66,26 +74,26 @@ if comp_recherche:
     
     col1, col2, col3 = st.columns(3)
     with col1:
-        st.metric("Occurrences", f"{comp_info['count']}")
+        st.metric("Occurrences", f"{comp_info['nb_offres']}")
     with col2:
         st.metric("Cluster", f"{comp_info['cluster']}")
     with col3:
-        pct = comp_info['count'] / len(df) * 100
+        pct = comp_info['nb_offres'] / len(df) * 100
         st.metric("% Offres", f"{pct:.1f}%")
 
 # TOP COMPÉTENCES
 st.markdown("---")
 st.subheader("🏆 Top 20 Compétences")
 
-top_comp = df_comp.nlargest(20, 'count')
+top_comp = df_comp.nlargest(20, 'nb_offres')
 
 import plotly.express as px
 fig = px.bar(
     top_comp,
-    x='count',
+    x='nb_offres',
     y='competence',
     orientation='h',
-    color='count',
+    color='nb_offres',
     color_continuous_scale='Viridis'
 )
 

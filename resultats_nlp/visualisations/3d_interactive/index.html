@@ -1,0 +1,148 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualisations 3D Interactives - Projet NLP</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            background: white;
+            color: #333;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #667eea;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 15px;
+        }
+        h2 {
+            color: #764ba2;
+            margin-top: 30px;
+        }
+        .viz-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        .viz-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 25px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s;
+        }
+        .viz-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            border-color: #667eea;
+        }
+        .viz-card h3 {
+            color: #667eea;
+            margin-top: 0;
+        }
+        .viz-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .badge {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 3px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Visualisations 3D Interactives</h1>
+        <p style="color: #666; font-size: 18px;">
+            Explorez les données du projet NLP en 3D - Style TensorFlow Projector
+        </p>
+        
+        <h2>📊 Offres d'Emploi (1687 offres)</h2>
+        <div class="viz-grid">
+            <div class="viz-card">
+                <h3>Vue par Profil Métier <span class="badge">Principal</span></h3>
+                <p>Projection UMAP 3D des offres colorées par profil classifié. Taille = score de classification.</p>
+                <a href="projector_offres_profils_3d.html" class="btn">Ouvrir ➜</a>
+            </div>
+            
+            <div class="viz-card">
+                <h3>Vue Animée</h3>
+                <p>Rotation automatique 360° pour démonstration. Contrôles play/pause.</p>
+                <a href="projector_offres_animated.html" class="btn">Ouvrir ➜</a>
+            </div>
+            
+            <div class="viz-card">
+                <h3>Vue par Région</h3>
+                <p>Top 5 régions françaises. Identifie clusters géographiques.</p>
+                <a href="projector_offres_regions_3d.html" class="btn">Ouvrir ➜</a>
+            </div>
+            
+            <div class="viz-card">
+                <h3>Vue par Source</h3>
+                <p>France Travail vs Indeed. Compare qualité/similarité des sources.</p>
+                <a href="projector_offres_sources_3d.html" class="btn">Ouvrir ➜</a>
+            </div>
+        </div>
+
+        <h2>🔧 Compétences Techniques (114 compétences)</h2>
+        <div class="viz-grid">
+            <div class="viz-card">
+                <h3>Top 100 avec Labels <span class="badge">Recommandé</span></h3>
+                <p>Carte sémantique des 100 compétences les plus fréquentes. Labels visibles.</p>
+                <a href="projector_competences_labels_3d.html" class="btn">Ouvrir ➜</a>
+            </div>
+            
+            <div class="viz-card">
+                <h3>Vue Complète</h3>
+                <p>Toutes les compétences par cluster technologique. Hover pour détails.</p>
+                <a href="projector_competences_all_3d.html" class="btn">Ouvrir ➜</a>
+            </div>
+        </div>
+
+        <h2>💡 Instructions</h2>
+        <ul style="color: #666; line-height: 1.8;">
+            <li><strong>Rotation :</strong> Clic gauche + glisser</li>
+            <li><strong>Zoom :</strong> Molette souris ou pincement tactile</li>
+            <li><strong>Pan :</strong> Clic droit + glisser (ou Shift + clic gauche)</li>
+            <li><strong>Hover :</strong> Survoler points pour infos détaillées</li>
+            <li><strong>Légende :</strong> Cliquer sur catégories pour afficher/masquer</li>
+            <li><strong>Reset :</strong> Double-clic pour réinitialiser vue</li>
+        </ul>
+        
+        <div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #e9ecef; color: #999; text-align: center;">
+            Projet NLP Text Mining - Master SISE - Décembre 2025
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+{
+  "France Travail": {
+    "total_offres": 1571,
+    "total_classified": 908,
+    "profils": {
+      "Data Manager": 260,
+      "Data/IA - Non spécifié": 144,
+      "Data Engineer": 108,
+      "Data Consultant": 91,
+      "BI Analyst": 89,
+      "Data Analyst": 84,
+      "Data Scientist": 74,
+      "AI Engineer": 22,
+      "MLOps Engineer": 12,
+      "Data Architect": 8,
+      "AI Research Scientist": 8,
+      "ML Engineer": 4,
+      "Computer Vision Engineer": 3,
+      "Analytics Engineer": 1
+    },
+    "profil_dominant": "Data Manager"
+  },
+  "Indeed": {
+    "total_offres": 1432,
+    "total_classified": 779,
+    "profils": {
+      "Data/IA - Non spécifié": 231,
+      "Data Manager": 142,
+      "Data Scientist": 108,
+      "Data Analyst": 77,
+      "BI Analyst": 68,
+      "Data Engineer": 61,
+      "Data Consultant": 35,
+      "AI Research Scientist": 23,
+      "AI Engineer": 10,
+      "Data Architect": 7,
+      "Computer Vision Engineer": 7,
+      "ML Engineer": 4,
+      "MLOps Engineer": 3,
+      "Analytics Engineer": 3
+    },
+    "profil_dominant": "Data/IA - Non spécifié"
+  }
+}

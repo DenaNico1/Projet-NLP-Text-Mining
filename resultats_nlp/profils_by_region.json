@@ -1,0 +1,111 @@
+{
+  "Île-de-France": {
+    "total_offres": 352,
+    "total_classified": 181,
+    "profils": {
+      "Data/IA - Non spécifié": 53,
+      "Data Scientist": 31,
+      "Data Manager": 29,
+      "Data Engineer": 18,
+      "Data Analyst": 16
+    },
+    "profil_dominant": "Data/IA - Non spécifié"
+  },
+  "Auvergne-Rhône-Alpes": {
+    "total_offres": 121,
+    "total_classified": 62,
+    "profils": {
+      "Data/IA - Non spécifié": 21,
+      "Data Scientist": 10,
+      "Data Manager": 9,
+      "Data Analyst": 7,
+      "Data Engineer": 4
+    },
+    "profil_dominant": "Data/IA - Non spécifié"
+  },
+  "Nouvelle-Aquitaine": {
+    "total_offres": 82,
+    "total_classified": 48,
+    "profils": {
+      "Data/IA - Non spécifié": 11,
+      "Data Manager": 8,
+      "Data Engineer": 7,
+      "BI Analyst": 6,
+      "Data Analyst": 6
+    },
+    "profil_dominant": "Data/IA - Non spécifié"
+  },
+  "Occitanie": {
+    "total_offres": 55,
+    "total_classified": 23,
+    "profils": {
+      "Data/IA - Non spécifié": 8,
+      "BI Analyst": 6,
+      "Data Scientist": 3,
+      "Data Manager": 2,
+      "Data Engineer": 2
+    },
+    "profil_dominant": "Data/IA - Non spécifié"
+  },
+  "Provence-Alpes-Côte d'Azur": {
+    "total_offres": 50,
+    "total_classified": 29,
+    "profils": {
+      "Data/IA - Non spécifié": 8,
+      "Data Manager": 6,
+      "Data Engineer": 5,
+      "Data Scientist": 4,
+      "BI Analyst": 2
+    },
+    "profil_dominant": "Data/IA - Non spécifié"
+  },
+  "Pays de la Loire": {
+    "total_offres": 14,
+    "total_classified": 10,
+    "profils": {
+      "Data/IA - Non spécifié": 4,
+      "Data Manager": 3,
+      "Data Analyst": 1,
+      "AI Research Scientist": 1,
+      "Data Architect": 1
+    },
+    "profil_dominant": "Data/IA - Non spécifié"
+  },
+  "Grand Est": {
+    "total_offres": 6,
+    "total_classified": 3,
+    "profils": {
+      "Data Analyst": 2,
+      "BI Analyst": 1
+    },
+    "profil_dominant": "Data Analyst"
+  },
+  "Normandie": {
+    "total_offres": 5,
+    "total_classified": 3,
+    "profils": {
+      "Data Manager": 2,
+      "Data/IA - Non spécifié": 1
+    },
+    "profil_dominant": "Data Manager"
+  },
+  "Centre-Val de Loire": {
+    "total_offres": 4,
+    "total_classified": 3,
+    "profils": {
+      "Data/IA - Non spécifié": 1,
+      "Data Manager": 1,
+      "BI Analyst": 1
+    },
+    "profil_dominant": "Data/IA - Non spécifié"
+  },
+  "Bretagne": {
+    "total_offres": 2,
+    "total_classified": 2,
+    "profils": {
+      "Data Scientist": 1,
+      "AI Research Scientist": 1
+    },
+    "profil_dominant": "Data Scientist"
+  }
+}

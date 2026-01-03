@@ -1,0 +1,28 @@
+
+NETTOYAGE ENTREPÔT DUCKDB - CASCADE
+Date: 2025-12-30 14:35:24
+
+RÉSULTATS:
+---------
+
+OFFRES:
+  AVANT:      4,315
+  APRÈS:      3,267
+  Supprimées: 1,048 (24.3%)
+
+COMPÉTENCES:
+  AVANT:      1,577
+  APRÈS:      1,013
+  Supprimées: 564 (35.8%)
+
+BACKUPS:
+--------
+Tables:
+  - fact_offres_backup (4,315 offres)
+  - fact_competences_backup (1,577 compétences)
+
+Pour restaurer:
+DROP TABLE fact_offres;
+CREATE TABLE fact_offres AS SELECT * FROM fact_offres_backup;
+DROP TABLE fact_competences;
+CREATE TABLE fact_competences AS SELECT * FROM fact_competences_backup;

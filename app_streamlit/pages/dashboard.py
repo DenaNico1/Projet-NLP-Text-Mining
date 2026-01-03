@@ -18,20 +18,20 @@ from config import MODELS_DIR, RESULTS_DIR, COLORS
 # ============================================
 # CHARGEMENT DONNÉES
 # ============================================
+#from config_db import load_offres_with_nlp
+#df = load_offres_with_nlp()
 
-@st.cache_data
-def load_data():
-    with open(MODELS_DIR / 'data_with_profiles.pkl', 'rb') as f:
-        return pickle.load(f)
+from utils import get_data
+df = get_data()
 
-df = load_data()
+
 
 # Appliquer filtres globaux
 filters = st.session_state.get('filters', {})
 df_filtered = df.copy()
 
 if filters.get('source') and filters['source'] != 'Toutes':
-    df_filtered = df_filtered[df_filtered['source_name'] == filters['source']]
+    df_filtered = df_filtered[df_filtered['source'] == filters['source']]
 
 if filters.get('region') and filters['region'] != 'Toutes':
     df_filtered = df_filtered[df_filtered['region'] == filters['region']]
@@ -211,7 +211,7 @@ with col_left2:
 with col_right2:
     st.subheader("Distribution par Source")
     
-    source_counts = df_filtered['source_name'].value_counts()
+    source_counts = df_filtered['source'].value_counts()
     
     fig_sources = go.Figure(data=[go.Pie(
         labels=source_counts.index,

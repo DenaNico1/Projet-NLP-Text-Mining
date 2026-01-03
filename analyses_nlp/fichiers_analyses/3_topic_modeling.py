@@ -1,5 +1,5 @@
 """
-3. Topic Modeling - VERSION SIMPLIFIÉE
+3. Topic Modeling -
 Lit data_clean.pkl (déjà preprocessé) et fait LDA
 
 CHANGEMENTS :
@@ -74,7 +74,7 @@ def display_topics(model, feature_names, n_top_words=15):
 def main():
     """Pipeline Topic Modeling SIMPLIFIÉ"""
     print("="*70)
-    print("🧠 ÉTAPE 3 : TOPIC MODELING (LDA) - VERSION SIMPLIFIÉE")
+    print(" ÉTAPE 3 : TOPIC MODELING (LDA)")
     print("="*70)
     
     saver = ResultSaver()
@@ -82,19 +82,19 @@ def main():
     # ==========================================
     # 1. CHARGEMENT DATA_CLEAN.PKL
     # ==========================================
-    print("\n📥 Chargement data_clean.pkl (déjà preprocessé)...")
+    print("\n Chargement data_clean.pkl (déjà preprocessé)...")
     
     with open('../resultats_nlp/models/data_clean.pkl', 'rb') as f:
         df = pickle.load(f)
     
-    print(f"   ✅ Offres: {len(df)}")
-    print(f"   ✅ Text for sklearn disponible: {len(df['text_for_sklearn'])}")
-    print(f"   ✅ Tokens moyen: {df['num_tokens'].mean():.0f}")
+    print(f"    Offres: {len(df)}")
+    print(f"    Text for sklearn disponible: {len(df['text_for_sklearn'])}")
+    print(f"    Tokens moyen: {df['num_tokens'].mean():.0f}")
     
     # ==========================================
     # 2. TOPIC MODELING LDA
     # ==========================================
-    print("\n🔄 Entraînement modèle LDA...")
+    print("\n Entraînement modèle LDA...")
     print("   (Cela peut prendre quelques minutes...)")
     
     N_TOPICS = 8
@@ -105,18 +105,18 @@ def main():
         n_top_words=15
     )
     
-    print(f"\n✅ Modèle entraîné avec {N_TOPICS} topics")
+    print(f"\n Modèle entraîné avec {N_TOPICS} topics")
     
     # ==========================================
     # 3. AFFICHAGE TOPICS
     # ==========================================
-    print("\n📋 Topics découverts:")
+    print("\n Topics découverts:")
     topics_dict = display_topics(lda, feature_names, n_top_words=15)
     
     # ==========================================
     # 4. ATTRIBUTION TOPICS
     # ==========================================
-    print("\n📊 Attribution topics aux offres...")
+    print("\n Attribution topics aux offres...")
     
     df['topic_dominant'] = doc_topics.argmax(axis=1)
     df['topic_score'] = doc_topics.max(axis=1)
@@ -124,7 +124,7 @@ def main():
     # ==========================================
     # 5. STATISTIQUES PAR TOPIC
     # ==========================================
-    print("\n📊 Distribution des topics:")
+    print("\n Distribution des topics:")
     
     for topic_id in range(N_TOPICS):
         count = (df['topic_dominant'] == topic_id).sum()
@@ -147,7 +147,7 @@ def main():
     # ==========================================
     # 6. VISUALISATIONS
     # ==========================================
-    print("\n📊 Création visualisations...")
+    print("\n Création visualisations...")
     
     # Distribution des topics
     topic_counts = df['topic_dominant'].value_counts().sort_index()
@@ -162,7 +162,7 @@ def main():
     # ==========================================
     # 7. SAUVEGARDE
     # ==========================================
-    print("\n💾 Sauvegarde...")
+    print("\n Sauvegarde...")
     
     results = {
         'n_topics': N_TOPICS,
@@ -180,8 +180,8 @@ def main():
     saver.save_pickle(lda, 'lda_model.pkl')
     saver.save_pickle(df, 'data_with_topics.pkl')
     
-    print("\n✅ TOPIC MODELING TERMINÉ !")
-    print(f"\n📁 Fichiers créés:")
+    print("\n TOPIC MODELING TERMINÉ !")
+    print(f"\n Fichiers créés:")
     print(f"   - topics_lda.json")
     print(f"   - lda_model.pkl")
     print(f"   - data_with_topics.pkl")

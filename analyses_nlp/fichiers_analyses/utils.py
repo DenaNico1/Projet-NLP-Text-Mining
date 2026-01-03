@@ -2,7 +2,6 @@
 Fonctions Utilitaires - Analyses NLP
 Fonctions communes pour toutes les analyses
 
-VERSION CORRIGÉE :
 - Stopwords FR + EN
 - Lemmatisation activée par défaut
 - Nettoyage HTML complet (entités &nbsp;)
@@ -108,7 +107,7 @@ class DataLoader:
         
         df = self.conn.execute(query).df()
         
-        print(f"📊 Chargé: {len(df)} offres")
+        print(f" Chargé: {len(df)} offres")
         print(f"   - France Travail: {len(df[df['source_name'] == 'France Travail'])}")
         print(f"   - Indeed: {len(df[df['source_name'] == 'Indeed'])}")
         
@@ -139,7 +138,7 @@ class DataLoader:
         
         df = self.conn.execute(query).df()
         
-        print(f"🎓 Chargé: {len(df)} compétences")
+        print(f" Chargé: {len(df)} compétences")
         
         return df
 
@@ -164,11 +163,11 @@ class TextPreprocessor:
         """
         self.language = language
         
-        # ✅ CORRECTION 1: Stopwords FR + EN
+        # : Stopwords FR + EN
         self.stop_words = set(stopwords.words('french')).union(
                           set(stopwords.words('english')))
         
-        # ✅ CORRECTION 2: Stopwords custom étendus
+        # : Stopwords custom étendus
         custom_stops = {
             # Méta-mots offres emploi (FR)
             'emploi', 'offre', 'poste', 'recherche', 'recrute',
@@ -199,7 +198,7 @@ class TextPreprocessor:
         }
         self.stop_words.update(custom_stops)
         
-        print(f"📚 Stopwords chargés: {len(self.stop_words)} (FR+EN+custom)")
+        print(f" Stopwords chargés: {len(self.stop_words)} (FR+EN+custom)")
         
         self.lemmatizer = WordNetLemmatizer()
     
@@ -219,7 +218,7 @@ class TextPreprocessor:
         # Minuscules
         text = text.lower()
         
-        # ✅ CORRECTION 3: Supprimer entités HTML (&nbsp;, &amp;, etc.)
+        # Supprimer entités HTML (&nbsp;, &amp;, etc.)
         text = re.sub(r'&[a-z]+;', ' ', text)
         text = re.sub(r'&#\d+;', ' ', text)
         
@@ -265,9 +264,8 @@ class TextPreprocessor:
     def preprocess(self, text: str, lemmatize: bool = True) -> List[str]:
         """
         Pipeline complet de preprocessing
-        
-        ✅ CORRECTION 4: lemmatize=True par défaut
-        
+
+        : Normalisation casse pour matching
         Args:
             text: Texte brut
             lemmatize: Appliquer la lemmatisation (défaut: True)
@@ -337,26 +335,26 @@ class ResultSaver:
         filepath = self.output_dir / filename
         with open(filepath, 'w', encoding='utf-8') as f:
             json.dump(data, f, ensure_ascii=False, indent=2)
-        print(f"💾 Sauvegardé: {filepath}")
+        print(f" Sauvegardé: {filepath}")
     
     def save_pickle(self, obj, filename: str):
         """Sauvegarde Pickle"""
         filepath = self.models_dir / filename
         with open(filepath, 'wb') as f:
             pickle.dump(obj, f)
-        print(f"💾 Sauvegardé: {filepath}")
+        print(f" Sauvegardé: {filepath}")
     
     def save_numpy(self, array: np.ndarray, filename: str):
         """Sauvegarde NumPy array"""
         filepath = self.output_dir / filename
         np.save(filepath, array)
-        print(f"💾 Sauvegardé: {filepath}")
+        print(f" Sauvegardé: {filepath}")
     
     def save_csv(self, df: pd.DataFrame, filename: str):
         """Sauvegarde CSV"""
         filepath = self.output_dir / filename
         df.to_csv(filepath, index=False, encoding='utf-8')
-        print(f"💾 Sauvegardé: {filepath}")
+        print(f" Sauvegardé: {filepath}")
     
     def save_visualization(self, fig, filename: str):
         """
@@ -379,7 +377,7 @@ class ResultSaver:
             # Wordcloud ou autre
             fig.to_file(filepath)
         
-        print(f"📊 Visualisation sauvegardée: {filepath}")
+        print(f" Visualisation sauvegardée: {filepath}")
 
 
 def compute_salary_annual(row: pd.Series) -> Optional[float]:
@@ -405,7 +403,7 @@ def extract_competences_from_text(text: str, competences_dict: List[str]) -> Lis
     """
     Extrait les compétences présentes dans un texte
     
-    ✅ CORRECTION 5: Normalisation casse pour matching
+    : Normalisation casse pour matching
     
     Args:
         text: Texte à analyser
@@ -435,18 +433,18 @@ def extract_competences_from_text(text: str, competences_dict: List[str]) -> Lis
 
 if __name__ == "__main__":
     print("="*70)
-    print("🧪 TEST DES UTILITAIRES - VERSION CORRIGÉE")
+    print(" TEST DES UTILITAIRES")
     print("="*70)
     
     # Test DataLoader
-    print("\n1️⃣ Test DataLoader")
+    print("\n Test DataLoader")
     loader = DataLoader()
     df = loader.load_all_offers()
     print(f"\n   Colonnes: {list(df.columns)}")
     print(f"   Aperçu:\n{df[['title', 'source_name', 'city']].head()}")
     
     # Test TextPreprocessor
-    print("\n2️⃣ Test TextPreprocessor CORRIGÉ")
+    print("\n Test TextPreprocessor CORRIGÉ")
     preprocessor = TextPreprocessor()
     
     sample_text = """
@@ -462,13 +460,13 @@ if __name__ == "__main__":
     print(f"   Tokens (avec lemmatisation): {tokens}")
     
     # Vérification
-    print(f"\n   ✅ 'nbsp' supprimé: {'nbsp' not in tokens}")
-    print(f"   ✅ Stopwords FR filtrés: {'nous' not in tokens and 'notre' not in tokens}")
-    print(f"   ✅ Stopwords EN filtrés (si présents)")
-    print(f"   ✅ Tokens >= 3 caractères: {all(len(t) >= 3 for t in tokens)}")
-    
+    print(f"\n   'nbsp' supprimé: {'nbsp' not in tokens}")
+    print(f"   Stopwords FR filtrés: {'nous' not in tokens and 'notre' not in tokens}")
+    print(f"   Stopwords EN filtrés (si présents)")
+    print(f"   Tokens >= 3 caractères: {all(len(t) >= 3 for t in tokens)}")
+
     # Test ResultSaver
-    print("\n3️⃣ Test ResultSaver")
+    print("\n Test ResultSaver")
     saver = ResultSaver()
     test_data = {
         "test": "ok", 
@@ -481,8 +479,8 @@ if __name__ == "__main__":
     }
     saver.save_json(test_data, "test_corrections.json")
     
-    print("\n✅ Tests terminés !")
-    print("\n📋 Corrections appliquées:")
+    print("\n Tests terminés !")
+    print("\n Corrections appliquées:")
     print("   1. Stopwords FR + EN")
     print("   2. Stopwords custom étendus (méta-mots, pronoms, verbes)")
     print("   3. Nettoyage entités HTML (&nbsp;)")

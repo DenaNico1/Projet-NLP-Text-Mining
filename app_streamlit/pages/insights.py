@@ -15,6 +15,10 @@ import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from config import MODELS_DIR, RESULTS_DIR, COLORS
 
+# data
+from data_loaders import load_insights_data
+
+df, clustering, quality = load_insights_data()
 # ============================================
 # FONCTION CLASSIFICATION
 # ============================================
@@ -156,7 +160,7 @@ def predict_profile(titre, description, competences_list):
         'details': best_details
     }
 
-@st.cache_data
+"""@st.cache_data
 def load_data():
     with open(MODELS_DIR / 'data_with_profiles.pkl', 'rb') as f:
         df = pickle.load(f)
@@ -175,7 +179,7 @@ def load_data():
     
     return df, clustering, quality
 
-df, clustering, quality = load_data()
+df, clustering, quality = load_data()"""
 
 st.title("Insights Avancés")
 st.markdown("Analyses approfondies et métriques qualité")

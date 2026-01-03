@@ -1,0 +1,17 @@
+{
+  "accuracy": 1.0,
+  "precision": 1.0,
+  "recall": 1.0,
+  "f1_score": 1.0,
+  "roc_auc": 1.0,
+  "n_train": 400,
+  "n_test": 100,
+  "feature_importance": {
+    "embedding_similarity": 0.03644755741414636,
+    "tfidf_similarity": 0.016885893778799094,
+    "comp_ratio": 0.7507658154465625,
+    "comp_count_match": 0.16702284647057622,
+    "experience_gap": 0.012846496597731724,
+    "title_similarity": 0.01603139029218416
+  }
+}

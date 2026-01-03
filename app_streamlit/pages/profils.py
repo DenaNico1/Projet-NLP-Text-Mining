@@ -15,7 +15,7 @@ import json
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from config import MODELS_DIR, RESULTS_DIR, COLORS
 
-@st.cache_data
+"""@st.cache_data
 def load_data():
     with open(MODELS_DIR / 'data_with_profiles.pkl', 'rb') as f:
         df = pickle.load(f)
@@ -25,7 +25,11 @@ def load_data():
     
     return df, profils_stats
 
-df, profils_stats = load_data()
+df, profils_stats = load_data()"""
+
+# data
+from data_loaders import load_profils_data
+df, profils_stats = load_profils_data()
 
 # ============================================
 # HEADER
@@ -34,11 +38,156 @@ df, profils_stats = load_data()
 st.title(" Profils Métiers Data/IA")
 st.markdown("Analyse des 14 profils métiers identifiés")
 
+# ============================================
+# VISUALISATIONS GLOBALES (TOUS PROFILS)
+# ============================================
+
 st.markdown("---")
+st.subheader(" Visualisations Globales - Tous Profils")
+
+# ==========================================
+# SANKEY : Compétences → Profils (Global)
+# ==========================================
+
+st.markdown("### Flux Compétences → Profils")
+st.caption("Les 10 compétences les plus demandées et leur répartition dans les profils")
+
+df_class = df[df['status'] == 'classified']
+# Top 10 compétences globales
+all_comps_global = []
+for comp_list in df_class['competences_found']:
+    if isinstance(comp_list, list):
+        all_comps_global.extend(comp_list)
+
+from collections import Counter
+top_comps_global = [c for c, _ in Counter(all_comps_global).most_common(10)]
+
+# Top 8 profils
+top_profils_global = df_class['profil_assigned'].value_counts().head(8).index
+
+# Compter flux compétence → profil
+flows_global = []
+for comp in top_comps_global:
+    for profil in top_profils_global:
+        df_match = df_class[
+            (df_class['profil_assigned'] == profil) &
+            (df_class['competences_found'].apply(lambda x: comp in x if isinstance(x, list) else False))
+        ]
+        count = len(df_match)
+        if count > 10:  # Seuil minimum
+            flows_global.append({
+                'source': comp,
+                'target': profil,
+                'value': count
+            })
+
+if flows_global:
+    df_flows_global = pd.DataFrame(flows_global)
+    
+    # Créer labels et indices
+    all_nodes_global = list(set(df_flows_global['source'].tolist() + df_flows_global['target'].tolist()))
+    node_dict_global = {node: idx for idx, node in enumerate(all_nodes_global)}
+    
+    source_indices_global = [node_dict_global[s] for s in df_flows_global['source']]
+    target_indices_global = [node_dict_global[t] for t in df_flows_global['target']]
+    
+    # Couleurs nodes (compétences vs profils)
+    node_colors_global = []
+    for node in all_nodes_global:
+        if node in top_profils_global:
+            node_colors_global.append('rgba(102, 126, 234, 0.8)')  # Profils en violet
+        else:
+            node_colors_global.append('rgba(34, 197, 94, 0.7)')  # Compétences en vert
+    
+    fig_sankey_global = go.Figure(data=[go.Sankey(
+        node=dict(
+            pad=15,
+            thickness=20,
+            label=all_nodes_global,
+            color=node_colors_global
+        ),
+        link=dict(
+            source=source_indices_global,
+            target=target_indices_global,
+            value=df_flows_global['value'],
+            color='rgba(102, 126, 234, 0.2)'
+        )
+    )])
+    
+    fig_sankey_global.update_layout(
+        height=700,
+        template='plotly_dark',
+        margin=dict(l=10, r=10, t=40, b=10)
+    )
+    
+    st.plotly_chart(fig_sankey_global, use_container_width=True)
+else:
+    st.warning("Pas assez de données pour le Sankey global")
+
+# ==========================================
+# SUNBURST : Profils → Contrats → Régions (Global)
+# ==========================================
+
+st.markdown("---")
+st.markdown("###  Hiérarchie Profils → Contrats → Régions")
+st.caption("Distribution des profils par type de contrat et région")
+
+# Top 6 profils, 5 régions
+top_profils_sun = df_class['profil_assigned'].value_counts().head(6).index
+top_regions_sun = df_class['region'].value_counts().head(5).index
+
+df_viz_sun = df_class[
+    (df_class['profil_assigned'].isin(top_profils_sun)) &
+    (df_class['region'].isin(top_regions_sun))
+]
+
+# Préparer données
+data_sun_global = []
+for profil in top_profils_sun:
+    for contrat in df_viz_sun['contract_type'].unique():
+        if pd.notna(contrat):
+            for region in top_regions_sun:
+                count = len(df_viz_sun[
+                    (df_viz_sun['profil_assigned'] == profil) &
+                    (df_viz_sun['contract_type'] == contrat) &
+                    (df_viz_sun['region'] == region)
+                ])
+                if count > 0:
+                    data_sun_global.append({
+                        'Profil': profil,
+                        'Contrat': contrat,
+                        'Région': region,
+                        'Count': count
+                    })
+
+df_sun_global = pd.DataFrame(data_sun_global)
+
+if len(df_sun_global) > 0:
+    fig_sunburst_global = px.sunburst(
+        df_sun_global,
+        path=['Profil', 'Contrat', 'Région'],
+        values='Count',
+        color='Count',
+        color_continuous_scale='Purples',
+        height=700
+    )
+    
+    fig_sunburst_global.update_layout(
+        template='plotly_dark',
+        margin=dict(l=10, r=10, t=40, b=10)
+    )
+    
+    st.plotly_chart(fig_sunburst_global, use_container_width=True)
+else:
+    st.warning("Pas assez de données pour le Sunburst global")
+
+
 
 # ============================================
 # SÉLECTION PROFIL
 # ============================================
+st.markdown("---")
+st.subheader(" Exploration par Profil")
 
 df_class = df[df['status'] == 'classified']
 profils_disponibles = sorted(df_class['profil_assigned'].unique())
@@ -55,23 +204,13 @@ df_profil = df_class[df_class['profil_assigned'] == profil_choisi]
 # MÉTRIQUES PROFIL
 # ============================================
 
-col1, col2, col3, col4 = st.columns(4)
+col1, col2 = st.columns(2)
 
 with col1:
     st.metric("Offres", f"{len(df_profil):,}")
 
+
 with col2:
-    pct_total = len(df_profil) / len(df_class) * 100
-    st.metric("% Total Classifiées", f"{pct_total:.1f}%")
-
-with col3:
-    salaire_median_profil = df_profil['salary_annual'].median()
-    if pd.notna(salaire_median_profil):
-        st.metric("Salaire Médian", f"{salaire_median_profil/1000:.0f}K€")
-    else:
-        st.metric("Salaire Médian", "N/A")
-
-with col4:
     score_moyen = df_profil['profil_score'].mean()
     st.metric("Score Moyen", f"{score_moyen:.1f}/10")
 
@@ -140,50 +279,9 @@ fig_radar.update_layout(
 
 st.plotly_chart(fig_radar, use_container_width=True)
 
-st.markdown("---")
 
-# ============================================
-# DISTRIBUTION SALAIRES
-# ============================================
+st.markdown("""----""")
 
-col_sal_left, col_sal_right = st.columns([6, 4])
-
-with col_sal_left:
-    st.subheader(" Distribution Salaires")
-    
-    df_profil_salaires = df_profil[df_profil['salary_annual'].notna()]
-    
-    if len(df_profil_salaires) > 5:
-        fig_salaires = px.violin(
-            df_profil_salaires,
-            y='salary_annual',
-            box=True,
-            points='all',
-            color_discrete_sequence=[COLORS['success']]
-        )
-        
-        fig_salaires.update_layout(
-            template='plotly_dark',
-            height=400,
-            yaxis_title='Salaire Annuel (€)',
-            showlegend=False
-        )
-        
-        st.plotly_chart(fig_salaires, use_container_width=True)
-    else:
-        st.warning("Pas assez de données salaires pour ce profil")
-
-with col_sal_right:
-    st.markdown("### Statistiques Salaires")
-    
-    if len(df_profil_salaires) > 0:
-        st.metric("Min", f"{df_profil_salaires['salary_annual'].min()/1000:.0f}K€")
-        st.metric("Q1 (25%)", f"{df_profil_salaires['salary_annual'].quantile(0.25)/1000:.0f}K€")
-        st.metric("Médiane", f"{df_profil_salaires['salary_annual'].median()/1000:.0f}K€")
-        st.metric("Q3 (75%)", f"{df_profil_salaires['salary_annual'].quantile(0.75)/1000:.0f}K€")
-        st.metric("Max", f"{df_profil_salaires['salary_annual'].max()/1000:.0f}K€")
-
-st.markdown("---")
 
 # ============================================
 # COMPARATEUR PROFILS

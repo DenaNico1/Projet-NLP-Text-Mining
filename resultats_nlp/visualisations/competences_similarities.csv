@@ -1,0 +1,51 @@
+﻿Compétence,Rang,Similaire,Similarité
+python,1,programmation en python,0.8794968
+python,2,talend,0.48018897
+python,3,anglais technique,0.39573354
+python,4,numpy,0.38698107
+python,5,azure,0.37488136
+python,6,maîtrise de l'anglais ,0.36992648
+python,7,scikit-learn,0.36372483
+python,8,qlik sense,0.3618615
+python,9,cognos,0.35828483
+python,10,bert,0.356002
+sql,1,mysql,0.77268744
+sql,2,gérer des bases de données,0.6454263
+sql,3,graphql,0.58904636
+sql,4,datalake,0.57414305
+sql,5,postgresql,0.57147825
+sql,6,dbt,0.5547965
+sql,7,excel,0.5349828
+sql,8,traiter des données,0.52009976
+sql,9,data management,0.48591506
+sql,10,mdm,0.44659638
+spark,1,api,0.67396224
+spark,2,bert,0.589726
+spark,3,keras,0.555911
+spark,4,rigueur,0.543954
+spark,5,cobol,0.5423948
+spark,6,ciel,0.5310338
+spark,7,sig,0.5270178
+spark,8,api rest,0.5228791
+spark,9,redis,0.5199866
+spark,10,kubeflow,0.50905615
+docker,1,rigueur,0.6377826
+docker,2,bert,0.6056263
+docker,3,mlops,0.6022163
+docker,4,sig,0.5846139
+docker,5,anglais technique,0.55460155
+docker,6,ciel,0.54954726
+docker,7,cognos,0.5468537
+docker,8,java,0.54650056
+docker,9,cobol,0.54648435
+docker,10,apis,0.540063
+kubernetes,1,rigueur scientifique,0.6321682
+kubernetes,2,sig,0.6298634
+kubernetes,3,cognos,0.5856178
+kubernetes,4,mlops,0.5776678
+kubernetes,5,rigueur,0.56240696
+kubernetes,6,qlik sense,0.5588156
+kubernetes,7,tableau,0.5528449
+kubernetes,8,llamaindex,0.55039465
+kubernetes,9,java,0.547629
+kubernetes,10,apis,0.5458414

@@ -14,8 +14,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 # Configuration page (DOIT être la première commande Streamlit)
 st.set_page_config(
-    page_title="Data IA Talent Observatory",
-    page_icon="",
+    page_title="DataJobs Explorer",
+    page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded",
     menu_items={
@@ -29,11 +29,19 @@ st.markdown("""
     /* Background gradient */
     .stApp {
         background: linear-gradient(135deg, #0e1117 0%, #1a1d29 100%);
+        padding-left: 0;
+        padding-right: 0;
     }
     
-    /* Sidebar */
-    [data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #1f2937 0%, #111827 100%);
+    [data-testid="stAppViewContainer"] {
+    padding-left: 0;
+    padding-right: 0;
+    }
+
+    [data-testid="stMainBlockContainer"] {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        max-width: 100%;
     }
     
     /* Cards */
@@ -124,7 +132,7 @@ with st.sidebar:
     st.markdown("""
     <div style='text-align: center; padding: 20px 0;'>
         <h1 style='font-size: 2.5rem; margin: 0;'></h1>
-        <h2 style='margin: 10px 0; font-size: 1.5rem;'>Data IA Talent Observatory</h2>
+        <h2 style='margin: 10px 0; font-size: 1.5rem;'>DataJobs Explorer</h2>
         <p style='color: #9ca3af; font-size: 0.9rem;'>Analyse NLP Marché Data/IA</p>
     </div>
     """, unsafe_allow_html=True)
@@ -132,18 +140,19 @@ with st.sidebar:
     st.markdown("---")
     
     # Navigation
-    st.markdown("### Menu Principal")
+    st.markdown("###  Navigation")
     
     page = st.radio(
         "Choisir une page",
         [
-            "Dashboard",
-            "Exploration Géographique",
-            "Profils Métiers",
-            "Compétences",
-            "Topics & Tendances",
-            "Visualisations",
-            "Insights Avancés"
+            " Dashboard",
+            " Exploration Géographique",
+            " Profils Métiers",
+            " Compétences",
+            " Topics & Tendances",
+            " Visualisations 3D",
+            " Insights Avancés",
+            " Matching CV ↔ Offres"
         ],
         label_visibility="collapsed"
     )
@@ -151,7 +160,7 @@ with st.sidebar:
     st.markdown("---")
     
     # Filtres globaux
-    st.markdown("### Filtres Globaux")
+    st.markdown("###  Filtres Globaux")
     
     filter_source = st.selectbox(
         "Source",
@@ -167,15 +176,16 @@ with st.sidebar:
     st.markdown("---")
     
     # Stats rapides
-    st.markdown("### Stats Rapides")
+    st.markdown("###  Stats Rapides")
     st.metric("Offres", "3,003", help="Total offres analysées")
     st.metric("Classifiées", "56.2%", help="Taux de classification")
     st.metric("Compétences", "158", help="Compétences uniques")
+    st.metric("CVs Base", "25", help="CVs démo matching")
     
     st.markdown("---")
     
     # Info projet
-    with st.expander("ℹ️ À propos"):
+    with st.expander("ℹ À propos"):
         st.markdown("""
         **Projet NLP Text Mining**
         
@@ -205,26 +215,29 @@ st.session_state.filters = {
 }
 
 # Router vers pages
-if page == "Dashboard":
+if page == " Dashboard":
     exec(open(Path(__file__).parent / "pages" / "dashboard.py", encoding='utf-8').read())
 
-elif page == "Exploration Géographique":
+elif page == " Exploration Géographique":
     exec(open(Path(__file__).parent / "pages" / "geographique.py", encoding='utf-8').read())
 
-elif page == "Profils Métiers":
+elif page == " Profils Métiers":
     exec(open(Path(__file__).parent / "pages" / "profils.py", encoding='utf-8').read())
 
-elif page == "Compétences":
+elif page == " Compétences":
     exec(open(Path(__file__).parent / "pages" / "competences.py", encoding='utf-8').read())
 
-elif page == "Topics & Tendances":
+elif page == " Topics & Tendances":
     exec(open(Path(__file__).parent / "pages" / "topics.py", encoding='utf-8').read())
 
-elif page == "Visualisations 3D":
+elif page == " Visualisations 3D":
     exec(open(Path(__file__).parent / "pages" / "viz_3d.py", encoding='utf-8').read())
 
-elif page == "Insights Avancés":
+elif page == " Insights Avancés":
     exec(open(Path(__file__).parent / "pages" / "insights.py", encoding='utf-8').read())
+
+elif page == " Matching CV ↔ Offres":
+    exec(open(Path(__file__).parent / "pages" / "matching.py", encoding='utf-8').read())
 
 # Footer
 st.markdown("""
