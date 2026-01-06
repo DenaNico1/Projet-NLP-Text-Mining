@@ -152,7 +152,8 @@ with st.sidebar:
             " Topics & Tendances",
             " Visualisations 3D",
             " Insights Avancés",
-            " Matching CV ↔ Offres"
+            " Matching CV ↔ Offres",
+            " Ajouter une offre"
         ],
         label_visibility="collapsed"
     )
@@ -239,6 +240,8 @@ elif page == " Insights Avancés":
 elif page == " Matching CV ↔ Offres":
     exec(open(Path(__file__).parent / "pages" / "matching.py", encoding='utf-8').read())
 
+elif page == " Ajouter une offre":
+    exec(open(Path(__file__).parent / "pages" / "nouvelle_offre.py", encoding='utf-8').read())
 # Footer
 st.markdown("""
 <div class='footer'>

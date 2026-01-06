@@ -21,3 +21,9 @@ venv/
 # OS
 .DS_Store
 Thumbs.db
+
+# Scripts utilitaires & Tests locaux
+test_manuel.py
+fix_sequences.py
+inspect_db.py
+*.log

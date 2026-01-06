@@ -12,6 +12,7 @@ import pandas as pd
 import streamlit as st
 from dotenv import load_dotenv
 from pathlib import Path
+import uuid
 
 # Charger variables d'environnement
 load_dotenv()
@@ -283,25 +284,8 @@ def get_top_entreprises(limit=20):
 
 def add_offre(offre_data):
     """
-    Ajoute une nouvelle offre dans l'entrepôt
-    
-    Args:
-        offre_data (dict): Données de l'offre
-            {
-                'job_id_source': str,
-                'title': str,
-                'company_name': str,
-                'city': str,
-                'region': str,
-                'contract_type': str,
-                'description': str,
-                'url': str,
-                'source': str,
-                ...
-            }
-    
-    Returns:
-        int: ID de l'offre créée, ou None si erreur
+    Insère une offre structurée en base.
+    CORRECTIF : experience_level < 10 caractères
     """
     conn = get_db_connection()
     if not conn:
@@ -310,62 +294,105 @@ def add_offre(offre_data):
     cursor = conn.cursor()
     
     try:
-        # 1. Récupérer ou créer source_id
-        cursor.execute(
-            "SELECT source_id FROM dim_source WHERE source_name = %s",
-            (offre_data.get('source', 'Manuel'),)
-        )
-        result = cursor.fetchone()
-        if result:
-            source_id = result[0]
+        # --- 1. Gestion SOURCE ---
+        source_name = offre_data.get('source', 'Import Manuel + IA')
+        # On tronque à 50 chars pour être sûr (voir schéma DIM_SOURCE)
+        source_name = source_name[:50] 
+        
+        cursor.execute("SELECT source_id FROM dim_source WHERE source_name = %s", (source_name,))
+        res = cursor.fetchone()
+        
+        if res:
+            source_id = res[0]
         else:
-            cursor.execute(
-                "INSERT INTO dim_source (source_name) VALUES (%s) RETURNING source_id",
-                (offre_data.get('source', 'Manuel'),)
-            )
+            cursor.execute("INSERT INTO dim_source (source_name) VALUES (%s) RETURNING source_id", (source_name,))
             source_id = cursor.fetchone()[0]
+
+        # --- 2. Gestion ENTREPRISE ---
+        company = offre_data.get('company_name') or 'Entreprise Confidentielle'
+        cursor.execute("SELECT entreprise_id FROM dim_entreprise WHERE company_name = %s", (company,))
+        res = cursor.fetchone()
         
-        # 2. Récupérer ou créer entreprise_id
-        cursor.execute(
-            "SELECT entreprise_id FROM dim_entreprise WHERE company_name = %s",
-            (offre_data.get('company_name', 'Non spécifié'),)
-        )
-        result = cursor.fetchone()
-        if result:
-            entreprise_id = result[0]
+        if res:
+            entreprise_id = res[0]
+        else:
+            cursor.execute("INSERT INTO dim_entreprise (company_name) VALUES (%s) RETURNING entreprise_id", (company,))
+            entreprise_id = cursor.fetchone()[0]
+
+        # --- 3. Gestion LOCALISATION ---
+        city = offre_data.get('city') or 'Non spécifié'
+        region = offre_data.get('region')
+        
+        cursor.execute("SELECT localisation_id FROM dim_localisation WHERE city = %s LIMIT 1", (city,))
+        res = cursor.fetchone()
+        
+        if res:
+            loc_id = res[0]
         else:
             cursor.execute(
-                "INSERT INTO dim_entreprise (company_name) VALUES (%s) RETURNING entreprise_id",
-                (offre_data.get('company_name', 'Non spécifié'),)
+                "INSERT INTO dim_localisation (city, region) VALUES (%s, %s) RETURNING localisation_id", 
+                (city, region)
             )
-            entreprise_id = cursor.fetchone()[0]
+            loc_id = cursor.fetchone()[0]
+
+        # --- 4. Gestion CONTRAT ---
+        # Le schéma dit varchar(50) pour contract_type -> OK
+        c_type = offre_data.get('contract_type') or 'Non spécifié'
         
-        # 3. Insérer offre (simplifié - à compléter avec autres dimensions)
-        cursor.execute("""
+        # ⚠️ LE CORRECTIF EST ICI : varchar(10) max
+        exp_level = 'Inconnu' 
+        
+        cursor.execute(
+            "SELECT contrat_id FROM dim_contrat WHERE contract_type = %s AND experience_level = %s", 
+            (c_type, exp_level)
+        )
+        res = cursor.fetchone()
+        
+        if res:
+            contrat_id = res[0]
+        else:
+            cursor.execute(
+                "INSERT INTO dim_contrat (contract_type, experience_level) VALUES (%s, %s) RETURNING contrat_id",
+                (c_type, exp_level)
+            )
+            contrat_id = cursor.fetchone()[0]
+
+        # --- 5. INSERTION FAIT (Offre) ---
+        # job_id_source est varchar(100), donc uuid hex (32 chars) c'est large.
+        fake_job_id = f"MANUAL_{uuid.uuid4().hex}" 
+        
+        query_fact = """
             INSERT INTO fact_offres (
-                source_id, entreprise_id, job_id_source, title, description, url, scraped_at
-            ) VALUES (%s, %s, %s, %s, %s, %s, NOW())
+                source_id, entreprise_id, localisation_id, contrat_id,
+                job_id_source, title, description, salary_min, salary_max, 
+                url, scraped_at
+            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, NOW())
             RETURNING offre_id
-        """, (
+        """
+        
+        cursor.execute(query_fact, (
             source_id,
             entreprise_id,
-            offre_data.get('job_id_source', ''),
-            offre_data.get('title', ''),
-            offre_data.get('description', ''),
-            offre_data.get('url', '')
+            loc_id,
+            contrat_id,
+            fake_job_id,
+            offre_data.get('title'),
+            offre_data.get('description'),
+            offre_data.get('salary_min'),
+            offre_data.get('salary_max'),
+            offre_data.get('url', 'N/A')
         ))
         
-        offre_id = cursor.fetchone()[0]
+        new_id = cursor.fetchone()[0]
         conn.commit()
-        
-        # Invalider cache Streamlit
         st.cache_data.clear()
         
-        return offre_id
-        
+        return new_id
+
     except Exception as e:
         conn.rollback()
-        st.error(f"Erreur ajout offre: {e}")
+        print(f"❌ CRASH SQL : {e}") 
+        st.error(f"Erreur SQL insertion: {e}")
         return None
     finally:
         cursor.close()
