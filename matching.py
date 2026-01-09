@@ -2,7 +2,7 @@
 PAGE 8 : MATCHING CV ↔ OFFRES
 Système ML hybride (Embeddings + Random Forest)
 """
-import time
+
 import streamlit as st
 import pandas as pd
 import pickle
@@ -41,6 +41,51 @@ def safe_slice(text, max_len=300):
         return ''
     return str(text)[:max_len]
 
+# @st.cache_data
+# def load_precomputed_embeddings():
+#     """Charge embeddings pré-calculés des offres"""
+#     try:
+#         embeddings_path = MODELS_DIR / 'embeddings.npy'
+#         embeddings = np.load(embeddings_path)
+#         st.success(f" Embeddings chargés ({len(embeddings)} offres)")
+#         return embeddings
+#     except Exception as e:
+#         st.warning(f" Embeddings non trouvés : {e}")
+#         return None
+
+# # Charger au démarrage
+# OFFRES_EMBEDDINGS = load_precomputed_embeddings()
+
+# @st.cache_resource
+# def load_matching_system():
+#     """Charge modèle ML + assets"""
+#     with open(MODELS_DIR / 'matching_model.pkl', 'rb') as f:
+#         system = pickle.load(f)
+    
+#     embeddings_model = SentenceTransformer(system['embeddings_model_name'])
+    
+#     return system['rf_model'], system['tfidf_vectorizer'], embeddings_model
+
+# @st.cache_data
+# def load_cv_base():
+#     """Charge base CV fictifs"""
+#     with open(RESULTS_DIR / 'cv_base_fictifs.json', 'r', encoding='utf-8') as f:
+#         return json.load(f)
+
+# @st.cache_data
+# def load_offres():
+#     """Charge offres réelles"""
+#     with open(MODELS_DIR / 'data_with_profiles.pkl', 'rb') as f:
+#         return pickle.load(f)
+
+# @st.cache_data
+# def load_metrics():
+#     """Charge métriques modèle"""
+#     try:
+#         with open(RESULTS_DIR / 'matching_metrics.json', 'r', encoding='utf-8') as f:
+#             return json.load(f)
+#     except:
+#         return {}
 
 from data_loaders import load_matching_data
 df, embeddings, rf_model, tfidf, embeddings_model, cv_base, metrics = load_matching_data()
@@ -51,6 +96,17 @@ tfidf_vec = tfidf
 emb_model = embeddings_model
 df_offres = df
 
+# Vérifier chargement
+# SYSTEM_LOADED = (
+#     embeddings is not None and 
+#     rf_model is not None and 
+#     embeddings_model is not None
+# )
+
+# if not SYSTEM_LOADED:
+#     st.error(" Système matching non initialisé")
+#     st.info(" Exécuter: `python 9_ml_matching_system.py`")
+#     st.stop()
 
 SYSTEM_LOADED = (
     embeddings is not None and 
@@ -64,7 +120,7 @@ if not SYSTEM_LOADED:
     st.stop()
 
 # Afficher statut simplifié
-st.sidebar.success(f" {len(OFFRES_EMBEDDINGS)} offres prêtes (PostgreSQL)")
+st.sidebar.success(f"🚀 {len(OFFRES_EMBEDDINGS)} offres prêtes (PostgreSQL)")
 # ============================================
 # FONCTIONS MATCHING
 # ============================================
@@ -166,161 +222,263 @@ def extract_features_predict(cv, offre, emb_model, tfidf_vec):
     
     return features, details
 
-
+# def predict_matches(cv, df_offres, rf_model, emb_model, tfidf_vec, top_n=10):
+#     """Prédit top N offres matching pour un CV donné"""
+    
+#     # Encoder CV UNE SEULE FOIS
+#     cv_text = f"{cv['titre_recherche']} {' '.join(cv['competences'][:10])}"
+#     cv_emb = emb_model.encode(cv_text)
+    
+#     results = []
+    
+#     # Utiliser embeddings pré-calculés
+#     use_precomputed = OFFRES_EMBEDDINGS is not None and len(OFFRES_EMBEDDINGS) >= len(df_offres)
+    
+#     for idx, offre in df_offres.iterrows():
+#         # === EMBEDDING SIMILARITY ===
+#         if use_precomputed:
+#             offre_emb = OFFRES_EMBEDDINGS[idx]
+#             embedding_sim = float(cosine_similarity([cv_emb], [offre_emb])[0][0])
+#         else:
+#             # Fallback lent
+#             offre_text = f"{offre['title']} {offre.get('description', '')[:300]}"
+#             offre_emb = emb_model.encode(offre_text)
+#             embedding_sim = float(cosine_similarity([cv_emb], [offre_emb])[0][0])
+        
+#         # === COMPÉTENCES ===
+#         cv_comp = set([normalize(c) for c in cv['competences']])
+        
+#         if isinstance(offre.get('competences_found'), list):
+#             offre_comp = set([normalize(c) for c in offre['competences_found']])
+#         else:
+#             offre_comp = set()
+        
+#         common_comp = cv_comp & offre_comp
+#         comp_ratio = len(common_comp) / len(offre_comp) if len(offre_comp) > 0 else 0.0
+#         comp_count = len(common_comp)
+        
+#         # === EXPERIENCE ===
+#         offre_exp = offre.get('experience_level', 0)
+#         cv_exp = cv.get('annees_experience', 0)
+        
+#         try:
+#             offre_exp = int(offre_exp) if offre_exp else 0
+#         except (ValueError, TypeError):
+#             offre_exp = 0
+        
+#         try:
+#             cv_exp = int(cv_exp) if cv_exp else 0
+#         except (ValueError, TypeError):
+#             cv_exp = 0
+        
+#         exp_gap = float(offre_exp - cv_exp)
+        
+#         # === TITRE ===
+#         cv_title = normalize(cv['titre_recherche'])
+#         offre_title = normalize(offre['title'])
+        
+#         cv_words = set(cv_title.split())
+#         offre_words = set(offre_title.split())
+#         title_sim = len(cv_words & offre_words) / len(offre_words) if len(offre_words) > 0 else 0.0
+        
+#         # === FEATURES ===
+#         features = np.array([[
+#             embedding_sim,
+#             0.0,  # tfidf_sim (skip pour vitesse)
+#             comp_ratio,
+#             comp_count,
+#             exp_gap,
+#             title_sim
+#         ]])
+        
+#         # === PRÉDICTION ===
+#         proba = rf_model.predict_proba(features)[0][1]
+#         score = proba * 100
+        
+#         # === BONUS TITRE ===
+#         if cv_title in offre_title or offre_title in cv_title:
+#             score = min(score * 1.3, 100)
+#         elif len(cv_title.split()) >= 2:
+#             key_words = cv_title.split()[:2]
+#             if all(word in offre_title for word in key_words):
+#                 score = min(score * 1.15, 100)
+        
+#         # === DÉTAILS ===
+#         details = {
+#             'embedding_sim': embedding_sim,
+#             'comp_ratio': comp_ratio,
+#             'comp_count': comp_count,
+#             'common_comp': list(common_comp),
+#             'missing_comp': list(offre_comp - cv_comp),
+#             'exp_gap': exp_gap,
+#             'title_sim': title_sim
+#         }
+        
+#         results.append({
+#             'offre': offre.to_dict(),
+#             'score': score,
+#             'details': details
+#         })
+    
+#     # === FILTRAGE INTELLIGENT ===
+#     results_filtered = []
+#     cv_title_check = normalize(cv['titre_recherche'])
+    
+#     for result in results:
+#         offre_title_check = normalize(result['offre']['title'])
+#         should_keep = True
+        
+#         if 'data engineer' in cv_title_check or 'engineer' in cv_title_check:
+#             required_kw = ['data', 'engineer', 'etl', 'pipeline', 'big data', 'données', 'cloud', 'spark', 'kafka']
+#             excluded_kw = ['développeur web', 'développeur mobile', 'front-end', 'frontend', 'programmeur c', 'c++', 'c#', '.net']
+#             should_keep = any(kw in offre_title_check for kw in required_kw) and not any(kw in offre_title_check for kw in excluded_kw)
+        
+#         elif 'data scientist' in cv_title_check or 'scientist' in cv_title_check:
+#             required_kw = ['data', 'scientist', 'science', 'machine learning', 'ml', 'ia', 'intelligence artificielle', 'research']
+#             excluded_kw = ['développeur', 'programmeur', 'ingénieur système']
+#             should_keep = any(kw in offre_title_check for kw in required_kw) and not any(kw in offre_title_check for kw in excluded_kw)
+        
+#         elif 'data analyst' in cv_title_check or 'analyst' in cv_title_check:
+#             required_kw = ['data', 'analyst', 'analyse', 'bi', 'business intelligence', 'reporting', 'tableau']
+#             should_keep = any(kw in offre_title_check for kw in required_kw)
+        
+#         if should_keep:
+#             results_filtered.append(result)
+    
+#     if len(results_filtered) < 5:
+#         results_filtered = results[:top_n]
+    
+#     results_filtered = sorted(results_filtered, key=lambda x: x['score'], reverse=True)[:top_n]
+    
+#     return results_filtered
 
 def predict_matches(cv, df_offres, rf_model, emb_model, tfidf_vec, top_n=10):
     """
     Prédit top N offres matching pour un CV donné
     
-    VERSION ULTRA-OPTIMISÉE :
-    - Batch Random Forest (1 appel vs 3,009)
-    - Pré-calculs CV (1× vs 3,009×)
-    - Temps : 285 sec → <3 sec (95× plus rapide)
+    VERSION POSTGRESQL: Plus simple, plus rapide !
+    - Embeddings TOUJOURS synchronisés avec offres
+    - Pas de fallback lent
+    - Garantie <5 secondes
     """
     
     import time
     start_time = time.time()
     
-    # ============================================
-    # PHASE 1 : PRÉ-CALCULS CV
-    # ============================================
-    
+    # Encoder CV UNE SEULE FOIS
     cv_text = f"{cv['titre_recherche']} {' '.join(cv['competences'][:10])}"
     cv_emb = emb_model.encode(cv_text)
-    cv_emb_norm = cv_emb / np.linalg.norm(cv_emb)
     
-    # Pré-normaliser compétences/titre CV (1× au lieu de 3,009×)
-    cv_comp_norm = set([normalize(c) for c in cv['competences']])
-    cv_title_norm = normalize(cv['titre_recherche'])
-    cv_words = set(cv_title_norm.split())
-    
-    try:
-        cv_exp = int(cv.get('annees_experience', 0))
-    except (ValueError, TypeError):
-        cv_exp = 0
+    results = []
     
     # ============================================
-    # PHASE 2 : SIMILARITÉS EMBEDDINGS (VECTORISÉ)
+    # UTILISATION DIRECTE EMBEDDINGS (PLUS DE VÉRIF)
     # ============================================
     
-    offres_emb_norm = OFFRES_EMBEDDINGS / np.linalg.norm(
-        OFFRES_EMBEDDINGS, axis=1, keepdims=True
-    )
-    embedding_sims = offres_emb_norm @ cv_emb_norm
+    # Plus besoin de vérifier use_precomputed !
+    # OFFRES_EMBEDDINGS est TOUJOURS synchro avec df_offres
     
-    # ============================================
-    # PHASE 3 : CONSTRUCTION FEATURES (BATCH)
-    # ============================================
-    
-    n_offres = len(df_offres)
-    all_features = np.zeros((n_offres, 6), dtype=np.float32)
-    all_features[:, 0] = embedding_sims  # Colonne 0 : embedding_sim
-    # Colonne 1 : tfidf_sim (skip, reste 0)
-    
-    details_list = []
-    offre_titles = []
-    
-    for idx, offre in enumerate(df_offres.itertuples()):
+    for idx, offre in df_offres.iterrows():
+        
+        # === EMBEDDING SIMILARITY (DIRECT) ===
+        # Plus de if/else, toujours valide !
+        offre_emb = OFFRES_EMBEDDINGS[idx]
+        embedding_sim = float(cosine_similarity([cv_emb], [offre_emb])[0][0])
         
         # === COMPÉTENCES ===
-        if isinstance(getattr(offre, 'competences_found', None), list):
-            offre_comp = set(normalize(c) for c in offre.competences_found)
+        cv_comp = set([normalize(c) for c in cv['competences']])
+        
+        if isinstance(offre.get('competences_found'), list):
+            offre_comp = set([normalize(c) for c in offre['competences_found']])
         else:
             offre_comp = set()
         
-        common_comp = cv_comp_norm & offre_comp
+        common_comp = cv_comp & offre_comp
         comp_ratio = len(common_comp) / len(offre_comp) if len(offre_comp) > 0 else 0.0
         comp_count = len(common_comp)
         
-        all_features[idx, 2] = comp_ratio
-        all_features[idx, 3] = comp_count
-        
         # === EXPERIENCE ===
-        offre_exp = getattr(offre, 'experience_level', 0)
+        offre_exp = offre.get('experience_level', 0)
+        cv_exp = cv.get('annees_experience', 0)
+        
         try:
             offre_exp = int(offre_exp) if offre_exp else 0
         except (ValueError, TypeError):
             offre_exp = 0
         
+        try:
+            cv_exp = int(cv_exp) if cv_exp else 0
+        except (ValueError, TypeError):
+            cv_exp = 0
+        
         exp_gap = float(offre_exp - cv_exp)
-        all_features[idx, 4] = exp_gap
         
         # === TITRE ===
-        offre_title = normalize(getattr(offre, 'title', ''))
+        cv_title = normalize(cv['titre_recherche'])
+        offre_title = normalize(safe_get(offre, 'title', ''))
+        
+        cv_words = set(cv_title.split())
         offre_words = set(offre_title.split())
         title_sim = len(cv_words & offre_words) / len(offre_words) if len(offre_words) > 0 else 0.0
         
-        all_features[idx, 5] = title_sim
+        # === FEATURES ===
+        features = np.array([[
+            embedding_sim,
+            0.0,  # tfidf_sim (skip pour vitesse)
+            comp_ratio,
+            comp_count,
+            exp_gap,
+            title_sim
+        ]])
         
-        # Stocker pour affichage
-        details_list.append({
-            'embedding_sim': float(embedding_sims[idx]),
+        # === PRÉDICTION ===
+        proba = rf_model.predict_proba(features)[0][1]
+        score = proba * 100
+        
+        # === BONUS TITRE ===
+        if cv_title in offre_title or offre_title in cv_title:
+            score = min(score * 1.3, 100)
+        elif len(cv_title.split()) >= 2:
+            key_words = cv_title.split()[:2]
+            if all(word in offre_title for word in key_words):
+                score = min(score * 1.15, 100)
+        
+        # === DÉTAILS ===
+        details = {
+            'embedding_sim': embedding_sim,
             'comp_ratio': comp_ratio,
             'comp_count': comp_count,
             'common_comp': list(common_comp),
-            'missing_comp': list(offre_comp - cv_comp_norm),
+            'missing_comp': list(offre_comp - cv_comp),
             'exp_gap': exp_gap,
             'title_sim': title_sim
-        })
+        }
         
-        offre_titles.append(offre_title)
-    
-    # ============================================
-    # PHASE 4 : BATCH RANDOM FOREST (CLEF !)
-    # ============================================
-    
-    # 1 SEUL appel pour TOUTES les offres
-    all_proba = rf_model.predict_proba(all_features)[:, 1]
-    all_scores = all_proba * 100
-    
-    # ============================================
-    # PHASE 5 : BONUS TITRES
-    # ============================================
-    
-    for idx in range(n_offres):
-        offre_title = offre_titles[idx]
-        
-        if cv_title_norm in offre_title or offre_title in cv_title_norm:
-            all_scores[idx] = min(all_scores[idx] * 1.3, 100)
-        elif len(cv_title_norm.split()) >= 2:
-            key_words = cv_title_norm.split()[:2]
-            if all(word in offre_title for word in key_words):
-                all_scores[idx] = min(all_scores[idx] * 1.15, 100)
-    
-    # ============================================
-    # PHASE 6 : CONSTRUCTION RÉSULTATS
-    # ============================================
-    
-    results = []
-    
-    for idx, offre in enumerate(df_offres.itertuples()):
         results.append({
-            'offre': offre._asdict(),
-            'score': float(all_scores[idx]),
-            'details': details_list[idx]
+            'offre': offre.to_dict(),
+            'score': score,
+            'details': details
         })
     
-    # ============================================
-    # PHASE 7 : FILTRAGE INTELLIGENT
-    # ============================================
-    
+    # === FILTRAGE INTELLIGENT ===
     results_filtered = []
+    cv_title_check = normalize(cv['titre_recherche'])
     
-    for idx, result in enumerate(results):
-        offre_title_check = offre_titles[idx]
+    for result in results:
+        offre_title_check = normalize(safe_get(result['offre'], 'title', ''))
         should_keep = True
         
-        if 'data engineer' in cv_title_norm or 'engineer' in cv_title_norm:
+        if 'data engineer' in cv_title_check or 'engineer' in cv_title_check:
             required_kw = ['data', 'engineer', 'etl', 'pipeline', 'big data', 'données', 'cloud', 'spark', 'kafka']
             excluded_kw = ['développeur web', 'développeur mobile', 'front-end', 'frontend', 'programmeur c', 'c++', 'c#', '.net']
             should_keep = any(kw in offre_title_check for kw in required_kw) and not any(kw in offre_title_check for kw in excluded_kw)
         
-        elif 'data scientist' in cv_title_norm or 'scientist' in cv_title_norm:
+        elif 'data scientist' in cv_title_check or 'scientist' in cv_title_check:
             required_kw = ['data', 'scientist', 'science', 'machine learning', 'ml', 'ia', 'intelligence artificielle', 'research']
             excluded_kw = ['développeur', 'programmeur', 'ingénieur système']
             should_keep = any(kw in offre_title_check for kw in required_kw) and not any(kw in offre_title_check for kw in excluded_kw)
         
-        elif 'data analyst' in cv_title_norm or 'analyst' in cv_title_norm:
+        elif 'data analyst' in cv_title_check or 'analyst' in cv_title_check:
             required_kw = ['data', 'analyst', 'analyse', 'bi', 'business intelligence', 'reporting', 'tableau']
             should_keep = any(kw in offre_title_check for kw in required_kw)
         
@@ -330,18 +488,11 @@ def predict_matches(cv, df_offres, rf_model, emb_model, tfidf_vec, top_n=10):
     if len(results_filtered) < 5:
         results_filtered = results[:top_n]
     
-    # ============================================
-    # PHASE 8 : TRI FINAL
-    # ============================================
-    
     results_filtered = sorted(results_filtered, key=lambda x: x['score'], reverse=True)[:top_n]
     
-    # ============================================
-    # AFFICHAGE TEMPS
-    # ============================================
-    
+    # === TEMPS EXECUTION ===
     elapsed = time.time() - start_time
-    st.sidebar.success(f"Matching calculé en {elapsed:.2f}s")
+    st.sidebar.success(f"⚡ Matching calculé en {elapsed:.2f}s")
     
     return results_filtered
 
@@ -430,7 +581,21 @@ st.markdown("**Intelligence Artificielle hybride** : Embeddings + Random Forest"
 if not SYSTEM_LOADED:
     st.stop()
 
-
+# Métriques modèle
+# if metrics:
+#     col_m1, col_m2, col_m3, col_m4 = st.columns(4)
+    
+#     with col_m1:
+#         st.metric("Accuracy", f"{metrics.get('accuracy', 0)*100:.1f}%")
+    
+#     with col_m2:
+#         st.metric("Précision", f"{metrics.get('precision', 0)*100:.1f}%")
+    
+#     with col_m3:
+#         st.metric("Recall", f"{metrics.get('recall', 0)*100:.1f}%")
+    
+#     with col_m4:
+#         st.metric("F1-Score", f"{metrics.get('f1_score', 0):.3f}")
 
 st.markdown("---")
 

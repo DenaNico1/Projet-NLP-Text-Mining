@@ -523,7 +523,7 @@ st.markdown("---")
 # TABLEAU DÉTAILS
 # ============================================
 
-with st.expander("📋 Voir le tableau détaillé"):
+with st.expander(" Voir le tableau détaillé"):
     st.dataframe(
         df_region[[
             'title', 'company_name', 'city', 'region',
