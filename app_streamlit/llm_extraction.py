@@ -29,7 +29,7 @@ def extract_job_info(raw_text):
     - contract_type (CDI, CDD, Stage, Alternance, Freelance)
     - salary_min (nombre entier ou null)
     - salary_max (nombre entier ou null)
-    - description (résumé succinct de 3 phrases max, chaine)
+    - description (description complète de l'offre, chaine)
     """
 
     user_prompt = f"Voici l'offre à analyser :\n\n{raw_text}"
