@@ -5,16 +5,12 @@ Système ML hybride (Embeddings + Random Forest)
 
 import streamlit as st
 import pandas as pd
-import pickle
-import json
 import numpy as np
 from pathlib import Path
 import sys
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from config import MODELS_DIR, RESULTS_DIR, COLORS
 
-from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import cosine_similarity
 import unicodedata
 

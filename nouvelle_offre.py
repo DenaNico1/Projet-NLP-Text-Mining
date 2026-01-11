@@ -8,7 +8,6 @@ Ajout offres avec 2 modes :
 import streamlit as st
 import scraper  # Module scraping créé
 import llm_extraction as ai
-import config_db as db
 from data_loaders import ajouter_offre_avec_embedding
 from sentence_transformers import SentenceTransformer
 

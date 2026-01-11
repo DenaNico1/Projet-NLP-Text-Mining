@@ -677,7 +677,7 @@ if __name__ == "__main__":
     print("📋 VALIDATION DÉFINITIONS PROFILS v2 (avec fourre-tout)")
     print("="*70)
     
-    print(f"\n✅ Version: v2 FINALE")
+    print("\n✅ Version: v2 FINALE")
     print(f"✅ Nombre de profils: {len(PROFILS)}")
     print(f"✅ Min score global: {CLASSIFICATION_CONFIG['min_score']}")
     print(f"✅ Min confidence: {CLASSIFICATION_CONFIG['min_confidence']}")
@@ -704,7 +704,7 @@ if __name__ == "__main__":
     print("📋 VALIDATION DÉFINITIONS PROFILS v5 ENRICHIE")
     print("="*70)
     
-    print(f"\n✅ Version: v5 - Base nettoyée + enrichissements FR")
+    print("\n✅ Version: v5 - Base nettoyée + enrichissements FR")
     print(f"✅ Nombre de profils: {len(PROFILS)}")
     print(f"✅ Min score global: {CLASSIFICATION_CONFIG['min_score']}")
     

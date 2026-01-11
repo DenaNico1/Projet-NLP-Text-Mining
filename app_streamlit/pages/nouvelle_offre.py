@@ -296,7 +296,7 @@ if 'draft_offer' in st.session_state:
                     'salary_max': sal_max if sal_max > 0 else None,
                     'description': desc,
                     'url': url,
-                    'source': f"Import IA"
+                    'source': "Import IA"
                 }
                 
                 if 'job_info' in data:
@@ -366,8 +366,8 @@ with st.sidebar:
         for source, count in results:
             emoji = "🔍" if source == "indeed" else "🏢" if source == "francetravail" else "📝"
             st.metric(f"{emoji} {source.capitalize()}", count)
-    except Exception as e:
-        st.caption(f"⚠️ Stats indisponibles")
+    except Exception:
+        st.caption("⚠️ Stats indisponibles")
 
 # """
 # Ajout offres avec sources validées

@@ -48,7 +48,7 @@ def validate_source(url):
         return True, 'francetravail', "✅ Source France Travail autorisée"
     
     # Source non autorisée
-    return False, 'unknown', f"""
+    return False, 'unknown', """
     ❌ Source non supportée
     
     **Sources acceptées :**

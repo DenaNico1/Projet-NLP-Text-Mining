@@ -110,14 +110,14 @@ success_count = sum(1 for r in results if r['status'] == 'SUCCESS')
 error_count = sum(1 for r in results if r['status'] == 'ERROR')
 timeout_count = sum(1 for r in results if r['status'] == 'TIMEOUT')
 
-print(f"\nResultats :")
+print("\nResultats :")
 print(f"  [OK]      : {success_count}/{len(scripts)}")
 print(f"  [ERREUR]  : {error_count}/{len(scripts)}")
 print(f"  [TIMEOUT] : {timeout_count}/{len(scripts)}")
 
 print(f"\nTemps total : {total_time/60:.1f} minutes")
 
-print(f"\nDetails par script :")
+print("\nDetails par script :")
 for r in results:
     status_icon = {
         'SUCCESS': '[OK]     ',

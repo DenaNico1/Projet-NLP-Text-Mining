@@ -37,7 +37,7 @@ import umap
 from sklearn.manifold import TSNE
 
 # Clustering
-from sklearn.cluster import KMeans, DBSCAN
+from sklearn.cluster import KMeans
 try:
     import hdbscan
     HDBSCAN_AVAILABLE = True
@@ -47,8 +47,6 @@ except ImportError:
 
 # Visualisation
 import plotly.express as px
-import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 
 # Métriques
 from sklearn.metrics import silhouette_score, davies_bouldin_score
@@ -211,7 +209,7 @@ class EmbeddingAnalyzer:
             print("\n⚠️  HDBSCAN non disponible, skip")
             return None, None
         
-        print(f"\n🟢 Clustering HDBSCAN...")
+        print("\n🟢 Clustering HDBSCAN...")
         
         clusterer = hdbscan.HDBSCAN(
             min_cluster_size=HDBSCAN_MIN_CLUSTER_SIZE,
@@ -494,7 +492,7 @@ def main():
     print(f"📁 Répertoire résultats: {RESULTS_DIR}")
     
     # Charger données
-    print(f"\n📥 Chargement data_with_profiles.pkl...")
+    print("\n📥 Chargement data_with_profiles.pkl...")
     with open(MODELS_DIR / 'data_with_profiles.pkl', 'rb') as f:
         df = pickle.load(f)
     
@@ -585,7 +583,7 @@ def main():
     with open(MODELS_DIR / 'data_with_clusters.pkl', 'wb') as f:
         pickle.dump(df, f)
     
-    print(f"   ✅ data_with_clusters.pkl")
+    print("   ✅ data_with_clusters.pkl")
     
     # Métriques clustering
     metrics = {
@@ -597,7 +595,7 @@ def main():
     with open(RESULTS_DIR / 'clustering_metrics.json', 'w', encoding='utf-8') as f:
         json.dump(metrics, f, indent=2, ensure_ascii=False)
     
-    print(f"   ✅ clustering_metrics.json")
+    print("   ✅ clustering_metrics.json")
     
     print("\n" + "="*70)
     print("✅ EMBEDDINGS & CLUSTERING TERMINÉS !")

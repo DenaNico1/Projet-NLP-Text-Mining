@@ -1,8 +1,11 @@
 """
-Configuration Base de Données PostgreSQL (Supabase)
+Configuration Base de Données PostgreSQL (Supabase + Docker Local)
 Projet NLP Text Mining - Master SISE
 
-Connexion centralisée à l'entrepôt de données cloud
+Connexion intelligente avec basculement automatique :
+- Supabase (online) par défaut
+- Docker PostgreSQL local (offline) en fallback
+
 Modèle en étoile : 5 dimensions + 2 faits
 """
 
@@ -11,7 +14,6 @@ import psycopg2
 import pandas as pd
 import streamlit as st
 from dotenv import load_dotenv
-from pathlib import Path
 
 # Charger variables d'environnement
 load_dotenv()
@@ -20,13 +22,59 @@ load_dotenv()
 # CONFIGURATION
 # ============================================
 
-DB_CONFIG = {
+# Configuration Supabase (production/online)
+SUPABASE_CONFIG = {
     'host': os.getenv('DB_HOST', 'aws-1-eu-north-1.pooler.supabase.com'),
     'port': int(os.getenv('DB_PORT', 5432)),
     'database': os.getenv('DB_NAME', 'postgres'),
     'user': os.getenv('DB_USER', 'postgres.znkulobexqmrshfkgynv'),
     'password': os.getenv('DB_PASSWORD', '')
 }
+
+# Configuration Docker local (offline/développement)
+DOCKER_CONFIG = {
+    'host': 'postgres' if os.getenv('DOCKER_ENV') == 'true' else 'localhost',
+    'port': 5432,
+    'database': 'entrepot_nlp',
+    'user': 'nlp_user',
+    'password': 'nlp_password_2026'
+}
+
+# Mode forcé via variable d'environnement (USE_LOCAL_DB=true pour forcer Docker)
+USE_LOCAL_DB = os.getenv('USE_LOCAL_DB', 'false').lower() == 'true'
+
+def test_connection(config, timeout=3):
+    """Test rapide de connexion PostgreSQL"""
+    try:
+        conn = psycopg2.connect(**config, connect_timeout=timeout)
+        conn.close()
+        return True
+    except:
+        return False
+
+def get_active_config():
+    """
+    Détermine quelle configuration utiliser
+    1. Si USE_LOCAL_DB=true → Docker
+    2. Si Supabase accessible → Supabase
+    3. Sinon → Docker (fallback)
+    """
+    if USE_LOCAL_DB:
+        return DOCKER_CONFIG, 'local'
+    
+    # Tester Supabase d'abord
+    if SUPABASE_CONFIG['password'] and test_connection(SUPABASE_CONFIG):
+        return SUPABASE_CONFIG, 'supabase'
+    
+    # Fallback sur Docker local
+    if test_connection(DOCKER_CONFIG):
+        return DOCKER_CONFIG, 'local'
+    
+    # Par défaut, retourner Supabase (même si non accessible)
+    return SUPABASE_CONFIG, 'supabase'
+
+# Obtenir la config active
+DB_CONFIG, DB_MODE = get_active_config()
 
 # ============================================
 # CONNEXION
@@ -36,14 +84,28 @@ DB_CONFIG = {
 def get_db_connection():
     """
     Crée et cache une connexion PostgreSQL
-    Utilisé par Streamlit pour éviter reconnexions multiples
+    Bascule automatiquement entre Supabase et Docker local
     """
     try:
         conn = psycopg2.connect(**DB_CONFIG)
+        
+        # Afficher mode actif dans la sidebar
+        if DB_MODE == 'supabase':
+            st.sidebar.success("🌐 Connecté à Supabase (online)")
+        else:
+            st.sidebar.info("💻 Connecté à Docker local (offline)")
+        
         return conn
     except Exception as e:
-        st.error(f"❌ Erreur connexion PostgreSQL: {e}")
-        st.info("Vérifiez votre fichier .env et credentials Supabase")
+        st.error(f"❌ Erreur connexion PostgreSQL ({DB_MODE}): {e}")
+        
+        if DB_MODE == 'supabase':
+            st.info("💡 Vérifiez votre connexion internet ou passez en mode local")
+            st.code("USE_LOCAL_DB=true")
+        else:
+            st.info("💡 Assurez-vous que Docker est démarré")
+            st.code("docker-compose up -d postgres")
+        
         return None
 
 # ============================================

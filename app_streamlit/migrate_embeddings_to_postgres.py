@@ -4,7 +4,6 @@ Exécuter : python 02_migrate_embeddings_to_postgres.py
 """
 
 import numpy as np
-import psycopg2
 from pathlib import Path
 import sys
 from tqdm import tqdm
@@ -69,8 +68,8 @@ if len(offre_ids) != len(embeddings):
 # 4. MIGRATION (BATCH)
 # ============================================
 
-print(f"\n🚀 Migration vers PostgreSQL...")
-print(f"   Batch size: 100 offres")
+print("\n🚀 Migration vers PostgreSQL...")
+print("   Batch size: 100 offres")
 
 inserted = 0
 errors = 0
@@ -109,7 +108,7 @@ for i in tqdm(range(0, len(offre_ids), 100), desc="Migration"):
             print("❌ Trop d'erreurs, arrêt migration")
             break
 
-print(f"\n✅ Migration terminée !")
+print("\n✅ Migration terminée !")
 print(f"   - Insérés: {inserted}")
 print(f"   - Erreurs: {errors}")
 

@@ -11,7 +11,7 @@ import json
 from pathlib import Path
 from datetime import datetime
 import re
-from typing import Dict, Optional, Tuple
+from typing import Optional, Tuple
 
 # Import géocodage
 try:
@@ -61,7 +61,7 @@ class EntrepotImporter:
         Args:
             schema_file: Fichier SQL contenant le schéma
         """
-        print(f"\n📋 Création du schéma...")
+        print("\n📋 Création du schéma...")
         
         with open(schema_file, 'r', encoding='utf-8') as f:
             sql_schema = f.read()
@@ -530,7 +530,7 @@ class EntrepotImporter:
     
     def get_stats(self):
         """Affiche les statistiques de l'entrepôt"""
-        print(f"\n📊 STATISTIQUES ENTREPÔT")
+        print("\n📊 STATISTIQUES ENTREPÔT")
         print("="*70)
         
         # Total offres
@@ -538,7 +538,7 @@ class EntrepotImporter:
         print(f"Total offres: {total}")
         
         # Par source
-        print(f"\n📌 Par source:")
+        print("\n📌 Par source:")
         result = self.conn.execute("""
             SELECT s.source_name, COUNT(o.offre_id) as nb
             FROM fact_offres o
@@ -549,7 +549,7 @@ class EntrepotImporter:
             print(f"  {source:<20}: {nb}")
         
         # Par région
-        print(f"\n🗺️  Top 10 régions:")
+        print("\n🗺️  Top 10 régions:")
         result = self.conn.execute("""
             SELECT l.region, COUNT(o.offre_id) as nb
             FROM fact_offres o
@@ -563,7 +563,7 @@ class EntrepotImporter:
             print(f"  {region:<30}: {nb}")
         
         # Par type de contrat
-        print(f"\n📝 Par type de contrat:")
+        print("\n📝 Par type de contrat:")
         result = self.conn.execute("""
             SELECT c.contract_type, COUNT(o.offre_id) as nb
             FROM fact_offres o
@@ -580,7 +580,7 @@ class EntrepotImporter:
         print(f"\n🎓 Total compétences: {nb_comp}")
         
         if nb_comp > 0:
-            print(f"\n🏆 Top 10 compétences:")
+            print("\n🏆 Top 10 compétences:")
             result = self.conn.execute("""
                 SELECT skill_label, COUNT(*) as nb
                 FROM fact_competences
@@ -594,7 +594,7 @@ class EntrepotImporter:
     def close(self):
         """Ferme la connexion"""
         self.conn.close()
-        print(f"\n🔒 Connexion fermée")
+        print("\n🔒 Connexion fermée")
 
 
 # ============================================
@@ -626,8 +626,8 @@ if __name__ == "__main__":
         # Stats
         importer.get_stats()
         
-        print(f"\n✅ IMPORT TERMINÉ !")
-        print(f"📂 Base de données: entrepot_nlp.duckdb")
+        print("\n✅ IMPORT TERMINÉ !")
+        print("📂 Base de données: entrepot_nlp.duckdb")
         
     except Exception as e:
         print(f"\n❌ ERREUR: {e}")

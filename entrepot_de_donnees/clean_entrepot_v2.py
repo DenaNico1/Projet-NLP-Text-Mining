@@ -15,7 +15,6 @@ Date: Décembre 2025
 """
 
 import duckdb
-import pandas as pd
 from pathlib import Path
 from datetime import datetime
 
@@ -270,11 +269,11 @@ def backup_tables(conn):
     n_comp = conn.execute("SELECT COUNT(*) FROM fact_competences_backup_v2").fetchone()[0]
     print(f"   ✅ Backup fact_competences_v2 créé: {n_comp:,} compétences")
     
-    print(f"\n   💡 Pour restaurer:")
-    print(f"      DROP TABLE fact_offres;")
-    print(f"      CREATE TABLE fact_offres AS SELECT * FROM fact_offres_backup_v2;")
-    print(f"      DROP TABLE fact_competences;")
-    print(f"      CREATE TABLE fact_competences AS SELECT * FROM fact_competences_backup_v2;")
+    print("\n   💡 Pour restaurer:")
+    print("      DROP TABLE fact_offres;")
+    print("      CREATE TABLE fact_offres AS SELECT * FROM fact_offres_backup_v2;")
+    print("      DROP TABLE fact_competences;")
+    print("      CREATE TABLE fact_competences AS SELECT * FROM fact_competences_backup_v2;")
 
 
 def delete_cascade(conn, exclusion_conditions):
@@ -322,29 +321,29 @@ def verify_results(conn, n_offres_before, n_comp_before, n_offres_to_delete, n_c
     n_offres_deleted = n_offres_before - n_offres_after
     n_comp_deleted = n_comp_before - n_comp_after
     
-    print(f"\n📊 OFFRES:")
+    print("\n📊 OFFRES:")
     print(f"   AVANT:      {n_offres_before:,}")
     print(f"   APRÈS:      {n_offres_after:,}")
     print(f"   Supprimées: {n_offres_deleted:,} ({n_offres_deleted/n_offres_before*100:.1f}%)")
     
-    print(f"\n📊 COMPÉTENCES:")
+    print("\n📊 COMPÉTENCES:")
     print(f"   AVANT:      {n_comp_before:,}")
     print(f"   APRÈS:      {n_comp_after:,}")
     print(f"   Supprimées: {n_comp_deleted:,} ({n_comp_deleted/n_comp_before*100:.1f}%)")
     
     # Vérifier cohérence
     if n_offres_deleted == n_offres_to_delete:
-        print(f"\n✅ Cohérence offres OK")
+        print("\n✅ Cohérence offres OK")
     else:
         print(f"\n⚠️  Différence offres: {abs(n_offres_deleted - n_offres_to_delete)}")
     
     if n_comp_deleted == n_comp_to_delete:
-        print(f"✅ Cohérence compétences OK")
+        print("✅ Cohérence compétences OK")
     else:
         print(f"⚠️  Différence compétences: {abs(n_comp_deleted - n_comp_to_delete)}")
     
     # Vérifier intégrité FK
-    print(f"\n🔍 Vérification intégrité FK...")
+    print("\n🔍 Vérification intégrité FK...")
     
     orphan_check = conn.execute("""
         SELECT COUNT(*) FROM fact_competences c
@@ -355,7 +354,7 @@ def verify_results(conn, n_offres_before, n_comp_before, n_offres_to_delete, n_c
     """).fetchone()[0]
     
     if orphan_check == 0:
-        print(f"   ✅ Pas de compétences orphelines")
+        print("   ✅ Pas de compétences orphelines")
     else:
         print(f"   ⚠️  {orphan_check} compétences orphelines trouvées !")
     
@@ -460,20 +459,20 @@ def main():
     print("⚠️  CONFIRMATION REQUISE")
     print("="*70)
     
-    print(f"\n✅ NOUVEAUTÉS v2:")
-    print(f"   • Supprime Architecte logiciel (sans data)")
-    print(f"   • Supprime Chef projet logiciel (sans data)")
-    print(f"   • Supprime Concepteur/Responsable logiciel")
+    print("\n✅ NOUVEAUTÉS v2:")
+    print("   • Supprime Architecte logiciel (sans data)")
+    print("   • Supprime Chef projet logiciel (sans data)")
+    print("   • Supprime Concepteur/Responsable logiciel")
     
-    print(f"\nVous allez supprimer:")
+    print("\nVous allez supprimer:")
     print(f"   • {n_offres_to_delete:,} offres")
     print(f"   • {n_comp_to_delete:,} compétences associées")
     
-    print(f"\nDes backups v2 seront créés:")
-    print(f"   • fact_offres_backup_v2")
-    print(f"   • fact_competences_backup_v2")
+    print("\nDes backups v2 seront créés:")
+    print("   • fact_offres_backup_v2")
+    print("   • fact_competences_backup_v2")
     
-    print(f"\n⚠️  Cette action est IRRÉVERSIBLE (sauf via backup v2).")
+    print("\n⚠️  Cette action est IRRÉVERSIBLE (sauf via backup v2).")
     
     confirm = input("\n👉 Confirmer la suppression CASCADE v2 ? (tapez 'OUI' en majuscules): ")
     
@@ -510,23 +509,23 @@ def main():
     print("✅ NETTOYAGE v2 TERMINÉ !")
     print("="*70)
     
-    print(f"\n📊 RÉSUMÉ:")
+    print("\n📊 RÉSUMÉ:")
     print(f"   Offres supprimées:       {n_offres_deleted:,} ({n_offres_deleted/n_offres_before*100:.1f}%)")
     print(f"   Compétences supprimées:  {n_comp_deleted:,} ({n_comp_deleted/n_comp_before*100:.1f}%)")
     print(f"   Offres restantes:        {n_offres_after:,}")
     
-    print(f"\n📁 Fichiers créés:")
-    print(f"   - offres_a_supprimer_v2.csv")
-    print(f"   - nettoyage_v2_log.txt")
+    print("\n📁 Fichiers créés:")
+    print("   - offres_a_supprimer_v2.csv")
+    print("   - nettoyage_v2_log.txt")
     
-    print(f"\n🚀 PROCHAINES ÉTAPES:")
-    print(f"   1. cd analyses_nlp/fichiers_analyses")
-    print(f"   2. python 1_preprocessing.py")
-    print(f"   3. python 2_extraction_competences.py")
-    print(f"   4. python 3_topic_modeling.py")
-    print(f"   5. python 4_classification_hybride.py  (avec profils v6)")
+    print("\n🚀 PROCHAINES ÉTAPES:")
+    print("   1. cd analyses_nlp/fichiers_analyses")
+    print("   2. python 1_preprocessing.py")
+    print("   3. python 2_extraction_competences.py")
+    print("   4. python 3_topic_modeling.py")
+    print("   5. python 4_classification_hybride.py  (avec profils v6)")
     
-    print(f"\n💡 Base ultra-propre (Data/AI uniquement) !")
+    print("\n💡 Base ultra-propre (Data/AI uniquement) !")
 
 
 if __name__ == "__main__":

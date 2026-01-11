@@ -399,7 +399,6 @@ def apply_hybrid_classification(df, classifier: HybridProfileClassifier) -> pd.D
     Returns:
         DataFrame avec colonnes profil, methode, score, confiance
     """
-    import pandas as pd
     
     results = []
     

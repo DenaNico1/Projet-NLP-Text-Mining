@@ -20,12 +20,10 @@ Date: Décembre 2025
 """
 
 import pandas as pd
-import numpy as np
 import pickle
-import json
 from pathlib import Path
 import sys
-from collections import Counter, defaultdict
+from collections import Counter
 import re
 import unicodedata
 
@@ -45,7 +43,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from utils import ResultSaver
 from profils_definitions_v1_optimized import (
     PROFILS, CLASSIFICATION_CONFIG,
-    get_profil_config, get_all_profils, get_min_score
+    get_all_profils
 )
 
 
@@ -468,12 +466,12 @@ class ProfileClassifierUltimate:
         # ========================================
         # RÉSUMÉ CASCADE
         # ========================================
-        print(f"\n   📊 RÉSUMÉ CASCADE:")
+        print("\n   📊 RÉSUMÉ CASCADE:")
         print(f"      PASSE 1 (4.5): {n_pass1:4d}")
         print(f"      PASSE 2 (3.5): {n_pass2:4d}")
         print(f"      PASSE 3 (2.5): {n_pass3:4d}")
         print(f"      PASSE 4 (0.5): {n_pass4:4d}")
-        print(f"      ────────────────────")
+        print("      ────────────────────")
         print(f"      TOTAL:         {n_pass1 + n_pass2 + n_pass3 + n_pass4:4d}")
         
         return df
@@ -645,12 +643,12 @@ def main():
     # ==========================================
     stats = compute_statistics(df)
     
-    print(f"\n📊 Résultats classification ULTIME:")
+    print("\n📊 Résultats classification ULTIME:")
     print(f"   Taux classification: {stats['taux_classification']*100:.1f}%  🎯")
     print(f"   Confiance moyenne: {stats['confiance_moyenne']:.2f}")
     print(f"   Score moyen: {stats['score_moyen']:.2f}/10")
     
-    print(f"\n🏆 Distribution profils:")
+    print("\n🏆 Distribution profils:")
     for profil, count in sorted(stats['distribution'].items(), key=lambda x: x[1], reverse=True):
         pct = count / len(df) * 100
         print(f"   {profil:<30s}: {count:4d} ({pct:5.1f}%)")
@@ -689,14 +687,14 @@ def main():
     
     print("\n✅ CLASSIFICATION ULTIME TERMINÉE !")
     
-    print(f"\n📁 Fichiers créés:")
-    print(f"   - data_with_profiles.pkl")
-    print(f"   - classification_system.pkl")
-    print(f"   - profils_distribution.json")
-    print(f"   - profils_by_region.json")
-    print(f"   - profils_by_source.json")
-    print(f"   - profils_competences.json")
-    print(f"   - classification_quality.json")
+    print("\n📁 Fichiers créés:")
+    print("   - data_with_profiles.pkl")
+    print("   - classification_system.pkl")
+    print("   - profils_distribution.json")
+    print("   - profils_by_region.json")
+    print("   - profils_by_source.json")
+    print("   - profils_competences.json")
+    print("   - classification_quality.json")
     
 
     if stats['taux_classification'] >= 0.80:

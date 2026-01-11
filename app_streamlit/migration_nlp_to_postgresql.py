@@ -10,7 +10,6 @@ Configuration via fichier .env
 
 import pickle
 import psycopg2
-from psycopg2.extras import execute_values
 import pandas as pd
 from tqdm import tqdm
 import sys
@@ -44,7 +43,7 @@ if missing_vars:
     print(f"\n❌ Variables manquantes dans .env: {missing_vars}")
     sys.exit(1)
 
-print(f"\n✅ Configuration chargée")
+print("\n✅ Configuration chargée")
 
 # Vérifier pickle existe
 if not PICKLE_PATH.exists():
@@ -332,7 +331,7 @@ try:
     # Count par statut
     cursor.execute("SELECT status, COUNT(*) FROM fact_nlp_analysis GROUP BY status")
     statuses = cursor.fetchall()
-    print(f"\n   📍 Répartition par statut:")
+    print("\n   📍 Répartition par statut:")
     for status, count in statuses:
         print(f"      {status}: {count}")
     
@@ -346,7 +345,7 @@ try:
         LIMIT 10
     """)
     profils = cursor.fetchall()
-    print(f"\n   🎯 Top 10 profils:")
+    print("\n   🎯 Top 10 profils:")
     for profil, count in profils:
         print(f"      {profil}: {count}")
     

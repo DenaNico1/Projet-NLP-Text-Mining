@@ -33,7 +33,7 @@ from sentence_transformers import SentenceTransformer
 import umap
 
 # Clustering
-from sklearn.cluster import KMeans, DBSCAN
+from sklearn.cluster import KMeans
 
 # Réseau
 import networkx as nx
@@ -41,7 +41,6 @@ import networkx as nx
 # Visualisation
 import plotly.express as px
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 
 # Métriques
 from sklearn.metrics.pairwise import cosine_similarity
@@ -96,7 +95,7 @@ def extract_all_competences(df):
     ]).sort_values('count', ascending=False)
     
     print(f"   ✅ {len(df_comp)} compétences uniques trouvées")
-    print(f"   📊 Top 10:")
+    print("   📊 Top 10:")
     for i, row in df_comp.head(10).iterrows():
         print(f"      {i+1}. {row['competence']}: {row['count']}×")
     
@@ -137,7 +136,7 @@ def build_cooccurrence_matrix(df, min_count=MIN_COOCCURRENCE):
     df_edges = pd.DataFrame(edges).sort_values('weight', ascending=False)
     
     print(f"   ✅ {len(df_edges)} paires co-occurrentes (>= {min_count}×)")
-    print(f"   📊 Top 10 paires:")
+    print("   📊 Top 10 paires:")
     for i, row in df_edges.head(10).iterrows():
         print(f"      {i+1}. {row['comp1']} ↔ {row['comp2']}: {row['weight']}×")
     
@@ -615,7 +614,7 @@ def main():
     print(f"📁 Répertoire résultats: {RESULTS_DIR}")
     
     # Charger données
-    print(f"\n📥 Chargement data_with_profiles.pkl...")
+    print("\n📥 Chargement data_with_profiles.pkl...")
     with open(MODELS_DIR / 'data_with_profiles.pkl', 'rb') as f:
         df = pickle.load(f)
     

@@ -13,10 +13,8 @@ Date: Décembre 2025
 """
 
 import pandas as pd
-import numpy as np
 from pathlib import Path
 import sys
-import json
 
 # Ajouter le chemin pour imports
 sys.path.insert(0, str(Path(__file__).parent))
@@ -41,7 +39,7 @@ def main():
     df_competences = loader.load_competences()
     loader.disconnect()
     
-    print(f"\n Statistiques initiales:")
+    print("\n Statistiques initiales:")
     print(f"   Total offres: {len(df_offres)}")
     print(f"   Avec description: {df_offres['description'].notna().sum()}")
     print(f"   Compétences structurées: {len(df_competences)}")
@@ -85,7 +83,7 @@ def main():
     # 3.4 Nombre de tokens
     df_clean['num_tokens'] = df_clean['tokens'].apply(len)
     
-    print(f"\n Statistiques texte:")
+    print("\n Statistiques texte:")
     print(f"   Tokens moyen par offre: {df_clean['num_tokens'].mean():.0f}")
     print(f"   Tokens médian: {df_clean['num_tokens'].median():.0f}")
     print(f"   Tokens min/max: {df_clean['num_tokens'].min()}/{df_clean['num_tokens'].max()}")
@@ -182,7 +180,7 @@ def main():
     all_comps = [comp for comps in df_clean['competences_found'] for comp in comps]
     comp_counter = Counter(all_comps)
     
-    print(f"\n Top 10 compétences extraites:")
+    print("\n Top 10 compétences extraites:")
     for comp, count in comp_counter.most_common(10):
         pct = count / len(df_clean) * 100
         print(f"   {comp:<30s}: {count:4d} ({pct:5.1f}%)")
@@ -247,7 +245,7 @@ def main():
     
     df_final = df_clean[colonnes_finales].copy()
     
-    print(f"\n Colonnes dans data_clean.pkl:")
+    print("\n Colonnes dans data_clean.pkl:")
     for col in colonnes_finales:
         print(f"   - {col}")
     
@@ -316,32 +314,32 @@ def main():
     print(" PREPROCESSING MASTER TERMINÉ !")
     print("="*70)
     
-    print(f"\n Fichier principal créé:")
+    print("\n Fichier principal créé:")
     print(f"    data_clean.pkl ({len(df_final)} offres, {len(colonnes_finales)} colonnes)")
 
-    print(f"\n Colonnes disponibles pour analyses:")
-    print(f"    description          → Texte brut original")
-    print(f"    description_clean    → HTML nettoyé")
-    print(f"    tokens               → Liste tokens (clean, lemmatisés)")
-    print(f"    text_for_sklearn     → String pour TF-IDF/LDA")
-    print(f"    competences_found    → Compétences extraites")
+    print("\n Colonnes disponibles pour analyses:")
+    print("    description          → Texte brut original")
+    print("    description_clean    → HTML nettoyé")
+    print("    tokens               → Liste tokens (clean, lemmatisés)")
+    print("    text_for_sklearn     → String pour TF-IDF/LDA")
+    print("    competences_found    → Compétences extraites")
     
-    print(f"\n Qualité du preprocessing:")
+    print("\n Qualité du preprocessing:")
     print(f"    Stopwords FR+EN filtrés ({len(preprocessor.stop_words)} stopwords)")
-    print(f"    Lemmatisation appliquée (technique/techniques → technique)")
-    print(f"    HTML nettoyé (&nbsp; supprimé)")
-    print(f"    Tokens >= 3 caractères")
-    print(f"    Compétences normalisées (lowercase)")
+    print("    Lemmatisation appliquée (technique/techniques → technique)")
+    print("    HTML nettoyé (&nbsp; supprimé)")
+    print("    Tokens >= 3 caractères")
+    print("    Compétences normalisées (lowercase)")
     
-    print(f"\n Fichiers additionnels:")
-    print(f"   - data_clean.csv (export sans tokens)")
+    print("\n Fichiers additionnels:")
+    print("   - data_clean.csv (export sans tokens)")
     print(f"   - dictionnaire_competences.json ({len(all_skills)} compétences)")
-    print(f"   - competences_ft.pkl (compétences France Travail)")
-    print(f"   - stats_globales.json (statistiques complètes)")
+    print("   - competences_ft.pkl (compétences France Travail)")
+    print("   - stats_globales.json (statistiques complètes)")
     
-    print(f"\n Prochaines étapes:")
-    print(f"   1. python 2_extraction_competences.py")
-    print(f"   2. python 3_topic_modeling.py")
+    print("\n Prochaines étapes:")
+    print("   1. python 2_extraction_competences.py")
+    print("   2. python 3_topic_modeling.py")
     
     return df_final, all_skills
 

@@ -13,7 +13,6 @@ Configuration via fichier .env (sécurisé)
 
 import duckdb
 import psycopg2
-from psycopg2.extras import execute_values
 import pandas as pd
 from tqdm import tqdm
 import sys
@@ -58,7 +57,7 @@ if missing_vars:
     print(f"\n❌ Variables manquantes dans .env: {missing_vars}")
     sys.exit(1)
 
-print(f"\n✅ Configuration chargée")
+print("\n✅ Configuration chargée")
 print(f"   Host: {SUPABASE_CONFIG['host']}")
 print(f"   User: {SUPABASE_CONFIG['user']}")
 
@@ -301,7 +300,7 @@ for table_name, columns in dimensions:
         df = conn_duck.execute(f"SELECT * FROM {table_name}").df()
         
         if len(df) == 0:
-            print(f"      ⚠️  Table vide - ignorée")
+            print("      ⚠️  Table vide - ignorée")
             continue
         
         # Conversion NaN → None
@@ -353,7 +352,7 @@ try:
     # Filtrer colonnes existantes
     available_cols = [col for col in columns if col in df_offres.columns]
     
-    print(f"\n   Insertion par batch (500 lignes)...")
+    print("\n   Insertion par batch (500 lignes)...")
     batch_size = 500
     total_inserted = 0
     
@@ -403,7 +402,7 @@ try:
         columns = ['competence_id', 'offre_id', 'skill_code', 'skill_label', 'skill_level']
         available_cols = [col for col in columns if col in df_comp.columns]
         
-        print(f"\n   Insertion par batch (1000 lignes)...")
+        print("\n   Insertion par batch (1000 lignes)...")
         batch_size = 1000
         total_inserted = 0
         
@@ -513,7 +512,7 @@ for table in tables:
         verification[table] = count
         status = "✅" if count == stats.get(table, 0) else "⚠️"
         print(f"   {table:20s} : {count:6d} lignes {status}")
-    except Exception as e:
+    except Exception:
         print(f"   {table:20s} : ❌ Erreur")
 
 # ============================================

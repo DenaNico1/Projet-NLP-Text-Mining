@@ -14,7 +14,6 @@ Auteur: Projet NLP Text Mining - Master SISE
 Date: Décembre 2025
 """
 
-import pandas as pd
 import numpy as np
 import pickle
 import json
@@ -25,7 +24,7 @@ import random
 # ML
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score, classification_report
+from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, roc_auc_score
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -163,7 +162,7 @@ def generate_cv_database():
     print(f"   ✅ {len(cvs)} CV générés")
     
     # Stats
-    print(f"\n   📊 Distribution:")
+    print("\n   📊 Distribution:")
     profils_count = Counter([cv['profil_type'] for cv in cvs])
     for profil, count in profils_count.most_common():
         print(f"      {profil}: {count}")
@@ -392,7 +391,7 @@ def train_matching_model(pairs, embeddings_model):
         model, tfidf_vectorizer, metrics
     """
     
-    print(f"\n🤖 Extraction features + entraînement...")
+    print("\n🤖 Extraction features + entraînement...")
     
     # Features extraction
     X = []
@@ -429,7 +428,7 @@ def train_matching_model(pairs, embeddings_model):
     )
     
     # Entraînement
-    print(f"\n   🌳 Entraînement Random Forest...")
+    print("\n   🌳 Entraînement Random Forest...")
     
     model = RandomForestClassifier(
         n_estimators=100,
@@ -473,14 +472,14 @@ def train_matching_model(pairs, embeddings_model):
     
     metrics['feature_importance'] = feature_importance
     
-    print(f"\n   📊 Résultats:")
+    print("\n   📊 Résultats:")
     print(f"      Accuracy:  {metrics['accuracy']:.3f}")
     print(f"      Precision: {metrics['precision']:.3f}")
     print(f"      Recall:    {metrics['recall']:.3f}")
     print(f"      F1-Score:  {metrics['f1_score']:.3f}")
     print(f"      ROC-AUC:   {metrics['roc_auc']:.3f}")
     
-    print(f"\n   🎯 Feature Importance:")
+    print("\n   🎯 Feature Importance:")
     for name, importance in sorted(feature_importance.items(), key=lambda x: x[1], reverse=True):
         print(f"      {name:25s}: {importance:.3f}")
     
@@ -497,7 +496,7 @@ def main():
     print("="*70)
     
     # 1. Charger offres
-    print(f"\n📥 Chargement offres...")
+    print("\n📥 Chargement offres...")
     with open(MODELS_DIR / 'data_with_profiles.pkl', 'rb') as f:
         df_offres = pickle.load(f)
     
@@ -507,9 +506,9 @@ def main():
     cvs = generate_cv_database()
     
     # 3. Charger modèle embeddings
-    print(f"\n🤖 Chargement sentence-transformers...")
+    print("\n🤖 Chargement sentence-transformers...")
     embeddings_model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
-    print(f"   ✅ Modèle chargé")
+    print("   ✅ Modèle chargé")
     
     # 4. Créer dataset
     pairs = create_matching_dataset(cvs, df_offres, n_pairs=500)
@@ -518,12 +517,12 @@ def main():
     model, tfidf_vectorizer, metrics = train_matching_model(pairs, embeddings_model)
     
     # 6. Sauvegarder
-    print(f"\n💾 Sauvegarde...")
+    print("\n💾 Sauvegarde...")
     
     # CV base
     with open(RESULTS_DIR / 'cv_base_fictifs.json', 'w', encoding='utf-8') as f:
         json.dump(cvs, f, indent=2, ensure_ascii=False)
-    print(f"   ✅ cv_base_fictifs.json")
+    print("   ✅ cv_base_fictifs.json")
     
     # Modèle
     with open(MODELS_DIR / 'matching_model.pkl', 'wb') as f:
@@ -532,21 +531,21 @@ def main():
             'tfidf_vectorizer': tfidf_vectorizer,
             'embeddings_model_name': 'paraphrase-multilingual-MiniLM-L12-v2'
         }, f)
-    print(f"   ✅ matching_model.pkl")
+    print("   ✅ matching_model.pkl")
     
     # Métriques
     with open(RESULTS_DIR / 'matching_metrics.json', 'w', encoding='utf-8') as f:
         json.dump(metrics, f, indent=2)
-    print(f"   ✅ matching_metrics.json")
+    print("   ✅ matching_metrics.json")
     
     print("\n" + "="*70)
     print("✅ SYSTÈME ML MATCHING TERMINÉ !")
     print("="*70)
     print(f"\n📊 Performance: {metrics['accuracy']*100:.1f}% accuracy")
-    print(f"📁 Fichiers créés:")
-    print(f"   - cv_base_fictifs.json (25 CV)")
-    print(f"   - matching_model.pkl (Random Forest)")
-    print(f"   - matching_metrics.json (métriques)")
+    print("📁 Fichiers créés:")
+    print("   - cv_base_fictifs.json (25 CV)")
+    print("   - matching_model.pkl (Random Forest)")
+    print("   - matching_metrics.json (métriques)")
 
 
 if __name__ == "__main__":

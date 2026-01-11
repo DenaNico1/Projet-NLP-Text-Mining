@@ -8,11 +8,18 @@ import pandas as pd
 import numpy as np
 import pickle
 import json
-from pathlib import Path
-from sentence_transformers import SentenceTransformer
+
+# Import conditionnel de sentence_transformers (optionnel pour pages basiques)
+try:
+    from sentence_transformers import SentenceTransformer
+    SENTENCE_TRANSFORMERS_AVAILABLE = True
+except ImportError:
+    SENTENCE_TRANSFORMERS_AVAILABLE = False
+    SentenceTransformer = None
 
 from config import MODELS_DIR, RESULTS_DIR
-from config_db import get_db_connection
+from config_db import DB_CONFIG
+import psycopg2
 
 # ============================================
 # CHARGEMENT EMBEDDINGS DEPUIS POSTGRESQL
@@ -27,21 +34,27 @@ def load_offres_with_embeddings():
     - 1 seule requête (JOIN)
     - Cache Streamlit (pas de rechargement à chaque matching)
     - Retourne DataFrame + embeddings numpy array
-    """
-    conn = get_db_connection()
     
-    # Requête combinée (performance)
-    query = """
-        SELECT 
-            o.*,
-            e.embedding
-        FROM v_offres_nlp_complete o
-        LEFT JOIN offres_embeddings e ON o.offre_id = e.offre_id
-        ORDER BY o.offre_id
+    NOTE: Crée sa propre connexion temporaire (évite conflit avec cache)
     """
+    # Créer connexion temporaire (pas de cache_resource)
+    conn = psycopg2.connect(**DB_CONFIG)
     
-    df = pd.read_sql(query, conn)
-    conn.close()
+    try:
+        # Requête combinée (performance)
+        query = """
+            SELECT 
+                o.*,
+                e.embedding
+            FROM v_offres_nlp_complete o
+            LEFT JOIN offres_embeddings e ON o.offre_id = e.offre_id
+            ORDER BY o.offre_id
+        """
+        
+        df = pd.read_sql(query, conn)
+    finally:
+        # Fermer connexion temporaire
+        conn.close()
     
     # Extraire embeddings dans array numpy
     embeddings_list = []
@@ -57,7 +70,7 @@ def load_offres_with_embeddings():
                 else:
                     embeddings_list.append(None)
                     missing_embeddings.append((idx, row['offre_id']))
-            except Exception as e:
+            except Exception:
                 embeddings_list.append(None)
                 missing_embeddings.append((idx, row['offre_id']))
         else:
@@ -84,6 +97,10 @@ def load_offres_with_embeddings():
 @st.cache_resource
 def load_matching_models():
     """Charge modèles ML"""
+    if not SENTENCE_TRANSFORMERS_AVAILABLE:
+        st.error("❌ sentence-transformers non disponible. Installez: pip install sentence-transformers")
+        return None, None, None
+    
     with open(MODELS_DIR / 'matching_model.pkl', 'rb') as f:
         system = pickle.load(f)
     
@@ -185,6 +202,8 @@ def ajouter_offre_avec_embedding(offre_data, emb_model=None):
         
         # 2. Calculer embedding
         if emb_model is None:
+            if not SENTENCE_TRANSFORMERS_AVAILABLE:
+                raise ImportError("sentence-transformers non disponible")
             emb_model = SentenceTransformer('paraphrase-multilingual-mpnet-base-v2')
         
         text = f"{offre_data['title']} {offre_data.get('description', '')[:500]}"
@@ -209,217 +228,86 @@ def ajouter_offre_avec_embedding(offre_data, emb_model=None):
     finally:
         conn.close()
 
-# """
-# Data Loaders - Chargement centralisé données
-# Projet NLP Text Mining - Master SISE
+# ============================================
+# CHARGEMENT DONNÉES (SESSION STATE) ET MÉTRIQUES POUR INSIGHTS
+# ============================================
+def get_data():
+    """
+    Charge offres depuis PostgreSQL avec session state
+    1 seul chargement par session - Instantané ensuite
+    Returns:
+        pd.DataFrame: Offres complètes (38 colonnes)
+    """
+    from config_db import load_offres_with_nlp
+    if 'df_offres' not in st.session_state:
+        with st.spinner("🔄 Chargement offres PostgreSQL..."):
+            st.session_state.df_offres = load_offres_with_nlp()
+    return st.session_state.df_offres
 
-# Combine PostgreSQL (offres) + fichiers locaux (modèles ML, métriques)
-# """
+@st.cache_data
+def load_clustering_metrics():
+    """Charge métriques clustering"""
+    try:
+        with open(RESULTS_DIR / 'clustering_metrics.json', 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        st.warning("⚠️ clustering_metrics.json non trouvé")
+        return {}
 
-# import streamlit as st
-# import pandas as pd
-# import numpy as np
-# import json
-# import pickle
-# from pathlib import Path
-# from sentence_transformers import SentenceTransformer
+@st.cache_data
+def load_classification_quality():
+    """Charge qualité classification"""
+    try:
+        with open(RESULTS_DIR / 'classification_quality.json', 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        st.warning("⚠️ classification_quality.json non trouvé")
+        return {}
 
-# # ============================================
-# # CONFIGURATION CHEMINS
-# # ============================================
+@st.cache_data
+def load_profils_distribution():
+    """Charge distribution profils"""
+    try:
+        with open(RESULTS_DIR / 'profils_distribution.json', 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        st.warning("⚠️ profils_distribution.json non trouvé")
+        return {}
 
-# MODELS_DIR = Path('../resultats_nlp/models')
-# RESULTS_DIR = Path('../resultats_nlp')
+@st.cache_data
+def load_topics_lda():
+    """Charge topics LDA"""
+    try:
+        with open(RESULTS_DIR / 'topics_lda.json', 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception:
+        st.warning("⚠️ topics_lda.json non trouvé")
+        return None
 
-# # ============================================
-# # CHARGEMENT OFFRES (POSTGRESQL)
-# # ============================================
+def load_insights_data():
+    """
+    Charge données page Insights
+    Retourne: (df, clustering_metrics, quality_metrics)
+    """
+    df = get_data()
+    clustering = load_clustering_metrics()
+    quality = load_classification_quality()
+    return df, clustering, quality
 
-# def get_data():
-#     """
-#     Charge offres depuis PostgreSQL avec session state
-#     1 seul chargement par session - Instantané ensuite
-    
-#     Returns:
-#         pd.DataFrame: Offres complètes (38 colonnes)
-#     """
-#     from config_db import load_offres_with_nlp
-    
-#     if 'df_offres' not in st.session_state:
-#         with st.spinner("🔄 Chargement offres PostgreSQL..."):
-#             st.session_state.df_offres = load_offres_with_nlp()
-    
-#     return st.session_state.df_offres
+def load_profils_data():
+    """
+    Charge données page Profils
+    Retourne: (df, profils_stats)
+    """
+    df = get_data()
+    profils_stats = load_profils_distribution()
+    return df, profils_stats
 
-# # ============================================
-# # CHARGEMENT FICHIERS JSON (MÉTRIQUES)
-# # ============================================
-
-# @st.cache_data
-# def load_clustering_metrics():
-#     """Charge métriques clustering"""
-#     try:
-#         with open(RESULTS_DIR / 'clustering_metrics.json', 'r', encoding='utf-8') as f:
-#             return json.load(f)
-#     except Exception as e:
-#         st.warning(f"⚠️ clustering_metrics.json non trouvé")
-#         return {}
-
-# @st.cache_data
-# def load_classification_quality():
-#     """Charge qualité classification"""
-#     try:
-#         with open(RESULTS_DIR / 'classification_quality.json', 'r', encoding='utf-8') as f:
-#             return json.load(f)
-#     except Exception as e:
-#         st.warning(f"⚠️ classification_quality.json non trouvé")
-#         return {}
-
-# @st.cache_data
-# def load_profils_distribution():
-#     """Charge distribution profils"""
-#     try:
-#         with open(RESULTS_DIR / 'profils_distribution.json', 'r', encoding='utf-8') as f:
-#             return json.load(f)
-#     except Exception as e:
-#         st.warning(f"⚠️ profils_distribution.json non trouvé")
-#         return {}
-
-# @st.cache_data
-# def load_topics_lda():
-#     """Charge topics LDA"""
-#     try:
-#         with open(RESULTS_DIR / 'topics_lda.json', 'r', encoding='utf-8') as f:
-#             return json.load(f)
-#     except Exception as e:
-#         st.warning(f"⚠️ topics_lda.json non trouvé")
-#         return None
-
-# @st.cache_data
-# def load_matching_metrics():
-#     """Charge métriques matching"""
-#     try:
-#         with open(RESULTS_DIR / 'matching_metrics.json', 'r', encoding='utf-8') as f:
-#             return json.load(f)
-#     except Exception as e:
-#         st.warning(f"⚠️ matching_metrics.json non trouvé")
-#         return {}
-
-# # ============================================
-# # CHARGEMENT FICHIERS NPY/PKL (MODÈLES)
-# # ============================================
-
-# @st.cache_data
-# def load_embeddings():
-#     """Charge embeddings pré-calculés (.npy)"""
-#     try:
-#         embeddings_path = MODELS_DIR / 'embeddings.npy'
-#         embeddings = np.load(embeddings_path)
-#         return embeddings
-#     except Exception as e:
-#         st.warning(f"⚠️ embeddings.npy non trouvé : {e}")
-#         return None
-
-# @st.cache_resource
-# def load_matching_system():
-#     """
-#     Charge système matching complet
-#     @st.cache_resource car contient modèles ML (pas serializable)
-#     """
-#     try:
-#         with open(MODELS_DIR / 'matching_model.pkl', 'rb') as f:
-#             system = pickle.load(f)
-        
-#         # Charger modèle embeddings
-#         embeddings_model = SentenceTransformer(system['embeddings_model_name'])
-        
-#         return system['rf_model'], system['tfidf_vectorizer'], embeddings_model
-    
-#     except Exception as e:
-#         st.error(f"❌ Erreur chargement matching_model.pkl : {e}")
-#         return None, None, None
-
-# @st.cache_data
-# def load_cv_base():
-#     """Charge base CV fictifs"""
-#     try:
-#         with open(RESULTS_DIR / 'cv_base_fictifs.json', 'r', encoding='utf-8') as f:
-#             return json.load(f)
-#     except Exception as e:
-#         st.warning(f"⚠️ cv_base_fictifs.json non trouvé")
-#         return []
-
-# # ============================================
-# # FONCTIONS COMBINÉES (POUR PAGES SPÉCIFIQUES)
-# # ============================================
-
-# def load_insights_data():
-#     """
-#     Charge données page Insights
-#     Retourne: (df, clustering_metrics, quality_metrics)
-#     """
-#     df = get_data()
-#     clustering = load_clustering_metrics()
-#     quality = load_classification_quality()
-    
-#     return df, clustering, quality
-
-# def load_matching_data():
-#     """
-#     Charge données page Matching
-#     Retourne: (df, embeddings, rf_model, tfidf, embeddings_model, cv_base, metrics)
-#     """
-#     df = get_data()
-#     embeddings = load_embeddings()
-#     rf_model, tfidf, embeddings_model = load_matching_system()
-#     cv_base = load_cv_base()
-#     metrics = load_matching_metrics()
-    
-#     return df, embeddings, rf_model, tfidf, embeddings_model, cv_base, metrics
-
-# def load_profils_data():
-#     """
-#     Charge données page Profils
-#     Retourne: (df, profils_stats)
-#     """
-#     df = get_data()
-#     profils_stats = load_profils_distribution()
-    
-#     return df, profils_stats
-
-# def load_topics_data():
-#     """
-#     Charge données page Topics
-#     Retourne: (df, topics)
-#     """
-#     df = get_data()
-#     topics = load_topics_lda()
-    
-#     return df, topics
-
-# # ============================================
-# # UTILITAIRES
-# # ============================================
-
-# def clear_all_cache():
-#     """Vide tous caches (offres + fichiers)"""
-#     if 'df_offres' in st.session_state:
-#         del st.session_state.df_offres
-#     st.cache_data.clear()
-#     st.cache_resource.clear()
-#     st.rerun()
-
-# def get_cache_info():
-#     """Infos sur données en cache"""
-#     info = {
-#         'offres_loaded': 'df_offres' in st.session_state,
-#         'cache_data_entries': len(st.cache_data._cache_stats),
-#         'cache_resource_entries': len(st.cache_resource._cache_stats)
-#     }
-    
-#     if info['offres_loaded']:
-#         df = st.session_state.df_offres
-#         info['offres_count'] = len(df)
-#         info['offres_memory_mb'] = df.memory_usage(deep=True).sum() / 1024**2
-    
-#     return info
+def load_topics_data():
+    """
+    Charge données page Topics
+    Retourne: (df, topics)
+    """
+    df = get_data()
+    topics = load_topics_lda()
+    return df, topics

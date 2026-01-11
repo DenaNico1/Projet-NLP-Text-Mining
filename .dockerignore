@@ -1,0 +1,103 @@
+# ==================================================
+# .dockerignore - Fichiers exclus du build
+# ==================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+*.egg
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environnement
+.env
+.env.local
+.env.*.local
+*.env
+venv/
+env/
+ENV/
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Git
+.git/
+.gitignore
+.gitattributes
+
+# Documentation
+*.md
+!README.md
+docs/
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Fichiers temporaires
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Base de données (ne pas inclure fichier local)
+*.duckdb
+*.db
+*.sqlite
+*.sqlite3
+
+# Backup
+*.bak
+*.backup
+*.old
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# Données volumineuses (déjà dans volumes Docker)
+entrepot_de_donnees/corpus_*.json
+entrepot_de_donnees/*.duckdb
+
+# Scripts de migration (inutiles dans container)
+migrate_*.py
+migration_*.py
+export_*.py
+
+# Tests
+tests/
+test_*.py
+*_test.py
+
+# Cache
+.ruff_cache/
+.mypy_cache/
+.cache/
+
+# Fichiers Docker eux-mêmes
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+docker_init/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Node (si présent)
+node_modules/
+package-lock.json

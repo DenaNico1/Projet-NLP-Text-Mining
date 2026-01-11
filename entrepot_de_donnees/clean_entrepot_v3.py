@@ -14,7 +14,6 @@ Date: Décembre 2025
 """
 
 import duckdb
-import pandas as pd
 from pathlib import Path
 
 def clean_entrepot_v3():
@@ -232,7 +231,7 @@ def clean_entrepot_v3():
     conn.close()
     
     print("\n✅ NETTOYAGE v3 TERMINÉ !")
-    print(f"\n📊 RÉSUMÉ:")
+    print("\n📊 RÉSUMÉ:")
     print(f"   Base initiale: {count_before} offres")
     print(f"   Base finale:   {count_after} offres")
     print(f"   Supprimées:    {count_before - count_after} offres ({(count_before - count_after)/count_before*100:.1f}%)")

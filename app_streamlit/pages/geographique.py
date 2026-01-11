@@ -5,14 +5,13 @@ Carte France, heatmap régions, stats locales
 
 import streamlit as st
 import pandas as pd
-import pickle
 import plotly.express as px
 import plotly.graph_objects as go
 from pathlib import Path
 import sys
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from config import MODELS_DIR, COLORS
+from config import COLORS
 
 from utils import get_data
 df = get_data()

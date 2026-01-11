@@ -1,0 +1,84 @@
+services:
+  # ==========================================
+  # PostgreSQL Embarqué
+  # ==========================================
+  postgres:
+    image: postgres:15-alpine
+    container_name: nlp_postgres
+    environment:
+      POSTGRES_DB: entrepot_nlp
+      POSTGRES_USER: nlp_user
+      POSTGRES_PASSWORD: nlp_password_2026
+      # Performance tuning
+      POSTGRES_SHARED_BUFFERS: 256MB
+      POSTGRES_EFFECTIVE_CACHE_SIZE: 1GB
+    volumes:
+      # Script d'initialisation (chargé au premier démarrage)
+      - ./docker_init:/docker-entrypoint-initdb.d
+      # Persistance données
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U nlp_user -d entrepot_nlp"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - nlp_network
+
+  # ==========================================
+  # Application Streamlit
+  # ==========================================
+  streamlit:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: nlp_streamlit
+    ports:
+      - "8501:8501"
+    environment:
+      # Configuration PostgreSQL local (Docker)
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_NAME: entrepot_nlp
+      DB_USER: nlp_user
+      DB_PASSWORD: nlp_password_2026
+      # Forcer mode Docker
+      DOCKER_ENV: "true"
+      USE_LOCAL_DB: "true"
+      # Optionnel
+      MISTRAL_API_KEY: ${MISTRAL_API_KEY:-}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      # Monter résultats NLP (lecture seule)
+      - ./resultats_nlp:/app/resultats_nlp:ro
+      - ./analyses_nlp/resultats_nlp:/app/analyses_nlp/resultats_nlp:ro
+      # Fichiers modèles (lecture seule)
+      - ./analyses_nlp/fichiers_analyses:/app/analyses_nlp/fichiers_analyses:ro
+    networks:
+      - nlp_network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+    restart: unless-stopped
+
+# ==========================================
+# Volumes persistants
+# ==========================================
+volumes:
+  postgres_data:
+    driver: local
+
+# ==========================================
+# Réseau interne
+# ==========================================
+networks:
+  nlp_network:
+    driver: bridge

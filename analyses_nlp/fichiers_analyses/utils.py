@@ -18,8 +18,7 @@ from pathlib import Path
 import json
 import pickle
 import re
-from typing import List, Dict, Tuple, Optional
-from datetime import datetime
+from typing import List, Optional
 
 # NLP
 import nltk
@@ -462,7 +461,7 @@ if __name__ == "__main__":
     # Vérification
     print(f"\n   'nbsp' supprimé: {'nbsp' not in tokens}")
     print(f"   Stopwords FR filtrés: {'nous' not in tokens and 'notre' not in tokens}")
-    print(f"   Stopwords EN filtrés (si présents)")
+    print("   Stopwords EN filtrés (si présents)")
     print(f"   Tokens >= 3 caractères: {all(len(t) >= 3 for t in tokens)}")
 
     # Test ResultSaver

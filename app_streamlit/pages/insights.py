@@ -4,16 +4,13 @@ Clustering, qualité classification, analyses approfondies
 """
 
 import streamlit as st
-import pandas as pd
 import pickle
-import json
 import plotly.express as px
-import plotly.graph_objects as go
 from pathlib import Path
 import sys
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from config import MODELS_DIR, RESULTS_DIR, COLORS
+from config import MODELS_DIR, COLORS
 
 # data
 from data_loaders import load_insights_data
@@ -46,9 +43,6 @@ def predict_profile(titre, description, competences_list):
     """
     
     # Import TfidfVectorizer
-    from sklearn.feature_extraction.text import TfidfVectorizer
-    from sklearn.metrics.pairwise import cosine_similarity
-    import re
     import unicodedata
     
     # Normalisation
@@ -160,26 +154,9 @@ def predict_profile(titre, description, competences_list):
         'details': best_details
     }
 
-"""@st.cache_data
-def load_data():
-    with open(MODELS_DIR / 'data_with_profiles.pkl', 'rb') as f:
-        df = pickle.load(f)
-    
-    try:
-        with open(RESULTS_DIR / 'clustering_metrics.json', 'r', encoding='utf-8') as f:
-            clustering = json.load(f)
-    except:
-        clustering = {}
-    
-    try:
-        with open(RESULTS_DIR / 'classification_quality.json', 'r', encoding='utf-8') as f:
-            quality = json.load(f)
-    except:
-        quality = {}
-    
-    return df, clustering, quality
-
-df, clustering, quality = load_data()"""
+# ============================================
+# PAGE PRINCIPALE
+# ============================================
 
 st.title("Insights Avancés")
 st.markdown("Analyses approfondies et métriques qualité")
@@ -386,9 +363,9 @@ df_salaires = df[df['salary_annual'].notna()]
 if len(df_salaires) > 0:
     fig_sal = px.box(
         df_salaires,
-        x='source_name',
+        x='source',
         y='salary_annual',
-        color='source_name',
+        color='source',
         color_discrete_sequence=[COLORS['primary'], COLORS['accent']]
     )
     

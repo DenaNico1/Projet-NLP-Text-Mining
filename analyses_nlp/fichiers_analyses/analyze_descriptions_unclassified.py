@@ -35,13 +35,13 @@ def analyze_descriptions():
         print(f"OFFRE #{i}")
         print(f"{'='*70}")
         
-        print(f"\n📌 TITRE:")
+        print("\n📌 TITRE:")
         print(f"   {row['title']}")
         
-        print(f"\n📍 SOURCE:")
+        print("\n📍 SOURCE:")
         print(f"   {row['source_name']}")
         
-        print(f"\n📊 SCORES:")
+        print("\n📊 SCORES:")
         print(f"   Score final: {row['profil_score']:.2f}/10")
         print(f"   Score titre: {row['score_title']:.2f}/10")
         print(f"   Score description: {row['score_description']:.2f}/10")
@@ -55,21 +55,21 @@ def analyze_descriptions():
         else:
             print("   Aucune")
         
-        print(f"\n📝 DESCRIPTION (premiers 500 caractères):")
+        print("\n📝 DESCRIPTION (premiers 500 caractères):")
         desc = row.get('description', '')
         if desc and not pd.isna(desc):
             print(f"   {desc[:500]}...")
         else:
             print("   [Pas de description]")
         
-        print(f"\n📝 TEXT_FOR_SKLEARN (premiers 300 caractères):")
+        print("\n📝 TEXT_FOR_SKLEARN (premiers 300 caractères):")
         text_sk = row.get('text_for_sklearn', '')
         if text_sk and not pd.isna(text_sk):
             print(f"   {text_sk[:300]}...")
         else:
             print("   [Pas de texte]")
         
-        print(f"\n🎯 PROFIL 2ÈME POSITION:")
+        print("\n🎯 PROFIL 2ÈME POSITION:")
         print(f"   {row.get('profil_second', 'Aucun')} (score: {row.get('profil_second_score', 0):.2f})")
     
     print("\n" + "="*70)

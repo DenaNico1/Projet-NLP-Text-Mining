@@ -7,9 +7,7 @@ Date: Décembre 2025
 """
 
 import pandas as pd
-import numpy as np
 import pickle
-import json
 from pathlib import Path
 import sys
 from collections import Counter
@@ -19,11 +17,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
 import plotly.graph_objects as go
-from plotly.subplots import make_subplots
 
 sys.path.insert(0, str(Path(__file__).parent))
 from utils import ResultSaver
-from profils_definitions import get_all_profils
 
 
 def viz_distribution_profils(df, saver):
@@ -528,19 +524,19 @@ def main():
     
     print("\n✅ VISUALISATIONS TERMINÉES !")
     
-    print(f"\n📁 Visualisations créées:")
-    print(f"   1. profils_distribution.html")
-    print(f"   2. profils_by_region.html")
-    print(f"   3. profils_salaires.html")
-    print(f"   4. profils_heatmap_region.png")
-    print(f"   5. profils_sankey.html")
-    print(f"   6. profils_radar.html")
-    print(f"   7. profils_treemap.html")
-    print(f"   8. profils_confidence.html")
-    print(f"   9. profils_sunburst.html")
-    print(f"   10. profils_evolution.html")
-    print(f"   11. profils_scores_components.html")
-    print(f"   12. profils_pie.html")
+    print("\n📁 Visualisations créées:")
+    print("   1. profils_distribution.html")
+    print("   2. profils_by_region.html")
+    print("   3. profils_salaires.html")
+    print("   4. profils_heatmap_region.png")
+    print("   5. profils_sankey.html")
+    print("   6. profils_radar.html")
+    print("   7. profils_treemap.html")
+    print("   8. profils_confidence.html")
+    print("   9. profils_sunburst.html")
+    print("   10. profils_evolution.html")
+    print("   11. profils_scores_components.html")
+    print("   12. profils_pie.html")
 
 
 if __name__ == "__main__":

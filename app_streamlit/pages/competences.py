@@ -5,13 +5,13 @@ Réseau sémantique, recherche, recommandations
 
 import streamlit as st
 import pandas as pd
-import pickle
 import streamlit.components.v1 as components
 from pathlib import Path
 import sys
+import os
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from config import MODELS_DIR, RESULTS_DIR, VIZ_DIR
+from config import VIZ_DIR
 
 
 #from config_db import load_offres_with_nlp
@@ -23,12 +23,23 @@ from config import MODELS_DIR, RESULTS_DIR, VIZ_DIR
 from utils import get_data
 df = get_data()
 
-# Charger analyse compétences depuis CSV (TEMPORAIRE)
-RESULTS_DIR = Path('../resultats_nlp')
-df_comp = pd.read_csv(RESULTS_DIR / 'competences_analysis.csv')
+# Charger analyse compétences depuis CSV
+# Utiliser chemin absolu qui fonctionne dans Docker et en local
+if os.getenv('DOCKER_ENV') == 'true':
+    # Dans Docker, les fichiers sont dans /app/resultats_nlp
+    RESULTS_DIR_LOCAL = Path('/app/resultats_nlp')
+else:
+    # En local, utiliser le chemin relatif
+    RESULTS_DIR_LOCAL = Path(__file__).parent.parent.parent / 'resultats_nlp'
 
-# Renommer 'count' en 'nb_offres'
-df_comp = df_comp.rename(columns={'count': 'nb_offres'})
+competences_file = RESULTS_DIR_LOCAL / 'competences_analysis.csv'
+if competences_file.exists():
+    df_comp = pd.read_csv(competences_file)
+    # Renommer 'count' en 'nb_offres'
+    df_comp = df_comp.rename(columns={'count': 'nb_offres'})
+else:
+    st.warning(f"Fichier competences_analysis.csv non trouvé: {competences_file}")
+    df_comp = pd.DataFrame(columns=['competence', 'nb_offres'])
 
 st.title("Analyse des Compétences")
 st.markdown("Réseau sémantique, clusters et co-occurrences")

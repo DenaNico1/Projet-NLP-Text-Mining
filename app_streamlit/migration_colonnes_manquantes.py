@@ -8,7 +8,6 @@ pour compatibilité 100% avec data_with_profiles.pkl
 
 import pickle
 import psycopg2
-from psycopg2.extras import execute_values
 import pandas as pd
 from tqdm import tqdm
 import sys
@@ -127,8 +126,8 @@ for col_name, col_type in COLONNES_MANQUANTES:
         print("✅")
         added_cols.append(col_name)
         
-    except Exception as e:
-        print(f"⚠️  Déjà existe")
+    except Exception:
+        print("⚠️  Déjà existe")
         conn.rollback()
         existing_cols.append(col_name)
 
@@ -298,7 +297,7 @@ try:
     if missing_in_vue:
         print(f"\n   ⚠️  Colonnes manquantes dans vue: {missing_in_vue}")
     else:
-        print(f"\n   ✅ Toutes colonnes présentes dans vue")
+        print("\n   ✅ Toutes colonnes présentes dans vue")
     
     # Test chargement
     cursor.execute("SELECT COUNT(*) FROM v_offres_nlp_complete")
@@ -306,7 +305,7 @@ try:
     print(f"   ✅ {count} offres dans vue")
     
     # Exemples valeurs nouvelles colonnes
-    print(f"\n   📋 Exemples valeurs (première ligne):")
+    print("\n   📋 Exemples valeurs (première ligne):")
     cursor.execute(f"""
         SELECT {', '.join([col for col, _ in COLONNES_MANQUANTES[:5]])}
         FROM v_offres_nlp_complete 

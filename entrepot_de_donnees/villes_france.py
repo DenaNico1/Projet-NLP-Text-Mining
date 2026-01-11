@@ -263,5 +263,5 @@ if __name__ == "__main__":
     print(f"   Top 10 villes: {get_top_cities(10)}")
     
     # Test 4: Villes par région
-    print(f"\n4. Villes Auvergne-Rhône-Alpes:")
+    print("\n4. Villes Auvergne-Rhône-Alpes:")
     print(f"   {get_cities_by_region('Auvergne-Rhône-Alpes')}")

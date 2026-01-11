@@ -49,7 +49,7 @@ DB_CONFIG = {
     'password': os.getenv('DB_PASSWORD')
 }
 
-print(f"\n🔗 Connexion PostgreSQL...")
+print("\n🔗 Connexion PostgreSQL...")
 
 try:
     conn = psycopg2.connect(**DB_CONFIG)
@@ -128,7 +128,7 @@ if extra_cols:
     print("\n" + "="*80)
     print("ℹ️  COLONNES SUPPLÉMENTAIRES DANS POSTGRESQL")
     print("="*80)
-    print(f"\n(Colonnes ajoutées par le modèle étoile)\n")
+    print("\n(Colonnes ajoutées par le modèle étoile)\n")
     for col in sorted(extra_cols):
         print(f"   • {col}")
 

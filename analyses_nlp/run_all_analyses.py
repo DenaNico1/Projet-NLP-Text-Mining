@@ -12,7 +12,6 @@ Usage:
 
 import argparse
 import sys
-import subprocess
 from pathlib import Path
 import time
 
@@ -76,8 +75,8 @@ def main():
     if skip_steps:
         print(f"⏭️  Étapes à sauter: {sorted(skip_steps)}")
     
-    print(f"\n⏱️  Temps estimé: 15-30 minutes")
-    print(f"\nAppuyez sur Ctrl+C pour annuler...")
+    print("\n⏱️  Temps estimé: 15-30 minutes")
+    print("\nAppuyez sur Ctrl+C pour annuler...")
     
     time.sleep(3)
     
@@ -94,7 +93,7 @@ def main():
         results[step_num] = success
         
         if not success:
-            print(f"\n⚠️  Voulez-vous continuer malgré l'erreur ? (o/n)")
+            print("\n⚠️  Voulez-vous continuer malgré l'erreur ? (o/n)")
             response = input().strip().lower()
             if response != 'o':
                 break
@@ -118,9 +117,9 @@ def main():
     
     if successful == total:
         print("\n🎉 TOUTES LES ANALYSES TERMINÉES AVEC SUCCÈS !")
-        print(f"\n📁 Résultats disponibles dans: ../resultats_nlp/")
+        print("\n📁 Résultats disponibles dans: ../resultats_nlp/")
     else:
-        print(f"\n⚠️  Certaines analyses ont échoué")
+        print("\n⚠️  Certaines analyses ont échoué")
 
 
 if __name__ == "__main__":

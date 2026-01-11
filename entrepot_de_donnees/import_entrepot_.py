@@ -340,12 +340,12 @@ def import_data(source, json_file, db_file='entrepot_nlp.duckdb', verbose=True):
     
     # Connexion
     if verbose:
-        print(f"\n✅ Connexion à la base...")
+        print("\n✅ Connexion à la base...")
     conn = duckdb.connect(db_file)
     
     # Lecture du fichier
     if verbose:
-        print(f"📖 Lecture du fichier...")
+        print("📖 Lecture du fichier...")
     
     try:
         with open(json_file, 'r', encoding='utf-8') as f:
@@ -375,7 +375,7 @@ def import_data(source, json_file, db_file='entrepot_nlp.duckdb', verbose=True):
     
     # Chargement offres existantes
     if verbose:
-        print(f"\n📊 Vérification doublons...")
+        print("\n📊 Vérification doublons...")
     
     existing_hashes = set()
     existing = conn.execute("""
@@ -400,7 +400,7 @@ def import_data(source, json_file, db_file='entrepot_nlp.duckdb', verbose=True):
     
     # Import
     if verbose:
-        print(f"\n📥 Import en cours...")
+        print("\n📥 Import en cours...")
     
     for i, offer in enumerate(offers, 1):
         try:
@@ -501,7 +501,7 @@ def import_data(source, json_file, db_file='entrepot_nlp.duckdb', verbose=True):
         print(f"Erreurs            : {errors}")
         
         if error_details:
-            print(f"\n⚠️  Détails erreurs:")
+            print("\n⚠️  Détails erreurs:")
             for err in error_details:
                 print(f"  • {err}")
         

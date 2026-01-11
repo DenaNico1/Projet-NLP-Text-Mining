@@ -19,7 +19,6 @@ import pandas as pd
 import numpy as np
 import pickle
 from pathlib import Path
-import json
 
 # Visualisation
 import plotly.graph_objects as go
@@ -273,7 +272,6 @@ def create_3d_dual_view(
     Vue côte-à-côte de 2 visualisations 3D (ex: UMAP vs t-SNE)
     """
     
-    from plotly.subplots import make_subplots
     
     # Créer subplot 1x2
     fig = make_subplots(
@@ -799,7 +797,7 @@ def main():
     with open(VIZ_DIR / 'index.html', 'w', encoding='utf-8') as f:
         f.write(html_index)
     
-    print(f"   ✅ index.html")
+    print("   ✅ index.html")
     
     # ========================================
     # RÉSUMÉ
@@ -810,18 +808,18 @@ def main():
     print("="*70)
     
     print(f"\n📁 Répertoire: {VIZ_DIR}")
-    print(f"\n📄 Fichiers créés:")
-    print(f"   - index.html (page d'accueil)")
-    print(f"   - projector_offres_profils_3d.html")
-    print(f"   - projector_offres_animated.html")
-    print(f"   - projector_offres_regions_3d.html")
-    print(f"   - projector_offres_sources_3d.html")
+    print("\n📄 Fichiers créés:")
+    print("   - index.html (page d'accueil)")
+    print("   - projector_offres_profils_3d.html")
+    print("   - projector_offres_animated.html")
+    print("   - projector_offres_regions_3d.html")
+    print("   - projector_offres_sources_3d.html")
     
     if competences_available:
-        print(f"   - projector_competences_labels_3d.html")
-        print(f"   - projector_competences_all_3d.html")
+        print("   - projector_competences_labels_3d.html")
+        print("   - projector_competences_all_3d.html")
     
-    print(f"\n🌐 Pour visualiser:")
+    print("\n🌐 Pour visualiser:")
     print(f"   Ouvrir: {VIZ_DIR / 'index.html'}")
 
 

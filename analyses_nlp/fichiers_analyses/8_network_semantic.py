@@ -14,7 +14,6 @@ Auteur: Projet NLP Text Mining
 Date: Décembre 2025
 """
 
-import pandas as pd
 import numpy as np
 import pickle
 from pathlib import Path
@@ -26,7 +25,6 @@ import networkx as nx
 
 # Visualisation
 import plotly.graph_objects as go
-import plotly.express as px
 
 # PyVis pour réseau interactif HTML
 try:
@@ -102,7 +100,7 @@ def build_network_graph(df, min_cooccur=MIN_COOCCURRENCE, top_n=TOP_N_NODES):
     top_comps = [comp for comp, _ in comp_counts.most_common(top_n)]
     
     print(f"   ✅ Top {len(top_comps)} compétences sélectionnées")
-    print(f"   📊 Top 10:")
+    print("   📊 Top 10:")
     for i, (comp, count) in enumerate(comp_counts.most_common(10), 1):
         print(f"      {i}. {comp}: {count}×")
     
@@ -130,7 +128,7 @@ def build_network_graph(df, min_cooccur=MIN_COOCCURRENCE, top_n=TOP_N_NODES):
                 G.add_edge(comp1, comp2, weight=weight)
                 n_edges += 1
     
-    print(f"   ✅ Graphe construit:")
+    print("   ✅ Graphe construit:")
     print(f"      Noeuds: {G.number_of_nodes()}")
     print(f"      Arêtes: {G.number_of_edges()}")
     
@@ -546,7 +544,7 @@ def main():
     print(f"📁 Répertoire: {VIZ_DIR}")
     
     # Charger données
-    print(f"\n📥 Chargement data_with_profiles.pkl...")
+    print("\n📥 Chargement data_with_profiles.pkl...")
     with open(MODELS_DIR / 'data_with_profiles.pkl', 'rb') as f:
         df = pickle.load(f)
     
@@ -664,7 +662,7 @@ def main():
     with open(VIZ_DIR / 'index.html', 'w', encoding='utf-8') as f:
         f.write(html_index)
     
-    print(f"   ✅ index.html")
+    print("   ✅ index.html")
     
     # ========================================
     # RÉSUMÉ
@@ -675,12 +673,12 @@ def main():
     print("="*70)
     
     print(f"\n📁 Fichiers créés dans: {VIZ_DIR}")
-    print(f"   - network_semantic_2d.html (⭐ principal)")
+    print("   - network_semantic_2d.html (⭐ principal)")
     if PYVIS_AVAILABLE:
-        print(f"   - network_semantic_interactive.html")
-    print(f"   - network_semantic_3d.html")
-    print(f"   - network_stats.json")
-    print(f"   - index.html")
+        print("   - network_semantic_interactive.html")
+    print("   - network_semantic_3d.html")
+    print("   - network_stats.json")
+    print("   - index.html")
     
     print(f"\n🌐 Ouvrir: {VIZ_DIR / 'index.html'}")
 

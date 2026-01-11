@@ -14,7 +14,6 @@ Date: Décembre 2025
 import pandas as pd
 import numpy as np
 import pickle
-import json
 from pathlib import Path
 import sys
 from collections import Counter
@@ -123,7 +122,7 @@ def main():
     all_comps = [comp for comps in df['competences_found'] for comp in comps]
     comp_counter = Counter(all_comps)
     
-    print(f"\n Top 20 compétences:")
+    print("\n Top 20 compétences:")
     for comp, count in comp_counter.most_common(20):
         pct = count / len(df) * 100
         print(f"   {comp:<30s}: {count:4d} ({pct:5.1f}%)")
@@ -135,7 +134,7 @@ def main():
     
     df_tfidf = compute_tfidf_keywords(df['text_for_sklearn'], top_k=100)
     
-    print(f"\n Top 20 termes TF-IDF:")
+    print("\n Top 20 termes TF-IDF:")
     print(df_tfidf.head(20).to_string(index=False))
     
     # ==========================================
@@ -145,13 +144,13 @@ def main():
     
     # Bigrams
     bigrams = extract_ngrams(df['text_for_sklearn'], n=2, top_k=50)
-    print(f"\n Top 20 Bi-grams:")
+    print("\n Top 20 Bi-grams:")
     for ngram, freq in bigrams[:20]:
         print(f"   {ngram:<40s}: {freq:4.0f}")
     
     # Trigrams
     trigrams = extract_ngrams(df['text_for_sklearn'], n=3, top_k=30)
-    print(f"\n Top 15 Tri-grams:")
+    print("\n Top 15 Tri-grams:")
     for ngram, freq in trigrams[:15]:
         print(f"   {ngram:<50s}: {freq:4.0f}")
     
@@ -218,7 +217,7 @@ def main():
     
     pairs_sorted = sorted(pairs, key=lambda x: x[2], reverse=True)
     
-    print(f"\n🔗 Top 20 paires de compétences:")
+    print("\n🔗 Top 20 paires de compétences:")
     for comp1, comp2, count in pairs_sorted[:20]:
         print(f"   {comp1:<20s} + {comp2:<20s}: {count:3d} offres")
     
@@ -340,21 +339,21 @@ def main():
     saver.save_pickle(df, 'data_with_analyses.pkl')
     
     print("\n EXTRACTION DE COMPÉTENCES TERMINÉE !")
-    print(f"\n Résultats:")
+    print("\n Résultats:")
     print(f"   - {len(comp_counter)} compétences uniques")
     print(f"   - {len(bigrams)} bi-grams")
     print(f"   - {len(trigrams)} tri-grams")
     print(f"   - {len(pairs_sorted)} paires co-occurrences")
     
-    print(f"\n Fichiers créés:")
-    print(f"   - competences_extracted.json")
-    print(f"   - data_with_analyses.pkl")
-    print(f"   - tfidf_keywords.csv")
-    print(f"   - cooccurrence_matrix.csv")
-    print(f"   - wordcloud_competences.png")
-    print(f"   - top30_competences.html")
-    print(f"   - heatmap_cooccurrence.png")
-    print(f"   - competences_par_region.html")
+    print("\n Fichiers créés:")
+    print("   - competences_extracted.json")
+    print("   - data_with_analyses.pkl")
+    print("   - tfidf_keywords.csv")
+    print("   - cooccurrence_matrix.csv")
+    print("   - wordcloud_competences.png")
+    print("   - top30_competences.html")
+    print("   - heatmap_cooccurrence.png")
+    print("   - competences_par_region.html")
 
 
 if __name__ == "__main__":

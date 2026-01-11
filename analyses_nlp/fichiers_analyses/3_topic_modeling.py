@@ -19,7 +19,6 @@ import sys
 
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.decomposition import LatentDirichletAllocation
-import matplotlib.pyplot as plt
 import plotly.express as px
 
 sys.path.insert(0, str(Path(__file__).parent))
@@ -181,11 +180,11 @@ def main():
     saver.save_pickle(df, 'data_with_topics.pkl')
     
     print("\n TOPIC MODELING TERMINÉ !")
-    print(f"\n Fichiers créés:")
-    print(f"   - topics_lda.json")
-    print(f"   - lda_model.pkl")
-    print(f"   - data_with_topics.pkl")
-    print(f"   - topics_distribution.html")
+    print("\n Fichiers créés:")
+    print("   - topics_lda.json")
+    print("   - lda_model.pkl")
+    print("   - data_with_topics.pkl")
+    print("   - topics_distribution.html")
 
 
 if __name__ == "__main__":

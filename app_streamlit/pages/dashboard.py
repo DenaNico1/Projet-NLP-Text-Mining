@@ -5,7 +5,6 @@ KPIs, timeline, top compétences, carte France
 
 import streamlit as st
 import pandas as pd
-import pickle
 import plotly.express as px
 import plotly.graph_objects as go
 from pathlib import Path
@@ -13,7 +12,7 @@ import sys
 
 # Imports locaux
 sys.path.insert(0, str(Path(__file__).parent.parent))
-from config import MODELS_DIR, RESULTS_DIR, COLORS
+from config import COLORS
 
 # ============================================
 # CHARGEMENT DONNÉES
@@ -281,29 +280,34 @@ with col_stats:
             help="Salaire annuel brut médian"
         )
     
-    # Tokens moyen
-    tokens_moyen = df_filtered['num_tokens'].mean()
-    st.metric(
-        "Tokens par Offre",
-        f"{tokens_moyen:.0f}",
-        help="Longueur moyenne descriptions"
-    )
+    # Tokens moyen (avec vérification de colonne)
+    if 'num_tokens' in df_filtered.columns:
+        tokens_moyen = df_filtered['num_tokens'].mean()
+        if pd.notna(tokens_moyen):
+            st.metric(
+                "Tokens par Offre",
+                f"{tokens_moyen:.0f}",
+                help="Longueur moyenne descriptions"
+            )
     
-    # Compétences moyennes
-    comp_moyennes = df_filtered['num_competences'].mean()
-    st.metric(
-        "Compétences par Offre",
-        f"{comp_moyennes:.1f}",
-        help="Nombre moyen compétences extraites"
-    )
+    # Compétences moyennes (avec vérification de colonne)
+    if 'num_competences' in df_filtered.columns:
+        comp_moyennes = df_filtered['num_competences'].mean()
+        if pd.notna(comp_moyennes):
+            st.metric(
+                "Compétences par Offre",
+                f"{comp_moyennes:.1f}",
+                help="Nombre moyen compétences extraites"
+            )
     
     # Région dominante
-    region_top = df_filtered['region'].value_counts().index[0]
-    st.metric(
-        "Région Dominante",
-        region_top,
-        help="Région avec le plus d'offres"
-    )
+    if 'region' in df_filtered.columns and len(df_filtered['region'].dropna()) > 0:
+        region_top = df_filtered['region'].value_counts().index[0]
+        st.metric(
+            "Région Dominante",
+            region_top,
+            help="Région avec le plus d'offres"
+        )
 
 st.markdown("---")
 

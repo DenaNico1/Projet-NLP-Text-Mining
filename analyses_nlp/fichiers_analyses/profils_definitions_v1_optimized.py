@@ -910,7 +910,7 @@ if __name__ == "__main__":
     print("📋 VALIDATION DÉFINITIONS PROFILS v1 OPTIMISÉE")
     print("="*70)
     
-    print(f"\n✅ Version: v1 OPTIMISÉE")
+    print("\n✅ Version: v1 OPTIMISÉE")
     print(f"✅ Nombre de profils: {len(PROFILS)}")
     print(f"✅ Min score global: {CLASSIFICATION_CONFIG['min_score']}")
     print(f"✅ Min confidence: {CLASSIFICATION_CONFIG['min_confidence']}")

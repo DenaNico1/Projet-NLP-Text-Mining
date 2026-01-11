@@ -2,9 +2,23 @@
 
 # Secrets
 .env
+
+# Database files
 *.duckdb
 
+# ==================================================
+# Docker & PostgreSQL Dumps
+# ==================================================
+# Décommenter la ligne suivante si vous ne voulez PAS 
+# versionner le dump SQL (données sensibles, taille > 1GB, etc.)
+# docker_init/*.sql
+
+# Volumes Docker
+postgres_data/
+
+# ==================================================
 # Python
+# ==================================================
 __pycache__/
 *.pyc
 *.pyo
