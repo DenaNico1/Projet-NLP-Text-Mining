@@ -71,7 +71,7 @@ def build_network_graph(df, min_cooccur=MIN_COOCCURRENCE, top_n=TOP_N_NODES):
         G: nx.Graph
         node_info: dict avec métadonnées noeuds
     """
-    print(f"\n🔗 Construction réseau (min_cooccur={min_cooccur}, top_n={top_n})...")
+    print(f"\n Construction réseau (min_cooccur={min_cooccur}, top_n={top_n})...")
     
     # ========================================
     # 1. CALCULER CO-OCCURRENCES
@@ -101,8 +101,8 @@ def build_network_graph(df, min_cooccur=MIN_COOCCURRENCE, top_n=TOP_N_NODES):
     
     top_comps = [comp for comp, _ in comp_counts.most_common(top_n)]
     
-    print(f"   ✅ Top {len(top_comps)} compétences sélectionnées")
-    print(f"   📊 Top 10:")
+    print(f"    Top {len(top_comps)} compétences sélectionnées")
+    print(f"    Top 10:")
     for i, (comp, count) in enumerate(comp_counts.most_common(10), 1):
         print(f"      {i}. {comp}: {count}×")
     
@@ -130,7 +130,7 @@ def build_network_graph(df, min_cooccur=MIN_COOCCURRENCE, top_n=TOP_N_NODES):
                 G.add_edge(comp1, comp2, weight=weight)
                 n_edges += 1
     
-    print(f"   ✅ Graphe construit:")
+    print(f"    Graphe construit:")
     print(f"      Noeuds: {G.number_of_nodes()}")
     print(f"      Arêtes: {G.number_of_edges()}")
     
@@ -138,7 +138,7 @@ def build_network_graph(df, min_cooccur=MIN_COOCCURRENCE, top_n=TOP_N_NODES):
     # 4. CALCULER MÉTRIQUES CENTRALITÉ
     # ========================================
     
-    print("\n📊 Calcul métriques centralité...")
+    print("\n Calcul métriques centralité...")
     
     # Degré (nombre connexions)
     degree_centrality = nx.degree_centrality(G)
@@ -166,7 +166,7 @@ def build_network_graph(df, min_cooccur=MIN_COOCCURRENCE, top_n=TOP_N_NODES):
     
     hubs = [node for node in G.nodes() if G.degree(node) >= threshold]
     
-    print(f"   ✅ Hubs identifiés ({len(hubs)}):")
+    print(f"    Hubs identifiés ({len(hubs)}):")
     hubs_sorted = sorted(hubs, key=lambda x: G.degree(x), reverse=True)
     for i, hub in enumerate(hubs_sorted[:15], 1):
         print(f"      {i}. {hub}: degré {G.degree(hub)}")
@@ -186,7 +186,7 @@ def viz_network_plotly_2d(G, node_info, output_file='network_semantic_2d.html'):
     """
     Réseau 2D Plotly style académique (comme l'image)
     """
-    print(f"\n   📊 Réseau 2D Plotly ({output_file})...")
+    print(f"\n    Réseau 2D Plotly ({output_file})...")
     
     # ========================================
     # 1. LAYOUT (position noeuds)
@@ -312,7 +312,7 @@ def viz_network_plotly_2d(G, node_info, output_file='network_semantic_2d.html'):
     output_path = VIZ_DIR / output_file
     fig.write_html(output_path)
     
-    print(f"      ✅ Sauvegardé: {output_file}")
+    print(f"       Sauvegardé: {output_file}")
     
     return fig
 
@@ -324,9 +324,9 @@ def viz_network_pyvis_interactive(G, node_info, output_file='network_semantic_in
     if not PYVIS_AVAILABLE:
         print("   ⚠️  PyVis non disponible, skip")
         return None
-    
-    print(f"\n   📊 Réseau PyVis interactif ({output_file})...")
-    
+
+    print(f"\n    Réseau PyVis interactif ({output_file})...")
+
     # Créer réseau PyVis
     net = Network(
         height='900px',
@@ -407,7 +407,7 @@ def viz_network_pyvis_interactive(G, node_info, output_file='network_semantic_in
     output_path = VIZ_DIR / output_file
     net.save_graph(str(output_path))
     
-    print(f"      ✅ Sauvegardé: {output_file}")
+    print(f"       Sauvegardé: {output_file}")
     
     return net
 
@@ -416,7 +416,7 @@ def viz_network_3d_plotly(G, node_info, output_file='network_semantic_3d.html'):
     """
     Réseau 3D Plotly
     """
-    print(f"\n   📊 Réseau 3D Plotly ({output_file})...")
+    print(f"\n    Réseau 3D Plotly ({output_file})...")
     
     # Layout 3D
     pos_3d = nx.spring_layout(G, dim=3, k=0.5, iterations=50, seed=42)
@@ -488,7 +488,7 @@ def viz_network_3d_plotly(G, node_info, output_file='network_semantic_3d.html'):
     output_path = VIZ_DIR / output_file
     fig.write_html(output_path)
     
-    print(f"      ✅ Sauvegardé: {output_file}")
+    print(f"       Sauvegardé: {output_file}")
     
     return fig
 
@@ -497,7 +497,7 @@ def export_network_stats(G, node_info, output_file='network_stats.json'):
     """
     Exporte statistiques réseau
     """
-    print(f"\n   📊 Export statistiques ({output_file})...")
+    print(f"\n    Export statistiques ({output_file})...")
     
     stats = {
         'global': {
@@ -532,7 +532,7 @@ def export_network_stats(G, node_info, output_file='network_stats.json'):
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(stats, f, indent=2, ensure_ascii=False)
     
-    print(f"      ✅ Sauvegardé: {output_file}")
+    print(f"       Sauvegardé: {output_file}")
 
 
 # ============================================
@@ -541,16 +541,16 @@ def export_network_stats(G, node_info, output_file='network_stats.json'):
 
 def main():
     print("="*70)
-    print("🌐 RÉSEAU SÉMANTIQUE COMPÉTENCES - STYLE GRAPH")
+    print(" RÉSEAU SÉMANTIQUE COMPÉTENCES - STYLE GRAPH")
     print("="*70)
-    print(f"📁 Répertoire: {VIZ_DIR}")
+    print(f" Répertoire: {VIZ_DIR}")
     
     # Charger données
-    print(f"\n📥 Chargement data_with_profiles.pkl...")
+    print(f"\n Chargement data_with_profiles.pkl...")
     with open(MODELS_DIR / 'data_with_profiles.pkl', 'rb') as f:
         df = pickle.load(f)
     
-    print(f"   ✅ {len(df)} offres chargées")
+    print(f"    {len(df)} offres chargées")
     
     # ========================================
     # 1. CONSTRUCTION RÉSEAU
@@ -566,7 +566,7 @@ def main():
     # 2. VISUALISATIONS
     # ========================================
     
-    print("\n🎨 Génération visualisations...")
+    print("\n Génération visualisations...")
     
     # 2D style image (principal)
     viz_network_plotly_2d(G, node_info, 'network_semantic_2d.html')
@@ -588,7 +588,7 @@ def main():
     # 4. INDEX HTML
     # ========================================
     
-    print("\n📄 Génération index.html...")
+    print("\n Génération index.html...")
     
     html_index = f"""
 <!DOCTYPE html>
@@ -631,10 +631,10 @@ def main():
     </style>
 </head>
 <body>
-    <h1>🌐 Réseau Sémantique des Compétences</h1>
+    <h1> Réseau Sémantique des Compétences</h1>
     
     <div class="stats">
-        <h3>📊 Statistiques Réseau</h3>
+        <h3> Statistiques Réseau</h3>
         <ul>
             <li><b>Noeuds:</b> {G.number_of_nodes()} compétences</li>
             <li><b>Liens:</b> {G.number_of_edges()} co-occurrences</li>
@@ -643,7 +643,7 @@ def main():
     </div>
     
     <div class="viz-card">
-        <h2>📍 Vue 2D (Recommandé)</h2>
+        <h2> Vue 2D (Recommandé)</h2>
         <p>Réseau style académique avec hubs en jaune. Layout force-directed.</p>
         <a href="network_semantic_2d.html" class="btn">Ouvrir ➜</a>
     </div>
@@ -651,7 +651,7 @@ def main():
     {"<div class='viz-card'><h2>⚡ Vue Interactive (PyVis)</h2><p>Physique temps réel. Drag, zoom, hover.</p><a href='network_semantic_interactive.html' class='btn'>Ouvrir ➜</a></div>" if PYVIS_AVAILABLE else ""}
     
     <div class="viz-card">
-        <h2>🎲 Vue 3D</h2>
+        <h2> Vue 3D</h2>
         <p>Exploration 3D du réseau.</p>
         <a href="network_semantic_3d.html" class="btn">Ouvrir ➜</a>
     </div>
@@ -664,17 +664,17 @@ def main():
     with open(VIZ_DIR / 'index.html', 'w', encoding='utf-8') as f:
         f.write(html_index)
     
-    print(f"   ✅ index.html")
+    print(f"    index.html")
     
     # ========================================
     # RÉSUMÉ
     # ========================================
     
     print("\n" + "="*70)
-    print("✅ RÉSEAU SÉMANTIQUE TERMINÉ !")
+    print(" RÉSEAU SÉMANTIQUE TERMINÉ !")
     print("="*70)
     
-    print(f"\n📁 Fichiers créés dans: {VIZ_DIR}")
+    print(f"\n Répertoire: {VIZ_DIR}")
     print(f"   - network_semantic_2d.html (⭐ principal)")
     if PYVIS_AVAILABLE:
         print(f"   - network_semantic_interactive.html")
@@ -682,7 +682,7 @@ def main():
     print(f"   - network_stats.json")
     print(f"   - index.html")
     
-    print(f"\n🌐 Ouvrir: {VIZ_DIR / 'index.html'}")
+    print(f"\n Ouvrir: {VIZ_DIR / 'index.html'}")
 
 
 if __name__ == "__main__":

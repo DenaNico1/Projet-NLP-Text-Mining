@@ -53,7 +53,7 @@ def viz_distribution_profils(df, saver):
 
 def viz_profils_by_region(df, saver):
     """2. Profils par région (grouped bar chart)"""
-    print("   🗺️  Profils par région...")
+    print("    Profils par région...")
     
     df_class = df[df['status'] == 'classified']
     top_regions = df_class['region'].value_counts().head(8).index
@@ -90,7 +90,7 @@ def viz_profils_by_region(df, saver):
 
 def viz_profils_salaires(df, saver):
     """3. Salaires par profil (box plot)"""
-    print("   💰 Salaires par profil...")
+    print("  Salaires par profil...")
     
     df_class = df[df['status'] == 'classified'].copy()
     df_class = df_class[df_class['salary_annual'].notna()]
@@ -121,7 +121,7 @@ def viz_profils_salaires(df, saver):
 
 def viz_heatmap_region(df, saver):
     """4. Heatmap profils × régions"""
-    print("   🔥 Heatmap profils × régions...")
+    print("    Heatmap profils × régions...")
     
     df_class = df[df['status'] == 'classified']
     
@@ -165,7 +165,7 @@ def viz_heatmap_region(df, saver):
 
 def viz_sankey_competences(df, saver):
     """5. Sankey diagram compétences → profils"""
-    print("   🔗 Sankey compétences → profils...")
+    print("   Sankey compétences → profils...")
     
     df_class = df[df['status'] == 'classified']
     
@@ -223,7 +223,7 @@ def viz_sankey_competences(df, saver):
 
 def viz_radar_competences(df, saver):
     """6. Radar chart compétences par profil (top 5 profils)"""
-    print("   📡 Radar compétences...")
+    print("    Radar compétences...")
     
     df_class = df[df['status'] == 'classified']
     top_profils = df_class['profil_assigned'].value_counts().head(5).index
@@ -273,7 +273,7 @@ def viz_radar_competences(df, saver):
 
 def viz_treemap_profils(df, saver):
     """7. Treemap profils × sources"""
-    print("   🌳 Treemap profils × sources...")
+    print("   Treemap profils × sources...")
     
     df_class = df[df['status'] == 'classified']
     
@@ -307,7 +307,7 @@ def viz_treemap_profils(df, saver):
 
 def viz_confidence_distribution(df, saver):
     """8. Distribution confiance classification"""
-    print("   📈 Distribution confiance...")
+    print("   Distribution confiance...")
     
     df_class = df[df['status'] == 'classified']
     
@@ -334,7 +334,7 @@ def viz_confidence_distribution(df, saver):
 
 def viz_sunburst_profils(df, saver):
     """9. Sunburst profils × contrats × régions"""
-    print("   ☀️  Sunburst profils...")
+    print("    Sunburst profils...")
     
     df_class = df[df['status'] == 'classified']
     
@@ -381,7 +381,7 @@ def viz_sunburst_profils(df, saver):
 
 def viz_evolution_temporelle(df, saver):
     """10. Évolution temporelle profils (si dates disponibles)"""
-    print("   📅 Évolution temporelle...")
+    print("    Évolution temporelle...")
     
     df_class = df[df['status'] == 'classified'].copy()
     df_class = df_class[df_class['date_posted'].notna()]
@@ -426,7 +426,7 @@ def viz_evolution_temporelle(df, saver):
 
 def viz_scores_components(df, saver):
     """11. Composantes scores (règles vs ML vs compétences)"""
-    print("   🎯 Composantes scores...")
+    print("   Composantes scores...")
     
     df_class = df[df['status'] == 'classified']
     top_profils = df_class['profil_assigned'].value_counts().head(6).index
@@ -470,7 +470,7 @@ def viz_scores_components(df, saver):
 
 def viz_pie_global(df, saver):
     """12. Pie chart distribution globale"""
-    print("   🥧 Pie chart distribution...")
+    print("   Pie chart distribution...")
     
     df_class = df[df['status'] == 'classified']
     profil_counts = df_class['profil_assigned'].value_counts()
@@ -492,7 +492,7 @@ def main():
     Génère toutes les visualisations
     """
     print("="*70)
-    print("📊 ÉTAPE 5 : VISUALISATIONS PROFILS MÉTIER")
+    print(" ÉTAPE 5 : VISUALISATIONS PROFILS MÉTIER")
     print("="*70)
     
     saver = ResultSaver()
@@ -505,13 +505,13 @@ def main():
     with open('../resultats_nlp/models/data_with_profiles.pkl', 'rb') as f:
         df = pickle.load(f)
     
-    print(f"   ✅ Offres: {len(df)}")
-    print(f"   ✅ Classifiées: {(df['status'] == 'classified').sum()}")
+    print(f"    Offres: {len(df)}")
+    print(f"    Classifiées: {(df['status'] == 'classified').sum()}")
     
     # ==========================================
     # VISUALISATIONS
     # ==========================================
-    print("\n📊 Génération visualisations...")
+    print("\n Génération visualisations...")
     
     viz_distribution_profils(df, saver)
     viz_profils_by_region(df, saver)
@@ -526,9 +526,9 @@ def main():
     viz_scores_components(df, saver)
     viz_pie_global(df, saver)
     
-    print("\n✅ VISUALISATIONS TERMINÉES !")
+    print("\n VISUALISATIONS TERMINÉES !")
     
-    print(f"\n📁 Visualisations créées:")
+    print(f"\n Visualisations créées:")
     print(f"   1. profils_distribution.html")
     print(f"   2. profils_by_region.html")
     print(f"   3. profils_salaires.html")

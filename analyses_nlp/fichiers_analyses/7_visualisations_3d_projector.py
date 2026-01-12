@@ -179,7 +179,7 @@ def create_3d_scatter_advanced(
         }
     )
     
-    print(f"   ✅ {output_file}")
+    print(f"   {output_file}")
     
     return fig
 
@@ -259,7 +259,7 @@ def create_3d_with_labels(
     output_path = VIZ_DIR / output_file
     fig.write_html(output_path)
     
-    print(f"   ✅ {output_file}")
+    print(f"   {output_file}")
     
     return fig
 
@@ -344,7 +344,7 @@ def create_3d_dual_view(
     output_path = VIZ_DIR / output_file
     fig.write_html(output_path)
     
-    print(f"   ✅ {output_file}")
+    print(f"   {output_file}")
     
     return fig
 
@@ -450,7 +450,7 @@ def create_3d_animated_rotation(
     output_path = VIZ_DIR / output_file
     fig.write_html(output_path)
     
-    print(f"   ✅ {output_file}")
+    print(f"   {output_file}")
     
     return fig
 
@@ -461,15 +461,15 @@ def create_3d_animated_rotation(
 
 def main():
     print("="*70)
-    print("🎨 VISUALISATIONS 3D INTERACTIVES - STYLE TENSORFLOW PROJECTOR")
+    print(" VISUALISATIONS 3D INTERACTIVES - STYLE TENSORFLOW PROJECTOR")
     print("="*70)
-    print(f"📁 Répertoire: {VIZ_DIR}")
+    print(f" Répertoire: {VIZ_DIR}")
     
     # ========================================
     # 1. CHARGER DONNÉES EMBEDDINGS OFFRES
     # ========================================
     
-    print("\n📥 Chargement embeddings offres...")
+    print("\n Chargement embeddings offres...")
     
     # Charger offres
     with open(MODELS_DIR / 'data_with_profiles.pkl', 'rb') as f:
@@ -494,13 +494,13 @@ def main():
     # Tailles basées sur score
     sizes_offres = (df_class['profil_score'] / 2).tolist()  # Score/2 pour tailles 0-5
     
-    print(f"   ✅ {len(coords_offres)} offres chargées")
+    print(f"   {len(coords_offres)} offres chargées")
     
     # ========================================
     # 2. CHARGER DONNÉES EMBEDDINGS COMPÉTENCES
     # ========================================
     
-    print("\n📥 Chargement embeddings compétences...")
+    print("\n Chargement embeddings compétences...")
     
     try:
         # Charger UMAP 3D compétences
@@ -517,24 +517,24 @@ def main():
             axis=1
         ).tolist()
         
-        print(f"   ✅ {len(coords_comp)} compétences chargées")
+        print(f"   {len(coords_comp)} compétences chargées")
         competences_available = True
         
     except FileNotFoundError:
-        print("   ⚠️  Compétences non disponibles (exécuter 6_embeddings_competences.py d'abord)")
+        print("    Compétences non disponibles (exécuter 6_embeddings_competences.py d'abord)")
         competences_available = False
     
     # ========================================
     # 3. GÉNÉRER VISUALISATIONS 3D
     # ========================================
     
-    print("\n🎨 Génération visualisations 3D...")
+    print("\n Génération visualisations 3D...")
     
     # ========================================
     # VIZ 1: Offres par profil (UMAP 3D)
     # ========================================
     
-    print("\n   📊 Vue 1: Offres par profil (UMAP 3D)...")
+    print("\n   Vue 1: Offres par profil (UMAP 3D)...")
     create_3d_scatter_advanced(
         coords_3d=coords_offres,
         labels=labels_offres,
@@ -548,7 +548,7 @@ def main():
     # VIZ 2: Offres avec rotation animée
     # ========================================
     
-    print("\n   📊 Vue 2: Offres avec rotation animée...")
+    print("\n   Vue 2: Offres avec rotation animée...")
     create_3d_animated_rotation(
         coords_3d=coords_offres,
         labels=labels_offres,
@@ -562,7 +562,7 @@ def main():
     # ========================================
     
     if competences_available:
-        print("\n   📊 Vue 3: Compétences avec labels...")
+        print("\n   Vue 3: Compétences avec labels...")
         
         # Filtrer top compétences pour lisibilité
         df_comp_top = df_comp.nlargest(100, 'count')
@@ -582,7 +582,7 @@ def main():
         # VIZ 4: Toutes compétences (sans labels)
         # ========================================
         
-        print("\n   📊 Vue 4: Toutes compétences...")
+        print("\n   Vue 4: Toutes compétences...")
         create_3d_scatter_advanced(
             coords_3d=coords_comp,
             labels=labels_comp,
@@ -595,7 +595,7 @@ def main():
     # VIZ 5: Offres par région (top 5 régions)
     # ========================================
     
-    print("\n   📊 Vue 5: Offres par région...")
+    print("\n   Vue 5: Offres par région...")
     
     top_regions = df_class['region'].value_counts().head(5).index.tolist()
     df_regions = df_class[df_class['region'].isin(top_regions)].copy()
@@ -620,7 +620,7 @@ def main():
     # VIZ 6: Offres par source
     # ========================================
     
-    print("\n   📊 Vue 6: Offres par source...")
+    print("\n   Vue 6: Offres par source...")
     
     hover_sources = df_class.apply(
         lambda row: f"{row['title']}<br>Source: {row['source_name']}<br>Profil: {row['profil_assigned']}",
@@ -639,7 +639,7 @@ def main():
     # GÉNÉRER INDEX HTML
     # ========================================
     
-    print("\n📄 Génération index.html...")
+    print("\n Génération index.html...")
     
     html_index = f"""
 <!DOCTYPE html>
@@ -726,12 +726,12 @@ def main():
 </head>
 <body>
     <div class="container">
-        <h1>🎨 Visualisations 3D Interactives</h1>
+        <h1> Visualisations 3D Interactives</h1>
         <p style="color: #666; font-size: 18px;">
             Explorez les données du projet NLP en 3D - Style TensorFlow Projector
         </p>
         
-        <h2>📊 Offres d'Emploi ({len(coords_offres)} offres)</h2>
+        <h2> Offres d'Emploi ({len(coords_offres)} offres)</h2>
         <div class="viz-grid">
             <div class="viz-card">
                 <h3>Vue par Profil Métier <span class="badge">Principal</span></h3>
@@ -778,7 +778,7 @@ def main():
 """
     
     html_index += """
-        <h2>💡 Instructions</h2>
+        <h2> Instructions</h2>
         <ul style="color: #666; line-height: 1.8;">
             <li><strong>Rotation :</strong> Clic gauche + glisser</li>
             <li><strong>Zoom :</strong> Molette souris ou pincement tactile</li>
@@ -799,18 +799,18 @@ def main():
     with open(VIZ_DIR / 'index.html', 'w', encoding='utf-8') as f:
         f.write(html_index)
     
-    print(f"   ✅ index.html")
+    print(f"    index.html")
     
     # ========================================
     # RÉSUMÉ
     # ========================================
     
     print("\n" + "="*70)
-    print("✅ VISUALISATIONS 3D TERMINÉES !")
+    print(" VISUALISATIONS 3D TERMINÉES !")
     print("="*70)
     
-    print(f"\n📁 Répertoire: {VIZ_DIR}")
-    print(f"\n📄 Fichiers créés:")
+    print(f"\n Répertoire: {VIZ_DIR}")
+    print(f"\n Fichiers créés:")
     print(f"   - index.html (page d'accueil)")
     print(f"   - projector_offres_profils_3d.html")
     print(f"   - projector_offres_animated.html")
@@ -821,7 +821,7 @@ def main():
         print(f"   - projector_competences_labels_3d.html")
         print(f"   - projector_competences_all_3d.html")
     
-    print(f"\n🌐 Pour visualiser:")
+    print(f"\n Pour visualiser:")
     print(f"   Ouvrir: {VIZ_DIR / 'index.html'}")
 
 

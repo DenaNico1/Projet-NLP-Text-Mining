@@ -78,7 +78,7 @@ MIN_COOCCURRENCE = 5  # Minimum co-occurrences pour lien
 
 def extract_all_competences(df):
     """Extrait liste unique de toutes les compétences"""
-    print("\n📋 Extraction compétences uniques...")
+    print("\n Extraction compétences uniques...")
     
     all_competences = []
     
@@ -95,8 +95,8 @@ def extract_all_competences(df):
         for comp, count in comp_counts.items()
     ]).sort_values('count', ascending=False)
     
-    print(f"   ✅ {len(df_comp)} compétences uniques trouvées")
-    print(f"   📊 Top 10:")
+    print(f"   {len(df_comp)} compétences uniques trouvées")
+    print(f"    Top 10:")
     for i, row in df_comp.head(10).iterrows():
         print(f"      {i+1}. {row['competence']}: {row['count']}×")
     
@@ -105,7 +105,7 @@ def extract_all_competences(df):
 
 def build_cooccurrence_matrix(df, min_count=MIN_COOCCURRENCE):
     """Construit matrice co-occurrence compétences"""
-    print(f"\n🔗 Calcul co-occurrences (min={min_count})...")
+    print(f"\n Calcul co-occurrences (min={min_count})...")
     
     # Matrice co-occurrence
     cooccur = defaultdict(lambda: defaultdict(int))
@@ -136,8 +136,8 @@ def build_cooccurrence_matrix(df, min_count=MIN_COOCCURRENCE):
     
     df_edges = pd.DataFrame(edges).sort_values('weight', ascending=False)
     
-    print(f"   ✅ {len(df_edges)} paires co-occurrentes (>= {min_count}×)")
-    print(f"   📊 Top 10 paires:")
+    print(f"   {len(df_edges)} paires co-occurrentes (>= {min_count}×)")
+    print(f"    Top 10 paires:")
     for i, row in df_edges.head(10).iterrows():
         print(f"      {i+1}. {row['comp1']} ↔ {row['comp2']}: {row['weight']}×")
     
@@ -152,16 +152,16 @@ class CompetenceEmbeddingAnalyzer:
     """Analyse embeddings compétences"""
     
     def __init__(self, model_name=EMBEDDING_MODEL):
-        print(f"\n🤖 Chargement modèle embeddings: {model_name}...")
+        print(f"\n Chargement modèle embeddings: {model_name}...")
         self.model = SentenceTransformer(model_name)
-        print(f"   ✅ Modèle chargé: {self.model.get_sentence_embedding_dimension()} dimensions")
+        print(f"   Modèle chargé: {self.model.get_sentence_embedding_dimension()} dimensions")
         
         self.embeddings = None
         self.competences = None
     
     def generate_embeddings(self, competences_list):
         """Génère embeddings pour liste compétences"""
-        print(f"\n📊 Génération embeddings pour {len(competences_list)} compétences...")
+        print(f"\n Génération embeddings pour {len(competences_list)} compétences...")
         
         self.competences = competences_list
         
@@ -172,23 +172,23 @@ class CompetenceEmbeddingAnalyzer:
             convert_to_numpy=True
         )
         
-        print(f"   ✅ Embeddings générés: shape {self.embeddings.shape}")
+        print(f"   Embeddings générés: shape {self.embeddings.shape}")
         
         return self.embeddings
     
     def compute_similarity_matrix(self):
         """Calcule matrice similarité cosinus"""
-        print("\n🔢 Calcul matrice similarité...")
+        print("\n Calcul matrice similarité...")
         
         sim_matrix = cosine_similarity(self.embeddings)
         
-        print(f"   ✅ Matrice similarité: shape {sim_matrix.shape}")
+        print(f"   Matrice similarité: shape {sim_matrix.shape}")
         
         return sim_matrix
     
     def reduce_umap_2d(self):
         """Réduction UMAP 2D"""
-        print("\n🔵 Réduction UMAP 2D compétences...")
+        print("\n Réduction UMAP 2D compétences...")
         
         reducer = umap.UMAP(
             n_components=2,
@@ -200,13 +200,13 @@ class CompetenceEmbeddingAnalyzer:
         
         umap_coords = reducer.fit_transform(self.embeddings)
         
-        print(f"   ✅ UMAP 2D: shape {umap_coords.shape}")
+        print(f"   UMAP 2D: shape {umap_coords.shape}")
         
         return umap_coords
     
     def reduce_umap_3d(self):
         """Réduction UMAP 3D"""
-        print("\n🔵 Réduction UMAP 3D compétences...")
+        print("\n Réduction UMAP 3D compétences...")
         
         reducer = umap.UMAP(
             n_components=3,
@@ -218,18 +218,18 @@ class CompetenceEmbeddingAnalyzer:
         
         umap_coords = reducer.fit_transform(self.embeddings)
         
-        print(f"   ✅ UMAP 3D: shape {umap_coords.shape}")
+        print(f"   UMAP 3D: shape {umap_coords.shape}")
         
         return umap_coords
     
     def cluster_competences(self, n_clusters=N_CLUSTERS_COMPETENCES):
         """Clustering compétences"""
-        print(f"\n🔴 Clustering compétences (k={n_clusters})...")
+        print(f"\n Clustering compétences (k={n_clusters})...")
         
         kmeans = KMeans(n_clusters=n_clusters, random_state=42, n_init=10)
         labels = kmeans.fit_predict(self.embeddings)
         
-        print(f"   ✅ {n_clusters} clusters trouvés")
+        print(f"   {n_clusters} clusters trouvés")
         
         return labels
     
@@ -294,14 +294,14 @@ def compute_profil_competence_signatures(df, analyzer):
                 'n_offres': len(df_profil)
             }
     
-    print(f"   ✅ Signatures calculées pour {len(signatures)} profils")
+    print(f"   Signatures calculées pour {len(signatures)} profils")
     
     return signatures
 
 
 def compare_profils_similarity(signatures):
     """Compare similarité entre profils via leurs signatures compétences"""
-    print("\n🔍 Comparaison similarité profils (via compétences)...")
+    print("\n Comparaison similarité profils (via compétences)...")
     
     profils = list(signatures.keys())
     n = len(profils)
@@ -316,7 +316,7 @@ def compare_profils_similarity(signatures):
     
     df_sim = pd.DataFrame(sim_matrix, index=profils, columns=profils)
     
-    print(f"   ✅ Matrice similarité profils: {df_sim.shape}")
+    print(f"   Matrice similarité profils: {df_sim.shape}")
     
     return df_sim
 
@@ -327,7 +327,7 @@ def compare_profils_similarity(signatures):
 
 def viz_competences_map_2d(df_comp, umap_coords, clusters, saver):
     """Carte 2D compétences avec clusters"""
-    print("\n   📊 Carte 2D compétences...")
+    print("\n    Carte 2D compétences...")
     
     df_viz = df_comp.copy()
     df_viz['UMAP_1'] = umap_coords[:, 0]
@@ -354,7 +354,7 @@ def viz_competences_map_2d(df_comp, umap_coords, clusters, saver):
 
 def viz_competences_map_3d(df_comp, umap_coords, clusters, saver):
     """Carte 3D compétences interactive"""
-    print("\n   📊 Carte 3D compétences...")
+    print("\n   Carte 3D compétences...")
     
     df_viz = df_comp.copy()
     df_viz['UMAP_1'] = umap_coords[:, 0]
@@ -383,7 +383,7 @@ def viz_competences_map_3d(df_comp, umap_coords, clusters, saver):
 
 def viz_cooccurrence_heatmap(df_edges, top_n=30, saver=None):
     """Heatmap co-occurrence top compétences"""
-    print("\n   📊 Heatmap co-occurrence...")
+    print("\n  Heatmap co-occurrence...")
     
     # Top compétences par total co-occurrences
     comp_totals = defaultdict(int)
@@ -428,7 +428,7 @@ def viz_cooccurrence_heatmap(df_edges, top_n=30, saver=None):
 
 def viz_network_competences(df_edges, top_n=50, saver=None):
     """Réseau de compétences (graphe interactif)"""
-    print("\n   📊 Réseau de compétences...")
+    print("\n   Réseau de compétences...")
     
     # Top edges
     df_top = df_edges.nlargest(top_n, 'weight')
@@ -507,7 +507,7 @@ def viz_network_competences(df_edges, top_n=50, saver=None):
 
 def viz_profils_similarity_heatmap(df_sim, saver):
     """Heatmap similarité profils (via compétences)"""
-    print("\n   📊 Heatmap similarité profils...")
+    print("\n   Heatmap similarité profils...")
     
     fig = px.imshow(
         df_sim,
@@ -525,7 +525,7 @@ def viz_profils_similarity_heatmap(df_sim, saver):
 
 def viz_top_similar_competences(analyzer, examples, saver):
     """Table top compétences similaires pour exemples"""
-    print("\n   📊 Top compétences similaires...")
+    print("\n   Top compétences similaires...")
     
     results = []
     
@@ -545,7 +545,7 @@ def viz_top_similar_competences(analyzer, examples, saver):
     # Sauvegarder CSV
     csv_path = VIZ_DIR / 'competences_similarities.csv'
     df_sim.to_csv(csv_path, index=False, encoding='utf-8-sig')
-    print(f"      ✅ CSV sauvegardé: {csv_path.name}")
+    print(f"      CSV sauvegardé: {csv_path.name}")
     
     # Visualisation
     fig = px.bar(
@@ -567,7 +567,7 @@ def viz_top_similar_competences(analyzer, examples, saver):
 
 def viz_clusters_competences_details(df_comp, clusters, saver):
     """Détails clusters compétences"""
-    print("\n   📊 Détails clusters compétences...")
+    print("\n   Détails clusters compétences...")
     
     df_viz = df_comp.copy()
     df_viz['Cluster'] = clusters
@@ -590,7 +590,7 @@ def viz_clusters_competences_details(df_comp, clusters, saver):
     # Sauvegarder
     csv_path = VIZ_DIR / 'competences_clusters_details.csv'
     df_clusters.to_csv(csv_path, index=False, encoding='utf-8-sig')
-    print(f"      ✅ CSV sauvegardé: {csv_path.name}")
+    print(f"      CSV sauvegardé: {csv_path.name}")
     
     # Bar chart tailles clusters
     fig = px.bar(
@@ -610,16 +610,16 @@ def viz_clusters_competences_details(df_comp, clusters, saver):
 
 def main():
     print("="*70)
-    print("🚀 ÉTAPE 6 : EMBEDDINGS COMPÉTENCES")
+    print(" ÉTAPE 6 : EMBEDDINGS COMPÉTENCES")
     print("="*70)
-    print(f"📁 Répertoire résultats: {RESULTS_DIR}")
+    print(f" Répertoire résultats: {RESULTS_DIR}")
     
     # Charger données
-    print(f"\n📥 Chargement data_with_profiles.pkl...")
+    print(f"\n Chargement data_with_profiles.pkl...")
     with open(MODELS_DIR / 'data_with_profiles.pkl', 'rb') as f:
         df = pickle.load(f)
     
-    print(f"   ✅ Offres: {len(df)}")
+    print(f"    Offres: {len(df)}")
     
     # Initialiser
     saver = ResultSaver(RESULTS_DIR)
@@ -634,7 +634,7 @@ def main():
     df_comp_filtered = df_comp[df_comp['count'] >= 3].reset_index(drop=True)
     competences_list = df_comp_filtered['competence'].tolist()
     
-    print(f"\n   ✅ {len(competences_list)} compétences retenues (>= 3 occurrences)")
+    print(f"\n   {len(competences_list)} compétences retenues (>= 3 occurrences)")
     
     # Co-occurrence
     df_edges = build_cooccurrence_matrix(df)
@@ -680,7 +680,7 @@ def main():
     # 6. VISUALISATIONS
     # ========================================
     
-    print("\n📊 Génération visualisations...")
+    print("\n Génération visualisations...")
     
     # Cartes compétences
     viz_competences_map_2d(df_comp_filtered, umap_2d, clusters, saver)
@@ -706,7 +706,7 @@ def main():
     # 7. SAUVEGARDE
     # ========================================
     
-    print("\n💾 Sauvegarde résultats...")
+    print("\n Sauvegarde résultats...")
     
     # DataFrame compétences enrichi
     df_comp_enriched = df_comp_filtered.copy()
@@ -734,10 +734,10 @@ def main():
     )
     
     print("\n" + "="*70)
-    print("✅ EMBEDDINGS COMPÉTENCES TERMINÉS !")
+    print(" EMBEDDINGS COMPÉTENCES TERMINÉS !")
     print("="*70)
     
-    print("\n📁 Fichiers créés:")
+    print("\n Fichiers créés:")
     print("   - competences_embeddings.npy")
     print("   - competences_similarity_matrix.npy")
     print("   - competences_umap_2d/3d.npy")

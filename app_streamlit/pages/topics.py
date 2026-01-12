@@ -14,24 +14,9 @@ import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 from config import MODELS_DIR, RESULTS_DIR
 
-"""@st.cache_data
-def load_data():
-    with open(MODELS_DIR / 'data_with_profiles.pkl', 'rb') as f:
-        df = pickle.load(f)
-    
-    try:
-        with open(RESULTS_DIR / 'topics_lda.json', 'r', encoding='utf-8') as f:
-            topics = json.load(f)
-    except Exception as e:
-        st.error(f"Erreur chargement topics: {e}")
-        topics = None
-    
-    return df, topics
 
-df, topics = load_data()"""
-
-# data
 from data_loaders import load_topics_data
+
 df, topics = load_topics_data()
 
 st.title(" Topics & Tendances")

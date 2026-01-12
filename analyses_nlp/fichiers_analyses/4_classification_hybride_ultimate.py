@@ -8,15 +8,6 @@ STRATÉGIE QUADRUPLE:
 3. Cascade 4 passes (seuils 4.5 / 3.5 / 2.5 / 0.5)
 4. Profil fourre-tout "Data/IA - Non spécifié" testé EN DERNIER
 
-CORRECTION CRITIQUE:
-- Profil fourre-tout testé après tous les profils spécifiques
-- PASSE 4 avec seuil 0.5 pour capturer reste Data/IA
-- Évite capture excessive par profil générique
-
-Résultat attendu: 87-90% classification
-
-Auteur: Projet NLP Text Mining
-Date: Décembre 2025
 """
 
 import pandas as pd
@@ -125,7 +116,7 @@ class ProfileClassifierUltimate:
         self.tfidf_vectorizer = None
         self.profil_vectors = {}
         
-        # ✅ PAS de pré-calcul - normalisation à la volée
+        #  PAS de pré-calcul - normalisation à la volée
         
     def build_profil_documents(self):
         """Crée documents représentatifs pour chaque profil"""
@@ -152,7 +143,7 @@ class ProfileClassifierUltimate:
     
     def fit_tfidf(self, df):
         """Entraîne TF-IDF"""
-        print("\n🔤 Entraînement TF-IDF...")
+        print("\n Entraînement TF-IDF...")
         
         profil_docs = self.build_profil_documents()
         all_texts = list(df['text_for_sklearn']) + list(profil_docs.values())
@@ -170,7 +161,7 @@ class ProfileClassifierUltimate:
             vector = self.tfidf_vectorizer.transform([doc])
             self.profil_vectors[profil_name] = vector
         
-        print(f"   ✅ TF-IDF entraîné: {len(self.tfidf_vectorizer.vocabulary_)} features")
+        print(f"    TF-IDF entraîné: {len(self.tfidf_vectorizer.vocabulary_)} features")
     
     def score_title_ultimate(self, title, profil_name):
         """
@@ -297,7 +288,7 @@ class ProfileClassifierUltimate:
         scores = {}
         details = {}
         
-        # ✅ CORRECTION: Tester profils spécifiques D'ABORD
+        
         # Séparer profil fourre-tout
         catch_all_profil = 'Data/IA - Non spécifié'
         
@@ -373,7 +364,7 @@ class ProfileClassifierUltimate:
         PASSE 3: Seuil 2.5 (confiance faible)
         PASSE 4: Seuil 0.5 (fourre-tout - capture reste Data/IA)
         """
-        print("\n🏷️  Classification CASCADE (4 passes)...")
+        print("\n  Classification CASCADE (4 passes)...")
         
         from tqdm import tqdm
         
@@ -392,7 +383,7 @@ class ProfileClassifierUltimate:
         # ========================================
         # PASSE 1 : Seuil 4.5 (haute confiance)
         # ========================================
-        print("\n   📍 PASSE 1/4: Seuil 4.5 (haute confiance)...")
+        print("\n   PASSE 1/4: Seuil 4.5 (haute confiance)...")
         
         unclassified_mask = df['status'] == 'unclassified'
         
@@ -406,12 +397,12 @@ class ProfileClassifierUltimate:
                 df.at[idx, 'cascade_pass'] = 1
         
         n_pass1 = (df['cascade_pass'] == 1).sum()
-        print(f"      ✅ Classifiées PASSE 1: {n_pass1}")
+        print(f"      Classifiées PASSE 1: {n_pass1}")
         
         # ========================================
         # PASSE 2 : Seuil 3.5 (confiance moyenne)
         # ========================================
-        print("\n   📍 PASSE 2/4: Seuil 3.5 (confiance moyenne)...")
+        print("\n   PASSE 2/4: Seuil 3.5 (confiance moyenne)...")
         
         unclassified_mask = df['status'] == 'unclassified'
         
@@ -425,12 +416,12 @@ class ProfileClassifierUltimate:
                 df.at[idx, 'cascade_pass'] = 2
         
         n_pass2 = (df['cascade_pass'] == 2).sum()
-        print(f"      ✅ Classifiées PASSE 2: {n_pass2}")
+        print(f"      Classifiées PASSE 2: {n_pass2}")
         
         # ========================================
         # PASSE 3 : Seuil 2.5 (confiance faible)
         # ========================================
-        print("\n   📍 PASSE 3/4: Seuil 2.5 (confiance faible)...")
+        print("\n   PASSE 3/4: Seuil 2.5 (confiance faible)...")
         
         unclassified_mask = df['status'] == 'unclassified'
         
@@ -444,12 +435,12 @@ class ProfileClassifierUltimate:
                 df.at[idx, 'cascade_pass'] = 3
         
         n_pass3 = (df['cascade_pass'] == 3).sum()
-        print(f"      ✅ Classifiées PASSE 3: {n_pass3}")
+        print(f"      Classifiées PASSE 3: {n_pass3}")
         
         # ========================================
         # PASSE 4 : Seuil 0.5 (fourre-tout)
         # ========================================
-        print("\n   📍 PASSE 4/4: Seuil 0.5 (fourre-tout Data/IA)...")
+        print("\n   PASSE 4/4: Seuil 0.5 (fourre-tout Data/IA)...")
         
         unclassified_mask = df['status'] == 'unclassified'
         
@@ -463,12 +454,12 @@ class ProfileClassifierUltimate:
                 df.at[idx, 'cascade_pass'] = 4
         
         n_pass4 = (df['cascade_pass'] == 4).sum()
-        print(f"      ✅ Classifiées PASSE 4: {n_pass4}")
+        print(f"      Classifiées PASSE 4: {n_pass4}")
         
         # ========================================
         # RÉSUMÉ CASCADE
         # ========================================
-        print(f"\n   📊 RÉSUMÉ CASCADE:")
+        print(f"\n    RÉSUMÉ CASCADE:")
         print(f"      PASSE 1 (4.5): {n_pass1:4d}")
         print(f"      PASSE 2 (3.5): {n_pass2:4d}")
         print(f"      PASSE 3 (2.5): {n_pass3:4d}")
@@ -485,7 +476,7 @@ class ProfileClassifierUltimate:
 
 def compute_statistics(df):
     """Calcule statistiques"""
-    print("\n📊 Calcul statistiques...")
+    print("\n Calcul statistiques...")
     
     stats = {}
     
@@ -498,7 +489,7 @@ def compute_statistics(df):
     stats['confiance_moyenne'] = df[df['status'] == 'classified']['profil_confidence'].mean()
     stats['score_moyen'] = df[df['status'] == 'classified']['profil_score'].mean()
     
-    # Par passe (✅ Convertir en int Python pour JSON)
+    # Par passe ( Convertir en int Python pour JSON)
     stats['by_pass'] = {
         'pass1': int((df['cascade_pass'] == 1).sum()),
         'pass2': int((df['cascade_pass'] == 2).sum()),
@@ -527,7 +518,7 @@ def compute_statistics(df):
 
 def analyze_by_region(df):
     """Analyse par région"""
-    print("\n🗺️  Analyse par région...")
+    print("\n  Analyse par région...")
     
     regions_stats = {}
     top_regions = df['region'].value_counts().head(10).index
@@ -551,7 +542,7 @@ def analyze_by_region(df):
 
 def analyze_by_source(df):
     """Analyse par source"""
-    print("\n📍 Analyse par source...")
+    print("\n Analyse par source...")
     
     sources_stats = {}
     
@@ -602,7 +593,7 @@ def analyze_competences_by_profil(df):
 def main():
     """Pipeline classification ULTIME"""
     print("="*70)
-    print("🚀 CLASSIFICATION ULTIME - OBJECTIF 80%+")
+    print(" CLASSIFICATION ULTIME - OBJECTIF 80%+")
     print("="*70)
     
     saver = ResultSaver()
@@ -615,20 +606,20 @@ def main():
     with open('../resultats_nlp/models/data_clean.pkl', 'rb') as f:
         df = pickle.load(f)
     
-    print(f"   ✅ Offres: {len(df)}")
-    print(f"   ✅ Avec compétences: {(df['num_competences'] > 0).sum()}")
-    print(f"   ✅ Avec titre: {df['title'].notna().sum()}")
+    print(f"    Offres: {len(df)}")
+    print(f"    Avec compétences: {(df['num_competences'] > 0).sum()}")
+    print(f"    Avec titre: {df['title'].notna().sum()}")
     
     # ==========================================
     # 2. CLASSIFICATION ULTIME
     # ==========================================
-    print("\n🤖 Initialisation système ULTIME...")
-    print("   ✅ Normalisation accents (é→e, è→e, etc.)")
+    print("\n Initialisation système ULTIME...")
+    print("    Normalisation accents (é→e, è→e, etc.)")
     if FUZZY_AVAILABLE:
-        print("   ✅ Fuzzy matching 85%+ (variations/typos)")
+        print("    Fuzzy matching 85%+ (variations/typos)")
     else:
-        print("   ⚠️  Fuzzy matching désactivé (fuzzywuzzy non installé)")
-    print("   ✅ Cascade 4 passes (seuils 4.5 / 3.5 / 2.5 / 0.5)")
+        print("     Fuzzy matching désactivé (fuzzywuzzy non installé)")
+    print("    Cascade 4 passes (seuils 4.5 / 3.5 / 2.5 / 0.5)")
     
     classifier = ProfileClassifierUltimate()
     
@@ -638,19 +629,19 @@ def main():
     # Classifier avec cascade
     df = classifier.classify_all_cascade(df)
     
-    print("\n✅ Classification ULTIME terminée !")
+    print("\n Classification ULTIME terminée !")
     
     # ==========================================
     # 3. STATISTIQUES
     # ==========================================
     stats = compute_statistics(df)
     
-    print(f"\n📊 Résultats classification ULTIME:")
+    print(f"\n Résultats classification ULTIME:")
     print(f"   Taux classification: {stats['taux_classification']*100:.1f}%  🎯")
     print(f"   Confiance moyenne: {stats['confiance_moyenne']:.2f}")
     print(f"   Score moyen: {stats['score_moyen']:.2f}/10")
     
-    print(f"\n🏆 Distribution profils:")
+    print(f"\n Distribution profils:")
     for profil, count in sorted(stats['distribution'].items(), key=lambda x: x[1], reverse=True):
         pct = count / len(df) * 100
         print(f"   {profil:<30s}: {count:4d} ({pct:5.1f}%)")
@@ -665,7 +656,7 @@ def main():
     # ==========================================
     # 5. SAUVEGARDE
     # ==========================================
-    print("\n💾 Sauvegarde résultats...")
+    print("\n Sauvegarde résultats...")
     
     saver.save_pickle(df, 'data_with_profiles.pkl')
     saver.save_pickle(classifier, 'classification_system.pkl')
@@ -687,9 +678,9 @@ def main():
     }
     saver.save_json(quality, 'classification_quality.json')
     
-    print("\n✅ CLASSIFICATION ULTIME TERMINÉE !")
+    print("\n CLASSIFICATION ULTIME TERMINÉE !")
     
-    print(f"\n📁 Fichiers créés:")
+    print(f"\n Fichiers créés:")
     print(f"   - data_with_profiles.pkl")
     print(f"   - classification_system.pkl")
     print(f"   - profils_distribution.json")
@@ -700,9 +691,9 @@ def main():
     
 
     if stats['taux_classification'] >= 0.80:
-        print("\n🎯 OBJECTIF 80%: ✅ ATTEINT !")
+        print("\n OBJECTIF 80%:  ATTEINT !")
     else:
-        print(f"\n🎯 OBJECTIF 80%: 📊 {stats['taux_classification']*100:.1f}% (proche !)")    
+        print(f"\n OBJECTIF 80%: {stats['taux_classification']*100:.1f}% (proche !)")    
         return df, classifier, stats
 
 

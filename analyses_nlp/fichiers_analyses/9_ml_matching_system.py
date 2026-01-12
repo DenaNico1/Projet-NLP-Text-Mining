@@ -58,7 +58,7 @@ def generate_cv_database():
         list: 25 CVs avec profils variés
     """
     
-    print("\n📝 Génération base de 25 CV fictifs...")
+    print("\n Génération base de 25 CV fictifs...")
     
     # Noms fictifs
     prenoms = ['Alice', 'Bob', 'Claire', 'David', 'Emma', 'François', 'Gabrielle', 
@@ -160,10 +160,10 @@ def generate_cv_database():
         
         cvs.append(cv)
     
-    print(f"   ✅ {len(cvs)} CV générés")
+    print(f"    {len(cvs)} CV générés")
     
     # Stats
-    print(f"\n   📊 Distribution:")
+    print(f"\n   Distribution:")
     profils_count = Counter([cv['profil_type'] for cv in cvs])
     for profil, count in profils_count.most_common():
         print(f"      {profil}: {count}")
@@ -188,7 +188,7 @@ def create_matching_dataset(cvs, df_offres, n_pairs=500):
         DataFrame avec features + labels
     """
     
-    print(f"\n🔗 Création dataset {n_pairs} paires...")
+    print(f"\n Création dataset {n_pairs} paires...")
     
     # Normalisation texte
     def normalize(text):
@@ -282,7 +282,7 @@ def create_matching_dataset(cvs, df_offres, n_pairs=500):
     all_pairs = positive_pairs + negative_pairs
     random.shuffle(all_pairs)
     
-    print(f"   ✅ {len(all_pairs)} paires générées")
+    print(f"    {len(all_pairs)} paires générées")
     print(f"      Matches: {len(positive_pairs)}")
     print(f"      Non-matches: {len(negative_pairs)}")
     
@@ -392,7 +392,7 @@ def train_matching_model(pairs, embeddings_model):
         model, tfidf_vectorizer, metrics
     """
     
-    print(f"\n🤖 Extraction features + entraînement...")
+    print(f"\n Extraction features + entraînement...")
     
     # Features extraction
     X = []
@@ -421,7 +421,7 @@ def train_matching_model(pairs, embeddings_model):
     X = np.array(X)
     y = np.array(y)
     
-    print(f"   ✅ Features: {X.shape}")
+    print(f"    Features: {X.shape}")
     
     # Split
     X_train, X_test, y_train, y_test = train_test_split(
@@ -429,7 +429,7 @@ def train_matching_model(pairs, embeddings_model):
     )
     
     # Entraînement
-    print(f"\n   🌳 Entraînement Random Forest...")
+    print(f"\n   Entraînement Random Forest...")
     
     model = RandomForestClassifier(
         n_estimators=100,
@@ -473,14 +473,14 @@ def train_matching_model(pairs, embeddings_model):
     
     metrics['feature_importance'] = feature_importance
     
-    print(f"\n   📊 Résultats:")
+    print(f"\n   Résultats:")
     print(f"      Accuracy:  {metrics['accuracy']:.3f}")
     print(f"      Precision: {metrics['precision']:.3f}")
     print(f"      Recall:    {metrics['recall']:.3f}")
     print(f"      F1-Score:  {metrics['f1_score']:.3f}")
     print(f"      ROC-AUC:   {metrics['roc_auc']:.3f}")
     
-    print(f"\n   🎯 Feature Importance:")
+    print(f"\n   Feature Importance:")
     for name, importance in sorted(feature_importance.items(), key=lambda x: x[1], reverse=True):
         print(f"      {name:25s}: {importance:.3f}")
     
@@ -493,23 +493,23 @@ def train_matching_model(pairs, embeddings_model):
 
 def main():
     print("="*70)
-    print("🤖 SYSTÈME ML DE MATCHING CV ↔ OFFRES")
+    print(" SYSTÈME ML DE MATCHING CV ↔ OFFRES")
     print("="*70)
     
     # 1. Charger offres
-    print(f"\n📥 Chargement offres...")
+    print(f"\n Chargement offres...")
     with open(MODELS_DIR / 'data_with_profiles.pkl', 'rb') as f:
         df_offres = pickle.load(f)
     
-    print(f"   ✅ {len(df_offres)} offres chargées")
+    print(f"    {len(df_offres)} offres chargées")
     
     # 2. Générer CV fictifs
     cvs = generate_cv_database()
     
     # 3. Charger modèle embeddings
-    print(f"\n🤖 Chargement sentence-transformers...")
+    print(f"\n Chargement sentence-transformers...")
     embeddings_model = SentenceTransformer('paraphrase-multilingual-MiniLM-L12-v2')
-    print(f"   ✅ Modèle chargé")
+    print(f"    Modèle chargé")
     
     # 4. Créer dataset
     pairs = create_matching_dataset(cvs, df_offres, n_pairs=500)
@@ -518,12 +518,12 @@ def main():
     model, tfidf_vectorizer, metrics = train_matching_model(pairs, embeddings_model)
     
     # 6. Sauvegarder
-    print(f"\n💾 Sauvegarde...")
+    print(f"\n Sauvegarde...")
     
     # CV base
     with open(RESULTS_DIR / 'cv_base_fictifs.json', 'w', encoding='utf-8') as f:
         json.dump(cvs, f, indent=2, ensure_ascii=False)
-    print(f"   ✅ cv_base_fictifs.json")
+    print(f"    cv_base_fictifs.json")
     
     # Modèle
     with open(MODELS_DIR / 'matching_model.pkl', 'wb') as f:
@@ -532,18 +532,18 @@ def main():
             'tfidf_vectorizer': tfidf_vectorizer,
             'embeddings_model_name': 'paraphrase-multilingual-MiniLM-L12-v2'
         }, f)
-    print(f"   ✅ matching_model.pkl")
+    print(f"    matching_model.pkl")
     
     # Métriques
     with open(RESULTS_DIR / 'matching_metrics.json', 'w', encoding='utf-8') as f:
         json.dump(metrics, f, indent=2)
-    print(f"   ✅ matching_metrics.json")
+    print(f"    matching_metrics.json")
     
     print("\n" + "="*70)
-    print("✅ SYSTÈME ML MATCHING TERMINÉ !")
+    print(" SYSTÈME ML MATCHING TERMINÉ !")
     print("="*70)
-    print(f"\n📊 Performance: {metrics['accuracy']*100:.1f}% accuracy")
-    print(f"📁 Fichiers créés:")
+    print(f"\n Performance: {metrics['accuracy']*100:.1f}% accuracy")
+    print(f" Fichiers créés:")
     print(f"   - cv_base_fictifs.json (25 CV)")
     print(f"   - matching_model.pkl (Random Forest)")
     print(f"   - matching_metrics.json (métriques)")

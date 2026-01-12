@@ -92,9 +92,9 @@ class EmbeddingAnalyzer:
     """Analyse par embeddings et clustering"""
     
     def __init__(self, model_name=EMBEDDING_MODEL):
-        print(f"\n🤖 Chargement modèle embeddings: {model_name}...")
+        print(f"\n Chargement modèle embeddings: {model_name}...")
         self.model = SentenceTransformer(model_name)
-        print(f"   ✅ Modèle chargé: {self.model.get_sentence_embedding_dimension()} dimensions")
+        print(f"    Modèle chargé: {self.model.get_sentence_embedding_dimension()} dimensions")
         
         self.embeddings = None
         self.umap_2d = None
@@ -107,11 +107,11 @@ class EmbeddingAnalyzer:
         
         Combine titre + description pour représentation riche
         """
-        print(f"\n📊 Génération embeddings pour {len(df)} offres...")
+        print(f"\n Génération embeddings pour {len(df)} offres...")
         
         # Créer texte combiné si pas déjà fait
         if text_column not in df.columns:
-            print("   📝 Création texte combiné (titre + description)...")
+            print("    Création texte combiné (titre + description)...")
             df['combined_text'] = df.apply(
                 lambda row: f"{row['title']}. {row.get('description', '')}",
                 axis=1
@@ -120,7 +120,7 @@ class EmbeddingAnalyzer:
         # Générer embeddings
         texts = df[text_column].fillna('').tolist()
         
-        print(f"   🔄 Encoding {len(texts)} textes (batch_size={BATCH_SIZE})...")
+        print(f"    Encoding {len(texts)} textes (batch_size={BATCH_SIZE})...")
         self.embeddings = self.model.encode(
             texts,
             batch_size=BATCH_SIZE,
@@ -128,13 +128,13 @@ class EmbeddingAnalyzer:
             convert_to_numpy=True
         )
         
-        print(f"   ✅ Embeddings générés: shape {self.embeddings.shape}")
+        print(f"    Embeddings générés: shape {self.embeddings.shape}")
         
         return self.embeddings
     
     def reduce_umap_2d(self):
         """Réduction UMAP 2D pour visualisation"""
-        print("\n🔵 Réduction UMAP 2D...")
+        print("\n Réduction UMAP 2D...")
         
         reducer = umap.UMAP(
             n_components=2,
@@ -145,13 +145,13 @@ class EmbeddingAnalyzer:
         )
         
         self.umap_2d = reducer.fit_transform(self.embeddings)
-        print(f"   ✅ UMAP 2D: shape {self.umap_2d.shape}")
+        print(f"    UMAP 2D: shape {self.umap_2d.shape}")
         
         return self.umap_2d
     
     def reduce_umap_3d(self):
         """Réduction UMAP 3D pour visualisation interactive"""
-        print("\n🔵 Réduction UMAP 3D...")
+        print("\n Réduction UMAP 3D...")
         
         reducer = umap.UMAP(
             n_components=3,
@@ -162,13 +162,13 @@ class EmbeddingAnalyzer:
         )
         
         self.umap_3d = reducer.fit_transform(self.embeddings)
-        print(f"   ✅ UMAP 3D: shape {self.umap_3d.shape}")
+        print(f"    UMAP 3D: shape {self.umap_3d.shape}")
         
         return self.umap_3d
     
     def reduce_tsne_2d(self):
         """Réduction t-SNE 2D (plus lent mais complémentaire)"""
-        print("\n🟠 Réduction t-SNE 2D...")
+        print("\n Réduction t-SNE 2D...")
         
         tsne = TSNE(
             n_components=2,
@@ -179,13 +179,13 @@ class EmbeddingAnalyzer:
         )
         
         self.tsne_2d = tsne.fit_transform(self.embeddings)
-        print(f"   ✅ t-SNE 2D: shape {self.tsne_2d.shape}")
+        print(f"    t-SNE 2D: shape {self.tsne_2d.shape}")
         
         return self.tsne_2d
     
     def cluster_kmeans(self, n_clusters=KMEANS_N_CLUSTERS):
         """Clustering KMeans"""
-        print(f"\n🔴 Clustering KMeans (k={n_clusters})...")
+        print(f"\n Clustering KMeans (k={n_clusters})...")
         
         kmeans = KMeans(
             n_clusters=n_clusters,
@@ -199,7 +199,7 @@ class EmbeddingAnalyzer:
         silhouette = silhouette_score(self.embeddings, labels)
         davies_bouldin = davies_bouldin_score(self.embeddings, labels)
         
-        print(f"   ✅ KMeans: {n_clusters} clusters")
+        print(f"    KMeans: {n_clusters} clusters")
         print(f"      Silhouette: {silhouette:.3f} (plus proche de 1 = mieux)")
         print(f"      Davies-Bouldin: {davies_bouldin:.3f} (plus proche de 0 = mieux)")
         
@@ -211,7 +211,7 @@ class EmbeddingAnalyzer:
             print("\n⚠️  HDBSCAN non disponible, skip")
             return None, None
         
-        print(f"\n🟢 Clustering HDBSCAN...")
+        print(f"\n Clustering HDBSCAN...")
         
         clusterer = hdbscan.HDBSCAN(
             min_cluster_size=HDBSCAN_MIN_CLUSTER_SIZE,
@@ -225,7 +225,7 @@ class EmbeddingAnalyzer:
         n_clusters = len(set(labels)) - (1 if -1 in labels else 0)
         n_noise = list(labels).count(-1)
         
-        print(f"   ✅ HDBSCAN: {n_clusters} clusters trouvés")
+        print(f"    HDBSCAN: {n_clusters} clusters trouvés")
         print(f"      Bruit: {n_noise} offres ({n_noise/len(labels)*100:.1f}%)")
         
         # Métriques (seulement sur offres non-bruit)
@@ -264,7 +264,7 @@ class EmbeddingAnalyzer:
 
 def viz_umap_2d_profils(df, umap_coords, saver):
     """Scatter UMAP 2D coloré par profils classifiés"""
-    print("\n   📊 UMAP 2D par profils...")
+    print("\n    UMAP 2D par profils...")
     
     df_viz = df.copy()
     df_viz['UMAP_1'] = umap_coords[:, 0]
@@ -292,7 +292,7 @@ def viz_umap_2d_profils(df, umap_coords, saver):
 
 def viz_umap_3d_profils(df, umap_coords, saver):
     """Scatter UMAP 3D interactif coloré par profils"""
-    print("\n   📊 UMAP 3D par profils...")
+    print("\n    UMAP 3D par profils...")
     
     df_viz = df.copy()
     df_viz['UMAP_1'] = umap_coords[:, 0]
@@ -321,7 +321,7 @@ def viz_umap_3d_profils(df, umap_coords, saver):
 
 def viz_tsne_2d_profils(df, tsne_coords, saver):
     """Scatter t-SNE 2D coloré par profils"""
-    print("\n   📊 t-SNE 2D par profils...")
+    print("\n    t-SNE 2D par profils...")
     
     df_viz = df.copy()
     df_viz['tSNE_1'] = tsne_coords[:, 0]
@@ -348,7 +348,7 @@ def viz_tsne_2d_profils(df, tsne_coords, saver):
 
 def viz_clusters_kmeans(df, umap_coords, kmeans_labels, saver):
     """Scatter UMAP 2D coloré par clusters KMeans"""
-    print("\n   📊 Clusters KMeans...")
+    print("\n   Clusters KMeans...")
     
     df_viz = df.copy()
     df_viz['UMAP_1'] = umap_coords[:, 0]
@@ -374,7 +374,7 @@ def viz_clusters_kmeans(df, umap_coords, kmeans_labels, saver):
 
 def viz_clusters_hdbscan(df, umap_coords, hdbscan_labels, saver):
     """Scatter UMAP 2D coloré par clusters HDBSCAN"""
-    print("\n   📊 Clusters HDBSCAN...")
+    print("\n    Clusters HDBSCAN...")
     
     df_viz = df.copy()
     df_viz['UMAP_1'] = umap_coords[:, 0]
@@ -401,7 +401,7 @@ def viz_clusters_hdbscan(df, umap_coords, hdbscan_labels, saver):
 
 def viz_confusion_clusters_profils(df, cluster_labels, cluster_name, saver):
     """Heatmap: Clusters vs Profils classifiés (cohérence)"""
-    print(f"\n   📊 Confusion {cluster_name} vs Profils...")
+    print(f"\n    Confusion {cluster_name} vs Profils...")
     
     df_viz = df[df['status'] == 'classified'].copy()
     df_viz['Cluster'] = cluster_labels[df_viz.index]
@@ -432,7 +432,7 @@ def viz_confusion_clusters_profils(df, cluster_labels, cluster_name, saver):
 
 def viz_top_similar_offers(df, embeddings, saver, n_examples=5):
     """Affiche top offres similaires pour quelques exemples"""
-    print("\n   📊 Top offres similaires...")
+    print("\n   Top offres similaires...")
     
     from sklearn.metrics.pairwise import cosine_similarity
     
@@ -465,7 +465,7 @@ def viz_top_similar_offers(df, embeddings, saver, n_examples=5):
     # Sauvegarder CSV
     csv_path = VIZ_DIR / 'embeddings_top_similar.csv'
     df_sim.to_csv(csv_path, index=False, encoding='utf-8-sig')
-    print(f"      ✅ CSV sauvegardé: {csv_path.name}")
+    print(f"      CSV sauvegardé: {csv_path.name}")
     
     # Visualisation simple
     fig = px.bar(
@@ -489,17 +489,17 @@ def viz_top_similar_offers(df, embeddings, saver, n_examples=5):
 
 def main():
     print("="*70)
-    print("🚀 ÉTAPE 5 : EMBEDDINGS & CLUSTERING")
+    print(" ÉTAPE 5 : EMBEDDINGS & CLUSTERING")
     print("="*70)
-    print(f"📁 Répertoire résultats: {RESULTS_DIR}")
+    print(f" Répertoire résultats: {RESULTS_DIR}")
     
     # Charger données
-    print(f"\n📥 Chargement data_with_profiles.pkl...")
+    print(f"\n Chargement data_with_profiles.pkl...")
     with open(MODELS_DIR / 'data_with_profiles.pkl', 'rb') as f:
         df = pickle.load(f)
     
-    print(f"   ✅ Offres: {len(df)}")
-    print(f"   ✅ Classifiées: {(df['status'] == 'classified').sum()}")
+    print(f"    Offres: {len(df)}")
+    print(f"    Classifiées: {(df['status'] == 'classified').sum()}")
     
     # Initialiser
     saver = ResultSaver(RESULTS_DIR)
@@ -520,7 +520,7 @@ def main():
     # Sauvegarder embeddings
     embeddings_path = MODELS_DIR / 'embeddings.npy'
     np.save(embeddings_path, embeddings)
-    print(f"\n💾 Embeddings sauvegardés: {embeddings_path}")
+    print(f"\n Embeddings sauvegardés: {embeddings_path}")
     
     # ========================================
     # 2. RÉDUCTION DIMENSIONNALITÉ
@@ -555,7 +555,7 @@ def main():
     # 4. VISUALISATIONS
     # ========================================
     
-    print("\n📊 Génération visualisations...")
+    print("\n Génération visualisations...")
     
     # Projections par profils
     viz_umap_2d_profils(df, umap_2d, saver)
@@ -579,13 +579,13 @@ def main():
     # 5. SAUVEGARDE FINALE
     # ========================================
     
-    print("\n💾 Sauvegarde données enrichies...")
+    print("\n Sauvegarde données enrichies...")
     
     # DataFrame avec clusters
     with open(MODELS_DIR / 'data_with_clusters.pkl', 'wb') as f:
         pickle.dump(df, f)
     
-    print(f"   ✅ data_with_clusters.pkl")
+    print(f"   data_with_clusters.pkl")
     
     # Métriques clustering
     metrics = {
@@ -597,13 +597,13 @@ def main():
     with open(RESULTS_DIR / 'clustering_metrics.json', 'w', encoding='utf-8') as f:
         json.dump(metrics, f, indent=2, ensure_ascii=False)
     
-    print(f"   ✅ clustering_metrics.json")
+    print(f"    clustering_metrics.json")
     
     print("\n" + "="*70)
-    print("✅ EMBEDDINGS & CLUSTERING TERMINÉS !")
+    print(" EMBEDDINGS & CLUSTERING TERMINÉS !")
     print("="*70)
     
-    print("\n📁 Fichiers créés:")
+    print("\n Fichiers créés:")
     print("   - embeddings.npy (représentations vectorielles)")
     print("   - umap_2d.npy / umap_3d.npy (projections UMAP)")
     print("   - tsne_2d.npy (projection t-SNE)")
