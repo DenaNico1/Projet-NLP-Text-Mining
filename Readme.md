@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- LOGO & HERO -->
-<img src="app_streamlit/assets/logo2.JPEG" alt="JOBLIZE" width="280"/>
+<img src="app_streamlit/assets/logo2.png" alt="JOBLIZE" width="580"/>
 
 # JOBLIZE for Data & IA
 
@@ -221,7 +221,7 @@ streamlit run app.py
 <div align="center">
 
 <!-- LOGO & HERO -->
-<img src="app_streamlit/assets/nlp_archi.PNG" alt="JOBLIZE" width="280"/>
+<img src="app_streamlit/assets/nlp_archi.png" alt="JOBLIZE" width="680"/>
 
 </div>
 
