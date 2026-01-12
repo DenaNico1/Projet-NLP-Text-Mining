@@ -221,58 +221,9 @@ streamlit run app.py
 <div align="center">
 
 <!-- LOGO & HERO -->
-<img src="app_streamlit/assets/nlp_archi.png" alt="JOBLIZE" width="680"/>
+<img src="app_streamlit/assets/nlp_archi.png" alt="JOBLIZE" width="880"/>
 
 </div>
-
-```
-┌──────────────────────────────────────────────────────────────────┐
-│                     🌐 SOURCES DE DONNÉES                        │
-├──────────────────────────────────────────────────────────────────┤
-│                                                                   │
-│  📡 France Travail API  →  🔍 Indeed Selenium  →  🤖 Mistral LLM │
-│     (API officielle)        (Scraping stealth)     (Extraction)  │
-│                                                                   │
-└─────────────────────────────┬────────────────────────────────────┘
-                              │
-                    ┌─────────▼──────────┐
-                    │   🔄 ETL Pipeline  │
-                    │   • DuckDB (OLAP)  │
-                    │   • Normalisation  │
-                    │   • Géocodage 97%  │
-                    └─────────┬──────────┘
-                              │
-          ┌───────────────────▼───────────────────┐
-          │     🗄️ ENTREPÔT DE DONNÉES           │
-          │   PostgreSQL Cloud (Supabase)        │
-          │   • Modèle étoile (5 dimensions)     │
-          │   • 3 tables de faits                │
-          │   • 3 009 offres géocodées           │
-          └───────────────────┬──────────────────┘
-                              │
-          ┌───────────────────▼───────────────────┐
-          │       🧠 PIPELINE NLP AVANCÉ          │
-          │   ┌────────────────────────────────┐  │
-          │   │ 1. Preprocessing (spaCy)      │  │
-          │   │ 2. Extraction (TF-IDF)        │  │
-          │   │ 3. Classification (90% acc)   │  │
-          │   │ 4. Topic Modeling (LDA)       │  │
-          │   │ 5. Embeddings (Sentence-BERT) │  │
-          │   └────────────────────────────────┘  │
-          └───────────────────┬──────────────────┘
-                              │
-      ┌───────────────────────┴────────────────────────┐
-      │                                                 │
-┌─────▼──────────┐                          ┌──────────▼─────────┐
-│  🤖 ML ENGINE  │                          │  🎨 APPLICATION    │
-│                │                          │                    │
-│ • Random Forest│                          │ • Streamlit 1.52   │
-│ • 85% précision│                          │ • 8 pages          │
-│ • <3 sec       │                          │ • Plotly + Mapbox  │
-│ • Embeddings   │                          │ • 7 thèmes         │
-│ • 6 features   │                          │ • Docker Ready 🐳  │
-└────────────────┘                          └────────────────────┘
-```
 
 ### Technologies Clés
 
