@@ -111,7 +111,7 @@ docker run -d \
 <div align="center">
 
 <!-- LOGO & HERO -->
-<img src="app_streamlit/assets/app.PNG" alt="JOBLIZE" width="880"/>
+<img src="app_streamlit/assets/app.PNG" alt="JOBLIZE" width="1000"/>
 
 </div>
 
