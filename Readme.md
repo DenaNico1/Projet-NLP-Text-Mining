@@ -108,6 +108,12 @@ docker run -d \
 ```
 
 **C'est tout ! Votre observatoire Data/IA est opérationnel !**
+<div align="center">
+
+<!-- LOGO & HERO -->
+<img src="app_streamlit/assets/app.png" alt="JOBLIZE" width="880"/>
+
+</div>
 
 ---
 
